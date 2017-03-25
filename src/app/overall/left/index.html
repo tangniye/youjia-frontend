@@ -1,0 +1,107 @@
+<div class="span3 left-span margin-top-header">
+  <div class="widget-box fl">
+    <div class="widget-content nopadding">
+      <div class="alert-zone left-boxup">
+        <div class="ibox-head">
+          <div class="title p0">
+            <span class="diamonds"></span>
+            <span class="text-cn">工控系统安全</span>
+            <div class="text-us">
+              Industrial Control Systems Security
+            </div>
+          </div>
+        </div>
+        <dl class="drange-list">
+          <dt class="icong"></dt>
+          <dd>
+            <p><span>风险系数</span> <strong class="num" ng-bind="icRisk.grade">89</strong></p>
+            <div id="ic-dist-dom" class="heigh6"></div>
+          </dd>
+        </dl>
+      </div>
+      <div class="alert-zone left-boxup">
+        <div class="ibox-head">
+          <div class="title p0">
+            <div><span class="diamonds"></span>
+              <span class="text-cn">网站安全</span>
+            </div>
+            <div class="text-us">
+              Website system security
+            </div>
+          </div>
+        </div>
+        <dl class="drange-list
+">
+          <dt class="icone"></dt>
+          <dd>
+            <p><span>风险系数</span> <strong class="num" ng-bind="webRisk.grade">89</strong></p>
+            <div id="web-dist-dom" class="heigh6"></div>
+          </dd>
+        </dl>
+      </div>
+      <div class="alert-zone left-boxdown   mt20">
+        <div class="ibox-head">
+          <div class="title p0">
+            <div>
+              <span class="diamonds"></span>
+              <span class="text-cn">风险工控系统区域分布</span>
+            </div>
+            <div class="text-us">
+              Regional risk Industrial Control Systems distribution
+            </div>
+          </div>
+        </div>
+        <div class="overflow-left">
+          <table class="table table-bordered table-mg">
+            <thead>
+            <tr>
+              <th class="w40">区域</th>
+              <th class="text-center">工控系统数</th>
+            </tr>
+            </thead>
+            <tbody id="tb-scroll-1">
+            <tr ng-repeat="dis in icDistribution track by $index">
+              <td>
+                <div ng-bind="dis._id"></div>
+              </td>
+              <td ng-bind="dis.value" class="text-center"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="alert-zone left-boxdown   mt20">
+        <div class="ibox-head">
+          <div class="title p0">
+            <div>
+              <span class="diamonds"></span>
+                            <span class="text-cn">网站区域分布
+</span>
+            </div>
+            <div class="text-us">
+              Regional Website system distribution
+            </div>
+          </div>
+        </div>
+        <div class="overflow-left">
+          <table class="table table-bordered table-mg">
+            <thead>
+            <tr>
+              <th class="w40">区域</th>
+              <th class="text-center">网站数</th>
+            </tr>
+            </thead>
+            <tbody id="tb-scroll-2">
+            <tr ng-repeat="dis in webDistribution track by $index">
+              <td>
+                <div ng-bind="dis.location"></div>
+              </td>
+              <td ng-bind="dis.value" class="text-center"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

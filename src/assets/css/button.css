@@ -1,0 +1,93 @@
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn.active:focus {
+    background-color: transparent;
+    border: 1px solid;
+    font-size: 12px;
+    border-radius: 20px;
+    margin: 0;
+    text-shadow: none;
+}
+
+.btn-inset-shadow,
+.btn-inset-shadow:hover,
+.btn-inset-shadow:focus,
+.btn-inset-shadow:active,
+.btn-inset-shadow.active,
+.btn-inset-shadow.active:focus{
+    font-weight: bold;
+    padding: 0 12px;
+    box-shadow: 0 0 6px inset;
+}
+
+.btn-inset-shadow-blue,
+.btn-inset-shadow-blue:hover,
+.btn-inset-shadow-blue:focus,
+.btn-inset-shadow-blue:active,
+.btn-inset-shadow-blue.active,
+.btn-inset-shadow-blue.active:focus {
+    color: rgba(0, 255, 201, 0.75);
+    border-color: rgba(0, 255, 201, 0.75);
+}
+
+.btn-inset-shadow-green,
+.btn-inset-shadow-green:hover,
+.btn-inset-shadow-green:focus,
+.btn-inset-shadow-green:active,
+.btn-inset-shadow-green.active,
+.btn-inset-shadow-green.active:focus {
+    color: rgba(72, 255, 0, 0.75);
+    border-color: rgba(72, 255, 0, 0.75);
+
+}
+
+.btn-inset-shadow-orange,
+.btn-inset-shadow-orange:hover,
+.btn-inset-shadow-orange:focus,
+.btn-inset-shadow-orange:active,
+.btn-inset-shadow-orange.active,
+.btn-inset-shadow-orange.active:focus {
+    color: rgba(255, 132, 0, 0.75);
+    border-color: rgba(255, 132, 0, 0.75);
+}
+
+/*.btn-deal,*/
+/*.btn-deal:hover,*/
+/*.btn-deal:focus,*/
+/*.btn-deal:active,*/
+/*.btn-deal.active,*/
+/*.btn-deal.active:focus {*/
+    /*font-weight: bold;*/
+    /*padding: 0 12px;*/
+    /*color: rgba(72, 255, 0, 0.75);*/
+    /*border-color: rgba(72, 255, 0, 0.75);*/
+    /*box-shadow: 0 0 6px rgba(72, 255, 0, 0.75) inset;*/
+/*}*/
+
+/*.btn-undeal,*/
+/*.btn-undeal:hover,*/
+/*.btn-undeal:focus,*/
+/*.btn-undeal:active,*/
+/*.btn-undeal.active,*/
+/*.btn-undeal.active:focus {*/
+    /*padding: 0 12px;*/
+    /*color: rgba(255, 132, 0, 0.75);*/
+    /*border-color: rgba(255, 132, 0, 0.75);*/
+    /*box-shadow: 0 0 6px rgba(255, 132, 0, 0.75) inset;*/
+/*}*/
+
+/*.btn-submit,*/
+/*.btn-submit:hover,*/
+/*.btn-submit:focus,*/
+/*.btn-submit:active,*/
+/*.btn-submit.active,*/
+/*.btn-submit.active:focus {*/
+    /*font-weight: bold;*/
+    /*padding: 1px 20px;*/
+    /*color: rgba(0, 255, 201, 0.75);*/
+    /*border-color: rgba(0, 255, 201, 0.75);*/
+    /*box-shadow: 0 0 6px rgba(0, 255, 201, 0.75) inset;*/
+/*}*/
