@@ -25,6 +25,11 @@
     "ng-file-upload": "*"
   },
   "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css"
+      ]
+    },
     "moment": {
       "main": [
         "moment.js",
