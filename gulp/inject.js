@@ -17,9 +17,8 @@ gulp.task('inject-reload', ['inject'], function() {
 
 gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendorImages'], function() {
     var injectStyles = gulp.src([
-        // path.join(conf.paths.tmp, '/serve/app/main.css'),
-        // path.join('!' + conf.paths.tmp, '/serve/app/vendor.css')
-         path.join(conf.paths.src, '/assets/css/**/*.css')
+        path.join(conf.paths.tmp, '/serve/styles/main.css'),
+        path.join('!' + conf.paths.tmp, '/serve/styles/vendor.css')
     ], { read: false });
 
     var injectScripts = gulp.src([
@@ -45,14 +44,14 @@ gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendor
 
 gulp.task('injectAuth', ['stylesAuth'], function() {
     return injectAlone({
-        css: [path.join('!' + conf.paths.tmp, '/serve/app/vendor.css'), path.join(conf.paths.tmp, '/serve/app/auth.css')],
-        paths: [path.join(conf.paths.src, '/auth.html'), path.join(conf.paths.src, '/regist.html')]
+        css: [path.join('!' + conf.paths.tmp, '/serve/styles/vendor.css'), path.join(conf.paths.tmp, '/serve/styles/auth.css')],
+        paths: [path.join(conf.paths.src, '/login.html'), path.join(conf.paths.src, '/regist.html')]
     })
 });
 
 gulp.task('inject404', ['styles404'], function() {
     return injectAlone({
-        css: [path.join('!' + conf.paths.tmp, '/serve/app/vendor.css'), path.join(conf.paths.tmp, '/serve/app/404.css')],
+        css: [path.join('!' + conf.paths.tmp, '/serve/styles/vendor.css'), path.join(conf.paths.tmp, '/serve/styles/404.css')],
         paths: path.join(conf.paths.src, '/404.html')
     })
 });

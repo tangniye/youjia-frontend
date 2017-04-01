@@ -1,0 +1,315 @@
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.alert-zone {
+  padding: 20px 70px;
+}
+
+.alert-zone .ibox-head {
+  position: relative;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #00ffc9;
+}
+
+.alert-zone .title {
+  color: #00ffcc;
+  display: inline-block;
+}
+
+.alert-zone .total {
+  color: #fefefe;
+  display: inline-block;
+}
+
+.modal-dialog .diamonds,
+.alert-zone .diamonds {
+  width: 7px;
+  height: 11px;
+  margin-left: 3px;
+  margin-right: 5px;
+  background-color: #00ffc9;
+  display: inline-block;
+}
+
+.modal-dialog .text-cn,
+.alert-zone .text-cn {
+  font-size: 16px;
+}
+
+.modal-dialog .text-us,
+.alert-zone .text-us {
+  font-size: 12px;
+  margin-left: -12px;
+  -webkit-transform: scale(0.79);
+  display: inline-block;
+}
+
+.alert-zone .text-num {
+  font-family: pirulen, "Microsoft Yahei", Helvetica, Arial, sans-serif;
+  font-size: 41px;
+  display: inline-block;
+  line-height: 41px;
+}
+
+.daterangepicker {
+  color: #000;
+}
+
+/**
+* start table style-sheet
+*/
+
+.alert-zone .table tbody {
+  color: #c3c3c3;
+}
+
+.alert-zone .table th,
+.alert-zone .table td {
+  padding: 0;
+  line-height: 30px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.alert-zone-bg {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.alert-zone .alert-zone-bg .table td,
+.alert-zone .alert-zone-bg .table th {
+  background: none;
+}
+
+.alert-zone .table th {
+  text-align: left;
+  border-bottom: 1px solid rgba(23, 137, 113, 0.18);
+}
+
+.alert-zone .table td {
+  border: none;
+}
+
+.alert-zone .threaten .table th,
+.alert-zone .threaten .table td,
+.alert-zone .incidents .table th,
+.alert-zone .incidents .table td,
+.alert-zone .information .table th:nth-last-child(1),
+.alert-zone .information .table td:nth-last-child(1),
+.alert-zone .policies .table td:nth-last-child(1),
+.alert-zone .policies .table td:nth-last-child(1) {
+  text-align: center;
+}
+
+.alert-zone .table td:nth-child(1),
+.alert-zone .table th:nth-child(1) {
+  padding-left: 25px;
+  text-align: left;
+  width: 40%;
+}
+
+/**
+* end table style-sheet
+*/
+
+/**
+* start button style-sheet
+*/
+
+.alert-zone .btn-v-center {
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  right: 15px;
+}
+
+.alert-zone .btn,
+.alert-zone .btn:hover,
+.alert-zone .btn:focus,
+.alert-zone .btn:active,
+.alert-zone .btn.active,
+.alert-zone .btn.active:focus,
+.modal-dialog .btn,
+.modal-dialog .btn:hover,
+.modal-dialog .btn:focus,
+.modal-dialog .btn:active,
+.modal-dialog .btn.active,
+.modal-dialog .btn.active:focus {
+  background-color: transparent;
+  border: 1px solid;
+  font-size: 12px;
+  border-radius: 20px;
+  margin: 0;
+  text-shadow: none;
+}
+
+.alert-zone .btn-more,
+.alert-zone .btn-more:hover,
+.alert-zone .btn-more:focus,
+.alert-zone .btn-more:active,
+.alert-zone .btn-more.active,
+.alert-zone .btn-more.active:focus {
+  font-weight: bold;
+  padding: 1px 15px;
+  color: rgba(0, 255, 201, 0.75);
+  border-color: rgba(0, 255, 201, 0.75);
+  box-shadow: 0 0 6px rgba(0, 255, 201, 0.75) inset;
+}
+
+.alert-zone .btn-deal,
+.alert-zone .btn-deal:hover,
+.alert-zone .btn-deal:focus,
+.alert-zone .btn-deal:active,
+.alert-zone .btn-deal.active,
+.alert-zone .btn-deal.active:focus {
+  font-weight: bold;
+  padding: 0 12px;
+  color: rgba(72, 255, 0, 0.75);
+  border-color: rgba(72, 255, 0, 0.75);
+  box-shadow: 0 0 6px rgba(72, 255, 0, 0.75) inset;
+}
+
+.alert-zone .btn-undeal,
+.alert-zone .btn-undeal:hover,
+.alert-zone .btn-undeal:focus,
+.alert-zone .btn-undeal:active,
+.alert-zone .btn-undeal.active,
+.alert-zone .btn-undeal.active:focus {
+  padding: 0 12px;
+  color: rgba(255, 132, 0, 0.75);
+  border-color: rgba(255, 132, 0, 0.75);
+  box-shadow: 0 0 6px rgba(255, 132, 0, 0.75) inset;
+}
+
+.modal-dialog .btn-submit,
+.modal-dialog .btn-submit:hover,
+.modal-dialog .btn-submit:focus,
+.modal-dialog .btn-submit:active,
+.modal-dialog .btn-submit.active,
+.modal-dialog .btn-submit.active:focus {
+  font-weight: bold;
+  padding: 1px 20px;
+  color: rgba(0, 255, 201, 0.75);
+  border-color: rgba(0, 255, 201, 0.75);
+  box-shadow: 0 0 6px rgba(0, 255, 201, 0.75) inset;
+}
+
+/**
+* end button style-sheet
+*/
+
+#threaten-map,
+#threaten-h-pie,
+#threaten-m-pie,
+#threaten-l-pie,
+#incidents-map,
+#incidents-h-pie,
+#incidents-m-pie,
+#incidents-l-pie,
+#threaten-bar {
+  height: 150px;
+}
+
+/****安全咨询***/
+.newsbox {
+  text-align: right;
+
+}
+
+.newsbox li {
+  display: inline-block;
+  width: 136px;
+  height: 137px;
+  border: solid 1px rgb(14, 76, 63);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  vertical-align: top;
+  margin-right: 32px;
+}
+
+.newsbox li .num {
+
+  font: 30px/40px NUM;
+}
+
+.newsbox li p {
+  margin-bottom: 0;
+}
+
+.niu {
+  background: url("@{images-root}/niu.png") no-repeat;
+  display: inline-block;
+  width: 37px;
+  height: 46px;
+  margin-top: 13px;
+}
+
+.e {
+  background: url("@{images-root}/e.png") no-repeat;
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  margin-top: 13px;
+}
+
+.re {
+  background: url(../image/re.png) no-repeat;
+  display: inline-block;
+  width: 89px;
+  height: 20px;
+  margin-top: 33px;
+}
+
+.ibox-table dl {
+  padding: 20px 0 20px 34px;
+  border-bottom: 1px solid #0a2729;
+  margin: 0;
+}
+
+.ibox-table dd {
+
+  margin-left: 172px;
+}
+
+.ibox-table dl h5 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.ibox-table dl p {
+  font-size: 12px;
+  color: #c3c3c3;
+  margin-bottom: 7px;
+}
+
+.ibox-table dl p.tips {
+  color: #666;
+}
+
+.ibox-table dl dt {
+  display: block;
+  width: 152px;
+  height: 142px;
+  overflow: hidden;
+
+}
+
+.ibox-table dl a {
+  color: #ffaa17;
+
+}
+
+.w100 {
+  width: 100px !important;
+  padding-right: 0 !important;
+}

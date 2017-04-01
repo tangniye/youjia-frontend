@@ -11,7 +11,7 @@ var $ = require('gulp-load-plugins')({
 gulp.task('partials', function() {
     return gulp.src([
             path.join(conf.paths.src, '/app/**/*.html'),
-            path.join(conf.paths.tmp, '/serve/app/**/*.html')
+            path.join(conf.paths.tmp, '/serve/*.html')
         ])
         .pipe($.minifyHtml({
             empty: true,
@@ -50,7 +50,7 @@ gulp.task('html', ['inject', 'partials'], function() {
         .pipe(jsFilter.restore)
         .pipe(cssFilter)
         .pipe($.sourcemaps.init())
-        .pipe($.replace('../../bower_components/bootstrap-sass/assets/fonts/bootstrap/', '../fonts/'))
+        .pipe($.replace('../../bower_components/bootstrap/fonts/', '../fonts/'))
         .pipe($.minifyCss({ processImport: false }))
         .pipe($.sourcemaps.write('maps'))
         .pipe(cssFilter.restore)
@@ -75,7 +75,7 @@ gulp.task('fonts', function() {
     return gulp.src($.mainBowerFiles())
         .pipe($.filter('**/*.{eot,svg,ttf,woff,woff2}'))
         .pipe($.flatten())
-        .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
+        .pipe(gulp.dest(path.join(conf.paths.dist, '/assets/fonts/')));
 });
 
 gulp.task('other', ['copyVendorImages'], function() {
@@ -85,8 +85,7 @@ gulp.task('other', ['copyVendorImages'], function() {
 
     return gulp.src([
             path.join(conf.paths.src, '/**/*'),
-            path.join('!' + conf.paths.src, '/**/*.{html,css,js,scss,md}'),
-            path.join(conf.paths.tmp, '/serve/**/assets/img/theme/vendor/**/*')
+            path.join('!' + conf.paths.src, '/**/*.{html,css,js,less,md}')
         ])
         .pipe(fileFilter)
         .pipe(gulp.dest(path.join(conf.paths.dist, '/')));

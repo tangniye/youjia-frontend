@@ -21,11 +21,11 @@ gulp.task('styles', function () {
 });
 
 gulp.task('stylesAuth', function () {
-  return buildSingleScss(path.join(conf.paths.src, '/less/auth.scss'));
+  return buildSingleLess(path.join(conf.paths.src, '/less/auth.less'));
 });
 
 gulp.task('styles404', function () {
-  return buildSingleScss(path.join(conf.paths.src, '/less/404.scss'));
+  return buildSingleLess(path.join(conf.paths.src, '/less/404.less'));
 });
 
 var buildStyles = function () {
@@ -34,10 +34,9 @@ var buildStyles = function () {
   };
 
   var injectFiles = gulp.src([
-    path.join(conf.paths.src, '/assets/less/**/_*.less'),
-    '!' + path.join(conf.paths.src, '/less/theme/conf/**/*.scss'),
-    '!' + path.join(conf.paths.src, '/less/404.scss'),
-    '!' + path.join(conf.paths.src, '/less/auth.scss')
+    path.join(conf.paths.src, '/less/**/*.less'),
+    '!' + path.join(conf.paths.src, '/less/404.less'),
+    '!' + path.join(conf.paths.src, '/less/auth.less')
   ], {read: false});
 
   var injectOptions = {
@@ -59,10 +58,10 @@ var buildStyles = function () {
     .pipe($.less(lessOptions)).on('error', conf.errorHandler('Less'))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/styles/')));
 };
 
-var buildSingleScss = function (paths) {
+var buildSingleLess = function (paths) {
 
   var lessOptions = {
     style: 'expanded'
@@ -70,5 +69,5 @@ var buildSingleScss = function (paths) {
   return gulp.src([paths])
     .pipe($.less(lessOptions)).on('error', conf.errorHandler('Less'))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/styles/')));
 };
