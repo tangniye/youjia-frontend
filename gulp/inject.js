@@ -67,7 +67,7 @@ var injectAlone = function(options) {
 
     return gulp.src(options.paths)
         .pipe($.inject(injectStyles, injectOptions))
-        //.pipe(wiredep(_.extend({}, conf.wiredep)))
+        // .pipe(wiredep(_.extend({}, conf.wiredep)))
         .pipe(wiredep(_.extend({ exclude: [!/\/jquery\.js$/] }, conf.wiredep)))
         .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')));
 };

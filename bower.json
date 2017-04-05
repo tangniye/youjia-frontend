@@ -22,7 +22,9 @@
     "jquery": "~2.1.4",
     "moment": "~2.10.6",
     "lodash": "~3.10.1",
-    "ng-file-upload": "*"
+    "ng-file-upload": "*",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
   },
   "overrides": {
     "bootstrap": {
@@ -36,8 +38,16 @@
         "locale/zh-cn.js"
       ]
     },
-    "angularjs-file-upload": {
-      "main": "./ng-file-upload.js"
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css",
+        "fonts/FontAwesome.otf",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2"
+      ]
     }
   }
 }

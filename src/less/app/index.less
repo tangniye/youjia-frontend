@@ -1,0 +1,161 @@
+.banner {
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-slider {
+  position: absolute;
+  height: 100%;
+  width: 500%;
+  list-style: none;
+  z-index: 1;
+
+  .slider-1 {
+    background: url("@{images-root}/banner-1.png") no-repeat;
+  }
+  .slider-2 {
+    background: url("@{images-root}/banner-2.png") no-repeat;
+  }
+
+  .slider-3 {
+    background: url("@{images-root}/banner-3.png") no-repeat;
+  }
+
+  li[class*='slider-'] {
+    position: relative;
+    display: block;
+    float: left;
+    background-size: contain;
+    height: 100%;
+  }
+}
+
+.rectangle {
+  background: url("@{images-root}/banner-rectangle.png") no-repeat center;
+  background-size: contain;
+  width: 55%;
+  height: 95%;
+  margin: auto;
+  z-index: 2;
+}
+
+.angle {
+  font-size: 56px;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  z-index: 3;
+
+  &:hover {
+    color: @primary-white;
+  }
+}
+
+.angle-left {
+  left: 15%;
+}
+
+.angle-right {
+  right: 15%;
+}
+
+.blockage {
+  bottom: 20px;
+  z-index: 3;
+
+  span[class*='blockage-'] {
+    display: inline-block;
+    width: 25px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    &:hover,
+    &.active {
+      background-color: @primary-white;
+    }
+  }
+}
+
+.banner-txt {
+  color: @primary-white;
+  width: 100%;
+
+  p:first-child {
+    font-size: 48px;
+  }
+
+  p:not(:first-child) {
+    font-size: 20px;
+    opacity: 0.8;
+  }
+}
+
+.brand-title {
+  margin: 6.2% 0 4.8%;
+
+  .underline {
+    width: 60px;
+    height: 2px;
+    background-color: @primary-blue;
+    margin: 0 auto 10px;
+  }
+}
+
+.brand-bg {
+  position: relative;
+}
+
+.brand-bg-1 {
+  background: url("@{images-root}/brand-profession.png") no-repeat;
+  background-size: contain;
+}
+
+.brand-bg-2 {
+  background: url("@{images-root}/brand-teaching.png") no-repeat;
+  background-size: contain;
+}
+
+.brand-bg-3 {
+  background: url("@{images-root}/brand-background.png") no-repeat;
+  background-size: contain;
+}
+
+.brand-content {
+  position: absolute;
+  width: 42%;
+  top: 15%;
+  color: @primary-white;
+
+}
+
+.brand-content .txt {
+  position: absolute;
+  top: 50%;
+}
+
+.brand-content.text-left {
+  left: 18%;
+  color: @primary-white;
+}
+
+.brand-content.text-right {
+  right: 18%;
+  color: @font-color;
+  i {
+    color: @font-sub-color;
+  }
+}
+
+.brand-content.text-left .txt {
+  left: 13%;
+}
+
+.brand-content.text-right .txt {
+  right: 13%;
+}
+
+.idea{
+  margin: 10% 34%;
+}
+
+
+

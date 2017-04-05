@@ -55,8 +55,8 @@ angular.module('app', [
         'ui.bootstrap',
         'toastr',
         'ngFileUpload',
-        'app.layout',
-        'app.overall'
+        'app.components',
+        'app.pages'
 
     ])
     .config(appConfig)

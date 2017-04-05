@@ -1,0 +1,54 @@
+.page-top {
+  position: fixed;
+  top: 0;
+  background-color: @primary-blue;
+  height: @page-top-height;
+  width: 100%;
+  font-size: 18px;
+  color: @primary-white;
+  z-index: 904;
+}
+
+a.page-top-logo {
+  float: left;
+  margin-top: 10px;
+  width: 220px;
+  height: 66px;
+  background: url("@{images-root}/page-top-logo.png") no-repeat;
+  text-indent: 9999em;
+  white-space: nowrap;
+}
+
+.page-top-menu {
+  position: relative;
+  margin-left: 4%;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+      width: 120px;
+      text-align: center;
+      line-height: @page-top-height;
+
+      &.active {
+        background-color: @primary-green;
+      }
+
+      a,
+      a:hover,
+      a:active {
+        display: block;
+        cursor: pointer;
+        color: @primary-white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.page-top-right{
+  line-height: @page-top-height;
+}
