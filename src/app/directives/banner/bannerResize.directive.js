@@ -28,7 +28,7 @@
         }
     }
 
-    angular.module('app.pages.index')
+    angular.module('app')
         .directive('bannerResize', bannerResize);
 
 })();

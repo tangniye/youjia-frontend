@@ -13,7 +13,8 @@
     angular.module('app.pages', [
             'ui.router',
             'app.pages.index',
-            'app.pages.staff'
+            'app.pages.staff',
+            'app.pages.about'
 
         ])
         .config(routeConfig);
