@@ -10,7 +10,8 @@
                 url: '/index',
                 title: '首页',
                 templateUrl: '/app/pages/index/index.html',
-                controller: 'indexCtrl'
+                controller: 'indexCtrl',
+                class:'index-zone'
             });
     }
 
