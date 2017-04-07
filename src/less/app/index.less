@@ -1,4 +1,10 @@
-.banner {
+.index-banner,
+.index-brand,
+.index-bottom-container {
+  font-size: 1.8rem;
+}
+
+.index-banner {
   overflow: hidden;
   position: relative;
 }
@@ -40,7 +46,7 @@
 }
 
 .angle {
-  font-size: 56px;
+  font-size: 5.6rem;
   color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
   z-index: 3;
@@ -48,14 +54,14 @@
   &:hover {
     color: @primary-white;
   }
-}
 
-.angle-left {
-  left: 15%;
-}
+  &.angle-left {
+    left: 15%;
+  }
 
-.angle-right {
-  right: 15%;
+  &.angle-right {
+    right: 15%;
+  }
 }
 
 .blockage {
@@ -79,13 +85,9 @@
   color: @primary-white;
   width: 100%;
 
-  p:first-child {
-    font-size: 48px;
-  }
-
   p:not(:first-child) {
-    font-size: 20px;
-    opacity: 0.8;
+    font-size: 2.0rem;
+    opacity: .8;
   }
 }
 
@@ -151,8 +153,8 @@
   right: 13%;
 }
 
-.idea{
-  margin: 10% 34%;
+.index-bottom-container {
+  margin: 10% 25%;
 }
 
 

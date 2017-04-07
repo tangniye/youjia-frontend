@@ -7,7 +7,7 @@
         'ngInject';
         var vm = $scope;
 
-        var bannerElem = angular.element('.banner')[0],
+        var bannerElem = angular.element('.index-banner')[0],
             bannerSlider = angular.element('.banner-slider')[0],
             imgWidth, timer, animating = false;
 
