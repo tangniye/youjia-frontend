@@ -14,7 +14,8 @@
             'ui.router',
             'app.pages.index',
             'app.pages.staff',
-            'app.pages.about'
+            'app.pages.about',
+            'app.pages.case'
 
         ])
         .config(routeConfig);

@@ -23,7 +23,7 @@
                 vm.staffs = res.items;
 
                 vm.activeIndex = 3;
-                vm.queryStr.page = res.page;
+                vm.queryStr.page = res.page_index;
                 vm.page_total = res.page_total;
 
                 getProfile(vm.staffs[2].id);
@@ -52,14 +52,17 @@
         }
 
         vm.next = function () {
+            if (vm.queryStr.page >= vm.page_total) {
+                return;
+            }
             vm.queryStr.page += 1;
-            vm.queryStr.page = vm.queryStr.page >= vm.page_total ? vm.page_total : vm.queryStr.page;
             getStaffList(vm.queryStr);
         };
 
         vm.prev = function () {
-            vm.queryStr.page -= 1;
-            vm.queryStr.page = vm.queryStr.page <= 1 ? 1 : vm.queryStr.page;
+            if (vm.queryStr.page <= 1) {
+                return
+            }
             getStaffList(vm.queryStr);
         };
 

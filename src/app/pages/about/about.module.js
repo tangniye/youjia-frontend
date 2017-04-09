@@ -8,7 +8,7 @@
         $stateProvider
             .state('about', {
                 url: '/about',
-                title: '首页',
+                title: '关于我们',
                 templateUrl: '/app/pages/about/about.html',
                 controller: 'aboutCtrl'
             });
