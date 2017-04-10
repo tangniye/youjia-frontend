@@ -9,7 +9,7 @@
   position: relative;
 }
 
-.banner-slider {
+.index-banner .banner-slider {
   position: absolute;
   height: 100%;
   width: 500%;
@@ -17,14 +17,15 @@
   z-index: 1;
 
   .slider-1 {
-    background: url("@{images-root}/banner-1.png") no-repeat;
+    background: url("@{images-root}/index-banner-1.png") no-repeat;
   }
+
   .slider-2 {
-    background: url("@{images-root}/banner-2.png") no-repeat;
+    background: url("@{images-root}/index-banner-2.png") no-repeat;
   }
 
   .slider-3 {
-    background: url("@{images-root}/banner-3.png") no-repeat;
+    background: url("@{images-root}/index-banner-3.png") no-repeat;
   }
 
   li[class*='slider-'] {
@@ -36,8 +37,8 @@
   }
 }
 
-.rectangle {
-  background: url("@{images-root}/banner-rectangle.png") no-repeat center;
+.index-banner .rectangle {
+  background: url("@{images-root}/index-banner-rectangle.png") no-repeat center;
   background-size: contain;
   width: 55%;
   height: 95%;
@@ -45,7 +46,7 @@
   z-index: 2;
 }
 
-.angle {
+.index-banner .angle {
   font-size: 5.6rem;
   color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
@@ -64,7 +65,7 @@
   }
 }
 
-.blockage {
+.index-banner .blockage {
   bottom: 20px;
   z-index: 3;
 
@@ -81,7 +82,7 @@
   }
 }
 
-.banner-txt {
+.index-banner .banner-txt {
   color: @primary-white;
   width: 100%;
 
@@ -91,7 +92,7 @@
   }
 }
 
-.brand-title {
+.index-brand .brand-title {
   margin: 6.2% 0 4.8%;
 
   .underline {
@@ -102,55 +103,55 @@
   }
 }
 
-.brand-bg {
+.index-brand .brand-bg {
   position: relative;
+
+  &.brand-bg-1 {
+    background: url("@{images-root}/brand-profession.png") no-repeat;
+    background-size: contain;
+  }
+
+  &.brand-bg-2 {
+    background: url("@{images-root}/brand-teaching.png") no-repeat;
+    background-size: contain;
+  }
+
+  &.brand-bg-3 {
+    background: url("@{images-root}/brand-background.png") no-repeat;
+    background-size: contain;
+  }
 }
 
-.brand-bg-1 {
-  background: url("@{images-root}/brand-profession.png") no-repeat;
-  background-size: contain;
-}
-
-.brand-bg-2 {
-  background: url("@{images-root}/brand-teaching.png") no-repeat;
-  background-size: contain;
-}
-
-.brand-bg-3 {
-  background: url("@{images-root}/brand-background.png") no-repeat;
-  background-size: contain;
-}
-
-.brand-content {
+.index-brand .brand-content {
   position: absolute;
   width: 42%;
   top: 15%;
+
+  .txt {
+    position: absolute;
+    top: 50%;
+  }
 }
 
-.brand-content .txt {
-  position: absolute;
-  top: 50%;
-}
-
-.brand-content.text-left {
+.index-brand .brand-content.text-left {
   left: 18%;
   color: @primary-white;
+
+  .txt {
+    left: 13%;
+  }
 }
 
-.brand-content.text-right {
+.index-brand .brand-content.text-right {
   right: 18%;
   color: inherit;
   i {
     color: @font-sub-color;
   }
-}
 
-.brand-content.text-left .txt {
-  left: 13%;
-}
-
-.brand-content.text-right .txt {
-  right: 13%;
+  .txt {
+    right: 13%;
+  }
 }
 
 .index-bottom-container {

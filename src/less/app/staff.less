@@ -1,0 +1,382 @@
+.staff-banner {
+  background: url("@{images-root}/staff-banner.png") no-repeat;
+  background-size: contain;
+  color: @primary-white;
+}
+
+.staff-banner-container {
+  background-image: url("@{images-root}/cross-left-top.png"), url("@{images-root}/cross-right-bottom.png");
+  background-position: left top, right bottom;
+  background-repeat: no-repeat;
+  width: 55%;
+  padding: 20px;
+}
+
+.staff-blue-bg {
+  position: relative;
+  background-color: @primary-blue;
+  height: 230px;
+  opacity: .7;
+}
+
+.staff-banner-txt {
+  width: 100%;
+}
+
+.staff-norm-section {
+  padding: 6.2% 0;
+
+  .staff-norm-title {
+    margin-bottom: 4.8%;
+  }
+
+  .staff-norm-content {
+    color: @primary-white;
+
+    .staff-norm-bg-1 {
+      background: url("@{images-root}/staff-norm-1.png") no-repeat;
+    }
+
+    .staff-norm-bg-2 {
+      background: url("@{images-root}/staff-norm-2.png") no-repeat;
+    }
+
+    .staff-norm-bg-3 {
+      background: url("@{images-root}/staff-norm-3.png") no-repeat;
+    }
+
+    div[class*='staff-norm-bg-'] {
+      position: relative;
+      display: inline-block;
+      background-size: 100% 100%;
+      background-color: #14213d;
+      &:not(:last-child) {
+        margin-right: 1.5%;
+      }
+
+      &:hover {
+        .circle {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .hover-stratum {
+          background-color: @primary-blue;
+        }
+      }
+    }
+
+    .circle {
+      position: relative;
+      width: 36.8%;
+      height: 31.1%;
+      margin: 25% auto;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background-color: transparent;
+      transition: background-color .4s linear;
+      -o-transition: background-color .4s linear;
+      -ms-transition: background-color .4s linear;
+      -moz-transition: background-color .4s linear;
+      -webkit-transition: background-color .4s linear;
+      font-size: 2.4rem;
+      z-index: 2;
+    }
+
+    .hover-stratum {
+      position: absolute;
+      top: 0;
+      background-color: transparent;
+      transition: background-color .4s linear;
+      -o-transition: background-color .4s linear;
+      -ms-transition: background-color .4s linear;
+      -moz-transition: background-color .4s linear;
+      -webkit-transition: background-color .4s linear;
+      width: inherit;
+      height: inherit;
+      opacity: .8;
+      z-index: 1;
+    }
+
+  }
+}
+
+.staff-tutor-section .container {
+  width: 1010px;
+  max-width: 100%;
+}
+
+.staff-tutor-section .underline {
+  width: 60px;
+  height: 2px;
+  background-color: @primary-white;
+}
+
+.staff-tutor-section .tutor-summary {
+  background-color: @primary-blue;
+  color: @primary-white;
+  text-align: center;
+  padding: 5% 0;
+
+  .title {
+    margin-bottom: 3%;
+
+    .underline {
+      opacity: .6;
+      margin: 0 auto 10px;
+    }
+  }
+
+  .tutors-slider-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin: auto;
+    text-align: left;
+    font-size: 0;
+
+    .tutor-item {
+      display: inline-block;
+      font-size: 1.6rem;
+      text-align: center;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 85px;
+      }
+
+      &.active {
+        .avatar-container {
+          width: 160px;
+          height: 160px;
+          margin-bottom: 40px;
+        }
+
+        .avatar-container img {
+          width: 148px;
+          height: 148px;
+        }
+
+        .tutor-info {
+          width: auto;
+          .tutor-name {
+            font-size: 2.4rem;
+          }
+
+          .tutor-school-major {
+            display: block;
+            font-size: 1.4rem;
+            opacity: .6;
+          }
+        }
+      }
+
+      &:hover,
+      &.active {
+        .avatar-container {
+          background-color: @primary-white;
+        }
+        .tutor-info .tutor-name {
+          opacity: 1;
+        }
+      }
+
+      .avatar-container {
+        border: 6px solid rgba(255, 255, 255, 0.2);
+        transition: all linear .5s;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+        img {
+          width: 108px;
+          height: 108px;
+          border-radius: 50%;
+          transition: all linear .5s;
+        }
+      }
+
+      .tutor-info {
+        position: absolute;
+        white-space: nowrap;
+        width: 120px;
+
+        .tutor-name {
+          opacity: .6;
+          transition: opacity linear .5s;
+        }
+
+        .tutor-school-major {
+          display: none;
+        }
+      }
+
+    }
+
+  }
+
+  .angle {
+    font-size: 5.6rem;
+    color: @primary-white;
+    cursor: pointer;
+    opacity: .4;
+    top: 80px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .angle.angle-left {
+    left: -60px;
+  }
+
+  .angle.angle-right {
+    right: -60px;
+  }
+}
+
+.staff-tutor-section .tutor-detail {
+  position: relative;
+
+  //&:before {
+  //  content: " ";
+  //  position: absolute;
+  //  top: -20px;
+  //  left: 50%;
+  //  transform: translateX(-50%);
+  //  border-left: 24px solid transparent;
+  //  border-right: 24px solid transparent;
+  //  border-bottom: 20px solid #fff;
+  //  border-top: 0;
+  //
+  //}
+
+  .tutor-brief {
+    width: 570px;
+    font-size: 1.4rem;
+    color: @font-sub-color;
+    margin: auto;
+    padding: 40px 0;
+
+    i.iconfont {
+      font-size: 3.4rem;
+    }
+  }
+
+  .tutor-detail-item {
+    position: relative;
+    margin-bottom: 108px;
+    font-size: 1.6rem;
+    color: @primary-white;
+
+    .title {
+      position: absolute;
+      top: -68px;
+      width: 230px;
+      height: 136px;
+      padding: 30px;
+
+      .underline {
+        margin-bottom: 10px;
+      }
+    }
+
+    .content {
+      min-height: 188px;
+      line-height: 1.8;
+      padding: 88px 5% 20px;
+    }
+
+  }
+
+  .tutor-detail-item.case {
+
+    .title {
+      background: url("@{images-root}/tutor-case-bg.png") no-repeat;
+      background-size: contain;
+      left: 5%;
+      padding-right: 0;
+    }
+
+    .content {
+      background-color: rgba(59, 89, 152, 0.1);
+      color: @font-color;
+    }
+  }
+
+  .tutor-detail-item.feature {
+    .title {
+      background: url("@{images-root}/tutor-feature-bg.png") no-repeat;
+      background-size: contain;
+      right: 5%;
+      text-align: right;
+      padding-left: 0;
+    }
+
+    .content {
+      background-color: #3b5998;
+    }
+  }
+}
+
+.staff-tutor-section .anchor {
+  width: 0;
+  height: 0;
+  margin: -20px auto;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  border-bottom: 20px solid #fff;
+  transition: transform linear .5s;
+}
+
+.staff-appoint-section {
+  background-color: @primary-grey;
+  padding: 80px 0;
+}
+
+.staff-appoint-section .underline {
+  width: 60px;
+  height: 2px;
+  background-color: @primary-blue;
+  margin: 0 auto 10px;
+}
+
+.appoint-container {
+  width: 820px;
+  height: 340px;
+  background-color: @primary-white;
+  margin: auto;
+
+  .appoint-bg {
+    display: inline-block;
+    background: @primary-blue url("@{images-root}/staff-appoint-form-bg.png") no-repeat left;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+  }
+  .appoint-info {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    padding: 40px 80px;
+
+    input.form-control {
+      background-color: @primary-grey;
+      border: 1px solid @primary-grey;
+      transition: border-color ease-in-out .2s;
+      border-radius: 0;
+      height: 40px;
+      box-shadow: none;
+      &:hover,
+      &:focus {
+        border-color: @primary-green;
+      }
+    }
+
+    button {
+      height: 40px;
+    }
+
+  }
+}
