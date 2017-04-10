@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "bower install",
     "start": "gulp serve"
-  }
+  },
   "devDependencies": {
     "browser-sync": "~2.9.11",
     "browser-sync-spa": "~1.0.3",
