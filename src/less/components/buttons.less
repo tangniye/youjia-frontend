@@ -1,9 +1,20 @@
 .btn{
   border-radius: 0;
 }
+.btn-mid {
+  .button-size(1rem, 3rem, 1.2rem, 1rem, 0);
+}
+
 
 .btn-green {
   .button-variant(@btn-green-color; @btn-green-bg; @btn-green-border);
+}
+.btn-green-outline {
+  .button-variant(@btn-green-outline-color; @btn-green-outline-bg; @btn-green-outline-border);
+}
+.btn-green-in-white {
+  .button-variant(@btn-green-color; @btn-green-bg; @btn-green-border);
+  border-color: white;
 }
 
 .btn-white-outline{
