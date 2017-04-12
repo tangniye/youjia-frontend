@@ -3,6 +3,8 @@
  */
 (function () {
     'use strict';
+
+    /** @ngInject */
     function sidebarCtrl($scope) {
         'ngInject';
 

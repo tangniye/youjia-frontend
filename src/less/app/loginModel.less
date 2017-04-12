@@ -1,0 +1,107 @@
+.login-modal .modal-sm {
+  width: 440px;
+}
+
+.login-modal .modal-header,
+.login-modal .modal-body {
+  background-color: #f7f8fd;
+}
+
+.login-modal {
+  color: @font-login-color;
+  font-size: 1.4rem;
+}
+
+.login-modal .modal-header {
+  border-bottom: 0;
+  .modal-logo-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 10px solid rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .modal-logo {
+    width: 110px;
+    height: 110px;
+    background: @primary-white url("@{images-root}/logo.png") no-repeat 60% 50%;
+    border-radius: 50%;
+  }
+
+  .close {
+    transition: all .2s linear;
+    &:hover {
+      color: @primary-green;
+      transform: rotate(90deg);
+      -ms-transform: rotate(90deg); /* IE 9 */
+      -moz-transform: rotate(90deg); /* Firefox */
+      -webkit-transform: rotate(90deg); /* Safari 和 Chrome */
+      -o-transform: rotate(90deg); /* Opera */
+    }
+
+  }
+}
+
+.login-modal .modal-body {
+
+  .login-form {
+    padding: 40px 60px;
+  }
+
+  .form-group {
+    padding-left: 15px;
+
+    &:not(:first-child) {
+      border-bottom: 1px solid @font-login-color;
+    }
+
+    &:hover:not(:first-child) {
+      border-bottom-color: @primary-green;
+      i, input {
+        color: @primary-green;
+      }
+    }
+
+  }
+
+  .form-group.has-error {
+    line-height: 33px;
+  }
+
+  input {
+    display: inline-block;
+    border: none;
+    color: @font-color;
+    box-shadow: 0 0 0 1000px #f7f8fd inset;
+
+    &:hover,
+    &:focus {
+      color: @primary-green;
+    }
+
+    &:-webkit-autofill {
+      color: @font-color !important;
+    }
+
+  }
+
+  input.input-username {
+    width: 250px;
+  }
+
+  input.input-psd {
+    width: 190px;
+  }
+
+  a.forget-psd {
+    color: @primary-green;
+    cursor: pointer;
+  }
+}
+
+.login-modal .modal-footer {
+  border-top: 0;
+}

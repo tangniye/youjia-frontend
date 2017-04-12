@@ -4,8 +4,9 @@
 (function () {
     'use strict';
 
+
+    /** @ngInject */
     function Staff($http, $q, URL_CONFIG) {
-        'ngInject';
 
         this.getStaffList = function (query) {
             var defer = $q.defer();

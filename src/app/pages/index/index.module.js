@@ -3,15 +3,15 @@
  */
 (function () {
     'use strict';
+
+    /** @ngInject */
     function routeConfig($stateProvider) {
-        'ngInject';
         $stateProvider
             .state('index', {
                 url: '/index',
                 title: '首页',
                 templateUrl: '/app/pages/index/index.html',
-                controller: 'indexCtrl',
-                class:'index-zone'
+                controller: 'indexCtrl'
             });
     }
 

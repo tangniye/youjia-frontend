@@ -3,8 +3,9 @@
  * app config
  * including http interceptor and http default config
  */
+/** @ngInject */
 function appConfig($provide, $httpProvider) {
-    'ngInject';
+
     // Intercept http calls.
     $provide.factory('ErrorHttpInterceptor', ['$q', '$injector', function ($q, $injector) {
         return {
@@ -43,7 +44,7 @@ function appConfig($provide, $httpProvider) {
 
     $httpProvider.interceptors.push('ErrorHttpInterceptor');
 
-    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/json';
     $httpProvider.defaults.headers.put['Content-Type'] = 'application/json';
     $httpProvider.defaults.headers.delete = {'Content-Type': 'application/json'};
 

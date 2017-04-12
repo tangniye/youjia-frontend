@@ -4,8 +4,8 @@
 (function () {
     'use strict';
 
+    /** @ngInject */
     function imgResize($window, $parse) {
-        'ng inject';
 
         return function (scope, element, attrs) {
             var w_scale = 1.0, h_scale = 1.0, w_screen = 1920,

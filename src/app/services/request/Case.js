@@ -4,8 +4,8 @@
 (function () {
     'use strict';
 
+    /** @ngInject */
     function Case($http, $q, URL_CONFIG) {
-        'ngInject';
 
         this.getCaseList = function (query) {
             var defer = $q.defer();

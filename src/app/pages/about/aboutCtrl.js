@@ -3,8 +3,9 @@
  */
 (function () {
     'use strict';
-    function aboutCtrl($scope) {
-        'ngInject';
+
+    /** @ngInject */
+    function aboutCtrl() {
 
     }
 

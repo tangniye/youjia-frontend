@@ -5,17 +5,17 @@
     'use strict';
 
     /** @ngInject */
-    function pageBottom() {
+    function step2() {
         return {
             restrict: 'E',
-            templateUrl: 'app/components/pageBottom/pageBottom.html',
+            templateUrl: 'app/pages/password/step2.html',
             link: function (scope, el) {
                
             }
         };
     }
 
-    angular.module('app.components')
-        .directive('pageBottom', pageBottom);
+    angular.module('app.pages.password')
+        .directive('step2', step2);
 
 })();
