@@ -50,6 +50,14 @@ function appConfig($provide, $httpProvider) {
 
 }
 
+/*
+ * app run function
+ */
+function appRun($rootScope, $state, $stateParams) {
+  $rootScope.$state = $state;
+  $rootScope.$stateParams = $stateParams;
+}
+
 angular.module('app', [
         'ngCookies',
         'ui.router',
@@ -58,8 +66,7 @@ angular.module('app', [
         'ngFileUpload',
         'app.components',
         'app.pages'
-
     ])
     .config(appConfig)
     .constant('URL_CONFIG', window.urlConfig)
-    .run();
+    .run(appRun);
