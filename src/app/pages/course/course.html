@@ -31,12 +31,12 @@
     </div>
   </div>
 </div>
-<ul class="course-nav">
-  <li class="course-nav__tab active">课程简介</li>
-  <li class="course-nav__tab">授课方式</li>
-  <li class="course-nav__tab">课程大纲</li>
+<ul class="course-nav" scroll-nav>
+  <li class="course-nav__tab active" scroll-to="course-intro-section">课程简介</li>
+  <li class="course-nav__tab" scroll-to="course-method-section">授课方式</li>
+  <li class="course-nav__tab" scroll-to="course-syllabus-section">课程大纲</li>
 </ul>
-<section class="course-section course-section--intro">
+<section id="course-intro-section" class="course-section course-section--intro">
   <h3 class="course-section__title">
     课程简介
     <small>COURSE INTRODUCTION</small>
@@ -56,7 +56,7 @@
     </ul>
   </div>
 </section>
-<section class="course-section course-section--method">
+<section id="course-method-section" class="course-section course-section--method">
   <h3 class="course-section__title">
     授课方式
     <small>TECHING METHOD</small>
@@ -77,7 +77,7 @@
     </div>
   </div>
 </section>
-<section class="course-section course-section--syllabus">
+<section id="course-syllabus-section" class="course-section course-section--syllabus">
   <h3 class="course-section__title">
     课程大纲
     <small>COURSE SYLLABUS</small>
