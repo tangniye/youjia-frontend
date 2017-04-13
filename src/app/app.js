@@ -20,22 +20,22 @@ function appConfig($provide, $httpProvider) {
                 // 弹出对话框错误提示
                 switch (rejection.status) {
                     case 400:
-                        toastr.error('错误请求', rejection.statusText, {'closeButton': true});
+                        toastr.error(rejection.data.message, '', {'closeButton': true});
                         break;
                     case 401:
-                        toastr.error('未授权', rejection.statusText, {'closeButton': true});
+                        toastr.error(rejection.statusText, '未授权', {'closeButton': true});
                         break;
                     case 403:
-                        toastr.error('服务器拒绝请求', rejection.statusText, {'closeButton': true});
+                        toastr.error(rejection.statusText, '服务器拒绝请求', {'closeButton': true});
                         break;
                     case 404:
-                        toastr.error('未找到', rejection.statusText, {'closeButton': true});
+                        toastr.error(rejection.statusText, '未找到', {'closeButton': true});
                         break;
                     case 500:
-                        toastr.error('服务器内部错误', rejection.statusText, {'closeButton': true});
+                        toastr.error(rejection.statusText, '服务器内部错误', {'closeButton': true});
                         break;
                     default:
-                        toastr.error('请求超时', '', {'closeButton': true});
+                        toastr.error('', '请求超时', {'closeButton': true});
                 }
                 return $q.reject(rejection);
             }

@@ -5,9 +5,10 @@
     'use strict';
 
     /** @ngInject */
-    function passwordCtrl($scope) {
+    function passwordCtrl($scope, User) {
         var vm = $scope;
-        
+        vm.step = 2;
+
 
     }
 

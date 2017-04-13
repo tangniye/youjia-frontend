@@ -7,9 +7,11 @@
 <div class="modal-body">
     <p class="font18 text-center main-color">优加留学登录</p>
     <form class="login-form">
-        <div class="form-group" ng-class="{'has-feedback has-error':error.flag}" ng-show="error.flag">
-            <i class="fa fa-times-circle mr10"></i>
-            <span ng-bind="error.message"></span>
+        <div class="has-error" ng-show="error.flag">
+            <div class="help-block error-block mb15 pl15">
+                <i class="fa fa-times-circle mr10"></i>
+                <span ng-bind="error.message"></span>
+            </div>
         </div>
         <div class="form-group">
             <i class="iconfont icon-user font18"></i>

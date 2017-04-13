@@ -1,1 +1,25 @@
-<div>step1</div>
+<form name="form" ng-submit="submit(item)" novalidate>
+    <div class="form-group mb30 clearfix" ng-class="{'has-error': !is_password_valid() && (form.password.$dirty||form.$submitted)}">
+        <label class="col-md-4 control-label">输入新密码：</label>
+        <div class="col-md-5">
+            <input type="text" class="form-control" name="password" placeholder="字母加数字组成的6-20位字符" ng-model="item.password" required>
+        </div>
+        <div class="col-md-3 help-block error-block" ng-if="!is_password_valid() && (form.password.$dirty||form.$submitted)">
+            <i class="fa fa-times-circle mr5"></i>
+            <span>新密码格式错误</span>
+        </div>
+    </div>
+    <div class="form-group mb30 clearfix" ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
+        <label class="col-md-4 control-label">确定新密码：</label>
+        <div class="col-md-5">
+            <input type="text" class="form-control" name="repassword" placeholder="确定新密码：" ng-model="item.repassword" required>
+        </div>
+        <div class="col-md-3 help-block error-block" ng-if="!is_password_equal() && (form.repassword.$dirty||form.$submitted)">
+            <i class="fa fa-times-circle mr5"></i>
+            <span>前后密码不一致</span>
+        </div>
+    </div>
+    <div class="col-md-5 col-md-offset-4">
+        <button class="btn btn-green">提 交</button>
+    </div>
+</form>

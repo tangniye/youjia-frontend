@@ -4,11 +4,11 @@
 
 .login-modal .modal-header,
 .login-modal .modal-body {
-  background-color: #f7f8fd;
+  background-color: @light-grey;
 }
 
 .login-modal {
-  color: @font-login-color;
+  color: @font-light-color;
   font-size: 1.4rem;
 }
 
@@ -55,7 +55,7 @@
     padding-left: 15px;
 
     &:not(:first-child) {
-      border-bottom: 1px solid @font-login-color;
+      border-bottom: 1px solid @font-light-color;
     }
 
     &:hover:not(:first-child) {
@@ -67,15 +67,11 @@
 
   }
 
-  .form-group.has-error {
-    line-height: 33px;
-  }
-
   input {
     display: inline-block;
     border: none;
     color: @font-color;
-    box-shadow: 0 0 0 1000px #f7f8fd inset;
+    box-shadow: 0 0 0 1000px @light-grey inset;
 
     &:hover,
     &:focus {
@@ -100,6 +96,12 @@
     color: @primary-green;
     cursor: pointer;
   }
+
+  .has-error .help-block {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
 }
 
 .login-modal .modal-footer {
