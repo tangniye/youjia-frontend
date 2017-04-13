@@ -20,10 +20,8 @@
     'app.pages.staff',
     'app.pages.about',
     'app.pages.case',
-    'app.pages.course'
+    'app.pages.course',
     'app.pages.password'
-
-
   ])
     .config(routeConfig);
 
