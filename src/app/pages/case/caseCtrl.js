@@ -3,8 +3,9 @@
  */
 (function () {
     'use strict';
+
+    /** @ngInject */
     function caseCtrl($scope, Case) {
-        'ngInject';
         var vm = $scope;
 
         vm.queryStr = {
@@ -16,6 +17,9 @@
         vm.page_total = 1;
 
         vm.seeMore = function (tag) {
+            if (tag === vm.queryStr.tag) {
+                return
+            }
             vm.queryStr.tag = tag;
             getCaseList(vm.queryStr);
         };

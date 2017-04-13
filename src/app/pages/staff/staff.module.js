@@ -3,8 +3,9 @@
  */
 (function () {
     'use strict';
+
+    /** @ngInject */
     function routeConfig($stateProvider) {
-        'ngInject';
         $stateProvider
             .state('staff', {
                 url: '/staff',

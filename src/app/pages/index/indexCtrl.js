@@ -3,8 +3,9 @@
  */
 (function () {
     'use strict';
+
+    /** @ngInject */
     function indexCtrl($scope, $timeout) {
-        'ngInject';
         var vm = $scope;
 
         var bannerElem = angular.element('.index-banner')[0],

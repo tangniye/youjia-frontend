@@ -4,12 +4,17 @@
 (function () {
     'use strict';
     
-    function pageTop() {
+    /** @ngInject */
+    function pageTop(Common) {
         return {
             restrict: 'E',
             templateUrl: 'app/components/pageTop/pageTop.html',
             link: function (scope, el) {
-               
+                
+               scope.promptLogin = function () {
+                   Common.model.promptModel('loginModelCtrl','app/components/login/loginModel.html','sm','','login-modal')
+               }
+                
             }
         };
     }

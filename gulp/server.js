@@ -34,11 +34,11 @@ function browserSyncInit(baseDir, browser) {
      *
      * For more details and option, https://github.com/chimurai/http-proxy-middleware/blob/v0.9.0/README.md
      */
-    var context = '/situaware/v1'; // requests with this path will be proxied
+    var context = '/api/account'; // requests with this path will be proxied
 
     // configure proxy middleware options
     var options = {
-        target: 'http://10.4.4.116:8080/', // target host
+        target: 'http://115.159.26.15/', // target host
         changeOrigin: true, // needed for virtual hosted sites
         ws: true, // proxy websockets
         pathRewrite: {

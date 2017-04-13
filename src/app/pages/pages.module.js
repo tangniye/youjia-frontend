@@ -4,11 +4,15 @@
 (function () {
   'use strict';
 
-  function routeConfig($urlRouterProvider) {
+
+    /** @ngInject */
+    function routeConfig($urlRouterProvider) {
+
 
     $urlRouterProvider.otherwise('/index');
 
   }
+
 
   angular.module('app.pages', [
     'ui.router',
@@ -17,6 +21,8 @@
     'app.pages.about',
     'app.pages.case',
     'app.pages.course'
+    'app.pages.password'
+
 
   ])
     .config(routeConfig);

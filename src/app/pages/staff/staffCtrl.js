@@ -3,8 +3,9 @@
  */
 (function () {
     'use strict';
-    function staffCtrl($scope, Staff, toastr) {
-        'ngInject';
+
+    /** @ngInject */
+    function staffCtrl($scope, Staff) {
         var vm = $scope;
         vm.activeIndex = 3;
 

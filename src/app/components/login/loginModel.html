@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+    <div class="modal-logo-bg">
+        <div class="modal-logo"></div>
+    </div>
+</div>
+<div class="modal-body">
+    <p class="font18 text-center main-color">优加留学登录</p>
+    <form class="login-form">
+        <div class="form-group" ng-class="{'has-feedback has-error':error.flag}" ng-show="error.flag">
+            <i class="fa fa-times-circle mr10"></i>
+            <span ng-bind="error.message"></span>
+        </div>
+        <div class="form-group">
+            <i class="iconfont icon-user font18"></i>
+            <input type="text" class="form-control input-username" placeholder="请输入您的账号" ng-model="user.phone">
+        </div>
+        <div class="form-group">
+            <i class="iconfont icon-lock font18"></i>
+            <input type="password" class="form-control input-psd" placeholder="请输入您的密码" ng-model="user.password">
+            <a class="forget-psd" ng-click="forget()">忘记密码</a>
+            <div></div>
+        </div>
+    </form>
+
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-green pl70 pr70 mb25" ng-click="login()">登 录</button>
+    <p>————&emsp;目前留学小助手只对内部学员开放&emsp;————</p>
+</div>
+
