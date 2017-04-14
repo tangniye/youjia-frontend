@@ -4,7 +4,8 @@
 (function () {
     'use strict';
 
-    function sidebar() {
+  /** @ngInject */
+  function sidebar() {
         return {
             restrict: 'E',
             templateUrl: 'app/components/sidebar/sidebar.html',

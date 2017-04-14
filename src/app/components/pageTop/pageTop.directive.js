@@ -11,7 +11,15 @@
       templateUrl: 'app/components/pageTop/pageTop.html',
       link: function (scope, el) {
 
-        scope.me = $cookies.getObject('me');
+        isLogin();
+        
+        function isLogin() {
+          User.isLogin().then(function () {
+            $rootScope.is_login = true;
+          },function () {
+            $rootScope.is_login = false;
+          })
+        }
 
         scope.promptLogin = function () {
           Common.model.promptModel('loginModelCtrl', 'app/components/login/loginModel.html', 'sm', '', 'login-modal')
@@ -19,6 +27,7 @@
 
         scope.logout = function () {
           User.logout().then(function () {
+            $rootScope.is_login = false;
             $cookies.remove('me');
             $state.go('index');
           })

@@ -5,7 +5,7 @@
     'use strict';
 
     /** @ngInject */
-    function sidebarCtrl($scope) {
+    function sidebarCtrl() {
         'ngInject';
 
     }

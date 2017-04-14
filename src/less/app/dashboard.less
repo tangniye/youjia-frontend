@@ -1,0 +1,75 @@
+.dashboard {
+  background-color: @primary-grey;
+  font-size: 1.4rem;
+  padding: 40px;
+}
+
+.dashboard-sidebar {
+  background: url("@{images-root}/dashboard-sidebar-bg.png") repeat-y;
+  width: 230px;
+  min-height: 490px;
+  background-size: 100%;
+  float: left;
+  color: @primary-white;
+}
+
+.dashboard-sidebar .info {
+  width: 70px;
+  height: 70px;
+  margin: 60px auto 85px;
+  border: 6px solid rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  img {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: @primary-white;
+    margin-bottom: 10px;
+  }
+}
+
+.dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  li.active {
+    background-color: @primary-green;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid @primary-white;
+    }
+  }
+
+  li a {
+    display: block;
+    line-height: 60px;
+    color: #fff;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.dashboard-content {
+  min-height: 490px;
+  background-color: @primary-white;
+}
+
+.dashboard-content ul.nav-tabs{
+  font-size: 1.8rem;
+  background-color: @light-grey;
+  height: 60px;
+  border: 0;
+}
+
