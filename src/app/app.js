@@ -20,7 +20,7 @@ function appConfig($provide, $httpProvider) {
                 // 弹出对话框错误提示
                 switch (rejection.status) {
                     case 400:
-                        toastr.error(rejection.data.message, '', {'closeButton': true});
+                        toastr.error(rejection.data.message, '错误请求', {'closeButton': true});
                         break;
                     case 401:
                         toastr.error(rejection.statusText, '未授权', {'closeButton': true});

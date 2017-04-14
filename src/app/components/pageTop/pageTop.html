@@ -1,29 +1,37 @@
 <div class="page-top clearfix">
-    <div class="container">
-        <a class="page-top-logo" href="#">优加教育</a>
-        <div class="page-top-menu fl clearfix">
-            <ul>
-                <li ui-sref-active="active">
-                    <a ui-sref="index">首&emsp;页</a>
-                </li>
-                <li ui-sref-active="active">
-                    <a ui-sref="staff">师资团队</a>
-                </li>
-                <li ui-sref-active="active">
-                    <a ui-sref="course">课程列表<i class="fa fa-caret-down ml5"></i></a>
-                </li>
-                <li ui-sref-active="active">
-                    <a ui-sref="case">成功案例</a>
-                </li>
-                <li ui-sref-active="active">
-                    <a ui-sref="about">关于我们</a>
-                </li>
-            </ul>
-        </div>
-        <div class="page-top-right fr">
-            <a href="" class="btn btn-green" ng-click="promptLogin()">登录</a>
-        </div>
+  <div class="container">
+    <a class="page-top-logo" href="#">优加教育</a>
+    <div class="page-top-menu fl clearfix">
+      <ul>
+        <li ui-sref-active="active">
+          <a ui-sref="index">首&emsp;页</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="staff">师资团队</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="course">课程列表<i class="fa fa-caret-down ml5"></i></a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="case">成功案例</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="about">关于我们</a>
+        </li>
+      </ul>
     </div>
+    <div class="page-top-right fr" uib-dropdown>
+      <a class="btn btn-green" ng-click="promptLogin()" ng-if="!me">登录</a>
+      <div class="flex-center" uib-dropdown-toggle ng-if="me">
+        <i class="iconfont icon-user-circle-o mr5 font40"></i>
+        <i class="fa fa-caret-down"></i>
+      </div>
+      <ul role="menu" class="dropdown-menu" uib-dropdown-menu aria-labelledby="split-button" ng-if="me">
+        <li role="menuitem"><a ui-sref="dashboard.students">个人中心</a></li>
+        <li role="menuitem"><a ng-click="logout()">退出</a></li>
+      </ul>
+    </div>
+  </div>
 
 
 </div>

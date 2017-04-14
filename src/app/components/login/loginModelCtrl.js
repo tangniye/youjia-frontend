@@ -5,7 +5,7 @@
     'use strict';
 
     /** @ngInject */
-    function loginModelCtrl($scope, $cookies, $uibModalInstance, $state, User) {
+    function loginModelCtrl($rootScope, $scope, $cookies, $uibModalInstance, $state, User) {
         var vm = $scope;
 
         vm.user = {
@@ -26,7 +26,7 @@
             }, function (res) {
                 vm.error.flag = true;
                 vm.error.message = res.message;
-            })
+            })  
         };
 
         vm.cancel = function () {

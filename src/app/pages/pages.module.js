@@ -21,6 +21,7 @@
     'app.pages.about',
     'app.pages.case',
     'app.pages.course',
+    'app.pages.dashboard',
     'app.pages.password'
   ])
     .config(routeConfig);

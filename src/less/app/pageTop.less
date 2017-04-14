@@ -49,6 +49,22 @@ a.page-top-logo {
   }
 }
 
-.page-top-right{
+.page-top-right {
   line-height: @page-top-height;
+}
+
+.page-top i.fa-caret-down {
+  transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
+}
+
+.page-top .dropdown.open i.fa-caret-down {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
 }
