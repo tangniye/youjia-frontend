@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "youjia website",
   "main": "gulp.js",
+  "node": "4.4.7",
   "scripts": {
     "postinstall": "bower install",
     "start": "gulp serve"
