@@ -1,20 +1,26 @@
-<section>
-    <table class="table alert-zone-bg" ng-if="tableData.length > 0">
-        <thead>
-        <tr>
-            <th ng-repeat="item in tableOptions.columns track by $index" ng-if="item.show" ng-bind="item.name" ng-style="item.style"></th>
-        </tr>
-        </thead>
+<section class="re-table">
+  <table class="table table-striped" ng-if="tableData.length > 0">
+    <thead>
+    <tr>
+      <th ng-if="tableOptions.checkOption"><input type="checkbox" re-check-all="tableData" ng-model="tableOptions.checkAll"></th>
+      <th ng-repeat="item in tableColumns track by $index" ng-if="item.show" ng-style="item.style"
+          ng-bind="item.name" re-sort="item">
+      </th>
+    </tr>
+    </thead>
 
-        <tbody class="emer-table-line">
-        <tr ng-repeat="data in tableData track by $index">
-            <td ng-repeat="item in tableOptions.columns track by $index" ng-if="item.show">
-                <span ng-if="!item.html" ng-bind="data[item.col]"></span>
-                <span ng-if="item.html" ng-compile-html="item.html(data[item.col])"></span>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="text-center emer-white alert-zone-bg p40" ng-if="tableData.length == 0">暂无数据</div>
+    <tbody>
+    <tr ng-repeat="data in tableData track by $index">
+      <td ng-if="tableOptions.checkOption">
+        <input type="checkbox" re-check ng-bind="data.id" ng-checked="tableOptions.checkAll">
+      </td>
+      <td ng-repeat="item in tableColumns track by $index" ng-if="item.show">
+        <span ng-if="!item.html" ng-bind="data[item.col]"></span>
+        <span ng-if="item.html" ng-compile-html="item.html(data[item.col])"></span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="text-center" ng-if="tableData.length == 0">暂无数据</div>
 </section>
 

@@ -8,11 +8,12 @@
   function pageTop($rootScope, $cookies, $state, Common, User) {
     return {
       restrict: 'E',
+      scope:true,
       templateUrl: 'app/components/pageTop/pageTop.html',
       link: function (scope, el) {
 
         isLogin();
-        
+
         function isLogin() {
           User.isLogin().then(function () {
             $rootScope.is_login = true;

@@ -9,7 +9,7 @@
         return {
             restrict: 'E',
             templateUrl: 'app/pages/dashboard/site/cases/cases.html',
-            controller:'caseCtrl'
+            controller:'casesCtrl'
         };
     }
 

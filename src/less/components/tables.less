@@ -1,3 +1,33 @@
-.table-options{
+.table-options {
   color: @primary-green;
+  padding: 30px;
+}
+
+.re-table {
+
+  .table > thead {
+    background-color: rgba(59, 89, 152, .4);
+    color: @primary-white;
+  }
+
+  .table > thead > tr > th {
+    text-align: center;
+    border-bottom: 0;
+    font-weight: normal;
+  }
+
+  .table > thead > tr > th,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > td {
+    padding: 10px;
+
+  }
+
+  th.icon-caret-up-down:after{
+    opacity: .6;
+  }
+
 }

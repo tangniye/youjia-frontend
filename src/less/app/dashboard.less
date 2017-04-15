@@ -1,3 +1,5 @@
+@dashboard-sidebar-width: 230px;
+
 .dashboard {
   background-color: @primary-grey;
   font-size: 1.4rem;
@@ -6,7 +8,7 @@
 
 .dashboard-sidebar {
   background: url("@{images-root}/dashboard-sidebar-bg.png") repeat-y;
-  width: 230px;
+  width: @dashboard-sidebar-width;
   min-height: 490px;
   background-size: 100%;
   float: left;
@@ -63,10 +65,11 @@
 
 .dashboard-content {
   min-height: 490px;
+  margin-left: @dashboard-sidebar-width;
   background-color: @primary-white;
 }
 
-.dashboard-content ul.nav-tabs{
+.dashboard-content ul.nav-tabs {
   font-size: 1.8rem;
   background-color: @light-grey;
   height: 60px;

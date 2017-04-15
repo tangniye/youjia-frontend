@@ -1,10 +1,11 @@
 /**
  * Created by tangniye on 2017/3/16.
  */
-'use strict';
 (function () {
+    'use strict';
+
+    /** @ngInject */
     function tableFooter() {
-        'ngInject';
         var linkFn = function (scope, elem, attr) {
         };
 
