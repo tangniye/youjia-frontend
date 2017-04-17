@@ -5,32 +5,13 @@
   'use strict';
 
   /** @ngInject */
-  function reTableCtrl($scope, $attrs, $parse, $filter) {
-    var propertyName = $attrs.reTable;
-    var displayGetter = $parse(propertyName);
-    var displaySetter = displayGetter.assign;
-    var safeGetter;
-    var orderBy = $filter('orderBy');
-    var filter = $filter('filter');
-    var tableState = {
-      sort: {},
-      search: {},
-      pagination: {
-        page: 1,
-        page_size: 20,
-        start: 0,
-        totalItemCount: 0
-      }
-    };
-    var filtered;
-    var pipeAfterSafeCopy = true;
-    var ctrl = this;
+  function reTableCtrl($scope) {
+
+    var vm = $scope;
+    var tableState = vm.tableState;
     var lastSelected;
 
-    var checkedIds = [];
-
-
-    /**
+    /*
      * sort the rows
      * @param {Function | String} predicate - function or string which will be used as predicate for the sorting
      * @param [reverse] - if you want to reverse the order
@@ -41,80 +22,94 @@
 
       tableState.pagination.page = 1;
 
-      // return this.pipe();
-    };
-
-    /**
-     * search matching rows
-     * @param {String} input - the input string
-     * @param {String} [predicate] - the property name against you want to check the match, otherwise it will search on all properties
-     */
-    this.search = function search(input, predicate) {
-      var predicateObject = tableState.search.predicateObject || {};
-      var prop = predicate ? predicate : '$';
-
-      input = ng.isString(input) ? input.trim() : input;
-      $parse(prop).assign(predicateObject, input);
-      // to avoid to filter out null value
-      if (!input) {
-        deepDelete(predicateObject, prop);
-      }
-      tableState.search.predicateObject = predicateObject;
-      tableState.pagination.start = 0;
       return this.pipe();
     };
 
-    /**
+    /*
+     * pagination matching page & page_size
+     * @param {Integer} page - the current page index
+     */
+    this.pagination = function pagination(page) {
+      page = page >= tableState.pagination.page_total ? tableState.pagination.page_total : (page <= 1 ? 1 : page);
+      tableState.pagination.page = page;
+      return this.pipe();
+    };
+
+    /*
      * this will chain the operations of sorting and filtering based on the current table state (sort options, filtering, ect)
      */
     this.pipe = function pipe() {
-      var pagination = tableState.pagination;
-      var output;
-      // filtered = tableState.search.predicateObject ? filter(safeCopy, tableState.search.predicateObject) : safeCopy;
-      if (tableState.sort.predicate) {
-        filtered = orderBy(filtered, tableState.sort.predicate, tableState.sort.reverse);
-        console.log(filtered)
-        debugger;
+      var _sort = {};
+      if (tableState.sort && tableState.sort.predicate) {
+        _sort[tableState.sort.predicate] = tableState.sort.reverse ? 'desc' : 'asc';
       }
-      pagination.totalItemCount = filtered.length;
-      if (pagination.number !== undefined) {
-        pagination.numberOfPages = filtered.length > 0 ? Math.ceil(filtered.length / pagination.number) : 1;
-        pagination.start = pagination.start >= filtered.length ? (pagination.numberOfPages - 1) * pagination.number : pagination.start;
-        output = filtered.slice(pagination.start, pagination.start + parseInt(pagination.number));
+      var _pagination = _.pick(tableState.pagination, ['page', 'page_size']);
+
+      var _search = {};
+      if (tableState.search) {
+        for (var key in tableState.search) {
+          if (tableState.search[key] || tableState.search[key] === 0 || typeof tableState.search[key] == 'boolean') {
+            _search[key] = tableState.search[key];
+          }
+        }
       }
-      displaySetter($scope, output || filtered);
+
+      var queryStr = Object.assign(_sort, _search, _pagination);
+
+      console.log(queryStr)
+
+      vm.callServer(queryStr);
+
     };
 
-    this.toggleItem = function toggleItem(id) {
-      var idx = checkedIds.indexOf(id);
-      if (idx > -1) {
-        checkedIds.splice(idx, 1);
+    /**
+     * select a dataRow (it will add the attribute isSelected to the row object)
+     * @param {Object} row - the row to select
+     * @param {String} mode - "single" or "multiple" (multiple by default)
+     * @param {Boolean} selectedAll - undefined or boolean (undefined by default)
+     */
+    this.select = function select(row, mode, selectedAll) {
+
+      var rows = vm.tableData;
+      var len = rows.length;
+      var count = 0;
+      var index = rows.indexOf(row);
+
+      if (!angular.isDefined(selectedAll)) {
+        if (index !== -1) {
+          if (mode === 'multiple') {
+            rows[index].isSelected = !rows[index].isSelected;
+          } else {
+            row.isSelected = row.isSelected !== true;
+            if (lastSelected) {
+              lastSelected.isSelected = false;
+            }
+            lastSelected = row.isSelected === true ? row : undefined;
+          }
+        }
+        for (var i = 0; i < len; i++) {
+          if (rows[i].isSelected) {
+            count++;
+          }
+        }
+        this.selectedAll = (count === len);
       }
       else {
-        checkedIds.push(id);
+        rows[index].isSelected = selectedAll;
       }
+
     };
 
-    this.toggleAll = function (ids) {
-      checkedIds = ids;
-      console.log(checkedIds)
-    };
 
     /**
      * return the current state of the table
      * @returns {{sort: {}, search: {}, pagination: {start: number}}}
      */
-    this.tableState = function getTableState() {
+    this.getTableState = function getTableState() {
       return tableState;
     };
 
-    /**
-     * return the current checkedIds ids array
-     * @returns {{sort: {}, search: {}, pagination: {start: number}}}
-     */
-    this.checkedIds = function getCheckedIds() {
-      return checkedIds;
-    }
+    this.pipe();
 
   }
 

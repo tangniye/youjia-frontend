@@ -12,11 +12,11 @@
 
     return {
       restrict: 'E',
-      scope: {
-        tableData: '=data',
-        tableColumns: '=columns',
-        tableOptions: '=options'
-      },
+      // scope: {
+      //   tableData: '=data',
+      //   tableColumns: '=columns',
+      //   tableState: '=state'
+      // },
       templateUrl: '/app/directives/tables/table.html',
       controller: 'reTableCtrl',
       link: linkFn

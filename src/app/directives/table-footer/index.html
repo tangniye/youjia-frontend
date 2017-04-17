@@ -1,8 +1,10 @@
-<div class="table-footer alert-zone-bg" ng-if="tableData.length > 0">
-    <a class="mr25" ng-if="page.page_index !== 1" ng-click="toPage(1)">首页</a>
-    <a ng-click="toPage(page.page_index - 1)" ng-hide="page.page_index === 1">上一页</a>
+<div class="table-footer" ng-if="tableData.length > 0">
+    <!--<a class="mr25" ng-if="page.page_index !== 1" ng-click="toPage(1)">首页</a>-->
+    <a class="btn btn-green" ng-click="toPage(page.page_index - 1)" ng-hide="page.page_index === 1"><i class="iconfont icon-angle-left mr5"></i>上一页</a>
     <span class="ml25 mr25">{{page.page_index}} / {{page.total_pages}} </span>
-    <a ng-click="toPage(page.page_index + 1)" ng-hide="page.page_index === page.total_pages">下一页</a>
-    <a class="ml25" ng-if="page.page_index !== page.total_pages" ng-click="toPage(page.total_pages)">末页</a>
+    <a class="btn btn-green" ng-click="toPage(page.page_index + 1)" >下一页<i class="iconfont icon-angle-right ml5"></i></a>
+    <!--<a class="ml25" ng-if="page.page_index !== page.total_pages" ng-click="toPage(page.total_pages)">末页</a>-->
 </div>
+
+
 

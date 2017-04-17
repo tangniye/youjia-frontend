@@ -14,9 +14,8 @@
       delay: 400, // ms
       inputEvent: 'input'
     },
-    check: {
-      mode: 'single',
-      selectedClass: 'st-selected'
+    select: {
+      mode: 'multiple'
     },
     sort: {
       defaltClass: 'iconfont icon-caret-up-down',

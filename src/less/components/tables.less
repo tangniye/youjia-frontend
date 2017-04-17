@@ -3,15 +3,52 @@
   padding: 30px;
 }
 
+.table-options .input-group {
+  float: right;
+  width: 234px;
+
+  .form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: @primary-green;
+  }
+
+  .input-group-addon {
+    color: #fff;
+    border: 1px solid #1abc9c;
+    border-radius: 0;
+    background-color: #1abc9c;
+    cursor: pointer;
+
+    &:hover,
+    &:focus{
+      background-color: darken(@primary-green, 10%);
+      border-color: darken(@primary-green, 10%);
+    }
+  }
+
+}
+
 .re-table {
+
+  .table-container{
+    min-height: 630px;
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
 
   .table > thead {
     background-color: rgba(59, 89, 152, .4);
     color: @primary-white;
   }
 
+  .table > tbody {
+    color: @font-sub-color;
+  }
+
   .table > thead > tr > th {
-    text-align: center;
     border-bottom: 0;
     font-weight: normal;
   }
@@ -23,11 +60,95 @@
   .table > tbody > tr > td,
   .table > tfoot > tr > td {
     padding: 10px;
-
+    border-top: 0;
+    text-align: center;
+    vertical-align: middle;
   }
 
-  th.icon-caret-up-down:after{
+  .table > tbody > tr > th,
+  .table > tbody > tr > td {
+    padding: 15px 5px;
+  }
+
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: @primary-white;
+  }
+
+  .table-striped > tbody > tr:nth-of-type(even) {
+    background-color: @light-grey;
+  }
+
+  .table-hover > tbody > tr:hover {
+    background-color: @primary-grey;
+  }
+
+  th.iconfont {
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    cursor: pointer;
+  }
+
+  th.icon-caret-up-down:after {
     opacity: .6;
   }
 
+  input[type='checkbox'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #d0d8e4;
+    border-radius: 0;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin: 0;
+    cursor: pointer;
+
+    &:checked {
+      background: url("@{images-root}/input-checked.png") no-repeat center;
+      background-size: contain;
+      border: 0;
+    }
+
+    &.intermediate:checked {
+      opacity: .5;
+    }
+
+  }
+
+  .option a {
+    color: inherit;
+    font-size: 2rem;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:hover,
+    a:focus {
+      color: @primary-green;
+      text-decoration: none;
+    }
+  }
+
 }
+
+.table-pagination {
+  text-align: center;
+  background-color: @primary-grey;
+  padding-top: 20px;
+  line-height: 34px;
+}
+
+.table-pagination span {
+  color: @primary-green;
+  padding: 0 6px;
+  cursor: pointer;
+
+  &.active {
+    display: inline-block;
+    color: #fff;
+    background-color: @primary-green;
+    padding: 0 10px;
+    cursor: default;
+  }
+}
+

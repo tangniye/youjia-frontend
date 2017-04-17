@@ -7,9 +7,11 @@
 }
 
 .dashboard-sidebar {
+  position: relative;
   background: url("@{images-root}/dashboard-sidebar-bg.png") repeat-y;
   width: @dashboard-sidebar-width;
-  min-height: 490px;
+  min-height: 784px;
+  height: inherit;
   background-size: 100%;
   float: left;
   color: @primary-white;
@@ -63,8 +65,26 @@
   }
 }
 
+.dashboard-sidebar .helper-rail{
+  position: absolute;
+  float: left;
+  left: 42px;
+  bottom: 40px;
+}
+
+.dashboard-sidebar a.helper {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px 25px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .dashboard-content {
-  min-height: 490px;
+  min-height: 784px;
   margin-left: @dashboard-sidebar-width;
   background-color: @primary-white;
 }

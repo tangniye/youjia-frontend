@@ -13,7 +13,6 @@
         vm.queryStr = {
             page: 1,
             page_size: 5,
-            key: '',
             show: true
         };
 

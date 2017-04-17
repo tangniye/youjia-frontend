@@ -16,7 +16,7 @@
                 defer.reject(res);
             });
             return defer.promise;
-        }
+        };
         
         this.getProfile = function (userid) {
             var defer = $q.defer();

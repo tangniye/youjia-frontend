@@ -10,11 +10,11 @@
     return {
       restrict: 'A',
       require: '^reTable',
+      scope: true,
       link: function (scope, element, attr, ctrl) {
 
         var item = $parse(attr.reSort)(scope);
-        var is_sort = item.sort;
-        var predicate = item.sortName;
+        var predicate = item.sort;
         var index = 0;
         var defaltClass = attr.reDefaltClass || reConfig.sort.defaltClass;
         var ascClass = attr.reAscClass || reConfig.sort.ascClass;
@@ -38,8 +38,8 @@
           if (index % 3 === 0) {
             //manual reset
             index = 0;
-            ctrl.tableState().sort = {};
-            ctrl.tableState().pagination.page = 1;
+            ctrl.getTableState().sort = {};
+            ctrl.getTableState().pagination.page = 1;
             func = ctrl.pipe.bind(ctrl);
           } else {
             func = ctrl.sortBy.bind(ctrl, predicate, index % 2 === 0);
@@ -57,14 +57,14 @@
 
         //table state --> view
 
-        if (is_sort && predicate) {
+        if (predicate) {
 
           element.bind('click', function () {
             scope.$apply(sort);
           });
 
           scope.$watch(function () {
-            return ctrl.tableState().sort;
+            return ctrl.getTableState().sort;
           }, function (newValue) {
             if (newValue.predicate !== predicate) {
               index = 0;

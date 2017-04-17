@@ -16,4 +16,7 @@ urlConfig.STAFF_LIST = '/api/account/teachers';
 urlConfig.AVATAR = '/api/account/photo';
 urlConfig.PROFILE = '/api/account/profile';
 
+// 获取成功案例
+urlConfig.CASE_LIST = '/api/success_case';
+
 window.urlConfig = urlConfig;
