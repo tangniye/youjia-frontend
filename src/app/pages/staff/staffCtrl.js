@@ -5,7 +5,7 @@
     'use strict';
 
     /** @ngInject */
-    function staffCtrl($scope, Staff) {
+    function staffCtrl($scope, User) {
         var vm = $scope;
         vm.activeIndex = 3;
 
@@ -13,14 +13,13 @@
         vm.queryStr = {
             page: 1,
             page_size: 5,
-            key: '',
             show: true
         };
 
-        getStaffList(vm.queryStr);
+        getTeacherList(vm.queryStr);
 
-        function getStaffList(queryStr) {
-            Staff.getStaffList(queryStr).then(function (res) {
+        function getTeacherList(queryStr) {
+            User.getTeacherList(queryStr).then(function (res) {
                 vm.staffs = res.items;
 
                 vm.activeIndex = 3;
@@ -32,7 +31,7 @@
         }
 
         function getProfile(userid) {
-            Staff.getProfile(userid).then(function (res) {
+            User.get(userid).then(function (res) {
                 vm.activeStaff = res;
             })
         }
@@ -57,14 +56,14 @@
                 return;
             }
             vm.queryStr.page += 1;
-            getStaffList(vm.queryStr);
+          getTeacherList(vm.queryStr);
         };
 
         vm.prev = function () {
             if (vm.queryStr.page <= 1) {
                 return
             }
-            getStaffList(vm.queryStr);
+          getTeacherList(vm.queryStr);
         };
 
     }

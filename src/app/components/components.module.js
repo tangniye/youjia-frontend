@@ -4,6 +4,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.components', []);
+  /** @ngInject */
+  angular.module('app.components', []);
 
 })();

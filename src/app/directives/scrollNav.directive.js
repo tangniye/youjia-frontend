@@ -1,6 +1,8 @@
 (function () {
+  'use strict';
+
+  /** @ngInject */
   function scrollNav() {
-    'ngInject';
     return {
       restrict: 'EA',
       scope: true,

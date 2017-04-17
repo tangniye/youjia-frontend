@@ -59,6 +59,98 @@
         defer.reject(res);
       });
       return defer.promise;
+    };
+
+    this.get = function (userid) {
+      var defer = $q.defer();
+      $http.get(URL_CONFIG.PROFILE, {params: userid}).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.modify = function (userid, user) {
+      var defer = $q.defer();
+      $http.put(URL_CONFIG.PROFILE + '?user_id=' + userid, user).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.delete = function (userids) {
+      var defer = $q.defer();
+      $http.delete(URL_CONFIG.DELETE_USER + '?user_ids=' + userids).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.getTeacherList = function (query) {
+      var defer = $q.defer();
+      $http.get(URL_CONFIG.TEACHER_LIST, {params: query}).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.addTeacher = function (teacher) {
+      var defer = $q.defer();
+      var _teacher = _.pick(teacher, ['chinese_name', 'english_name', 'graduated', 'major', 'country', 'phone', 'wechat', 'introduce', 'success_case', 'feature', 'show']);
+      $http.post(URL_CONFIG.LOGIN, _teacher).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.getStudentList = function (query) {
+      var defer = $q.defer();
+      $http.get(URL_CONFIG.STUDENT_LIST, {params: query}).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.addStudent = function (student) {
+      var defer = $q.defer();
+      var _student = _.pick(student, ['chinese_name', 'english_name', 'sexual', 'location', 'age', 'school', 'grade', 'study_country', 'enrollment_time', 'major', 'course_name', 'learn_range', 'wechat', 'phone', 'parent_phone', 'remark']);
+      $http.post(URL_CONFIG.LOGIN, _student).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.uploadAvatar = function (userid, file) {
+      var defer = $q.defer();
+      $http.post(URL_CONFIG.AVATAR + '?user_id=' + userid, {data: file}).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.getAvatar = function (userid) {
+      var defer = $q.defer();
+      $http.get(URL_CONFIG.AVATAR + '?user_id=' + userid).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
     }
 
   }

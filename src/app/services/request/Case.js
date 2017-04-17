@@ -9,7 +9,7 @@
 
         this.getCaseList = function (query) {
             var defer = $q.defer();
-            $http.get(URL_CONFIG.STAFF_LIST, {params: query}).success(function (res) {
+            $http.get(URL_CONFIG.CASE_LIST, {params: query}).success(function (res) {
                 defer.resolve(res);
             }).error(function (res) {
                 defer.reject(res);

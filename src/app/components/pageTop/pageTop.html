@@ -26,12 +26,12 @@
       </ul>
     </div>
     <div class="page-top-right fr" uib-dropdown>
-      <a class="btn btn-green" ng-click="promptLogin()" ng-if="!me">登录</a>
-      <div class="flex-center" uib-dropdown-toggle ng-if="me">
+      <a class="btn btn-green" ng-click="promptLogin()" ng-if="!is_login">登录</a>
+      <div class="flex-center" uib-dropdown-toggle ng-if="is_login">
         <i class="iconfont icon-user-circle-o mr5 font40"></i>
         <i class="fa fa-caret-down"></i>
       </div>
-      <ul role="menu" class="dropdown-menu" uib-dropdown-menu aria-labelledby="split-button" ng-if="me">
+      <ul role="menu" class="dropdown-menu" uib-dropdown-menu aria-labelledby="split-button" ng-if="is_login">
         <li role="menuitem"><a ui-sref="dashboard.students">个人中心</a></li>
         <li role="menuitem"><a ng-click="logout()">退出</a></li>
       </ul>
