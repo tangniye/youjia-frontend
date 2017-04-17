@@ -18,13 +18,10 @@
 
       scope.$watch('row.isSelected', function (newValue) {
         if (newValue === true) {
-          // elem.addClass(reConfig.select.selectedClass);
-          debugger;
           if(ctrl.selectedAll){
             selectAllElement.checked = true;
           }
         } else {
-          // elem.removeClass(reConfig.select.selectedClass);
           selectAllElement.checked = false;
         }
       });

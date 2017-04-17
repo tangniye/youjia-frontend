@@ -23,7 +23,7 @@
         }
 
         scope.promptLogin = function () {
-          Common.model.promptModel('loginModelCtrl', 'app/components/login/loginModel.html', 'sm', '', 'login-modal')
+          Common.model.promptModel('loginModelCtrl', 'app/components/login-model/login-model.html', 'sm', '', 'login-modal')
         };
 
         scope.logout = function () {

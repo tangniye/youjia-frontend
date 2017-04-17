@@ -2,6 +2,15 @@
   background-color: @font-color;
 }
 
+.modal {
+  font-size: 1.4rem;
+}
+
+.modal-header,
+.modal-footer {
+  border: 0;
+}
+
 .modal.fade .modal-dialog {
   position: absolute;
   top: 0;
@@ -26,9 +35,20 @@
 
 .modal-content {
   border-radius: 0;
-  box-shadow-color: rgba(51, 60, 75, .2)
+  box-shadow-color: rgba(51, 60, 75, .2);
+  color: @font-sub-color;
 }
 
 .modal-footer {
   text-align: center;
+}
+
+.delete-modal .modal-footer button {
+  padding: 6px 40px;
+}
+
+.common-modal{
+  .form-group label.control-label{
+    width: 95px;
+  }
 }

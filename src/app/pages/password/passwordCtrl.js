@@ -7,7 +7,7 @@
     /** @ngInject */
     function passwordCtrl($scope, User) {
         var vm = $scope;
-        vm.step = 2;
+        vm.step = 1;
 
 
     }

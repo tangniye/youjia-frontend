@@ -5,15 +5,15 @@
     'use strict';
 
     /** @ngInject */
-    function teachers() {
+    function teacher() {
         return {
             restrict: 'E',
-            templateUrl: 'app/pages/dashboard/site/teachers/teachers.html',
-            controller:'teachersCtrl'
+            templateUrl: 'app/pages/dashboard/site/teacher/teacher.html',
+            controller:'teacherCtrl'
         };
     }
 
     angular.module('app.pages.dashboard.site')
-        .directive('teachers', teachers);
+        .directive('teacher', teacher);
 
 })();
