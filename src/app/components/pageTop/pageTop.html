@@ -9,8 +9,13 @@
         <li ui-sref-active="active">
           <a ui-sref="staff">师资团队</a>
         </li>
-        <li ui-sref-active="active">
-          <a ui-sref="course">课程列表<i class="fa fa-caret-down ml5"></i></a>
+        <li ng-class="{active: $state.includes('course')}" class="course-menu-trigger">
+          <a>课程列表<i class="fa fa-caret-down ml5"></i></a>
+          <ul class="dropdown-menu">
+            <li><a ui-sref="course.ielts" ui-sref-active="active">雅思</a></li>
+            <li><a ui-sref="course.toefl" ui-sref-active="active">托福</a></li>
+            <li><a ui-sref="course.sat" ui-sref-active="active">SAT</a></li>
+          </ul>
         </li>
         <li ui-sref-active="active">
           <a ui-sref="case">成功案例</a>
