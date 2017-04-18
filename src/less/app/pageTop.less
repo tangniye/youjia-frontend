@@ -68,3 +68,17 @@ a.page-top-logo {
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
 }
+.page-top-menu {
+  .course-menu-trigger {
+    .dropdown-menu {
+      display: none;
+      width: 160px;
+      & > li {
+        width: 160px;
+      }
+    }
+    &:hover .dropdown-menu {
+      display: block;
+    }
+  }
+}

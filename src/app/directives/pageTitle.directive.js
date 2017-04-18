@@ -4,11 +4,8 @@
   /** @ngInject */
   function pageTitle($rootScope, $timeout) {
     return {
-      link: function (scope, element) {
-
-        var listener = function (event, toState, toParams, fromState, fromParams) {
-
-          // Default title - load on Dashboard 1
+      link: function(scope, element) {
+        var listener = function(event, toState, toParams, fromState, fromParams) {
           var title = '优加教育';
           // Create your own title pattern
           if (toState.title) title = '优加教育 | ' + toState.title;
