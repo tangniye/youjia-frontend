@@ -4,7 +4,7 @@
         <div class="col-md-5">
             <input type="text" class="form-control" name="phone" placeholder="用户名为您的手机号" ng-model="item.phone" required>
         </div>
-        <div class="col-md-3 help-block error-block" ng-if="form.phone.$invalid && form.$submitted">
+        <div class="col-md-3 help-block error-block">
             <i class="fa fa-times-circle mr5"></i>
             <span>用户名不能为空</span>
         </div>
@@ -15,7 +15,7 @@
             <input type="text" class="form-control" name="study_country" placeholder="国家中文名称"
                    ng-model="item.study_country" required>
         </div>
-        <div class="col-md-3 help-block error-block" ng-if="form.study_country.$invalid && form.$submitted">
+        <div class="col-md-3 help-block error-block">
             <i class="fa fa-times-circle mr5"></i>
             <span>国家不能为空</span>
         </div>
@@ -26,7 +26,7 @@
             <input type="text" class="form-control" name="parent_phone" placeholder="您家长的手机号"
                    ng-model="item.parent_phone" required>
         </div>
-        <div class="col-md-3 help-block error-block" ng-if="form.parent_phone.$invalid && form.$submitted">
+        <div class="col-md-3 help-block error-block">
             <i class="fa fa-times-circle mr5"></i>
             <span>手机不能为空</span>
         </div>

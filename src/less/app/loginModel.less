@@ -1,3 +1,26 @@
+.login-modal.fade .modal-dialog {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  -o-transition: -o-transform .3s ease-out;
+  transition: all .3s ease-out;
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+}
+
+.login-modal.in .modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+
 .login-modal .modal-sm {
   width: 440px;
 }
@@ -31,18 +54,6 @@
     border-radius: 50%;
   }
 
-  .close {
-    transition: all .2s linear;
-    &:hover {
-      color: @primary-green;
-      transform: rotate(90deg);
-      -ms-transform: rotate(90deg); /* IE 9 */
-      -moz-transform: rotate(90deg); /* Firefox */
-      -webkit-transform: rotate(90deg); /* Safari 和 Chrome */
-      -o-transform: rotate(90deg); /* Opera */
-    }
-
-  }
 }
 
 .login-modal .modal-body {
@@ -67,7 +78,7 @@
 
   }
 
-  input {
+  input.form-control {
     display: inline-block;
     border: none;
     color: @font-color;
@@ -102,5 +113,10 @@
     margin-bottom: 15px;
   }
 
+}
+
+.login-modal .modal-footer button{
+  padding-left: 70px;
+  padding-right: 70px;
 }
 

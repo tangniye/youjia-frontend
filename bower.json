@@ -25,7 +25,8 @@
     "ng-file-upload": "*",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "ng-img-crop": "ngImgCrop#^0.3.2"
   },
   "overrides": {
     "bootstrap": {

@@ -64,6 +64,7 @@ angular.module('app', [
         'ui.bootstrap',
         'toastr',
         'ngFileUpload',
+        'ngImgCrop',
         'app.components',
         'app.pages'
     ])

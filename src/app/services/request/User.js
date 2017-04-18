@@ -63,17 +63,8 @@
 
     this.get = function (userid) {
       var defer = $q.defer();
-      $http.get(URL_CONFIG.PROFILE, {params: userid}).success(function (res) {
-        defer.resolve(res);
-      }).error(function (res) {
-        defer.reject(res);
-      });
-      return defer.promise;
-    };
-
-    this.modify = function (userid, user) {
-      var defer = $q.defer();
-      $http.put(URL_CONFIG.PROFILE + '?user_id=' + userid, user).success(function (res) {
+      $http.get(URL_CONFIG.PROFILE + '?user_id=' + userid).success(function (res) {
+        res.photo = 'data:image/png;base64,' + res.photo;
         defer.resolve(res);
       }).error(function (res) {
         defer.reject(res);
@@ -103,8 +94,21 @@
 
     this.addTeacher = function (teacher) {
       var defer = $q.defer();
-      var _teacher = _.pick(teacher, ['chinese_name', 'english_name', 'graduated', 'major', 'country', 'phone', 'wechat', 'introduce', 'success_case', 'feature', 'show']);
-      $http.post(URL_CONFIG.LOGIN, _teacher).success(function (res) {
+      teacher.photo = teacher.photo.slice(22);
+      var _teacher = _.pick(teacher, ['photo', 'chinese_name', 'english_name', 'graduated', 'major', 'country', 'phone', 'wechat', 'introduce', 'success_case', 'feature', 'show']);
+      $http.post(URL_CONFIG.ADD_TEACHER, _teacher).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.modifyTeacher = function (userid, teacher) {
+      var defer = $q.defer();
+      teacher.photo = teacher.photo.slice(22);
+      var _teacher = _.pick(teacher, ['photo', 'chinese_name', 'english_name', 'graduated', 'major', 'country', 'phone', 'wechat', 'introduce', 'success_case', 'feature', 'show']);
+      $http.put(URL_CONFIG.PROFILE + '?user_id=' + userid, _teacher).success(function (res) {
         defer.resolve(res);
       }).error(function (res) {
         defer.reject(res);
@@ -125,7 +129,18 @@
     this.addStudent = function (student) {
       var defer = $q.defer();
       var _student = _.pick(student, ['chinese_name', 'english_name', 'sexual', 'location', 'age', 'school', 'grade', 'study_country', 'enrollment_time', 'major', 'course_name', 'learn_range', 'wechat', 'phone', 'parent_phone', 'remark']);
-      $http.post(URL_CONFIG.LOGIN, _student).success(function (res) {
+      $http.post(URL_CONFIG.ADD_STUDENT, _student).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
+
+    this.modifyStudent = function (userid, student) {
+      var defer = $q.defer();
+      var _student = _.pick(student, ['chinese_name', 'english_name', 'sexual', 'location', 'age', 'school', 'grade', 'study_country', 'enrollment_time', 'major', 'course_name', 'learn_range', 'wechat', 'phone', 'parent_phone', 'remark']);
+      $http.put(URL_CONFIG.PROFILE + '?user_id=' + userid, _student).success(function (res) {
         defer.resolve(res);
       }).error(function (res) {
         defer.reject(res);
