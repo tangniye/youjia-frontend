@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function routeConfig($stateProvider) {
+  function routeConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('dashboard.site', {
         url: '/site',
@@ -13,6 +13,8 @@
         templateUrl: '/app/pages/dashboard/site/site.html',
         controller: 'siteCtrl'
       });
+
+    $urlRouterProvider.otherwise('/teacher');
   }
 
   angular.module('app.pages.dashboard.site', [
