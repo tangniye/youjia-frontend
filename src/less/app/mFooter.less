@@ -1,0 +1,109 @@
+@mfooter-border-color: #dee3e8;
+@mfooter-height: 52px;
+.mfooter {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: @mfooter-height;
+  background-color: @primary-white;
+  z-index: 2000;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.mfooter__menu {
+    display: flex;
+    a {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      color: @font-color;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    > li {
+      position: relative;
+      width: 25%;
+      height: @mfooter-height;
+      font-size: 1.4rem;
+      display: inline-flex;
+      border: solid 1px @mfooter-border-color;
+      border-left: none;
+      > a {
+        padding: 2rem 0 0 0;
+        .iconfont {
+          display: block;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          text-align: center;
+          color: #b4bcc8;
+        }
+      }
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      > ul.mfooter__dropdown-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        bottom: 65px;
+        width: 100%;
+        border: solid 1px @mfooter-border-color;
+        background-color: @primary-white;
+        &.show {
+          display: block;
+        }
+        > li {
+          width: 80%;
+          margin: 0 auto;
+          text-align: center;
+          border-bottom: solid 1px @mfooter-border-color;
+          &:last-child {
+            border-bottom: none;
+          }
+          > a {
+            padding: 1rem 0;
+          }
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: -10px;
+          transform: translateX(-50%);
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid @mfooter-border-color;
+          z-index: 2001;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          left:50%;
+          bottom: -8px;
+          transform: translateX(-50%);
+          width: 0;
+          height: 0;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid @primary-white;
+          z-index: 2002;
+        }
+      }
+    }
+  }
+}
+@media (max-width: @screen-xs-max) {
+  .mfooter {
+    display: block;
+  }
+}
