@@ -7,10 +7,6 @@
       restrict: 'AE',
       templateUrl: function (ele, attrs) {
         return attrs.includeWithScope;
-      },
-      link:function (scope,elem,attrs,ctrl) {
-        console.log(scope)
-        // console.log(ctrl)
       }
     };
   }

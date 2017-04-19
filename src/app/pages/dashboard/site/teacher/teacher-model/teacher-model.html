@@ -3,148 +3,203 @@
   <div class="modal-title">基本信息</div>
 </div>
 <div class="modal-body clearfix">
-  <form name="form" ng-submit="submit(item)" novalidate>
-    <div class="form-group clearfix"
-         ng-class="{'has-error': !is_password_valid() && (form.password.$dirty||form.$submitted)}">
-      <label class="col-md-4 control-label">输入新密码：</label>
-      <div class="col-md-5">
-        <input type="text" class="form-control" name="password" placeholder="字母加数字组成的6-20位字符" ng-model="item.password"
-               required>
-      </div>
-      <div class="col-md-3 help-block error-block"
-           ng-if="!is_password_valid() && (form.password.$dirty||form.$submitted)">
-        <i class="fa fa-times-circle mr5"></i>
-        <span>新密码格式错误</span>
+  <form name="form" novalidate>
+
+    <div class="col-md-12">
+      <div class="form-group flex-vertical-center"
+           ng-class="{'has-error': ((!picFile && add) || (!item.photo && edit)) && (form.picFile.$dirty || form.$submitted)}">
+        <label class="control-label"><span class="must-star">*</span>头像信息：</label>
+        <div class="flex-vertical-center ml5 relative">
+          <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea" ng-hide="view">
+            <img-crop image="picFile  | ngfDataUrl"
+                      result-image="croppedDataUrl" ng-init="croppedDataUrl=''" result-image-size="58">
+            </img-crop>
+            <div class="button upload-avatar" ngf-select ng-model="picFile" name="picFile" ngf-pattern="'image/*'"
+                 ngf-accept="'image/*'" ngf-max-size="3MB"><i class="iconfont icon-camera mr5"></i>选择照片
+            </div>
+          </div>
+          <span class="ml50 mr50" ng-hide="view">效果预览</span>
+          <div class="fl">
+            <img class="preview" ng-src="{{item.photo || croppedDataUrl}}"/>
+          </div>
+          <div class="help-block avatar-error-block">
+            <span>请选择照片</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="row">
-    <div class="col-md-6">
-      <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
-        <label class="control-label"><span class="must-star">*</span>中文名称：</label>
-        <div class="fl">
-          <input type="text" class="form-control" name="chinese_name" ng-model="item.chinese_name" required>
-        </div>
-        <!--<div class="col-md-3 help-block error-block" ng-if="!is_password_equal() && (form.repassword.$dirty||form.$submitted)">-->
-        <!--<i class="fa fa-times-circle mr5"></i>-->
-        <!--<span>前后密码不一致</span>-->
-        <!--</div>-->
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
-        <label class="control-label"><span class="must-star">*</span>英文名称：</label>
-        <div class="fl">
-          <input type="text" class="form-control" name="english_name" ng-model="item.english_name" required>
-        </div>
-        <!--<div class="col-md-3 help-block error-block" ng-if="!is_password_equal() && (form.repassword.$dirty||form.$submitted)">-->
-        <!--<i class="fa fa-times-circle mr5"></i>-->
-        <!--<span>前后密码不一致</span>-->
-        <!--</div>-->
-      </div>
-    </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
-        <label class="control-label"><span class="must-star">*</span>毕业学校：</label>
-        <div class="fl">
-          <input type="text" class="form-control" name="graduated" ng-model="item.graduated" required>
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.chinese_name.$invalid && (form.chinese_name.$dirty || form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>中文名称：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="chinese_name" ng-model="item.chinese_name" ng-hide="view"
+                   required>
+            <span class="view-txt" ng-bind="item.chinese_name" ng-show="view"></span>
+            <div class="help-block">
+              <span>中文名称不能为空</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
-        <label class="control-label"><span class="must-star">*</span>毕业专业：</label>
-        <div class="fl">
-          <input type="text" class="form-control" name="major" ng-model="item.major" required>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.english_name.$invalid && (form.english_name.$dirty || form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>英文名称：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="english_name" ng-model="item.english_name" ng-hide="view"
+                   required>
+            <span class="view-txt" ng-bind="item.english_name" ng-show="view"></span>
+            <div class="help-block">
+              <span>英文名称不能为空</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
-        <label class="control-label"><span class="must-star">*</span>毕业国家：</label>
-        <div class="fl">
-          <input type="text" class="form-control" name="country" ng-model="item.country" required>
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.graduated.$invalid && (form.graduated.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>毕业学校：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="graduated" ng-model="item.graduated" ng-hide="view" required>
+            <span class="view-txt" ng-bind="item.graduated" ng-show="view"></span>
+            <div class="help-block">
+              <span>毕业学校不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.major.$invalid && (form.major.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>毕业专业：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="major" ng-model="item.major" ng-hide="view" required>
+            <span class="view-txt" ng-bind="item.major" ng-show="view"></span>
+            <div class="help-block">
+              <span>毕业专业不能为空</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
-        <label class="control-label">手机号码：</label>
-        <div class="fl">
-          <input type="tel" class="form-control" name="phone" ng-model="item.phone">
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.country.$invalid && (form.country.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>毕业国家：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="country" ng-model="item.country" ng-hide="view" required>
+            <span class="view-txt" ng-bind="item.country" ng-show="view"></span>
+            <div class="help-block">
+              <span>毕业国家不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': !is_phone_valid() && (form.phone.$dirty||form.$submitted)}">
+          <label class="control-label">手机号码：</label>
+          <div class="right">
+            <input type="tel" class="form-control" name="phone" ng-model="item.phone" ng-hide="view">
+            <span class="view-txt" ng-bind="item.phone" ng-show="view"></span>
+            <div class="help-block">
+              <span>手机号码格式有误</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
-        <label class="control-label">微信号码：</label>
-        <div class="fl">
-          <input type="text" class="form-control" name="wechat" ng-model="item.wechat">
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">微信号码：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="wechat" ng-model="item.wechat" ng-hide="view">
+            <span class="view-txt" ng-bind="item.wechat" ng-show="view"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.show.$invalid && (form.show.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>显示于前端：</label>
+          <div class="right">
+            <select class="form-control" name="show" ng-model="item.show" ng-checked="item.show" ng-hide="view"
+                    required>
+              <option value="">请选择</option>
+              <option value="true">是</option>
+              <option value="false">否</option>
+            </select>
+            <span class="view-txt" ng-show="view"><span ng-if="item.show">是</span><span
+              ng-if="!item.show">否</span></span>
+            <div class="help-block">
+              <span>请选择是否显示于前端</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="col-md-6">
-      <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
-        <label class="control-label"><span class="must-star">*</span>显示于前端：</label>
-        <div class="fl">
-          <select class="form-control" name="show" ng-model="item.show" ng-checked="item.show">
-            <option value="true">是</option>
-            <option value="false">否</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
 
     <div class="col-md-12">
       <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
+           ng-class="{'has-error': form.introduce.$invalid && (form.introduce.$dirty||form.$submitted)}">
         <label class="control-label"><span class="must-star">*</span>个人简介：</label>
-        <div class="fl">
-          <textarea class="textarea" name="introduce" ng-model="item.introduce"></textarea>
+        <div class="right">
+          <textarea rows="4" class="textarea" name="introduce" placeholder="请限制信息100字以内"
+                    ng-model="item.introduce" maxlength="100" required ng-disabled="view"></textarea>
+          <!--<span class="view-txt" ng-bind="item.introduce" ng-if="view"></span>-->
+          <div class="help-block">
+            <span>个人简介不能为空</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-md-12">
       <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
+           ng-class="{'has-error': form.success_case.$invalid && (form.success_case.$dirty||form.$submitted)}">
         <label class="control-label"><span class="must-star">*</span>成功案例：</label>
-        <div class="fl">
-          <textarea class="textarea" name="success_case" ng-model="item.success_case"></textarea>
+        <div class="right">
+          <textarea rows="4" class="textarea" name="success_case" placeholder="请限制信息200字以内"
+                    ng-model="item.success_case" maxlength="200" required ng-disabled="view"></textarea>
+          <!--<span class="view-txt" ng-bind="item.success_case" ng-if="view"></span>-->
+          <div class="help-block">
+            <span>成功案例不能为空</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-md-12">
       <div class="form-group clearfix"
-           ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
+           ng-class="{'has-error': form.feature.$invalid && (form.feature.$dirty||form.$submitted)}">
         <label class="control-label"><span class="must-star">*</span>个人特色：</label>
-        <div class="fl">
-          <textarea class="textarea" name="feature" ng-model="item.feature"></textarea>
+        <div class="right">
+          <textarea rows="4" class="textarea" name="feature" placeholder="请限制信息400字以内"
+                    ng-model="item.feature" maxlength="400" required ng-disabled="view"></textarea>
+          <!--<span class="view-txt" ng-bind="item.feature" ng-if="view"></span>-->
+          <div class="help-block">
+            <span>个人特色不能为空</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <!--<div class="col-md-5 col-md-offset-4">-->
-    <button class="btn btn-green">提 交</button>
-    <!--</div>-->
   </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-green" ng-hide="view" ng-click="submit(item)">保存信息</button>
+  <button class="btn btn-green" ng-show="view" ng-click="cancel()">关 闭</button>
 
 </div>
 

@@ -11,14 +11,14 @@
             templateUrl: 'app/pages/password/step2.html',
             link: function (scope, el) {
 
-                var regx = '^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$';
+                var regx = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
 
                 scope.is_password_equal = function () {
                     return scope.form.repassword && scope.form.password.$viewValue === scope.form.repassword.$viewValue;
                 };
 
                 scope.is_password_valid = function () {
-                    return scope.form.password && scope.form.password.$viewValue && scope.form.password.$viewValue.match(regx);
+                    return scope.form.password && scope.form.password.$viewValue && regx.test(scope.form.password.$viewValue);
                 };
 
                 scope.submit = function (item) {

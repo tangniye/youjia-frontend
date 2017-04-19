@@ -4,7 +4,7 @@
         <div class="col-md-5">
             <input type="text" class="form-control" name="password" placeholder="字母加数字组成的6-20位字符" ng-model="item.password" required>
         </div>
-        <div class="col-md-3 help-block error-block" ng-if="!is_password_valid() && (form.password.$dirty||form.$submitted)">
+        <div class="col-md-3 help-block error-block">
             <i class="fa fa-times-circle mr5"></i>
             <span>新密码格式错误</span>
         </div>
@@ -14,7 +14,7 @@
         <div class="col-md-5">
             <input type="text" class="form-control" name="repassword" placeholder="确定新密码：" ng-model="item.repassword" required>
         </div>
-        <div class="col-md-3 help-block error-block" ng-if="!is_password_equal() && (form.repassword.$dirty||form.$submitted)">
+        <div class="col-md-3 help-block error-block">
             <i class="fa fa-times-circle mr5"></i>
             <span>前后密码不一致</span>
         </div>

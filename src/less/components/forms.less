@@ -1,12 +1,33 @@
-
-.has-error .error-block {
-  border: 1px solid #ebccd1;
-  background-color: #f2dede;
-  color: #b84442;
+.help-block {
+  display: none;
 }
 
-.help-block {
+.has-error .help-block {
+  display: block;
+  margin-bottom: 0;
+}
+
+.has-error .error-block {
   line-height: 32px;
+  border: 1px solid #ebccd1;
+  background-color: #f2dede;
+}
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: @font-error-color;
+}
+
+.form-control {
+  color: @font-color;
 }
 
 .form-group label.control-label {
@@ -16,10 +37,28 @@
   font-weight: normal;
 }
 
-.form-group input.form-control {
+.form-group input.form-control,
+.form-group select.form-control {
+  color: @font-color;
   border-radius: 0;
   box-shadow: none;
   border-color: @font-light-color;
+}
+
+.form-group textarea {
+  color: @font-color;
+  width: 100%;
+  border-color: @font-light-color;
+  resize: none;
+  padding: 6px 12px;
+}
+
+.form-group select.form-control {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url("@{images-root}/select-arrow-down.png") no-repeat scroll 96% 50% transparent;
+  padding-right: 18px;
 }
 
 .must-star {
