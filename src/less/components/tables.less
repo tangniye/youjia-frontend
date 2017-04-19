@@ -21,7 +21,7 @@
     cursor: pointer;
 
     &:hover,
-    &:focus{
+    &:focus {
       background-color: darken(@primary-green, 10%);
       border-color: darken(@primary-green, 10%);
     }
@@ -31,7 +31,7 @@
 
 .re-table {
 
-  .table-container{
+  .table-container {
     min-height: 630px;
   }
 
@@ -119,8 +119,11 @@
   .option a {
     color: inherit;
     font-size: 2rem;
-    margin-right: 10px;
     cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
 
     &:hover,
     a:focus {

@@ -8,7 +8,7 @@ urlConfig.USER = '/api/account';
 
 //登录 验证 修改密码
 urlConfig.IS_LOGIN = urlConfig.USER + '/is_login';
-urlConfig.LOGIN = urlConfig.USER + '/api/account/login';
+urlConfig.LOGIN = urlConfig.USER + '/login';
 urlConfig.LOGOUT = urlConfig.USER + '/logout';
 urlConfig.VERIFY = urlConfig.USER + '/verify';
 urlConfig.RESET_PASSWORD = urlConfig.USER + '/reset_password';
@@ -33,5 +33,9 @@ urlConfig.USER_PROFILE = urlConfig.USER + '/profile';
 urlConfig.CASE = '/api/success_case';
 // 成功案例详情
 urlConfig.CASE_DETAIL = urlConfig.CASE + '/detail';
+
+// 试听
+urlConfig.AUDITION = '/api/course/apply_info';
+
 
 window.urlConfig = urlConfig;
