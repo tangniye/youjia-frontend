@@ -1,0 +1,40 @@
+<div class="mNavigation">
+  <div class="mNavigation__topbar">
+    <a class="mNavigation__logo" ui-sref="index"></a>
+    <div>
+      <a class="mNavigation__login-link">登录</a>
+      <a class="mNavigation__menu-toggle" ng-click="toggleMenu()"><i class="iconfont icon-menu"></i></a>
+    </div>
+  </div>
+  <div class="mNavigation__sidebar">
+    <div class="mNavigation__topbar">
+      <a class="mNavigation__logo" ui-sref="index"></a>
+      <div>
+        <a class="mNavigation__login-link"><i class="iconfont icon-user-circle-o"></i></a>
+        <a class="mNavigation__menu-toggle" ng-click="toggleMenu()"><i class="iconfont icon-close"></i></a>
+      </div>
+    </div>
+    <ul class="mNavigation__sidebar__menu">
+      <li ui-sref-active="active">
+        <a ui-sref="index">首&emsp;页</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="staff">师资团队</a>
+      </li>
+      <li>
+        <a>课程列表</a>
+        <ul class="mNavigation__sidebar__second-menu">
+          <li ui-sref-active="active"><a ui-sref="course.ielts">雅思</a></li>
+          <li ui-sref-active="active"><a ui-sref="course.toefl">托福</a></li>
+          <li ui-sref-active="active"><a ui-sref="course.sat">SAT</a></li>
+        </ul>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="case">成功案例</a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="about">关于我们</a>
+      </li>
+    </ul>
+  </div>
+</div>
