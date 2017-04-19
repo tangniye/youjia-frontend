@@ -24,13 +24,18 @@
               } else {
                 secondLevelMenus.removeClass('show');
               }
-            })
+              e.stopPropagation();
+            });
           });
+          //
+          // _.forEach(secondLevelLinks, function (link) {
+          //   $(link).on('click', function (e) {
+          //     secondLevelMenus.removeClass('show');
+          //   })
+          // });
 
-          _.forEach(secondLevelLinks, function (link) {
-            $(link).on('click', function (e) {
-              secondLevelMenus.removeClass('show');
-            })
+          $(document).on('click', function (e) {
+            secondLevelMenus.removeClass('show');
           })
         }
       }
