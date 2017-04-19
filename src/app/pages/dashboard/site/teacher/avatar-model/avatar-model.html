@@ -1,0 +1,50 @@
+<!--<div class="col-md-12">-->
+  <!--<div class="form-group flex-vertical-center"-->
+       <!--ng-class="{'has-error': ((!picFile && add) || (!item.photo && edit)) && (form.picFile.$dirty || form.$submitted)}">-->
+    <!--<label class="control-label"><span class="must-star">*</span>头像信息：</label>-->
+    <!--<div class="flex-vertical-center ml5 relative">-->
+      <!--<div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea" ng-hide="view">-->
+        <!--<img-crop image="picFile  | ngfDataUrl"-->
+                  <!--result-image="croppedDataUrl" ng-init="croppedDataUrl=''" result-image-size="58">-->
+        <!--</img-crop>-->
+        <!--<div class="button upload-avatar" ngf-select ng-model="picFile" name="picFile" ngf-pattern="'image/*'"-->
+             <!--ngf-accept="'image/*'" ngf-max-size="3MB"><i class="iconfont icon-camera mr5"></i>选择照片-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<span class="ml50 mr50" ng-hide="view">效果预览</span>-->
+      <!--<div class="fl">-->
+        <!--<img class="preview" ng-src="{{item.photo || croppedDataUrl}}"/>-->
+      <!--</div>-->
+      <!--<div class="help-block avatar-error-block">-->
+        <!--<span>请选择照片</span>-->
+      <!--</div>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<div class="modal-header">
+  <button type="button" class="close" ng-click="cancel()">&times;</button>
+  <div class="modal-title">头像信息</div>
+</div>
+<div class="modal-body pl60 pr60">
+  <button class="btn btn-green-outline mb10" ngf-select ng-model="picFile" ngf-pattern="'image/*'"
+       ngf-accept="'image/*'" ngf-max-size="3MB"><i class="iconfont icon-camera mr5"></i>选择您要上传的头像
+  </button>
+  <p>仅支持JPG、GIF、PNG、JPEG、BMP格式，文件大小小于3M</p>
+  <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
+    <img-crop image="picFile  | ngfDataUrl"
+              result-image="croppedDataUrl" ng-init="croppedDataUrl = ''">
+    </img-crop>
+  </div>
+  <p class="font16 main-color">效果预览</p>
+  <p>您上传的图片会自动生成3种尺寸</p>
+  <div>
+    <img class="preview-b" ng-src="{{croppedDataUrl}}"/>
+    <img class="preview-m" ng-src="{{croppedDataUrl}}"/>
+    <img class="preview-s" ng-src="{{croppedDataUrl}}"/>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-green modal-footer-btn" ng-click="save()">保存信息</button>
+</div>

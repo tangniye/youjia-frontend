@@ -15,6 +15,11 @@
       });
   }
 
-  angular.module('app.pages.dashboard.site', [])
+  angular.module('app.pages.dashboard.site', [
+      'ui.router',
+      'app.pages.dashboard.site.teacher',
+      'app.pages.dashboard.site.successCase',
+      'app.pages.dashboard.site.audition'
+    ])
     .config(routeConfig);
 })();

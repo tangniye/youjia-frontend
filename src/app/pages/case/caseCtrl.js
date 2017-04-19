@@ -21,33 +21,34 @@
                 return
             }
             vm.queryStr.tag = tag;
-            getCaseList(vm.queryStr);
+          getCaseDetailList(vm.queryStr);
         };
-
-        vm.seeMore(vm.queryStr.tag);
 
         vm.next = function () {
             if (vm.queryStr.page >= vm.page_total) {
                 return;
             }
             vm.queryStr.page += 1;
-            getCaseList(vm.queryStr);
+          getCaseDetailList(vm.queryStr);
         };
 
         vm.prev = function () {
             if (vm.queryStr.page <= 1) {
                 return
             }
-            getCaseList(vm.queryStr);
+          getCaseDetailList(vm.queryStr);
         };
 
-        function getCaseList(queryStr) {
-            Case.getCaseList(queryStr).then(function (res) {
+        function getCaseDetailList(queryStr) {
+            Case.getCaseDetailList(queryStr).then(function (res) {
                 vm.cases = res.items;
-                vm.queryStr.page = res.page_index;
+                vm.queryStr.page = res.page;
                 vm.page_total = res.page_total;
             })
         }
+
+        getCaseDetailList(vm.queryStr);
+
     }
 
     angular.module('app.pages.case').controller('caseCtrl', caseCtrl);

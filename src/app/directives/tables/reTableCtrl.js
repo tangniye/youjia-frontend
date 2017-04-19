@@ -110,7 +110,7 @@
     };
 
     this.pipe();
-    
+
     vm.pipe = this.pipe;
 
   }

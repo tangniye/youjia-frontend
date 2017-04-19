@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function teacherModelCtrl($scope, $uibModalInstance, User, Common) {
+  function auditionModelCtrl($scope, $uibModalInstance, User) {
     var vm = $scope;
 
     vm.is_phone_valid = function () {
@@ -45,26 +45,8 @@
       $uibModalInstance.close();
     };
 
-    vm.addPic = function () {
-      Common.model.promptModel('avatarModelCtrl', 'app/pages/dashboard/site/teacher/avatar-model/avatar-model.html', 'md', true, 'common-modal')
-        .result.then('', function (data) {
-        vm.picFile = data.picFile;
-        vm.croppedDataUrl = data.croppedDataUrl;
-      })
-    };
-
-    vm.editPic = function () {
-      Common.model.promptModel('avatarModelCtrl', 'app/pages/dashboard/site/teacher/avatar-model/avatar-model.html', 'md', true, 'common-modal', {
-          picFile: vm.picFile
-        })
-        .result.then('', function (data) {
-        vm.picFile = data.picFile;
-        vm.croppedDataUrl = data.croppedDataUrl;
-      })
-    }
-
 
   }
 
-  angular.module('app.pages.dashboard.site.teacher').controller('teacherModelCtrl', teacherModelCtrl);
+  angular.module('app.pages.dashboard.site.audition').controller('auditionModelCtrl', auditionModelCtrl);
 })();

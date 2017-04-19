@@ -4,31 +4,34 @@ var urlConfig = window.urlConfig || {};
 
 urlConfig.API_ROOT = '/situaware/v1';
 
+urlConfig.USER = '/api/account';
+
 //登录 验证 修改密码
-urlConfig.IS_LOGIN = '/api/account/is_login';
-urlConfig.LOGIN = '/api/account/login';
-urlConfig.LOGOUT = '/api/account/logout';
-urlConfig.VERIFY = '/api/account/verify';
-urlConfig.RESET_PASSWORD = '/api/account/reset_password';
+urlConfig.IS_LOGIN = urlConfig.USER + '/is_login';
+urlConfig.LOGIN = urlConfig.USER + '/api/account/login';
+urlConfig.LOGOUT = urlConfig.USER + '/logout';
+urlConfig.VERIFY = urlConfig.USER + '/verify';
+urlConfig.RESET_PASSWORD = urlConfig.USER + '/reset_password';
 
 // 获取老师列表
-urlConfig.TEACHER_LIST = '/api/account/teachers';
+urlConfig.TEACHER_LIST = urlConfig.USER + '/teachers';
 // 添加老师
-urlConfig.ADD_TEACHER = '/api/account/add_teacher';
+urlConfig.ADD_TEACHER = urlConfig.USER + '/add_teacher';
 
-//获取学生列表
-urlConfig.STUDENT_LIST = '/api/account/students';
-//添加学生
-urlConfig.ADD_STUDENT = '/api/account/add_student';
+// 获取学生列表
+urlConfig.STUDENT_LIST = urlConfig.USER + '/students';
+// 添加学生
+urlConfig.ADD_STUDENT = urlConfig.USER + '/add_student';
 
-//用户头像
-urlConfig.AVATAR = '/api/account/photo';
-//用户详细信息
-urlConfig.PROFILE = '/api/account/profile';
-//删除用户
-urlConfig.DELETE_USER = '/api/account';
+// 用户头像
+urlConfig.AVATAR = urlConfig.USER + '/photo';
+// 用户详细信息
+urlConfig.USER_PROFILE = urlConfig.USER + '/profile';
 
-// 获取成功案例
-urlConfig.CASE_LIST = '/api/success_case';
+
+// 成功案例
+urlConfig.CASE = '/api/success_case';
+// 成功案例详情
+urlConfig.CASE_DETAIL = urlConfig.CASE + '/detail';
 
 window.urlConfig = urlConfig;

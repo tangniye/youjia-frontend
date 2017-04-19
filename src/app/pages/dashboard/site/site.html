@@ -1,11 +1,6 @@
-<uib-tabset active="active">
-  <uib-tab index="0" heading="老师信息">
-    <teacher></teacher>
-  </uib-tab>
-  <uib-tab index="2" heading="成功案例">
-    <cases></cases>
-  </uib-tab>
-  <uib-tab index="3" heading="试听用户">
-    I've got an HTML heading, and a select callback. Pretty cool!
-  </uib-tab>
-</uib-tabset>
+<ul class="nav nav-tabs">
+  <li role="presentation" ui-sref-active="active"><a ui-sref="dashboard.site.teacher">老师信息</a></li>
+  <li role="presentation" ui-sref-active="active"><a ui-sref="dashboard.site.successCase">成功案例</a></li>
+  <li role="presentation" ui-sref-active="active"><a ui-sref="dashboard.site.audition">试听用户</a></li>
+</ul>
+<div ui-view></div>
