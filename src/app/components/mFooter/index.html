@@ -1,0 +1,26 @@
+<div class="mfooter">
+  <ul class="mfooter__menu">
+    <li ng-class="{active: $state.includes('course')}">
+      <a class="mfooter__dropdown-toggle"><i class="iconfont icon-two-line"></i>全部课程</a>
+      <ul class="mfooter__dropdown-menu">
+        <li><a ui-sref="course.ielts" ui-sref-active="active">雅思</a></li>
+        <li><a ui-sref="course.toefl" ui-sref-active="active">托福</a></li>
+        <li><a ui-sref="course.sat" ui-sref-active="active">SAT</a></li>
+      </ul>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="staff">师资力量</a>
+    </li>
+    <li>
+      <a class="mfooter__dropdown-toggle"><i class="iconfont icon-two-line"></i>咨询小U</a>
+      <ul class="mfooter__dropdown-menu">
+        <li><a>在线咨询</a></li>
+        <li><a>电话咨询</a></li>
+        <li><a>关注微信</a></li>
+      </ul>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="case">成功案例</a>
+    </li>
+  </ul>
+</div>
