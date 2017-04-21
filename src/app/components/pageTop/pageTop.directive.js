@@ -8,19 +8,11 @@
   function pageTop($rootScope, $cookies, $state, Common, User) {
     return {
       restrict: 'E',
-      scope:true,
+      scope: true,
       templateUrl: 'app/components/pageTop/pageTop.html',
       link: function (scope, el) {
 
-        isLogin();
-
-        function isLogin() {
-          User.isLogin().then(function () {
-            $rootScope.is_login = true;
-          },function () {
-            $rootScope.is_login = false;
-          })
-        }
+        $rootScope.me = $cookies.getObject('me');
 
         scope.promptLogin = function () {
           Common.model.promptModel('loginModelCtrl', 'app/components/login-model/login-model.html', 'sm', '', 'login-modal')
@@ -28,8 +20,8 @@
 
         scope.logout = function () {
           User.logout().then(function () {
-            $rootScope.is_login = false;
             $cookies.remove('me');
+            $rootScope.me = null;
             $state.go('index');
           })
         }

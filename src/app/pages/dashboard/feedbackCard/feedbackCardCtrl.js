@@ -110,10 +110,6 @@
 
     };
 
-    vm.return = function () {
-      $state.go('dashboard.feedback');
-    }
-
   }
 
   angular.module('app.pages.dashboard.feedbackCard').controller('feedbackCardCtrl', feedbackCardCtrl);

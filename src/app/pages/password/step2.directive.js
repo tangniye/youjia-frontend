@@ -21,14 +21,25 @@
                     return scope.form.password && scope.form.password.$viewValue && regx.test(scope.form.password.$viewValue);
                 };
 
+                scope.check = function (oldpwd) {
+                    if (!oldpwd) {
+                        scope.is_oldpassword_valid = false;
+                        return;
+                    }
+                    User.checkPwd({password:oldpwd}).then(function (res) {
+                        scope.is_oldpassword_valid = true;
+                    },function () {
+                        scope.is_oldpassword_valid = false;
+                    })
+                };
+
                 scope.submit = function (item) {
                     if (scope.form.$valid && scope.is_password_equal() && scope.is_password_valid()) {
-                        User.isLogin().then(function (res) {
-                            resetPwd(item);
-                        }, function (res) {
-                            item.token = scope.$parent.token;
-                            resetPwd(item);
-                        });
+
+                        if(scope.$parent.token) {
+                          item.token = scope.$parent.token;
+                        }
+                        resetPwd(item);
                     }
                 };
 

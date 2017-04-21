@@ -11,6 +11,7 @@ urlConfig.IS_LOGIN = urlConfig.USER + '/is_login';
 urlConfig.LOGIN = urlConfig.USER + '/login';
 urlConfig.LOGOUT = urlConfig.USER + '/logout';
 urlConfig.VERIFY = urlConfig.USER + '/verify';
+urlConfig.CHECK_PASSWORD = urlConfig.USER + '/check_password';
 urlConfig.RESET_PASSWORD = urlConfig.USER + '/reset_password';
 
 // 获取老师列表

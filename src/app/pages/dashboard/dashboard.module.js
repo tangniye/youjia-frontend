@@ -20,6 +20,7 @@
   angular.module('app.pages.dashboard', [
       'ui.router',
       'app.pages.dashboard.personal',
+      'app.pages.dashboard.password',
       'app.pages.dashboard.students',
       'app.pages.dashboard.history',
       'app.pages.dashboard.schedule',
