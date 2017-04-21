@@ -1,0 +1,142 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="cancel()">&times;</button>
+  <div class="modal-title" ng-bind="title"></div>
+</div>
+<div class="modal-body clearfix">
+  <form name="form" ng-submit="submit(item)" novalidate>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">中文名称：</label>
+          <div class="right">
+            <span class="view-txt" ng-bind="cur_user.chinese_name"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.study_date.$invalid && (form.study_date.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>日期：</label>
+          <div class="right">
+            <input type="text" name="study_date" class="form-control" ng-model="item.study_date"
+                   placeholder="YYYY-MM-DD" uib-datepicker-popup datepicker-options="dateOptions"
+                   show-button-bar="false" starting-day="1" is-open="opened" ng-init="opened = false"
+                   ng-click="opened = !opened" required/>
+            <div class="help-block">
+              <span>日期不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': !is_class_time_valid() && (form.class_time.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>上课时间：</label>
+          <div class="right">
+            <div name="class_time" uib-timepicker ng-model="item.class_time" show-meridian="false"
+                 show-spinners="false"></div>
+            <div class="help-block">
+              <span>上课时间不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': !is_leave_time_valid() && (form.leave_time.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>离校时间：</label>
+          <div class="right">
+            <div name="leave_time" uib-timepicker ng-model="item.leave_time" show-meridian="false"
+                 show-spinners="false"></div>
+            <div class="help-block">
+              <span>离校时间不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.course_name.$invalid && (form.course_name.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>课程类型：</label>
+          <div class="right">
+            <select class="form-control" name="course_name" ng-model="item.course_name" ng-checked="item.course_name"
+                    required>
+              <option value="">请选择</option>
+              <option value="雅思">雅思</option>
+              <option value="托福">托福</option>
+              <option value="SAT">SAT</option>
+            </select>
+            <div class="help-block">
+              <span>课程类型不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.section.$invalid && (form.section.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>授课范围：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="section" ng-model="item.section" required>
+            <div class="help-block">
+              <span>授课范围不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group clearfix"
+           ng-class="{'has-error': form.contents.$invalid && (form.contents.$dirty||form.$submitted)}">
+        <label class="control-label"><span class="must-star">*</span>课程内容：</label>
+        <div class="right">
+          <textarea rows="4" class="textarea" name="contents" placeholder="请限制信息50字以内"
+                    ng-model="item.contents" maxlength="50" required></textarea>
+          <div class="help-block">
+            <span>课程内容不能为空</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group clearfix"
+           ng-class="{'has-error': form.homework.$invalid && (form.homework.$dirty||form.$submitted)}">
+        <label class="control-label"><span class="must-star">*</span>课后作业：</label>
+        <div class="right">
+          <textarea rows="4" class="textarea" name="homework" placeholder="请限制信息75字以内"
+                    ng-model="item.homework" maxlength="75" required></textarea>
+          <div class="help-block">
+            <span>课后作业不能为空</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group clearfix"
+           ng-class="{'has-error': form.feedback.$invalid && (form.feedback.$dirty||form.$submitted)}">
+        <label class="control-label"><span class="must-star">*</span>课堂反馈：</label>
+        <div class="right">
+          <textarea rows="4" class="textarea" name="feedback" placeholder="请限制信息125字以内"
+                    ng-model="item.feedback" maxlength="125" required></textarea>
+          <div class="help-block">
+            <span>课堂反馈不能为空</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-green modal-footer-btn">保存信息</button>
+
+  </form>
+</div>
+

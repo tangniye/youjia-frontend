@@ -16,12 +16,12 @@
     <li ui-sref-active="active">
       <a ui-sref="dashboard.schedule"><i class="iconfont icon-calender-2 mr15"></i>课&ensp;程&ensp;表</a>
     </li>
-    <li ui-sref-active="active">
+    <li ng-class="{active:$state.includes('dashboard.feedback') || $state.includes('dashboard.feedbackCard')}">
       <a ui-sref="dashboard.feedback"><i class="iconfont icon-paper-plane mr15"></i>学习反馈</a>
     </li>
     <li ng-class="{active:$state.includes('dashboard.site')}">
       <a ui-sref="dashboard.site.teacher"><i class="iconfont icon-setting mr15"></i>站点信息</a>
     </li>
   </ul>
-  <div class="helper-rail"><a class="helper">留学小助手<i class="iconfont icon-arrow-right"></i></a></div>
+  <div class="helper-rail"><a class="helper" href="http://www.uplusway.com" target="_blank">留学小助手<i class="iconfont icon-arrow-right"></i></a></div>
 </div>

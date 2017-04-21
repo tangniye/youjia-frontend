@@ -40,7 +40,8 @@
       }
     };
     vm.tableConfig = {
-      delete: true
+      delete: true,
+      select: true
     };
 
     function optionHtml() {

@@ -37,5 +37,8 @@ urlConfig.CASE_DETAIL = urlConfig.CASE + '/detail';
 // 试听
 urlConfig.AUDITION = '/api/course/apply_info';
 
+// 学习反馈
+urlConfig.FEEDBACK = '/api/feedback';
+
 
 window.urlConfig = urlConfig;
