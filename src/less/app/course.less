@@ -1,7 +1,4 @@
-@course-sm-width: 480px;
-@course-content-width: 780px;
-@course-mid-width: 780px;
-@course-lg-width: 1120px;
+@course-mid-width: @content-mid-width;
 .course-page {
   font-size: 1.2rem;
 }
@@ -16,7 +13,7 @@
 }
 .course-banner__content {
   display: flex;
-  width: @course-content-width;
+  width: @course-mid-width;
   margin: 40px 0;
   background-color: @primary-white;
 }
@@ -159,7 +156,7 @@
     }
   }
   .course-section__content {
-    width: @course-content-width;
+    width: @course-mid-width;
   }
 }
 .course-section--intro {

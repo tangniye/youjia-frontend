@@ -1,27 +1,42 @@
 .page-bottom {
+  padding: 60px 0 10px;
   background-color: @primary-blue;
   color: #fff;
-  padding: 60px 0 10px;
-  font-size: 14px;
-}
-
-.page-bottom-logo {
-  background: url("@{images-root}/page-bottom-logo.png") no-repeat right;
-  height: 67px;
-}
-
-.page-bottom .column-2 {
-  padding: 0 10%;
+  font-size: 1.4rem;
+  .page-bottom__container {
+    display: flex;
+    margin: 0 auto 30px;
+    width: @content-mid-width;
+    justify-content: space-between;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  .page-bottom__logo {
+    background: url("@{images-root}/page-bottom-logo.png") no-repeat right;
+    height: 67px;
+    margin-bottom: 10px;
+  }
+  .page-bottom__copyright {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .phone-number {
-  font-size: 3.6rem;
+  font-size: 2.8rem;
 }
 
 .qr-code{
   background: url("@{images-root}/QR-code.png") no-repeat;
   background-size: contain;
   height: 80px;
+}
+@media (max-width: @screen-sm-max) {
+  .page-bottom__container {
+    padding: 0 20px;
+    width: 100%;
+  }
 }
 @media (max-width: @screen-xs-max) {
   .page-bottom {
