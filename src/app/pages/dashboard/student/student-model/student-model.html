@@ -95,7 +95,7 @@
           <label class="control-label">年级：</label>
           <div class="right">
             <select class="form-control" name="grade" ng-model="item.grade"
-                    ng-options="option for option in gradeOptions track by $index" ng-if="!view">
+                    ng-options="option.value as option.value group by option.group for option in gradeOptions" ng-if="!view">
               <option value="">请选择</option>
             </select>
             <span class="view-txt" ng-bind="item.grade" ng-if="view"></span>
@@ -125,7 +125,7 @@
             <input type="text" name="enrollment_time" class="form-control" ng-model="item.enrollment_time"
                    placeholder="YYYY-MM-DD" uib-datepicker-popup datepicker-options="dateOptions"
                    show-button-bar="false" starting-day="1" is-open="opened" ng-init="opened = false"
-                   ng-click="opened = !opened" ng-if="!view" required/>
+                   ng-click="opened = !opened" ng-if="!view"/>
             <span class="view-txt" ng-bind="item.enrollment_time" ng-if="view"></span>
           </div>
         </div>
@@ -148,7 +148,7 @@
           <label class="control-label"><span class="must-star">*</span>学习课程：</label>
           <div class="right">
             <select class="form-control" name="course_name" ng-model="item.course_name"
-                    ng-options="option for option in courseOptions track by $index" ng-if="!view" required>
+                    ng-options="option for option in courseOptions" ng-if="!view" required>
               <option value="">请选择</option>
             </select>
             <span class="view-txt" ng-bind="item.course_name" ng-if="view"></span>

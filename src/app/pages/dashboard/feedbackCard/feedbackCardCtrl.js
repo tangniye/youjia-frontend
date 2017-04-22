@@ -86,7 +86,7 @@
     };
 
     vm.delete = function (feedbackid) {
-      Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认删除所选成功案例吗?'})
+      Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认删除所选学习反馈吗?'})
         .result.then('', function (data) {
         if (data === 'ok') {
           Feedback.delete(feedbackid).then(function (res) {
@@ -98,7 +98,7 @@
     };
 
     vm.deleteAll = function () {
-      Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认删除所选成功案例吗?'})
+      Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认清空该学生的所有学习反馈吗?'})
         .result.then('', function (data) {
         if (data === 'ok') {
           Feedback.deleteAll(userid).then(function (res) {

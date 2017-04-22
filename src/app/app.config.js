@@ -2,8 +2,6 @@
 
 var urlConfig = window.urlConfig || {};
 
-urlConfig.API_ROOT = '/situaware/v1';
-
 urlConfig.USER = '/api/account';
 
 //登录 验证 修改密码
@@ -40,6 +38,9 @@ urlConfig.AUDITION = '/api/course/apply_info';
 
 // 学习反馈
 urlConfig.FEEDBACK = '/api/feedback';
+
+//归档
+urlConfig.HISTORY = '/api/history';
 
 
 window.urlConfig = urlConfig;

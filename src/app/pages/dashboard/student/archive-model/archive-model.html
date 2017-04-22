@@ -1,0 +1,137 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="cancel()">&times;</button>
+  <div class="modal-title">归档确认</div>
+</div>
+<div class="modal-body clearfix">
+  <form name="form" ng-submit="submit(item)" novalidate>
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.test1.$invalid && (form.test1.$dirty || form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>考试科目1：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="test1" ng-model="item.test1" required>
+            <div class="help-block">
+              <span>考试科目1不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.score1.$invalid && (form.score1.$dirty || form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>科目1成绩：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="score1" ng-model="item.score1" required>
+            <div class="help-block">
+              <span>科目1成绩不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">考试科目2：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="test2" ng-model="item.test2">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">科目2成绩：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="score2" ng-model="item.score2">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">考试科目3：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="test3" ng-model="item.test3">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">科目3成绩：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="score3" ng-model="item.score3">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">考试科目4：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="test4" ng-model="item.test4">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">科目4成绩：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="score4" ng-model="item.score4">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">考试科目5：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="test5" ng-model="item.test5">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">科目5成绩：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="score5" ng-model="item.score5">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.admission_school.$invalid && (form.admission_school.$dirty || form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>录取学校：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="admission_school" ng-model="item.admission_school" required>
+            <div class="help-block">
+              <span>录取学校不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">录取专业：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="admission_major" ng-model="item.admission_major">
+            <div class="help-block">
+              <span>录取专业不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-green modal-footer-btn">保存信息</button>
+
+  </form>
+</div>
+

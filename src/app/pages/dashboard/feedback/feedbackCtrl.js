@@ -70,7 +70,7 @@
     };
 
     function optionHtml() {
-      var html = '<a ng-click="(item.handler)(data)"><i class="iconfont icon-magnifier"></i></a>';
+      var html = '<a ng-click="(item.handler)(data)" title="查看"><i class="iconfont icon-magnifier"></i></a>';
       return html
     }
 

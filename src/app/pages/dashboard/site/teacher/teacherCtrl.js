@@ -43,9 +43,9 @@
     };
 
     function optionHtml() {
-      var html = '<a ng-click="(item.handler[0])(data)"><i class="iconfont icon-magnifier"></i></a>' +
-        '<a ng-click="(item.handler[1])(data)"><i class="iconfont icon-pencil"></i></a>' +
-        '<a ng-click="(item.handler[2])(data)"><i class="iconfont icon-delete"></i></a>';
+      var html = '<a ng-click="(item.handler[0])(data)" title="查看"><i class="iconfont icon-magnifier"></i></a>' +
+        '<a ng-click="(item.handler[1])(data)" title="修改"><i class="iconfont icon-pencil"></i></a>' +
+        '<a ng-click="(item.handler[2])(data)" title="删除"><i class="iconfont icon-delete"></i></a>';
       return html
     }
 
