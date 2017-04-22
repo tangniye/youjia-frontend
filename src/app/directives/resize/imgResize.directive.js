@@ -25,8 +25,8 @@
       var changeSize = function () {
         element.css('height', h_scale * w.innerWidth());
         if (element.hasClass('index-banner')) {
-          element.css('width', w_scale * w.innerWidth());
-          element.children().first().find('li').css('width', w_scale * w.innerWidth());
+          element.css('width', w.innerWidth());
+          element.children().first().find('li').css('width', w.innerWidth());
         } else {
           element.css('width', '100%');
         }
