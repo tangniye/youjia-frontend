@@ -7,14 +7,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.students', {
-        url: '/students',
+      .state('dashboard.student', {
+        url: '/student',
         title: '学生信息',
-        templateUrl: '/app/pages/dashboard/students/students.html',
-        controller: 'studentsCtrl'
+        templateUrl: '/app/pages/dashboard/student/student.html',
+        controller: 'studentCtrl'
       });
   }
 
-  angular.module('app.pages.dashboard.students', [])
+  angular.module('app.pages.dashboard.student', [])
     .config(routeConfig);
 })();

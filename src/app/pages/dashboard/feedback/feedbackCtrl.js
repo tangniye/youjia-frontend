@@ -108,7 +108,7 @@
       };
 
       $state.go('dashboard.feedbackCard', {id: data.id, data: res});
-      
+
     }
 
     vm.callServer = function callServer(queryStr) {
