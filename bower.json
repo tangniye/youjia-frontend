@@ -26,7 +26,8 @@
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "animate.css": "^3.5.2",
-    "ng-img-crop": "ngImgCrop#^0.3.2"
+    "ng-img-crop": "ngImgCrop#^0.3.2",
+    "angular-i18n": "^1.6.4"
   },
   "overrides": {
     "bootstrap": {
@@ -49,6 +50,11 @@
         "fonts/fontawesome-webfont.ttf",
         "fonts/fontawesome-webfont.woff",
         "fonts/fontawesome-webfont.woff2"
+      ]
+    },
+    "angular-i18n":{
+      "main": [
+        "angular-locale_zh-cn.js"
       ]
     }
   }

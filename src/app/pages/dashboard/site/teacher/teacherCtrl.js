@@ -30,7 +30,8 @@
     };
     vm.tableConfig = {
       add: true,
-      delete: true
+      delete: true,
+      select: true
     };
 
     vm.callServer = function callServer(queryStr) {

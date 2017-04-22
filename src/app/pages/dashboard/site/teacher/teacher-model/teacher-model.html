@@ -28,9 +28,9 @@
              ng-class="{'has-error': form.chinese_name.$invalid && (form.chinese_name.$dirty || form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>中文名称：</label>
           <div class="right">
-            <input type="text" class="form-control" name="chinese_name" ng-model="item.chinese_name" ng-hide="view"
+            <input type="text" class="form-control" name="chinese_name" ng-model="item.chinese_name" ng-if="!view"
                    required>
-            <span class="view-txt" ng-bind="item.chinese_name" ng-show="view"></span>
+            <span class="view-txt" ng-bind="item.chinese_name" ng-if="view"></span>
             <div class="help-block">
               <span>中文名称不能为空</span>
             </div>
@@ -42,9 +42,9 @@
              ng-class="{'has-error': form.english_name.$invalid && (form.english_name.$dirty || form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>英文名称：</label>
           <div class="right">
-            <input type="text" class="form-control" name="english_name" ng-model="item.english_name" ng-hide="view"
+            <input type="text" class="form-control" name="english_name" ng-model="item.english_name" ng-if="!view"
                    required>
-            <span class="view-txt" ng-bind="item.english_name" ng-show="view"></span>
+            <span class="view-txt" ng-bind="item.english_name" ng-if="view"></span>
             <div class="help-block">
               <span>英文名称不能为空</span>
             </div>
@@ -59,8 +59,8 @@
              ng-class="{'has-error': form.graduated.$invalid && (form.graduated.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>毕业学校：</label>
           <div class="right">
-            <input type="text" class="form-control" name="graduated" ng-model="item.graduated" ng-hide="view" required>
-            <span class="view-txt" ng-bind="item.graduated" ng-show="view"></span>
+            <input type="text" class="form-control" name="graduated" ng-model="item.graduated" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.graduated" ng-if="view"></span>
             <div class="help-block">
               <span>毕业学校不能为空</span>
             </div>
@@ -72,8 +72,8 @@
              ng-class="{'has-error': form.major.$invalid && (form.major.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>毕业专业：</label>
           <div class="right">
-            <input type="text" class="form-control" name="major" ng-model="item.major" ng-hide="view" required>
-            <span class="view-txt" ng-bind="item.major" ng-show="view"></span>
+            <input type="text" class="form-control" name="major" ng-model="item.major" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.major" ng-if="view"></span>
             <div class="help-block">
               <span>毕业专业不能为空</span>
             </div>
@@ -88,8 +88,8 @@
              ng-class="{'has-error': form.country.$invalid && (form.country.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>毕业国家：</label>
           <div class="right">
-            <input type="text" class="form-control" name="country" ng-model="item.country" ng-hide="view" required>
-            <span class="view-txt" ng-bind="item.country" ng-show="view"></span>
+            <input type="text" class="form-control" name="country" ng-model="item.country" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.country" ng-if="view"></span>
             <div class="help-block">
               <span>毕业国家不能为空</span>
             </div>
@@ -101,8 +101,8 @@
              ng-class="{'has-error': !is_phone_valid() && (form.phone.$dirty||form.$submitted)}">
           <label class="control-label">手机号码：</label>
           <div class="right">
-            <input type="tel" class="form-control" name="phone" ng-model="item.phone" ng-hide="view">
-            <span class="view-txt" ng-bind="item.phone" ng-show="view"></span>
+            <input type="tel" class="form-control" name="phone" ng-model="item.phone" ng-if="!view">
+            <span class="view-txt" ng-bind="item.phone" ng-if="view"></span>
             <div class="help-block">
               <span>手机号码格式有误</span>
             </div>
@@ -116,8 +116,8 @@
         <div class="form-group clearfix">
           <label class="control-label">微信号码：</label>
           <div class="right">
-            <input type="text" class="form-control" name="wechat" ng-model="item.wechat" ng-hide="view">
-            <span class="view-txt" ng-bind="item.wechat" ng-show="view"></span>
+            <input type="text" class="form-control" name="wechat" ng-model="item.wechat" ng-if="!view">
+            <span class="view-txt" ng-bind="item.wechat" ng-if="view"></span>
           </div>
         </div>
       </div>
@@ -126,13 +126,13 @@
              ng-class="{'has-error': form.show.$invalid && (form.show.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>显示于前端：</label>
           <div class="right">
-            <select class="form-control" name="show" ng-model="item.show" ng-checked="item.show" ng-hide="view"
+            <select class="form-control" name="show" ng-model="item.show" ng-checked="item.show" ng-if="!view"
                     required>
               <option value="">请选择</option>
               <option value="true">是</option>
               <option value="false">否</option>
             </select>
-            <span class="view-txt" ng-show="view"><span ng-if="item.show">是</span><span
+            <span class="view-txt" ng-if="view"><span ng-if="item.show">是</span><span
               ng-if="!item.show">否</span></span>
             <div class="help-block">
               <span>请选择是否显示于前端</span>
@@ -184,8 +184,8 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-green modal-footer-btn" ng-hide="view">保存信息</button>
-    <button type="button" class="btn btn-green modal-footer-btn" ng-show="view" ng-click="cancel()">关 闭</button>
+    <button type="submit" class="btn btn-green modal-footer-btn" ng-if="!view">保存信息</button>
+    <button type="button" class="btn btn-green modal-footer-btn" ng-if="view" ng-click="cancel()">关 闭</button>
 
   </form>
 </div>

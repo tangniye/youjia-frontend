@@ -48,6 +48,16 @@
       });
       return defer.promise;
     };
+    
+    this.checkPwd = function (pwd) {
+      var defer = $q.defer();
+      $http.post(URL_CONFIG.CHECK_PASSWORD, pwd).success(function (res) {
+        defer.resolve(res);
+      }).error(function (res) {
+        defer.reject(res);
+      });
+      return defer.promise;
+    };
 
     this.resetPwd = function (obj, is_login) {
       var defer = $q.defer();
@@ -64,7 +74,9 @@
     this.get = function (userid) {
       var defer = $q.defer();
       $http.get(URL_CONFIG.USER_PROFILE + '?user_id=' + userid).success(function (res) {
-        res.photo = 'data:image/png;base64,' + res.photo;
+        if (res.photo) {
+          res.photo = 'data:image/png;base64,' + res.photo;
+        }
         defer.resolve(res);
       }).error(function (res) {
         defer.reject(res);

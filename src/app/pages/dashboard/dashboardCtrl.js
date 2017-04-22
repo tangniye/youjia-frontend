@@ -5,8 +5,10 @@
   'use strict';
 
   /** @ngInject */
-  function dashboardCtrl($scope) {
+  function dashboardCtrl($scope, $cookies) {
     var vm = $scope;
+
+    vm.me = $cookies.getObject('me');
 
   }
 

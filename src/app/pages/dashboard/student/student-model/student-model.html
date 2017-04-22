@@ -1,0 +1,232 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="cancel()">&times;</button>
+  <div class="modal-title">基本信息</div>
+</div>
+<div class="modal-body clearfix">
+  <form name="form" ng-submit="submit(item)" novalidate>
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.chinese_name.$invalid && (form.chinese_name.$dirty || form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>中文名称：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="chinese_name" ng-model="item.chinese_name" ng-if="!view"
+                   required>
+            <span class="view-txt" ng-bind="item.chinese_name" ng-if="view"></span>
+            <div class="help-block">
+              <span>中文名称不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.english_name.$invalid && (form.english_name.$dirty || form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>英文名称：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="english_name" ng-model="item.english_name" ng-if="!view"
+                   required>
+            <span class="view-txt" ng-bind="item.english_name" ng-if="view"></span>
+            <div class="help-block">
+              <span>英文名称不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">性别：</label>
+          <div class="right">
+            <select class="form-control" name="sexual" ng-model="item.sexual" ng-checked="item.sexual" ng-if="!view">
+              <option value="">请选择</option>
+              <option value="男">男</option>
+              <option value="女">女</option>
+            </select>
+            <span class="view-txt" ng-bind="item.sexual" ng-if="view"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.location.$invalid && (form.location.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>所在地：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="location" ng-model="item.location" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.location" ng-if="view"></span>
+            <div class="help-block">
+              <span>所在地不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">年龄：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="age" ng-model="item.age" ng-if="!view">
+            <span class="view-txt" ng-bind="item.age" ng-if="view"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.school.$invalid && (form.school.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>学校：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="school" ng-model="item.school" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.school" ng-if="view"></span>
+            <div class="help-block">
+              <span>学校不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">年级：</label>
+          <div class="right">
+            <select class="form-control" name="grade" ng-model="item.grade"
+                    ng-options="option for option in gradeOptions track by $index" ng-if="!view">
+              <option value="">请选择</option>
+            </select>
+            <span class="view-txt" ng-bind="item.grade" ng-if="view"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.study_country.$invalid && (form.study_country.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>期望留学国家：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="study_country" ng-model="item.study_country" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.study_country" ng-if="view"></span>
+            <div class="help-block">
+              <span>期望留学国家不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">预计入学时间：</label>
+          <div class="right">
+            <input type="text" name="enrollment_time" class="form-control" ng-model="item.enrollment_time"
+                   placeholder="YYYY-MM-DD" uib-datepicker-popup datepicker-options="dateOptions"
+                   show-button-bar="false" starting-day="1" is-open="opened" ng-init="opened = false"
+                   ng-click="opened = !opened" ng-if="!view" required/>
+            <span class="view-txt" ng-bind="item.enrollment_time" ng-if="view"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">期望留学专业：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="major" ng-model="item.major" ng-if="!view">
+            <span class="view-txt" ng-bind="item.major" ng-if="view"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.course_name.$invalid && (form.course_name.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>学习课程：</label>
+          <div class="right">
+            <select class="form-control" name="course_name" ng-model="item.course_name"
+                    ng-options="option for option in courseOptions track by $index" ng-if="!view" required>
+              <option value="">请选择</option>
+            </select>
+            <span class="view-txt" ng-bind="item.course_name" ng-if="view"></span>
+            <div class="help-block">
+              <span>学习课程不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.learn_range.$invalid && (form.learn_range.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>学习范围：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="learn_range" ng-model="item.learn_range" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.learn_range" ng-if="view"></span>
+            <div class="help-block">
+              <span>学习范围不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">微信：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="wechat" ng-model="item.wechat" ng-if="!view">
+            <span class="view-txt" ng-bind="item.wechat" ng-if="view"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': !is_phone_valid() && (form.phone.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>手机号码：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="phone" ng-model="item.phone" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.phone" ng-if="view"></span>
+            <div class="help-block">
+              <span>手机号码不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': !is_parent_phone_valid() && (form.parent_phone.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>家长手机号码：</label>
+          <div class="right">
+            <input type="text" class="form-control" name="parent_phone" ng-model="item.parent_phone" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.parent_phone" ng-if="view"></span>
+            <div class="help-block">
+              <span>家长手机号码不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-group clearfix">
+        <label class="control-label">备注：</label>
+        <div class="right">
+          <textarea rows="4" class="textarea" name="remark" placeholder="请限制信息100字以内"
+                    ng-model="item.remark" maxlength="100" ng-disabled="view"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-green modal-footer-btn" ng-if="!view">保存信息</button>
+    <button type="button" class="btn btn-green modal-footer-btn" ng-if="view" ng-click="cancel()">关 闭</button>
+
+  </form>
+</div>
+

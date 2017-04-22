@@ -11,9 +11,9 @@
              ng-class="{'has-error': form.chinese_name.$invalid && (form.chinese_name.$dirty || form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>学生姓名：</label>
           <div class="right">
-            <input type="text" class="form-control" name="chinese_name" ng-model="item.chinese_name" ng-hide="view"
+            <input type="text" class="form-control" name="chinese_name" ng-model="item.chinese_name" ng-if="!view"
                    required>
-            <span class="view-txt" ng-bind="item.chinese_name" ng-show="view"></span>
+            <span class="view-txt" ng-bind="item.chinese_name" ng-if="view"></span>
             <div class="help-block">
               <span>学生姓名不能为空</span>
             </div>
@@ -24,9 +24,8 @@
         <div class="form-group clearfix">
           <label class="control-label">录取学校：</label>
           <div class="right">
-            <input type="text" class="form-control" name="school" ng-model="item.school" ng-hide="view"
-                   required>
-            <span class="view-txt" ng-bind="item.school" ng-show="view"></span>
+            <input type="text" class="form-control" name="school" ng-model="item.school" ng-if="!view">
+            <span class="view-txt" ng-bind="item.school" ng-if="view"></span>
           </div>
         </div>
       </div>
@@ -38,14 +37,14 @@
              ng-class="{'has-error': form.tag.$invalid && (form.tag.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>标签：</label>
           <div class="right">
-            <select class="form-control" name="tag" ng-model="item.tag" ng-checked="item.tag" ng-hide="view"
+            <select class="form-control" name="tag" ng-model="item.tag" ng-checked="item.tag" ng-if="!view"
                     required>
               <option value="">请选择</option>
               <option value="雅思">雅思</option>
               <option value="托福">托福</option>
               <option value="SAT">SAT</option>
             </select>
-            <span class="view-txt" ng-bind="item.tag" ng-show="view"></span>
+            <span class="view-txt" ng-bind="item.tag" ng-if="view"></span>
             <div class="help-block">
               <span>标签不能为空</span>
             </div>
@@ -60,8 +59,8 @@
              ng-class="{'has-error': form.test1.$invalid && (form.test1.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>考试科目1：</label>
           <div class="right">
-            <input type="text" class="form-control" name="test1" ng-model="item.test1" ng-hide="view" required>
-            <span class="view-txt" ng-bind="item.test1" ng-show="view"></span>
+            <input type="text" class="form-control" name="test1" ng-model="item.test1" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.test1" ng-if="view"></span>
             <div class="help-block">
               <span>考试科目1不能为空</span>
             </div>
@@ -73,8 +72,8 @@
              ng-class="{'has-error': form.score1.$invalid && (form.score1.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>科目1成绩：</label>
           <div class="right">
-            <input type="text" class="form-control" name="score1" ng-model="item.score1" ng-hide="view" required>
-            <span class="view-txt" ng-bind="item.score1" ng-show="view"></span>
+            <input type="text" class="form-control" name="score1" ng-model="item.score1" ng-if="!view" required>
+            <span class="view-txt" ng-bind="item.score1" ng-if="view"></span>
             <div class="help-block">
               <span>科目1成绩不能为空</span>
             </div>
@@ -88,8 +87,8 @@
         <div class="form-group clearfix">
           <label class="control-label">考试科目2：</label>
           <div class="right">
-            <input type="text" class="form-control" name="test2" ng-model="item.test2" ng-hide="view">
-            <span class="view-txt" ng-bind="item.test2" ng-show="view"></span>
+            <input type="text" class="form-control" name="test2" ng-model="item.test2" ng-if="!view">
+            <span class="view-txt" ng-bind="item.test2" ng-if="view"></span>
           </div>
         </div>
       </div>
@@ -97,8 +96,8 @@
         <div class="form-group clearfix">
           <label class="control-label">科目2成绩：</label>
           <div class="right">
-            <input type="text" class="form-control" name="score2" ng-model="item.score2" ng-hide="view">
-            <span class="view-txt" ng-bind="item.score2" ng-show="view"></span>
+            <input type="text" class="form-control" name="score2" ng-model="item.score2" ng-if="!view">
+            <span class="view-txt" ng-bind="item.score2" ng-if="view"></span>
           </div>
         </div>
       </div>
@@ -132,8 +131,8 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-green modal-footer-btn" ng-hide="view">保存信息</button>
-    <button type="button" class="btn btn-green modal-footer-btn" ng-show="view" ng-click="cancel()">关 闭</button>
+    <button type="submit" class="btn btn-green modal-footer-btn" ng-if="!view">保存信息</button>
+    <button type="button" class="btn btn-green modal-footer-btn" ng-if="view" ng-click="cancel()">关 闭</button>
 
   </form>
 </div>
