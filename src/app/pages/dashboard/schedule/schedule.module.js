@@ -15,6 +15,9 @@
       });
   }
 
-  angular.module('app.pages.dashboard.schedule', [])
+  angular.module('app.pages.dashboard.schedule', [
+    'app.pages.dashboard.schedule.student',
+    'app.pages.dashboard.schedule.teacher'
+  ])
     .config(routeConfig);
 })();

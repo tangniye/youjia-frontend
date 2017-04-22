@@ -5,8 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function scheduleCtrl($scope) {
-    var vm = $scope;
+  function scheduleCtrl() {
 
   }
 

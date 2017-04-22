@@ -5,8 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function siteCtrl($scope) {
-    var vm = $scope;
+  function siteCtrl() {
 
   }
 

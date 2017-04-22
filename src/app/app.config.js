@@ -39,8 +39,18 @@ urlConfig.AUDITION = '/api/course/apply_info';
 // 学习反馈
 urlConfig.FEEDBACK = '/api/feedback';
 
-//归档
+// 归档
 urlConfig.HISTORY = '/api/history';
 
+// 课程表
+urlConfig.SCHEDULE = '/api/coursetable';
+// 获取空闲老师
+urlConfig.AVAILABLE_TEACHER = urlConfig.SCHEDULE + '/available_teacher';
+// 获取课程列表用户索引（学生）
+urlConfig.SCHEDULE_STUDENT_LIST = urlConfig.SCHEDULE + '/students';
+// 获取课程列表用户索引（老师）
+urlConfig.SCHEDULE_TEACHER_LIST = urlConfig.SCHEDULE + '/teachers';
+// 获取指定用户课程表
+urlConfig.SCHEDULE_BY_USER = urlConfig.SCHEDULE + '/tables';
 
 window.urlConfig = urlConfig;
