@@ -1,5 +1,14 @@
 <ul class="nav nav-tabs">
   <li role="presentation" ui-sref-active="active"><a ui-sref="dashboard.schedule.student">按学生排课</a></li>
   <li role="presentation" ui-sref-active="active"><a ui-sref="dashboard.schedule.teacher">老师课表</a></li>
+
+  <div class="table-tool">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="姓名或手机号" ng-model="key" ng-enter="search()"
+             ng-focus="focus()">
+      <span class="input-group-addon" ng-click="search()">搜索</span>
+    </div>
+  </div>
+
 </ul>
 <div ui-view class="schedule"></div>

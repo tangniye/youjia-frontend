@@ -25,6 +25,7 @@
       'app.pages.dashboard.history',
       'app.pages.dashboard.historyInfo',
       'app.pages.dashboard.schedule',
+      'app.pages.dashboard.scheduleInfo',
       'app.pages.dashboard.feedback',
       'app.pages.dashboard.feedbackCard',
       'app.pages.dashboard.site'

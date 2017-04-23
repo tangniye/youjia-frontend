@@ -7,6 +7,7 @@
   /** @ngInject */
   function feedbackCardModelCtrl($scope, $uibModalInstance, Feedback) {
     var vm = $scope;
+    vm.courseOptions = ['托福', '雅思', 'SAT', 'GCSE', 'GRE', 'GMAT', 'LSAT', 'AP', 'IB', 'CRITICAL READING', '其他'];
 
     var cur_user = vm.cur_user;
 

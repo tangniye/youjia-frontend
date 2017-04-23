@@ -1,0 +1,58 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="cancel()">&times;</button>
+  <div class="modal-title">课程表编辑</div>
+</div>
+<div class="modal-body clearfix">
+  <form name="form" ng-submit="submit(item)" novalidate>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">时间：</label>
+          <div class="right">
+            <span class="view-txt" ng-bind="data.time.start_time"></span>
+            -
+            <span class="view-txt" ng-bind="data.time.stop_time"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">星期：</label>
+          <div class="right">
+            <span class="view-txt" ng-bind="week"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">课程：</label>
+          <div class="right">
+            <select class="form-control" name="course_name" ng-model="item.course_name"
+                    ng-options="option for option in courseOptions">
+              <option value="">请选择</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group clearfix">
+          <label class="control-label">老师：</label>
+          <div class="right">
+            <select class="form-control" name="teacher_user_id" ng-model="item.teacher_user_id"
+                    ng-options="option.id as option.chinese_name for option in teacherOptions">
+              <option value="">请选择</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-green modal-footer-btn">保存信息</button>
+
+  </form>
+</div>
+
