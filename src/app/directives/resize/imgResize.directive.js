@@ -12,7 +12,7 @@
         w_screen = 1920;
       var parseObj = $parse(attrs['imgResize'])(scope);
       if (angular.element($window).width() < 768 && attrs['mSize']) {
-        w_screen = 768;
+        w_screen = 750;
         parseObj = $parse(attrs['mSize'])(scope);
       }
 
@@ -28,7 +28,8 @@
           element.css('width', w.innerWidth());
           element.children().first().find('li').css('width', w.innerWidth());
         } else {
-          element.css('width', '100%');
+          // element.css('width', '100%');
+          element.css('width', w_scale * w.innerWidth());
         }
       };
 

@@ -1,108 +1,132 @@
 .staff-banner {
-  background: url("@{images-root}/staff-banner.png") no-repeat;
-  background-size: contain;
+  background: url("@{images-root}/staff-banner.png") no-repeat center;
+  background-size: cover;
   color: @primary-white;
 }
 
-.staff-banner-container {
+.staff-banner__container {
+  position: relative;
   background-image: url("@{images-root}/cross-left-top.png"), url("@{images-root}/cross-right-bottom.png");
   background-position: left top, right bottom;
   background-repeat: no-repeat;
   width: 55%;
+  height: 240px;
   padding: 20px;
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: @primary-blue;
+    opacity: .7;
+  }
+  .banner-txt {
+    min-width: 240px;
+  }
 }
+.staff-standard-section {
+  margin: 80px 0;
 
-.staff-blue-bg {
+}
+.staff-standard-section__info {
+  text-align: center;
+  color: @font-sub-color;
+  margin: 20px 10px 60px;
+  font-size: 1.8rem;
+}
+.staff-standard-section__content {
+  display: flex;
+  justify-content: space-between;
+  width: @content-lg-width;
   position: relative;
-  background-color: @primary-blue;
-  height: 230px;
-  opacity: .7;
-}
-
-.staff-banner-txt {
-  width: 100%;
-}
-
-.staff-norm-section {
-  padding: 6.2% 0;
-
-  .staff-norm-title {
-    margin-bottom: 4.8%;
+  margin: 0 auto;
+  color: @primary-white;
+  .staff-standard-bg {
+    display: block;
+    width: 310px;
+    height: 368px;
+    position: relative;
+    background-size: cover;
+    background-color: #14213d;
+    .staff-standard-info {
+      position: relative;
+      padding: 10px;
+      font-size: 1.2rem;
+      z-index: 5;
+    }
+    &:hover {
+      .circle {
+        background-color: rgba(255, 255, 255, 0.3);
+        border: none;
+      }
+      .hover-stratum {
+        background-color: @primary-blue;
+      }
+    }
+  }
+  .circle {
+    position: relative;
+    width: 36.8%;
+    height: 31.1%;
+    margin: 25% auto;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+    transition: background-color .4s linear;
+    -o-transition: background-color .4s linear;
+    -ms-transition: background-color .4s linear;
+    -moz-transition: background-color .4s linear;
+    -webkit-transition: background-color .4s linear;
+    font-size: 2.4rem;
+    z-index: 2;
   }
 
-  .staff-norm-content {
-    color: @primary-white;
-
-    .staff-norm-bg-1 {
-      background: url("@{images-root}/staff-norm-1.png") no-repeat;
-    }
-
-    .staff-norm-bg-2 {
-      background: url("@{images-root}/staff-norm-2.png") no-repeat;
-    }
-
-    .staff-norm-bg-3 {
-      background: url("@{images-root}/staff-norm-3.png") no-repeat;
-    }
-
-    div[class*='staff-norm-bg-'] {
-      position: relative;
-      display: inline-block;
-      background-size: 100% 100%;
-      background-color: #14213d;
-      &:not(:last-child) {
-        margin-right: 1.5%;
-      }
-
-      &:hover {
-        .circle {
-          background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .hover-stratum {
-          background-color: @primary-blue;
-        }
-      }
-    }
-
-    .circle {
-      position: relative;
-      width: 36.8%;
-      height: 31.1%;
-      margin: 25% auto;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      background-color: transparent;
-      transition: background-color .4s linear;
-      -o-transition: background-color .4s linear;
-      -ms-transition: background-color .4s linear;
-      -moz-transition: background-color .4s linear;
-      -webkit-transition: background-color .4s linear;
-      font-size: 2.4rem;
-      z-index: 2;
-    }
-
-    .hover-stratum {
-      position: absolute;
-      top: 0;
-      background-color: transparent;
-      transition: background-color .4s linear;
-      -o-transition: background-color .4s linear;
-      -ms-transition: background-color .4s linear;
-      -moz-transition: background-color .4s linear;
-      -webkit-transition: background-color .4s linear;
-      width: inherit;
-      height: inherit;
-      opacity: .8;
-      z-index: 1;
-    }
-
+  .hover-stratum {
+    position: absolute;
+    top: 0;
+    background-color: transparent;
+    transition: background-color .4s linear;
+    -o-transition: background-color .4s linear;
+    -ms-transition: background-color .4s linear;
+    -moz-transition: background-color .4s linear;
+    -webkit-transition: background-color .4s linear;
+    width: inherit;
+    height: inherit;
+    opacity: .8;
+    z-index: 1;
   }
 }
 
+.staff-standard-section__bg--1 {
+  background: url("@{images-root}/staff-norm-1.png") no-repeat center;
+}
+
+.staff-standard-section__bg--2 {
+  background: url("@{images-root}/staff-norm-2.png") no-repeat center;
+}
+
+.staff-standard-section__bg--3 {
+  background: url("@{images-root}/staff-norm-3.png") no-repeat center;
+}
+
+.staff-tutor-section {
+  margin: 80px 0;
+}
 .staff-tutor-section .container {
   width: 1010px;
   max-width: 100%;
+}
+.staff-tutor-section {
+  .section-title {
+    color: @primary-white;
+    margin-bottom: 40px;
+    small {
+      color: @font-sub-color;
+      &:before {
+        border-bottom: solid 2px @font-sub-color;
+      }
+    }
+  }
 }
 
 .staff-tutor-section .underline {
@@ -266,7 +290,7 @@
 
   .tutor-detail-item {
     position: relative;
-    margin-bottom: 108px;
+    margin-bottom: 60px;
     font-size: 1.6rem;
     color: @primary-white;
 
@@ -334,34 +358,30 @@
   background-color: @primary-grey;
   padding: 80px 0;
 }
-
-.staff-appoint-section .underline {
-  width: 60px;
-  height: 2px;
-  background-color: @primary-blue;
-  margin: 0 auto 10px;
-}
-
-.appoint-container {
-  width: 820px;
+.staff-appoint-section__content {
+  width: @content-md-width;
   height: 340px;
-  background-color: @primary-white;
-  margin: auto;
-
-  .appoint-bg {
-    display: inline-block;
-    background: @primary-blue url("@{images-root}/staff-appoint-form-bg.png") no-repeat left;
-    background-size: 100% 100%;
+  display: flex;
+  margin: 0 auto;
+  div {
     width: 50%;
-    height: 100%;
   }
-  .appoint-info {
-    display: inline-block;
-    width: 50%;
-    height: 100%;
-    padding: 40px 80px;
-
+}
+.staff-appoint-section__content__bg {
+  width: 50%;
+  background: @primary-blue url("@{images-root}/staff-appoint-form-bg.png") no-repeat left;
+  background-size: cover;
+}
+.staff-appoint-section__content__info {
+  padding: 40px 80px;
+  background-color: @primary-white;
+  h3 {
+    font-size: 2.4rem;
+  }
+  .form-group {
+    width: 100%;
     input.form-control {
+      width: 100%;
       background-color: @primary-grey;
       border: 1px solid @primary-grey;
       transition: border-color ease-in-out .2s;
@@ -374,9 +394,123 @@
       }
     }
 
-    button {
-      height: 40px;
-    }
+  }
+  button {
+    height: 40px;
+    padding: 6px 28px;
+  }
+}
 
+// < 1200px
+@media (max-width: @screen-md-max) {
+  .staff-standard-section__info {
+    font-size: 1.6rem;
+  }
+}
+
+// < 992px
+@media (max-width: @screen-sm-max) {
+  .staff-standard-section,
+  .staff-tutor-section {
+    margin: 60px 0;
+  }
+  .staff-standard-section__info {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+  }
+  .staff-standard-section__content {
+    width: 740px;
+    .staff-standard-bg {
+      width: 240px;
+      height: 284px;
+      .staff-standard-info {
+        top: -20px;
+      }
+    }
+  }
+  .staff-appoint-section {
+    padding: 60px 0;
+  }
+  .staff-appoint-section__content {
+    width: 720px;
+    height: 360px;
+  }
+  .staff-appoint-section__content__info {
+    h3 {
+      font-size: 1.8rem;
+    }
+  }
+}
+// <768px
+@media (max-width: @screen-xs-max) {
+
+  .staff-banner__container {
+    width: 76%;
+    height: 180px;
+    .banner-txt {
+      margin: 0;
+    }
+  }
+  .staff-standard-section,
+  .staff-tutor-section {
+    margin: 40px 0;
+  }
+  .staff-standard-section__info {
+    font-size: 1.4rem;
+  }
+  .staff-standard-section__content {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0 );
+    width: 640px;
+    margin: 0 !important;
+    .staff-standard-bg {
+      width: 200px;
+      height: 236px;
+      .staff-standard-info {
+        top: -40px;
+      }
+    }
+  }
+  .staff-appoint-section {
+    padding: 40px 0;
+  }
+  .staff-appoint-section__content {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+  }
+  .staff-appoint-section__content__bg {
+    content: '';
+    width: 100% !important;
+    height: 300px;
+  }
+  .staff-appoint-section__content__info {
+    width: 100% !important;
+    h3 {
+      font-size: 1.8rem;
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+// < 480px
+@media (max-width: @screen-xxs-max) {
+  .staff-banner__container {
+    width: 96%;
+    height: 140px;
+  }
+  .staff-standard-section__info {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  .staff-appoint-section__content__bg {
+    height: 200px;
+  }
+  .staff-appoint-section__content__info {
+    padding: 20px;
   }
 }
