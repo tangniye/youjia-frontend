@@ -1,23 +1,25 @@
-<section class="re-table">
+<div class="info-panel">
+  <div class="table-tool">
+    <div class="title mr10"><span ng-if="role === 'student'">学生</span><span ng-if="role === 'teacher'">老师</span>课程表</div>
+    <button class="btn btn-green-outline mr10" ng-click="export()"><i class="iconfont icon-print mr10"></i>导出</button>
+    <button class="btn btn-green-outline" ng-click="deleteAll()" ng-if="edit"><i class="iconfont icon-brush mr10"></i>清空反馈</button>
+    <button class="btn btn-green-outline fr" ng-click="return()"><i class="iconfont icon-angle-left mr10"></i>返回</button>
+  </div>
+</div>
 
-  <div include-with-scope="app/directives/tables/table-tool.html" ng-if="tableConfig"></div>
-
+<section class="re-table schedule-info">
   <div class="table-container">
     <table class="table table-striped table-hover" ng-if="tableData.length > 0">
       <thead>
       <tr>
-        <th ng-if="tableConfig.select"><input type="checkbox" re-select-all="tableData"></th>
         <th ng-repeat="item in tableColumns track by $index" ng-if="item.show" ng-class="item.class"
-            ng-bind="item.name" re-sort="item">
+            ng-bind="item.name">
         </th>
       </tr>
       </thead>
 
       <tbody>
       <tr ng-repeat="data in tableData track by $index">
-        <td ng-if="tableConfig.select">
-          <input type="checkbox" re-select="data" ng-checked="data.isSelected">
-        </td>
         <td ng-repeat="item in tableColumns track by $index" ng-if="item.show" ng-class="item.class">
           <span ng-if="!item.html" ng-bind="data[item.col]"></span>
           <span ng-if="item.html" ng-compile-html="item.html(data[item.col])"></span>
@@ -28,6 +30,5 @@
     <div class="text-center" ng-if="tableData.length == 0">暂无数据</div>
   </div>
 
-  <re-pagination ng-if="tableState.pagination"></re-pagination>
-
 </section>
+

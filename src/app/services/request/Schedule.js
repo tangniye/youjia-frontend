@@ -59,7 +59,7 @@
       return defer.promise;
     };
 
-    this.getByUser = function (userid) {
+    this.getByUserId = function (userid) {
       var defer = $q.defer();
       $http.get(URL_CONFIG.SCHEDULE_BY_USER + '?user_id=' + userid).success(function (res) {
         defer.resolve(res);

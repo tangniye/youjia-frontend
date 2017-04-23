@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function studentScheduleCtrl($scope, Schedule) {
+  function studentScheduleCtrl($scope, $state, $cookies, Schedule) {
     var vm = $scope;
 
     vm.tableData = [
@@ -76,12 +76,14 @@
       return html
     }
 
-    function view() {
-
+    function view(data) {
+      $cookies.put('scheduleOption', 'view');
+      $state.go('dashboard.scheduleInfo', {id: data.id, role: 'student'})
     }
 
-    function edit() {
-
+    function edit(data) {
+      $cookies.put('scheduleOption', 'edit');
+      $state.go('dashboard.scheduleInfo', {id: data.id, role: 'student'})
     }
 
     vm.callServer = function callServer(queryStr) {
@@ -92,13 +94,11 @@
       })
     };
 
-    vm.search = function () {
+    vm.$on('searchChanged', function (event, data) {
+      vm.tableState.search.key = data;
       vm.pipe();
-    };
+    })
 
-    vm.focus = function () {
-      vm.tableState.search.key = '';
-    }
   }
 
   angular.module('app.pages.dashboard.schedule.student').controller('studentScheduleCtrl', studentScheduleCtrl);

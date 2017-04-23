@@ -1,0 +1,243 @@
+/**
+ * Created by tangniye on 17/4/14.
+ */
+(function () {
+  'use strict';
+
+  /** @ngInject */
+  function scheduleInfoCtrl($scope, $stateParams, $cookies, $state, Schedule, Common, toastr) {
+    var vm = $scope;
+    var schedule_model_template_url = 'app/pages/dashboard/scheduleInfo/schedule-model/schedule-model.html';
+
+    var userid = $stateParams.id;
+    vm.role = $stateParams.role;
+
+    vm.edit = $cookies.get('scheduleOption') === 'edit' ? true : false;
+
+    vm.tableData = [
+      {
+        "id": 6,
+        "chinese_name": "中文名称",
+        "course_name": "托福读",
+        "day": 5,
+        "start_time": "13:30",
+        "stop_time": "15:30"
+      },
+      {
+        "id": 6,
+        "chinese_name": "中文名称",
+        "course_name": "托福读",
+        "day": 2,
+        "start_time": "19:00",
+        "stop_time": "21:00"
+      },
+      {
+        "id": 6,
+        "chinese_name": "中文名称",
+        "course_name": "托福读",
+        "day": 3,
+        "start_time": "19:00",
+        "stop_time": "21:00"
+      },
+      {
+        "id": 6,
+        "chinese_name": "中文名称",
+        "course_name": "托福读",
+        "day": 7,
+        "start_time": "08:30",
+        "stop_time": "10:00"
+      },
+      {
+        "id": 6,
+        "chinese_name": "中文名称",
+        "course_name": "托福读",
+        "day": 5,
+        "start_time": "19:00",
+        "stop_time": "21:00"
+      }
+
+    ];
+
+    vm.tableData = courseHandler(vm.tableData);
+
+    vm.tableColumns = [
+      {name: '节次', col: 'meridian', show: true},
+      {name: '时间', col: 'time', show: true, html: timeHtml},
+      {name: '星期一', col: 'day1', show: true, html: courseHtml, handler: [add, edit, del]},
+      {name: '星期二', col: 'day2', show: true, html: courseHtml, handler: [add, edit, del]},
+      {name: '星期三', col: 'day3', show: true, html: courseHtml, handler: [add, edit, del]},
+      {name: '星期四', col: 'day4', show: true, html: courseHtml, handler: [add, edit, del]},
+      {name: '星期五', col: 'day5', show: true, html: courseHtml, handler: [add, edit, del]},
+      {name: '星期六', col: 'day6', show: true, html: courseHtml, handler: [add, edit, del]},
+      {name: '星期天', col: 'day7', show: true, html: courseHtml, handler: [add, edit, del]}
+    ];
+
+    function timeHtml(data) {
+      return data.start_time + '-' + data.stop_time;
+    }
+
+    function courseHtml(data) {
+      if (!data) {
+        return '<i class="iconfont icon-pencil-circle-o" ng-click="(item.handler[0])(data,item.col)" ng-if="edit" title="编辑"></i>';
+      }
+      var html = '<p class="main-color font24">' + data.course_name + '</p>' +
+        '<p>' + data.chinese_name + '<i class="iconfont icon-note ml5" ng-click="(item.handler[1])(data,item.col)" title="编辑" ng-if="edit"></i>' +
+        '<i class="iconfont icon-delete ml5" ng-click="(item.handler[2])(data,item.col)" title="删除" ng-if="edit"></i></p>';
+      return html;
+    }
+
+    function add(data, col) {
+      Common.model.promptModel('scheduleModelCtrl', schedule_model_template_url, 'md', true, 'common-modal', {
+        add: true,
+        data: data,
+        col: col,
+        userid: userid,
+        getdata: callServer
+      })
+    }
+
+    function edit(data, col) {
+      Common.model.promptModel('scheduleModelCtrl', schedule_model_template_url, 'md', true, 'common-modal', {
+        edit: true,
+        data: data,
+        col: col,
+        getdata: callServer
+      })
+    }
+
+    function del(data, col) {
+      var id = data[col].id;
+      Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认删除该课程吗?'})
+        .result.then('', function (data) {
+        if (data === 'ok') {
+          Schedule.delete(id).then(function (res) {
+            toastr.success('删除成功', '', {timeOut: 2000});
+          });
+          callServer(userid);
+        }
+      });
+    }
+
+    callServer(userid);
+
+    function callServer(userid) {
+      Schedule.getByUserId(userid).then(function (res) {
+        vm.tableData = courseHandler(res);
+      })
+    }
+
+    function courseHandler(arr) {
+      var data = [
+        {
+          "meridian": "上午",
+          "time": {"start_time": "08:30", "stop_time": "10:00"},
+          "day1": '',
+          "day2": '',
+          "day3": '',
+          "day4": '',
+          "day5": '',
+          "day6": '',
+          "day7": ''
+        },
+        {
+          "meridian": "上午",
+          "time": {"start_time": "10:00", "stop_time": "12:00"},
+          "day1": '',
+          "day2": '',
+          "day3": '',
+          "day4": '',
+          "day5": '',
+          "day6": '',
+          "day7": ''
+        },
+        {
+          "meridian": "下午",
+          "time": {"start_time": "13:30", "stop_time": "15:30"},
+          "day1": '',
+          "day2": '',
+          "day3": '',
+          "day4": '',
+          "day5": '',
+          "day6": '',
+          "day7": ''
+        },
+        {
+          "meridian": "下午",
+          "time": {"start_time": "15:30", "stop_time": "17:30"},
+          "day1": '',
+          "day2": '',
+          "day3": '',
+          "day4": '',
+          "day5": '',
+          "day6": '',
+          "day7": ''
+        },
+        {
+          "meridian": "晚上",
+          "time": {"start_time": "19:00", "stop_time": "21:00"},
+          "day1": '',
+          "day2": '',
+          "day3": '',
+          "day4": '',
+          "day5": '',
+          "day6": '',
+          "day7": ''
+        }
+      ];
+
+      for (var i in arr) {
+        var idx;
+        switch (arr[i].start_time) {
+          case '08:30':
+            idx = 0;
+            break;
+          case '10:00':
+            idx = 1;
+            break;
+          case '13:30':
+            idx = 2;
+            break;
+          case '15:30':
+            idx = 3;
+            break;
+          case '19:00':
+            idx = 4;
+            break;
+        }
+        data[idx]['day' + arr[i].day] = {
+          id: arr[i].id,
+          course_name: arr[i].course_name,
+          chinese_name: arr[i].chinese_name
+        };
+
+      }
+      return data
+    }
+
+    vm.deleteAll = function () {
+      Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认清空该学生的所有课程吗?'})
+        .result.then('', function (data) {
+        if (data === 'ok') {
+          Schedule.deleteAll(userid).then(function (res) {
+            toastr.success('删除成功', '', {timeOut: 2000});
+          });
+          callServer(userid);
+        }
+      });
+    };
+
+    vm.return = function () {
+      switch (vm.role) {
+        case 'student':
+          $state.go('dashboard.schedule.student');
+          break;
+        case 'teacher':
+          $state.go('dashboard.schedule.teacher');
+          break;
+      }
+    }
+
+  }
+
+  angular.module('app.pages.dashboard.scheduleInfo').controller('scheduleInfoCtrl', scheduleInfoCtrl);
+})();

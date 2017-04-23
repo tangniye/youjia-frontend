@@ -66,12 +66,9 @@
              ng-class="{'has-error': form.course_name.$invalid && (form.course_name.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>课程类型：</label>
           <div class="right">
-            <select class="form-control" name="course_name" ng-model="item.course_name" ng-checked="item.course_name"
-                    required>
+            <select class="form-control" name="course_name" ng-model="item.course_name"
+                    ng-options="option for option in courseOptions" required>
               <option value="">请选择</option>
-              <option value="雅思">雅思</option>
-              <option value="托福">托福</option>
-              <option value="SAT">SAT</option>
             </select>
             <div class="help-block">
               <span>课程类型不能为空</span>
