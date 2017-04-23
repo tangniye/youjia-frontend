@@ -7,7 +7,19 @@
   /** @ngInject */
   function studentModelCtrl($scope, $uibModalInstance, User) {
     var vm = $scope;
-    vm.gradeOptions = ['初一', '初二', '初三', '高一', '高二', '高三', '大一', '大二', '大三', '大四', '其他'];
+    vm.gradeOptions = [
+      {value:'初一',group:'初中'},
+      {value:'初二',group:'初中'},
+      {value:'初三',group:'初中'},
+      {value:'高一',group:'高中'},
+      {value:'高二',group:'高中'},
+      {value:'高三',group:'高中'},
+      {value:'大一',group:'大学'},
+      {value:'大二',group:'大学'},
+      {value:'大三',group:'大学'},
+      {value:'大四',group:'大学'},
+      {value:'其他',group:'其他'}
+    ];
     vm.courseOptions = ['托福', '雅思', 'SAT', 'GCSE', 'GRE', 'GMAT', 'LSAT', 'AP', 'IB', 'CRITICAL READING', '其他'];
     vm.dateOptions = {
       startingDay: 1

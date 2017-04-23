@@ -45,8 +45,8 @@
     };
 
     function optionHtml() {
-      var html = '<a ng-click="(item.handler[0])(data)"><i class="iconfont icon-magnifier"></i></a>' +
-        '<a ng-click="(item.handler[1])(data)"><i class="iconfont icon-delete"></i></a>';
+      var html = '<a ng-click="(item.handler[0])(data)" title="查看"><i class="iconfont icon-magnifier"></i></a>' +
+        '<a ng-click="(item.handler[1])(data)" title="删除"><i class="iconfont icon-delete"></i></a>';
       return html
     }
 
@@ -73,7 +73,7 @@
     }
 
     function _delete(ids) {
-      Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认删除所选成功案例吗?'})
+      Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认删除所选试听用户吗?'})
         .result.then('', function (data) {
         if (data === 'ok') {
           Audition.delete(ids).then(function (res) {

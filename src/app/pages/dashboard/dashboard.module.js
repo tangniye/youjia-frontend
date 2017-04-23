@@ -23,6 +23,7 @@
       'app.pages.dashboard.password',
       'app.pages.dashboard.student',
       'app.pages.dashboard.history',
+      'app.pages.dashboard.historyInfo',
       'app.pages.dashboard.schedule',
       'app.pages.dashboard.feedback',
       'app.pages.dashboard.feedbackCard',

@@ -2,8 +2,7 @@
 
   <div include-with-scope="app/directives/tables/table-tool.html"></div>
 
-  <div class="table-container"
-       ng-class="{'with-tool':tableConfig.add || tableConfig.delete || tableConfig.search || tableConfig.archive}">
+  <div class="table-container">
     <table class="table table-striped table-hover" ng-if="tableData.length > 0">
       <thead>
       <tr>

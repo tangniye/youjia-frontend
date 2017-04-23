@@ -8,6 +8,7 @@
   function studentCtrl($scope, Common, User) {
     var vm = $scope;
     var student_model_template_url = 'app/pages/dashboard/student/student-model/student-model.html';
+    var archive_model_template_url = 'app/pages/dashboard/student/archive-model/archive-model.html';
 
     vm.tableData = [
       {
@@ -72,10 +73,10 @@
     };
 
     function optionHtml() {
-      var html = '<a ng-click="(item.handler[0])(data)"><i class="iconfont icon-magnifier"></i></a>' +
-        '<a ng-click="(item.handler[1])(data)"><i class="iconfont icon-pencil"></i></a>' +
-        '<a ng-click="(item.handler[2])(data)"><i class="iconfont icon-archive"></i></a>' +
-        '<a ng-click="(item.handler[2])(data)"><i class="iconfont icon-print"></i></a>';
+      var html = '<a ng-click="(item.handler[0])(data)" title="查看"><i class="iconfont icon-magnifier"></i></a>' +
+        '<a ng-click="(item.handler[1])(data)" title="修改"><i class="iconfont icon-pencil"></i></a>' +
+        '<a ng-click="(item.handler[2])(data)" title="归档"><i class="iconfont icon-archive"></i></a>' +
+        '<a ng-click="(item.handler[2])(data)" title="导出"><i class="iconfont icon-print"></i></a>';
       return html
     }
 
@@ -94,7 +95,6 @@
           getdata: vm.pipe
         })
       })
-
     }
 
     function view(data) {
@@ -107,7 +107,10 @@
     }
 
     function archive(data) {
-
+      Common.model.promptModel('archiveModelCtrl', archive_model_template_url, 'md', true, 'common-modal', {
+        id: data.id,
+        getdata: vm.pipe
+      })
     }
 
     function print(data) {
