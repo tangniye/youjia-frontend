@@ -109,6 +109,9 @@
   background: url("@{images-root}/staff-norm-3.png") no-repeat center;
 }
 
+.staff-tutor-section--mobile {
+  display: none;
+}
 .staff-tutor-section {
   margin: 80px 0;
 }
@@ -472,6 +475,113 @@
       }
     }
   }
+  .staff-tutor-section {
+    display: none;
+  }
+  .staff-tutor-section--mobile {
+    display: block;
+    margin: 40px 0;
+    padding-top: 40px;
+    background-color: @primary-blue;
+    color: @font-sub-color;
+    .staff-tutor-section__title {
+      color: @primary-white;
+      small {
+        color: @font-sub-color;
+        &:before {
+          border-bottom: solid 2px @font-sub-color;
+        }
+      }
+    }
+    .staff-tutor-section__summary {
+      margin: 80px 0 40px;
+      position: relative;
+      text-align: center;
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 14%;
+        height: 100%;
+        background-color: #b1bdd6;
+      }
+      &:before {
+        left: 0;
+      }
+      &:after {
+        right: 0;
+      }
+    }
+    .tutor {
+      position: relative;
+      width: 60%;
+      margin: 0 auto;
+      padding: 10px;
+      background-color: @primary-white;
+      .tutor__header-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        img {
+          transform: translate(0, -50%);
+          width: 120px;
+          height: 120px;
+          border: solid 4px @primary-white;
+          border-radius: 100%;
+          background-color: white;
+        }
+      }
+
+      .tutor__name {
+        margin-top: 70px;
+        font-size: 1.8rem;
+        color: @font-color;
+      }
+      .tutor__title {
+        font-size: 1.4rem;
+        color: @primary-blue;
+      }
+      .icon-quotation-left {
+        display: inline-block;
+        margin: 20px 0 10px;
+        font-size: 1.8rem;
+        color: #b4bcc8;
+      }
+      .tutor__brief {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+    }
+    .staff-tutor-section__detail {
+      position: relative;
+      background-color: @primary-white;
+      padding: 10px 80px;
+      h4 {
+        color: @font-color;
+        font-size: 1.8rem;
+        margin: 30px 0 20px;
+      }
+      p {
+        font-size: 1.4rem;
+      }
+      &:before {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translate(-50%, 0 );
+        content: '';
+        width: 15px;
+        height: 15px;
+        border-bottom: solid 15px @primary-white;
+        border-left: solid 15px transparent;
+        border-right: solid 15px transparent;
+      }
+    }
+  }
+
   .staff-appoint-section {
     padding: 40px 0;
   }
@@ -506,6 +616,11 @@
   .staff-standard-section__info {
     font-size: 1.2rem;
     margin-bottom: 20px;
+  }
+  .staff-tutor-section--mobile {
+    .staff-tutor-section__detail {
+      padding: 10px 20px;
+    }
   }
   .staff-appoint-section__content__bg {
     height: 200px;
