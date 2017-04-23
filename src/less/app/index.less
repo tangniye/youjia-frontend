@@ -1,6 +1,5 @@
 .index-banner,
-.index-brand,
-.index-bottom-container {
+.index-section {
   font-size: 1.8rem;
 }
 
@@ -14,25 +13,26 @@
   height: 100%;
   width: 500%;
   list-style: none;
+  margin: 0;
+  padding: 0;
   z-index: 1;
-
   .slider-1 {
-    background: url("@{images-root}/index-banner-1.png") no-repeat;
+    background: url("@{images-root}/index-banner-1.png") no-repeat center;
   }
 
   .slider-2 {
-    background: url("@{images-root}/index-banner-2.png") no-repeat;
+    background: url("@{images-root}/index-banner-2.png") no-repeat center;
   }
 
   .slider-3 {
-    background: url("@{images-root}/index-banner-3.png") no-repeat;
+    background: url("@{images-root}/index-banner-3.png") no-repeat center;
   }
 
   li[class*='slider-'] {
     position: relative;
     display: block;
     float: left;
-    background-size: contain;
+    background-size: cover;
     height: 100%;
   }
 }
@@ -82,81 +82,170 @@
   }
 }
 
-.index-banner .banner-txt {
-  color: @primary-white;
-  width: 100%;
-
-  p:not(:first-child) {
-    font-size: 2.0rem;
-    opacity: .8;
-  }
-}
-
-.index-brand .brand-title {
-  margin: 6.2% 0 4.8%;
-
-  .underline {
-    width: 60px;
-    height: 2px;
-    background-color: @primary-blue;
-    margin: 0 auto 10px;
-  }
-}
-
-.index-brand .brand-bg {
+.index-section--brand {
   position: relative;
+  .brand-bg {
+    display: flex;
+    justify-content: center;
+    &.brand-bg-1 {
+      background: url("@{images-root}/brand-profession.png") no-repeat center;
+      background-size: cover;
+    }
 
-  &.brand-bg-1 {
-    background: url("@{images-root}/brand-profession.png") no-repeat;
-    background-size: contain;
+    &.brand-bg-2 {
+      background: url("@{images-root}/brand-teaching.png") no-repeat center;
+      background-size: cover;
+    }
+
+    &.brand-bg-3 {
+      background: url("@{images-root}/brand-background.png") no-repeat center;
+      background-size: cover;
+    }
+    &:nth-child(2n+1) {
+      .brand-content {
+        color: @primary-white;
+      }
+      .iconfont {
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        color: @primary-white;
+      }
+    }
+    &:nth-child(2n) {
+      .brand-content {
+        text-align: right;
+        color: @font-color;
+      }
+      .iconfont {
+        top: 0;
+        right: 0;
+        color: @font-sub-color;
+        transform: translate(50%, -50%);
+      }
+    }
   }
-
-  &.brand-bg-2 {
-    background: url("@{images-root}/brand-teaching.png") no-repeat;
-    background-size: contain;
+  .brand-content {
+    position: relative;
+    width: 76%;
+    margin-top: 10%;
+    .iconfont {
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.3;
+    }
   }
-
-  &.brand-bg-3 {
-    background: url("@{images-root}/brand-background.png") no-repeat;
-    background-size: contain;
+  .brand-content__text {
+    font-size: 1.8rem;
+    .strong {
+      font-size: 4.8rem;
+      small {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+.index-section--philosophy {
+  .section-content {
+    width: 76%;
+    text-align: center;
+    p {
+      margin-top: 20px;
+    }
   }
 }
 
-.index-brand .brand-content {
-  position: absolute;
-  width: 42%;
-  top: 15%;
+// < 1200px
+@media (max-width: @screen-md-max) {
 
-  .txt {
-    position: absolute;
-    top: 50%;
+  .index-banner,
+  .index-section {
+    font-size: 1.6rem;
+  }
+
+  .index-section--brand {
+    .brand-content__text {
+      font-size: 1.4rem;
+      .strong {
+        font-size: 3.6rem;
+        small {
+          font-size: 1.8rem;
+        }
+      }
+    }
+    .brand-content {
+      .iconfont {
+        font-size: 8rem;
+      }
+    }
   }
 }
 
-.index-brand .brand-content.text-left {
-  left: 18%;
-  color: @primary-white;
+// < 992px
+@media (max-width: @screen-sm-max) {
 
-  .txt {
-    left: 13%;
+}
+// <768px
+@media (max-width: @screen-xs-max) {
+  .index-banner,
+  .index-section {
+    font-size: 1.4rem;
+  }
+  .index-banner {
+    .rectangle {
+      width: 76%;
+    }
+    .banner-slider {
+      li[class*='slider-'] {
+        background-size: cover;
+      }
+    }
+    .angle {
+      &.angle-left {
+        left: 10px;
+      }
+      &.angle-right {
+        right: 10px;
+      }
+    }
+    .blockage {
+      bottom: 4px;
+    }
+  }
+  .index-section--brand {
+    .brand-bg {
+      height: 480px;
+      &.brand-bg-1 {
+        background: url("@{images-root}/mobile-index-brand-1.png") no-repeat;
+        background-size: cover;
+      }
+
+      &.brand-bg-2 {
+        background: url("@{images-root}/mobile-index-brand-2.png") no-repeat;
+        background-size: cover;
+      }
+
+      &.brand-bg-3 {
+        background: url("@{images-root}/mobile-index-brand-3.png") no-repeat;
+        background-size: cover;
+      }
+    }
+    .brand-content {
+      margin-top: 60px;
+    }
+    .brand-content__text {
+      font-size: 1.2rem;
+      .strong {
+        font-size: 2.4rem;
+        small {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .brand-content {
+      .iconfont {
+        font-size: 6rem;
+      }
+    }
   }
 }
-
-.index-brand .brand-content.text-right {
-  right: 18%;
-  color: inherit;
-  i {
-    color: @font-sub-color;
-  }
-
-  .txt {
-    right: 13%;
-  }
-}
-
-.index-bottom-container {
-  margin: 10% 25%;
-}
-
-
-

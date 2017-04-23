@@ -11,7 +11,6 @@
         if (windowWidth < 768) {
           var firstLevelLinks = $('.mfooter__menu > li > a');
           var secondLevelMenus = $('.mfooter__dropdown-menu');
-          var secondLevelLinks = $('.mfooter__dropdown-menu > li > a');
 
           _.forEach(firstLevelLinks, function (link) {
             $(link).on('click', function (e) {
@@ -27,12 +26,6 @@
               e.stopPropagation();
             });
           });
-          //
-          // _.forEach(secondLevelLinks, function (link) {
-          //   $(link).on('click', function (e) {
-          //     secondLevelMenus.removeClass('show');
-          //   })
-          // });
 
           $(document).on('click', function (e) {
             secondLevelMenus.removeClass('show');
