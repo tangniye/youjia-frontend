@@ -56,6 +56,11 @@ function appConfig($provide, $httpProvider) {
 function appRun($rootScope, $state, $stateParams) {
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
+  if ($(window).width() < 768) {
+    $rootScope.isMobile = true;
+  } else {
+    $rootScope.isMobile == false;
+  }
 }
 
 angular.module('app', [
