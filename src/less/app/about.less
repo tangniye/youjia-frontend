@@ -1,42 +1,150 @@
-.about {
-  background: url("@{images-root}/about-bg.png") no-repeat;
-  background-size: contain;
-}
-
-.about .message {
-  position: relative;
-  background-color: #fff;
-  max-height: 100%;
-  padding: 10px;
-  margin: 0 10%;
-}
-
-.about .message-header {
-  background: @primary-white url("@{images-root}/message-header.png") no-repeat center;
-  background-size: contain;
-  width: 75%;
-  height: 115px;
-  position: absolute;
-  top: 30px;
-}
-
-.about .message-bg {
-  border: 8px solid #3b5998;
-  margin-top: 80px;
-  padding: 80px 3% 10px;
+.about-page {
+  background: url("@{images-root}/about-bg.png") no-repeat left top;
+  background-size: cover;
+  overflow: hidden;
   font-size: 14px;
 }
-
-.about .e-signature {
+.about-banner {
+  display: none;
+  background: url("@{images-root}/mobile-about-banner.png") no-repeat center;
+  background-size: cover;
+}
+.about-section {
+  position: relative;
+  width: @content-md-width;
+  margin: 40px auto;
+  padding: 100px 10px 10px;
+  background: @primary-white;
+}
+.about-section__title {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 60px;
+  left: 50%;
+  width: 600px;
+  margin: 0 auto;
+  padding: 0 40px;
+  background: @primary-white;
+  transform: translateX(-50%);
+  z-index: 5;
+  .section-title--border {
+    margin: 0 auto;
+    > * {
+      color: @primary-blue;
+    }
+    small:before {
+      border-color: @primary-blue;
+    }
+  }
+}
 
-  .e-signature-logo {
-    background: url("@{images-root}/alex-signature.png") no-repeat;
+.about-section__content {
+  position: relative;
+  border: solid 6px @primary-blue;
+  padding: 80px 40px 40px;
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.about-section__content__contact {
+  margin-top: 60px;
+  color: @font-sub-color;
+  p {
+    display: flex;
+    align-items: center;
+    &:last-child {
+      padding-left: 32px;
+    }
+  }
+  .iconfont {
+    display: inline-flex;
+    width: 32px;
+    font-size: 18px;
+  }
+}
+.about-section__content__signature {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 100%;
+  text-align: right;
+  color: @font-sub-color;
+  .signature-logo {
+    display: inline-block;
     width: 168px;
     height: 53px;
+    background: url("@{images-root}/alex-signature.png") no-repeat;
     background-size: contain;
-    margin-bottom: 15px;
+  }
+}
+//>= 1440px
+@media (min-width: @screen-xl-min) {
+  .about-section {
+    width: @content-xl-width;
+  }
+}
+// < 992px
+@media (max-width: @screen-sm-max) {
+  .about-section {
+    width: @content-sm-width;
+  }
+}
+// <768px
+@media (max-width: @screen-xs-max) {
+  .about-page {
+    background: @primary-grey;
+  }
+  .about-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-banner__text--mobile {
+    display: block;
+    background: url("@{images-root}/mobile-case-banner-text-bg.png") no-repeat center 60px;
+    background-size: 100%;
+    padding: 40px 100px;
+    .section-title {
+      margin: 0;
+      color: @primary-white;
+      font-size: 3.6rem;
+      small {
+        color: @primary-white;
+        font-size: 1.8rem;
+        &:before {
+          border-bottom: solid 2px @primary-white;
+        }
+      }
+    }
+  }
+  .about-section {
+    width: auto;
+    padding: 0;
+    margin: 0 0 60px 0;
+  }
+  .about-section__title {
+    display: none;
+  }
+  .about-section__content {
+    padding: 40px 20px;
+    border: none;
+  }
+  .about-section__content__contact {
+    visibility: hidden;
+  }
+}
+// < 480px
+@media (max-width: @screen-xxs-max) {
+  .about-banner__text--mobile {
+    background: url("@{images-root}/mobile-case-banner-text-bg.png") no-repeat center 30px;
+    background-size: 100%;
+    padding: 20px 40px;
+    .section-title {
+      margin: 0px;
+      font-size: 2.2rem;
+      small {
+        font-size: 1.4rem;
+      }
+    }
   }
 }
