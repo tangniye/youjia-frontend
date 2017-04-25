@@ -7,14 +7,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('app.pages.dashboard.historyInfo', {
+      .state('app.pages.dashboard.history.info', {
         url: '/history/:id',
         title: '历史信息',
-        templateUrl: '/app/pages/dashboard/historyInfo/historyInfo.html',
+        templateUrl: '/app/pages/dashboard/history/history-info/historyInfo.html',
         controller: 'historyInfoCtrl'
       });
   }
 
-  angular.module('app.pages.dashboard.historyInfo', [])
+  angular.module('app.pages.dashboard.history.info', [])
     .config(routeConfig);
 })();

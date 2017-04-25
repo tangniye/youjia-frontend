@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function feedbackCtrl($scope, $state, Feedback) {
+  function feedbackListCtrl($scope, $state, Feedback) {
     var vm = $scope;
 
     vm.tableData = [
@@ -107,7 +107,7 @@
         "page": 1
       };
 
-      $state.go('app.pages.dashboard.feedbackCard', {id: data.id, data: res});
+      $state.go('app.pages.dashboard.feedback.card', {id: data.id, data: res});
 
     }
 
@@ -129,5 +129,5 @@
 
   }
 
-  angular.module('app.pages.dashboard.feedback').controller('feedbackCtrl', feedbackCtrl);
+  angular.module('app.pages.dashboard.feedback.list').controller('feedbackListCtrl', feedbackListCtrl);
 })();

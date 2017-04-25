@@ -78,12 +78,12 @@
 
     function view(data) {
       $cookies.put('scheduleOption', 'view');
-      $state.go('app.pages.dashboard.scheduleInfo', {id: data.id, role: 'student'})
+      $state.go('app.pages.dashboard.schedule.info', {id: data.id, role: 'student'})
     }
 
     function edit(data) {
       $cookies.put('scheduleOption', 'edit');
-      $state.go('app.pages.dashboard.scheduleInfo', {id: data.id, role: 'student'})
+      $state.go('app.pages.dashboard.schedule.info', {id: data.id, role: 'student'})
     }
 
     vm.callServer = function callServer(queryStr) {

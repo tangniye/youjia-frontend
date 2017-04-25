@@ -74,5 +74,5 @@
 
   }
 
-  angular.module('app.pages.dashboard.historyInfo').controller('historyInfoCtrl', historyInfoCtrl);
+  angular.module('app.pages.dashboard.history.info').controller('historyInfoCtrl', historyInfoCtrl);
 })();

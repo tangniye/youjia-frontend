@@ -112,5 +112,5 @@
 
   }
 
-  angular.module('app.pages.dashboard.feedbackCard').controller('feedbackCardCtrl', feedbackCardCtrl);
+  angular.module('app.pages.dashboard.feedback.card').controller('feedbackCardCtrl', feedbackCardCtrl);
 })();

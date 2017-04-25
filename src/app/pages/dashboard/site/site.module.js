@@ -8,10 +8,10 @@
   function routeConfig($stateProvider) {
     $stateProvider
       .state('app.pages.dashboard.site', {
+        abstract: true,
         url: '/site',
         title: '站点信息',
-        templateUrl: '/app/pages/dashboard/site/site.html',
-        controller: 'siteCtrl'
+        templateUrl: '/app/pages/dashboard/site/site.html'
       });
   }
 

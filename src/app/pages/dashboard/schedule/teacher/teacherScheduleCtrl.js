@@ -52,7 +52,7 @@
 
     function view(data) {
       $cookies.put('scheduleOption', 'view');
-      $state.go('app.pages.dashboard.scheduleInfo', {id: data.id, role: 'teacher'})
+      $state.go('app.pages.dashboard.schedule.info', {id: data.id, role: 'teacher'})
     }
 
     vm.callServer = function callServer(queryStr) {

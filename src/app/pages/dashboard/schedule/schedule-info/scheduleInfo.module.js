@@ -7,14 +7,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('app.pages.dashboard.scheduleInfo', {
-        url: '/schedule/:role/:id',
+      .state('app.pages.dashboard.schedule.info', {
+        url: '/:role/:id',
         title: '课程表',
-        templateUrl: '/app/pages/dashboard/scheduleInfo/scheduleInfo.html',
+        templateUrl: '/app/pages/dashboard/schedule/schedule-info/scheduleInfo.html',
         controller: 'scheduleInfoCtrl'
       });
   }
 
-  angular.module('app.pages.dashboard.scheduleInfo', [])
+  angular.module('app.pages.dashboard.schedule.info', [])
     .config(routeConfig);
 })();

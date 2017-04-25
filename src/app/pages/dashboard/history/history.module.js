@@ -8,13 +8,15 @@
   function routeConfig($stateProvider) {
     $stateProvider
       .state('app.pages.dashboard.history', {
-        url: '/history',
+        abstract: true,
         title: '历史信息',
-        templateUrl: '/app/pages/dashboard/history/history.html',
-        controller: 'historyCtrl'
+        templateUrl: '/app/pages/dashboard/history/history.html'
       });
   }
 
-  angular.module('app.pages.dashboard.history', [])
+  angular.module('app.pages.dashboard.history', [
+    'app.pages.dashboard.history.list',
+    'app.pages.dashboard.history.info'
+  ])
     .config(routeConfig);
 })();

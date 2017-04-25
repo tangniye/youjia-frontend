@@ -8,13 +8,16 @@
   function routeConfig($stateProvider) {
     $stateProvider
       .state('app.pages.dashboard.feedback', {
+        abstract: true,
         url: '/feedback',
         title: '学习反馈',
-        templateUrl: '/app/pages/dashboard/feedback/feedback.html',
-        controller: 'feedbackCtrl'
+        templateUrl: '/app/pages/dashboard/feedback/feedback.html'
       });
   }
 
-  angular.module('app.pages.dashboard.feedback', [])
+  angular.module('app.pages.dashboard.feedback', [
+      'app.pages.dashboard.feedback.list',
+      'app.pages.dashboard.feedback.card'
+    ])
     .config(routeConfig);
 })();
