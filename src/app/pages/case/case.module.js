@@ -7,7 +7,7 @@
     /** @ngInject */
     function routeConfig($stateProvider) {
         $stateProvider
-            .state('case', {
+            .state('app.pages.case', {
                 url: '/case',
                 title: '成功案例',
                 templateUrl: '/app/pages/case/case.html',

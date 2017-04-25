@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.password', {
+      .state('app.pages.dashboard.password', {
         url: '/personal/password',
         title: '修改密码',
         templateUrl: '/app/pages/dashboard/password/password.html',

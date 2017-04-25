@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.site', {
+      .state('app.pages.dashboard.site', {
         url: '/site',
         title: '站点信息',
         templateUrl: '/app/pages/dashboard/site/site.html',

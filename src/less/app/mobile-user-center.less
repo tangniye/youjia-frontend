@@ -1,0 +1,48 @@
+.mobile-user-center {
+  .mobile-user-center__header {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background: @primary-blue url("@{images-root}/mobile-user-center-header-bg.png") no-repeat top center;
+    background-size: cover;
+  }
+  .mobile-user-center__header__top-links {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .mobile-user-center__header__user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .user-header-img {
+      padding: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .user-name {
+      position: relative;
+      button {
+        position: absolute;
+      }
+    }
+  }
+  .mobile-user-center__header__nav {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    li {
+      width: 100px;
+      text-align: center;
+    }
+  }
+  .mobile-user-center__content {
+
+  }
+}

@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.scheduleInfo', {
+      .state('app.pages.dashboard.scheduleInfo', {
         url: '/schedule/:role/:id',
         title: '课程表',
         templateUrl: '/app/pages/dashboard/scheduleInfo/scheduleInfo.html',

@@ -4,7 +4,16 @@
  * including http interceptor and http default config
  */
 /** @ngInject */
-function appConfig($provide, $httpProvider) {
+function appConfig($provide, $httpProvider, $stateProvider) {
+
+  $stateProvider.state('app', {
+    abstract: true,
+    views: {
+      root: {
+        template: '<div data-ui-view="app"></div>'
+      }
+    }
+  });
 
     // Intercept http calls.
     $provide.factory('ErrorHttpInterceptor', ['$q', '$injector', function ($q, $injector) {
@@ -56,23 +65,20 @@ function appConfig($provide, $httpProvider) {
 function appRun($rootScope, $state, $stateParams) {
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
-  if ($(window).width() < 768) {
-    $rootScope.isMobile = true;
-  } else {
-    $rootScope.isMobile == false;
-  }
 }
 
 angular.module('app', [
-        'ngCookies',
-        'ui.router',
-        'ui.bootstrap',
-        'toastr',
-        'ngFileUpload',
-        'ngImgCrop',
-        'app.components',
-        'app.pages'
-    ])
-    .config(appConfig)
-    .constant('URL_CONFIG', window.urlConfig)
-    .run(appRun);
+      'ngCookies',
+      'ui.router',
+      'ui.bootstrap',
+      'toastr',
+      'ngFileUpload',
+      'ngImgCrop',
+      'app.components',
+      'app.pages',
+  'app.mobileUserCenter'
+  ])
+  .config(appConfig)
+  .constant('URL_CONFIG', window.urlConfig)
+  .constant('IS_MOBILE', window.isMobile)
+  .run(appRun);

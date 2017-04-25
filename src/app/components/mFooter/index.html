@@ -1,15 +1,15 @@
 <div class="mfooter">
   <ul class="mfooter__menu">
-    <li ng-class="{active: $state.includes('course')}">
+    <li ng-class="{active: $state.includes('app.pages.course')}">
       <a class="mfooter__dropdown-toggle"><i class="iconfont icon-two-line"></i>全部课程</a>
       <ul class="mfooter__dropdown-menu">
-        <li><a ui-sref="course.ielts" ui-sref-active="active">雅思</a></li>
-        <li><a ui-sref="course.toefl" ui-sref-active="active">托福</a></li>
-        <li><a ui-sref="course.sat" ui-sref-active="active">SAT</a></li>
+        <li><a ui-sref="app.pages.course.ielts" ui-sref-active="active">雅思</a></li>
+        <li><a ui-sref="app.pages.course.toefl" ui-sref-active="active">托福</a></li>
+        <li><a ui-sref="app.pages.course.sat" ui-sref-active="active">SAT</a></li>
       </ul>
     </li>
     <li ui-sref-active="active">
-      <a ui-sref="staff">师资力量</a>
+      <a ui-sref="app.pages.staff">师资力量</a>
     </li>
     <li>
       <a class="mfooter__dropdown-toggle"><i class="iconfont icon-two-line"></i>咨询小U</a>
@@ -20,7 +20,7 @@
       </ul>
     </li>
     <li ui-sref-active="active">
-      <a ui-sref="case">成功案例</a>
+      <a ui-sref="app.pages.case">成功案例</a>
     </li>
   </ul>
 </div>

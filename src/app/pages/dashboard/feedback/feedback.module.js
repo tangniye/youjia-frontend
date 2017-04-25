@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.feedback', {
+      .state('app.pages.dashboard.feedback', {
         url: '/feedback',
         title: '学习反馈',
         templateUrl: '/app/pages/dashboard/feedback/feedback.html',

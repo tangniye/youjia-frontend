@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.personal', {
+      .state('app.pages.dashboard.personal', {
         url: '/personal',
         title: '个人信息',
         templateUrl: '/app/pages/dashboard/personal/personal.html',
