@@ -69,5 +69,5 @@
 
   }
 
-  angular.module('app.pages.dashboard.feedbackCard').controller('feedbackCardModelCtrl', feedbackCardModelCtrl);
+  angular.module('app.pages.dashboard.feedback.card').controller('feedbackCardModelCtrl', feedbackCardModelCtrl);
 })();

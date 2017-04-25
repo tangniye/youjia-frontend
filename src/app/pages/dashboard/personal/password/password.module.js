@@ -7,14 +7,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('app.pages.dashboard.password', {
-        url: '/personal/password',
+      .state('app.pages.dashboard.personal.password', {
+        url: '/password',
         title: '修改密码',
-        templateUrl: '/app/pages/dashboard/password/password.html',
+        templateUrl: '/app/pages/dashboard/personal/password/password.html',
         controller: 'passwordCtrl'
       });
   }
 
-  angular.module('app.pages.dashboard.password', [])
+  angular.module('app.pages.dashboard.personal.password', [])
     .config(routeConfig);
 })();

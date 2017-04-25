@@ -94,5 +94,5 @@
 
   }
 
-  angular.module('app.pages.dashboard.scheduleInfo').controller('scheduleModelCtrl', scheduleModelCtrl);
+  angular.module('app.pages.dashboard.schedule.info').controller('scheduleModelCtrl', scheduleModelCtrl);
 })();

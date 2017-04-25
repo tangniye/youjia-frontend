@@ -1,6 +1,6 @@
-<ul class="nav nav-tabs">
-  <li role="presentation" ui-sref-active="active"><a ui-sref="dashboard.schedule.student">按学生排课</a></li>
-  <li role="presentation" ui-sref-active="active"><a ui-sref="dashboard.schedule.teacher">老师课表</a></li>
+<ul class="nav nav-tabs" ng-hide="$state.includes('app.pages.dashboard.schedule.info')">
+  <li role="presentation" ui-sref-active="active"><a ui-sref="app.pages.dashboard.schedule.student">按学生排课</a></li>
+  <li role="presentation" ui-sref-active="active"><a ui-sref="app.pages.dashboard.schedule.teacher">老师课表</a></li>
 
   <div class="table-tool">
     <div class="input-group">

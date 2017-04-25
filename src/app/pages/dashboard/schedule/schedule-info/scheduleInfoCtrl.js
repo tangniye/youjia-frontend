@@ -9,7 +9,7 @@
     var vm = $scope;
     var schedule_model_template_url = 'app/pages/dashboard/scheduleInfo/schedule-model/schedule-model.html';
 
-    var userid = $stateParams.id;
+    vm.userid = $stateParams.id;
     vm.role = $stateParams.role;
 
     vm.edit = $cookies.get('scheduleOption') === 'edit' ? true : false;
@@ -91,7 +91,7 @@
         add: true,
         data: data,
         col: col,
-        userid: userid,
+        userid: vm.userid,
         getdata: callServer
       })
     }
@@ -113,12 +113,12 @@
           Schedule.delete(id).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
           });
-          callServer(userid);
+          callServer(vm.userid);
         }
       });
     }
 
-    callServer(userid);
+    callServer(vm.userid);
 
     function callServer(userid) {
       Schedule.getByUserId(userid).then(function (res) {
@@ -218,10 +218,10 @@
       Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认清空该学生的所有课程吗?'})
         .result.then('', function (data) {
         if (data === 'ok') {
-          Schedule.deleteAll(userid).then(function (res) {
+          Schedule.deleteAll(vm.userid).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
           });
-          callServer(userid);
+          callServer(vm.userid);
         }
       });
     };
@@ -229,15 +229,15 @@
     vm.return = function () {
       switch (vm.role) {
         case 'student':
-          $state.go('dashboard.schedule.student');
+          $state.go('app.pages.dashboard.schedule.student');
           break;
         case 'teacher':
-          $state.go('dashboard.schedule.teacher');
+          $state.go('app.pages.dashboard.schedule.teacher');
           break;
       }
     }
 
   }
 
-  angular.module('app.pages.dashboard.scheduleInfo').controller('scheduleInfoCtrl', scheduleInfoCtrl);
+  angular.module('app.pages.dashboard.schedule.info').controller('scheduleInfoCtrl', scheduleInfoCtrl);
 })();

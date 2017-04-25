@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function personalCtrl($scope, User) {
+  function personalInfoCtrl($scope, User) {
     var vm = $scope;
 
     // vm.data = {
@@ -80,5 +80,5 @@
 
   }
 
-  angular.module('app.pages.dashboard.personal').controller('personalCtrl', personalCtrl);
+  angular.module('app.pages.dashboard.personal.info').controller('personalInfoCtrl', personalInfoCtrl);
 })();

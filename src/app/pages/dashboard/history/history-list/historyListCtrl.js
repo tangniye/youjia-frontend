@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function historyCtrl($scope, $state, Common, toastr, User, History) {
+  function historyListCtrl($scope, $state, Common, toastr, User, History) {
     var vm = $scope;
 
     vm.tableData = [
@@ -78,7 +78,7 @@
     }
 
     function view(data) {
-      $state.go('dashboard.historyInfo', {id: data.id});
+      $state.go('app.pages.dashboard.history.info', {id: data.id});
     }
 
     vm.deleteAll = function () {
@@ -127,5 +127,5 @@
 
   }
 
-  angular.module('app.pages.dashboard.history').controller('historyCtrl', historyCtrl);
+  angular.module('app.pages.dashboard.history.list').controller('historyListCtrl', historyListCtrl);
 })();

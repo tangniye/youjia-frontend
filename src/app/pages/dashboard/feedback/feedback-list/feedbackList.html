@@ -1,0 +1,10 @@
+<div class="table-tool">
+  <div class="title">学习反馈</div>
+  <div class="input-group">
+    <input type="search" class="form-control" placeholder="姓名或手机号" ng-model="tableState.search.key" ng-enter="search()"
+           ng-focus="focus()">
+    <span class="input-group-addon" ng-click="search()">搜索</span>
+  </div>
+</div>
+
+<re-table></re-table>
