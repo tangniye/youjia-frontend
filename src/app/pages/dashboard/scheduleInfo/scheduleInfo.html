@@ -1,7 +1,8 @@
 <div class="info-panel">
   <div class="table-tool">
     <div class="title mr10"><span ng-if="role === 'student'">学生</span><span ng-if="role === 'teacher'">老师</span>课程表</div>
-    <button class="btn btn-green-outline mr10" ng-click="export()"><i class="iconfont icon-print mr10"></i>导出</button>
+    <a class="btn btn-green-outline mr10" href="/export.html#/?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>
+    <!--<a class="btn btn-green-outline mr10" href="/export/user/coursetable?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>-->
     <button class="btn btn-green-outline" ng-click="deleteAll()" ng-if="edit"><i class="iconfont icon-brush mr10"></i>清空反馈</button>
     <button class="btn btn-green-outline fr" ng-click="return()"><i class="iconfont icon-angle-left mr10"></i>返回</button>
   </div>

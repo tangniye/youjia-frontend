@@ -1,0 +1,135 @@
+@font-color: #333c4b;
+@font-sub-color: #8391a6;
+@font-light-color: #b4bcc8;
+@light-grey: #f7f8fd;
+@images-root: '../assets/image';
+
+@export-margin-width: 100px;
+@export-header-height: 120px;
+
+.main-color {
+  color: @font-color;
+}
+
+.sub-color {
+  color: @font-sub-color;
+}
+
+.export-body {
+  padding: 0 @export-margin-width;
+  color: @font-color;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  h3 {
+    line-height: 120px;
+    margin: 0;
+  }
+  .logo {
+    background: url("@{images-root}/logo.png") no-repeat;
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+section .title {
+  height: 88px;
+  line-height: 88px;
+  background-color: @light-grey;
+  margin: 0 -@export-margin-width;
+  padding: 0 @export-margin-width;
+}
+
+.content {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.profile-section {
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    label {
+      width: 120px;
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+    span {
+      color: @font-sub-color;
+    }
+  }
+}
+
+.schedule-section {
+
+  .table > tbody h3 {
+    font-weight: normal;
+  }
+
+  .table > thead > tr,
+  .table > tbody > tr {
+    border: 1px solid @font-light-color;
+  }
+
+  .table > thead > tr > th {
+    border-bottom: 0;
+  }
+
+  .table > thead > tr > th,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > td {
+    border-top: 0;
+    text-align: center;
+  }
+
+  .table > tbody > tr > td {
+    height: 120px;
+    vertical-align: middle;
+  }
+}
+
+.feedback-section {
+  .card-box-container {
+    width: 50%;
+    float: left;
+    margin-bottom: 30px;
+
+    &:nth-of-type(odd) {
+      padding-right: 15px;
+    }
+    &:nth-of-type(even) {
+      padding-left: 15px;
+    }
+  }
+
+  .card-box {
+    border: 1px solid @font-light-color;
+    min-height: 672px;
+  }
+
+  .card-box-header {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    border-bottom: 1px solid @font-light-color;
+  }
+  .card-box-body {
+    padding: 30px 20px;
+
+    .row {
+      margin-bottom: 30px;
+    }
+  }
+
+}

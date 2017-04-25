@@ -7,13 +7,13 @@
   <div class="info-panel-body">
     <div class="col-md-6 mb20" ng-repeat="item in baseColumns track by $index">
       <label ng-bind="item.name"></label>
-      <span ng-bind="data[item.col]"></span>
+      <span class="txt" ng-bind="data[item.col]"></span>
     </div>
 
     <div class="inline-block mt10">
       <div class="col-md-6 mb20" ng-repeat="item in proColumns track by $index">
         <label ng-bind="item.name"></label>
-        <span ng-bind="data[item.col]"></span>
+        <span class="txt" ng-bind="data[item.col]"></span>
       </div>
     </div>
   </div>

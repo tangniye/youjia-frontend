@@ -28,6 +28,10 @@ gulp.task('styles404', function () {
   return buildSingleLess(path.join(conf.paths.src, '/less/404.less'));
 });
 
+gulp.task('stylesExport', function () {
+  return buildSingleLess(path.join(conf.paths.src, '/less/export.less'));
+});
+
 var buildStyles = function () {
   var lessOptions = {
     style: 'expanded'
@@ -36,7 +40,8 @@ var buildStyles = function () {
   var injectFiles = gulp.src([
     path.join(conf.paths.src, '/less/**/*.less'),
     '!' + path.join(conf.paths.src, '/less/404.less'),
-    '!' + path.join(conf.paths.src, '/less/auth.less')
+    '!' + path.join(conf.paths.src, '/less/auth.less'),
+    '!' + path.join(conf.paths.src, '/less/export.less')
   ], {read: false});
 
   var injectOptions = {

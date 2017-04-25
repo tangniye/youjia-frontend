@@ -10,9 +10,9 @@
 
     var feedback_card_model_template_url = 'app/pages/dashboard/feedbackCard/feedback-card-model/feedback-card-model.html';
 
-    var userid = $stateParams.id;
+    vm.userid = $stateParams.id;
     var cur_user = {
-      id: userid,
+      id: vm.userid,
       chinese_name: 'test'
     };
 
@@ -54,7 +54,7 @@
       var query = {
         page: vm.pagination.page,
         page_size: vm.pagination.page_size,
-        user_id: userid
+        user_id: vm.userid
       };
 
       Feedback.getList(query).then(function (res) {
@@ -101,7 +101,7 @@
       Common.model.promptModel('deleteModelCtrl', 'app/components/delete-model/delete-model.html', 'sm', true, 'delete-modal', {prompt: '确认清空该学生的所有学习反馈吗?'})
         .result.then('', function (data) {
         if (data === 'ok') {
-          Feedback.deleteAll(userid).then(function (res) {
+          Feedback.deleteAll(vm.userid).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
           });
           callServer();

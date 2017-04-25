@@ -1,6 +1,8 @@
 (function () {
     'use strict';
-    angular.module('login', [
+
+  /** @ngInject */
+  angular.module('login', [
             'ngResource',
             'ngCookies'
 
