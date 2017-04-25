@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.history', {
+      .state('app.pages.dashboard.history', {
         url: '/history',
         title: '历史信息',
         templateUrl: '/app/pages/dashboard/history/history.html',

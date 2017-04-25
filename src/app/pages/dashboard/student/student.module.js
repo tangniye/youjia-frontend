@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.student', {
+      .state('app.pages.dashboard.student', {
         url: '/student',
         title: '学生信息',
         templateUrl: '/app/pages/dashboard/student/student.html',

@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard', {
+      .state('app.pages.dashboard', {
         abstract: true,
         url: '/dashboard',
         title: '个人中心',

@@ -53,4 +53,14 @@ urlConfig.SCHEDULE_TEACHER_LIST = urlConfig.SCHEDULE + '/teachers';
 // 获取指定用户课程表
 urlConfig.SCHEDULE_BY_USER = urlConfig.SCHEDULE + '/tables';
 
+function getIsMobile() {
+  if ($(window).width() < 768) {
+    return true;
+  } else {
+    return false
+  }
+}
+
 window.urlConfig = urlConfig;
+window.isMobile = getIsMobile();
+

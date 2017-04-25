@@ -7,7 +7,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('dashboard.feedbackCard', {
+      .state('app.pages.dashboard.feedbackCard', {
         url: '/feedback/:id',
         title: '学习反馈',
         templateUrl: '/app/pages/dashboard/feedbackCard/feedbackCard.html',

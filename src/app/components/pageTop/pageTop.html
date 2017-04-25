@@ -1,27 +1,27 @@
 <div class="page-top clearfix">
   <div class="container">
-    <a class="page-top-logo" ui-sref="index">优加教育</a>
+    <a class="page-top-logo" ui-sref="app.pages.index">优加教育</a>
     <div class="page-top-menu fl clearfix">
       <ul>
         <li ui-sref-active="active">
-          <a ui-sref="index">首&emsp;页</a>
+          <a ui-sref="app.pages.index">首&emsp;页</a>
         </li>
         <li ui-sref-active="active">
-          <a ui-sref="staff">师资团队</a>
+          <a ui-sref="app.pages.staff">师资团队</a>
         </li>
-        <li ng-class="{active: $state.includes('course')}" class="course-menu-trigger">
+        <li ng-class="{active: $state.includes('app.pages.course')}" class="course-menu-trigger">
           <a>课程列表<i class="fa fa-caret-down ml5"></i></a>
           <ul class="dropdown-menu">
-            <li><a ui-sref="course.ielts" ui-sref-active="active">雅思</a></li>
-            <li><a ui-sref="course.toefl" ui-sref-active="active">托福</a></li>
-            <li><a ui-sref="course.sat" ui-sref-active="active">SAT</a></li>
+            <li><a ui-sref="app.pages.course.ielts" ui-sref-active="active">雅思</a></li>
+            <li><a ui-sref="app.pages.course.toefl" ui-sref-active="active">托福</a></li>
+            <li><a ui-sref="app.pages.course.sat" ui-sref-active="active">SAT</a></li>
           </ul>
         </li>
         <li ui-sref-active="active">
-          <a ui-sref="case">成功案例</a>
+          <a ui-sref="app.pages.case">成功案例</a>
         </li>
         <li ui-sref-active="active">
-          <a ui-sref="about">关于我们</a>
+          <a ui-sref="app.pages.about">关于我们</a>
         </li>
       </ul>
     </div>
@@ -32,7 +32,7 @@
         <i class="fa fa-caret-down"></i>
       </div>
       <ul role="menu" class="dropdown-menu" uib-dropdown-menu aria-labelledby="split-button" ng-if="me">
-        <li role="menuitem"><a ui-sref="dashboard.personal">个人中心</a></li>
+        <li role="menuitem"><a ui-sref="app.pages.dashboard.personal">个人中心</a></li>
         <li role="menuitem"><a ng-click="logout()">退出</a></li>
       </ul>
     </div>
