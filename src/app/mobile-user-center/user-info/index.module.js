@@ -12,6 +12,7 @@
 
   }
 
-  angular.module('app.mobileUserCenter.userInfo', [])
+  angular.module('app.mobileUserCenter.userInfo', [
+  ])
     .config(routeConfig);
 })();

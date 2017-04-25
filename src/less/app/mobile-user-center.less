@@ -1,35 +1,76 @@
 .mobile-user-center {
+  font-size: 16px;
+  color: @font-color;
   .mobile-user-center__header {
     position: relative;
     width: 100%;
-    height: 160px;
     background: @primary-blue url("@{images-root}/mobile-user-center-header-bg.png") no-repeat top center;
     background-size: cover;
+    color: @primary-white;
   }
   .mobile-user-center__header__top-links {
     position: absolute;
+    top: 1em;
     display: flex;
-    width: 100%;
     justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    a {
+      display: block;
+      color: @primary-white;
+      padding: 0.5em 0.8em;
+    }
+    .home-link {
+      border-radius: 0 2em 2em 0;
+      background-color: rgba(255,255,255,0.12);
+    }
+    .assistant-link {
+      text-decoration: underline;
+    }
+
   }
   .mobile-user-center__header__user {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 1.4em 0;
     .user-header-img {
-      padding: 10px;
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 0 1em 0;
       border-radius: 50%;
       background-color: #fff;
+      text-align: center;
+      &:after {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        content: '';
+        display: block;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,0.12);
+      }
       img {
+        position: relative;
+        top: 20px;
+        left: 4px;
         width: 40px;
         height: 40px;
       }
     }
     .user-name {
       position: relative;
+      margin: 0;
+      font-size: 16px;
+      font-weight: normal;
       button {
         position: absolute;
+        top: -50%;
+        margin-left: 10px;
       }
     }
   }
@@ -37,12 +78,125 @@
     display: flex;
     justify-content: space-between;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
     li {
-      width: 100px;
-      text-align: center;
+      position: relative;
+      width: 32%;
+      background-color: rgba(255,255,255,0.12);
+      a {
+        display: block;
+        padding: 12px 0;
+        text-align: center;
+        vertical-align: middle;
+        color: @primary-white;
+        .iconfont {
+          display: inline-block;
+          margin-right: 5px;
+        }
+      }
+      &.active {
+        background-color: @primary-green;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          border: solid 8px transparent;
+          border-bottom: solid 8px @primary-grey;
+          z-index: 20;
+        }
+      }
     }
   }
   .mobile-user-center__content {
+    padding: 30px 16px;
+    background-color: @primary-grey;
+    .user-info-section {
+      padding: 30px;
+      background: @primary-white;
+      .user-info-item {
+        > * {
+          display: block;
+          margin-bottom: 20px;
+        }
+        label {
+          margin-bottom: 10px;
+          font-size: 14px;
+          font-weight: normal;
+          color: @font-sub-color;
+        }
+
+      }
+    }
+    .user-schedule-section {
+      .user-schedule-table {
+        width: 100%;
+        background: @primary-white;
+        margin: 0 0 30px 0;
+        font-size: 14px;
+        color: #8391a6;
+        thead {
+          background: #a9b6d0;
+          color: @primary-white;
+          th {
+            font-size: 0.9em;
+            font-weight: normal;
+          }
+          th:first-child {
+            font-size: 1.4em;
+          }
+        }
+        th,td {
+          text-align: center;
+          padding: 10px;
+        }
+        td:last-child {
+          span {
+            display: block;
+            &:first-child {
+              font-size: 1.4em;
+              color: @font-color;
+            }
+          }
+        }
+      }
+    }
+    .user-feedback-section {
+      .user-feedback-block {
+      }
+      .user-feedback-block__header {
+        background-color: #a9b6d0;
+        padding: 10px;
+        color: @primary-white;
+        font-size: 14px;
+      }
+      .user-feedback-block__content {
+        padding: 20px;
+        background-color: @primary-white;
+      }
+      .feedback-item {
+        > * {
+          display: block;
+          margin-bottom: 20px;
+        }
+        label {
+          margin-bottom: 10px;
+          font-size: 14px;
+          font-weight: normal;
+          color: @font-sub-color;
+        }
+        span, p {
+          color: @font-color;
+        }
+      }
+      .user-feedback-section__footer {
+        margin: 40px;
+        color: @font-sub-color;
+        text-align: center;
+      }
+    }
 
   }
 }
