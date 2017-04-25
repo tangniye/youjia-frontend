@@ -6,10 +6,12 @@ html, body {
   //font-size: @font-size-percent;
   color: @font-color;
 }
+
 a {
   text-decoration: none;
   cursor: pointer;
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
   }
 }
@@ -33,15 +35,24 @@ ul {
 }
 
 //>= 1440px
-@media (min-width: @screen-xl-min) { }
+@media (min-width: @screen-xl-min) {
+}
+
 // < 1200px
-@media (max-width: @screen-md-max) {  }
+@media (max-width: @screen-md-max) {
+}
+
 // < 992px
-@media (max-width: @screen-sm-max) {  }
+@media (max-width: @screen-sm-max) {
+}
+
 // <768px
-@media (max-width: @screen-xs-max) {  }
+@media (max-width: @screen-xs-max) {
+}
+
 // < 480px
-@media (max-width: @screen-xxs-max) {  }
+@media (max-width: @screen-xxs-max) {
+}
 
 // injector
 // endinjector

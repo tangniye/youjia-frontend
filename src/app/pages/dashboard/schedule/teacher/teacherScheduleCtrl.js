@@ -52,7 +52,7 @@
 
     function view(data) {
       $cookies.put('scheduleOption', 'view');
-      $state.go('dashboard.scheduleInfo', {id: data.id, role: 'teacher'})
+      $state.go('app.pages.dashboard.scheduleInfo', {id: data.id, role: 'teacher'})
     }
 
     vm.callServer = function callServer(queryStr) {
@@ -67,7 +67,7 @@
       vm.tableState.search.key = data;
       vm.pipe();
     })
-    
+
   }
 
   angular.module('app.pages.dashboard.schedule.teacher').controller('teacherScheduleCtrl', teacherScheduleCtrl);

@@ -107,7 +107,7 @@
         "page": 1
       };
 
-      $state.go('dashboard.feedbackCard', {id: data.id, data: res});
+      $state.go('app.pages.dashboard.feedbackCard', {id: data.id, data: res});
 
     }
 

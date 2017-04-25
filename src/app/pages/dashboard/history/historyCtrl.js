@@ -78,7 +78,7 @@
     }
 
     function view(data) {
-      $state.go('dashboard.historyInfo', {id: data.id});
+      $state.go('app.pages.dashboard.historyInfo', {id: data.id});
     }
 
     vm.deleteAll = function () {

@@ -229,10 +229,10 @@
     vm.return = function () {
       switch (vm.role) {
         case 'student':
-          $state.go('dashboard.schedule.student');
+          $state.go('app.pages.dashboard.schedule.student');
           break;
         case 'teacher':
-          $state.go('dashboard.schedule.teacher');
+          $state.go('app.pages.dashboard.schedule.teacher');
           break;
       }
     }
