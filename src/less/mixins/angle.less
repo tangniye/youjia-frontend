@@ -1,0 +1,30 @@
+.angle() {
+  content: '';
+  display: inline-flex;
+  width: 0;
+  height: 0;
+}
+.angle-left(@border-width, @angle-color, @bg-color) {
+  .angle();
+  border-top: solid @border-width @bg-color;
+  border-bottom: solid @border-width @bg-color;
+  border-left: solid @border-width @angle-color;
+}
+.angle-right(@border-width, @angle-color, @bg-color) {
+  .angle();
+  border-top: solid @border-width @bg-color;
+  border-bottom: solid @border-width @bg-color;
+  border-right: solid @border-width @angle-color;
+}
+.angle-top(@border-width, @angle-color, @bg-color) {
+  .angle();
+  border-left: solid @border-width @bg-color;
+  border-right: solid @border-width @bg-color;
+  border-bottom: solid @border-width @angle-color;
+}
+.angle-bottom(@border-width, @angle-color, @bg-color) {
+  .angle();
+  border-left: solid @border-width @bg-color;
+  border-right: solid @border-width @bg-color;
+  border-top: solid @border-width @angle-color;
+}
