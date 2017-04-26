@@ -11,7 +11,13 @@
         abstract: true,
         url: '/site',
         title: '站点信息',
-        templateUrl: '/app/pages/dashboard/site/site.html'
+        templateUrl: '/app/pages/dashboard/site/site.html',
+        data: {
+          permissions: {
+            only: 'ADMIN',
+            redirectTo: 'app.pages.dashboard.personal.info'
+          }
+        }
       });
   }
 

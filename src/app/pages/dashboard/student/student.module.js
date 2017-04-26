@@ -11,7 +11,13 @@
         url: '/student',
         title: '学生信息',
         templateUrl: '/app/pages/dashboard/student/student.html',
-        controller: 'studentCtrl'
+        controller: 'studentCtrl',
+        data: {
+          permissions: {
+            only: 'ADMIN',
+            redirectTo: 'app.pages.dashboard.personal.info'
+          }
+        }
       });
   }
 

@@ -12,7 +12,13 @@
         url: '/dashboard',
         title: '个人中心',
         templateUrl: '/app/pages/dashboard/dashboard.html',
-        controller: 'dashboardCtrl'
+        controller: 'dashboardCtrl',
+        data: {
+          permissions: {
+            only: 'AUTHORIZED',
+            redirectTo: 'app.pages.index'
+          }
+        }
       });
 
   }

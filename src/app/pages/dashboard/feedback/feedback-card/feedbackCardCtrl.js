@@ -5,10 +5,10 @@
   'use strict';
 
   /** @ngInject */
-  function feedbackCardCtrl($scope, $stateParams, $state, Feedback, Common, toastr) {
+  function feedbackCardCtrl($scope, $stateParams, Feedback, Common, toastr) {
     var vm = $scope;
 
-    var feedback_card_model_template_url = 'app/pages/dashboard/feedbackCard/feedback-card-model/feedback-card-model.html';
+    var feedback_card_model_template_url = 'app/pages/dashboard/feedback/feedback-card/feedback-card-model/feedback-card-model.html';
 
     vm.userid = $stateParams.id;
     var cur_user = {

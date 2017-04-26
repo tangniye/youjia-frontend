@@ -10,7 +10,13 @@
       .state('app.pages.dashboard.history', {
         abstract: true,
         title: '历史信息',
-        templateUrl: '/app/pages/dashboard/history/history.html'
+        templateUrl: '/app/pages/dashboard/history/history.html',
+        data: {
+          permissions: {
+            only: 'ADMIN',
+            redirectTo: 'app.pages.dashboard.personal.info'
+          }
+        }
       });
   }
 

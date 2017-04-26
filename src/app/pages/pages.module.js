@@ -13,8 +13,8 @@
         'app': {
           templateUrl: '/app/pages/index.html'
         }
-      },
-    })
+      }
+    });
 
     $urlRouterProvider.otherwise('/index');
 
@@ -29,7 +29,7 @@
     'app.pages.case',
     'app.pages.course',
     'app.pages.dashboard',
-    'app.pages.password',
+    'app.pages.password'
   ])
     .config(routeConfig);
 

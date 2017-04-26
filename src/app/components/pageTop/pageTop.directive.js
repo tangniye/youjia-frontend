@@ -22,7 +22,7 @@
           User.logout().then(function () {
             $cookies.remove('me');
             $rootScope.me = null;
-            $state.go('index');
+            $state.go('app.pages.index');
           })
         }
 

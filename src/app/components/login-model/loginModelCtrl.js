@@ -24,6 +24,7 @@
         $cookies.putObject('me', res);
         $rootScope.me = res;
         $uibModalInstance.close();
+        $state.go('app.pages.index');
       }, function (res) {
         vm.error.flag = true;
         vm.error.message = res.message;
@@ -35,7 +36,7 @@
     };
 
     vm.forget = function () {
-      $state.go('password');
+      $state.go('app.pages.password');
       $uibModalInstance.close();
     }
   }

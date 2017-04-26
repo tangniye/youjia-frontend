@@ -11,7 +11,13 @@
         url: '/teacher',
         title: '老师课表',
         templateUrl: '/app/pages/dashboard/schedule/teacher/teacherSchedule.html',
-        controller: 'teacherScheduleCtrl'
+        controller: 'teacherScheduleCtrl',
+        data: {
+          permissions: {
+            only: 'ADMIN',
+            redirectTo: 'app.pages.dashboard.personal.info'
+          }
+        }
       });
   }
 

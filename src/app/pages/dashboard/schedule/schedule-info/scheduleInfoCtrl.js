@@ -7,10 +7,12 @@
   /** @ngInject */
   function scheduleInfoCtrl($scope, $stateParams, $cookies, $state, Schedule, Common, toastr) {
     var vm = $scope;
-    var schedule_model_template_url = 'app/pages/dashboard/scheduleInfo/schedule-model/schedule-model.html';
+    var schedule_model_template_url = 'app/pages/dashboard/schedule/schedule-info/schedule-model/schedule-model.html';
 
     vm.userid = $stateParams.id;
     vm.role = $stateParams.role;
+    console.log(vm.userid)
+    console.log(vm.role)
 
     vm.edit = $cookies.get('scheduleOption') === 'edit' ? true : false;
 
@@ -78,11 +80,11 @@
 
     function courseHtml(data) {
       if (!data) {
-        return '<i class="iconfont icon-pencil-circle-o" ng-click="(item.handler[0])(data,item.col)" ng-if="edit" title="编辑"></i>';
+        return '<i class="iconfont icon-pencil-circle-o" ng-click="(item.handler[0])(data,item.col)" ng-if="edit" title="编辑" permission permission-only="\'ADMIN\'"></i>';
       }
       var html = '<p class="main-color font24">' + data.course_name + '</p>' +
-        '<p>' + data.chinese_name + '<i class="iconfont icon-note ml5" ng-click="(item.handler[1])(data,item.col)" title="编辑" ng-if="edit"></i>' +
-        '<i class="iconfont icon-delete ml5" ng-click="(item.handler[2])(data,item.col)" title="删除" ng-if="edit"></i></p>';
+        '<p>' + data.chinese_name + '<i class="iconfont icon-note ml5" ng-click="(item.handler[1])(data,item.col)" title="编辑" ng-if="edit" permission permission-only="\'ADMIN\'"></i>' +
+        '<i class="iconfont icon-delete ml5" ng-click="(item.handler[2])(data,item.col)" title="删除" ng-if="edit" permission permission-only="\'ADMIN\'"></i></p>';
       return html;
     }
 

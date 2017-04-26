@@ -9,19 +9,30 @@
     <li ng-class="{active:$state.includes('app.pages.dashboard.personal')}">
       <a ui-sref="app.pages.dashboard.personal.info"><i class="iconfont icon-user mr15"></i>个人信息</a>
     </li>
-    <li ui-sref-active="active">
+    <li ui-sref-active="active" permission permission-only="'ADMIN'">
       <a ui-sref="app.pages.dashboard.student"><i class="iconfont icon-trencher-cap mr15"></i>学生信息</a>
     </li>
-    <li ng-class="{active:$state.includes('app.pages.dashboard.history')}">
+    <li ng-class="{active:$state.includes('app.pages.dashboard.history')}" permission permission-only="'ADMIN'">
       <a ui-sref="app.pages.dashboard.history.list"><i class="iconfont icon-document mr15"></i>历史信息</a>
     </li>
     <li ng-class="{active:$state.includes('app.pages.dashboard.schedule')}">
-      <a ui-sref="app.pages.dashboard.schedule.student"><i class="iconfont icon-calender-2 mr15"></i>课&ensp;程&ensp;表</a>
+      <a ui-sref="app.pages.dashboard.schedule.student" permission permission-only="'ADMIN'">
+        <i class="iconfont icon-calender-2 mr15"></i>课&ensp;程&ensp;表
+      </a>
+      <a ui-sref="app.pages.dashboard.schedule.info({id:me.id,role:'student'})" permission
+         permission-only="'STUDENT'">
+        <i class="iconfont icon-calender-2 mr15"></i>课&ensp;程&ensp;表
+      </a>
     </li>
     <li ng-class="{active:$state.includes('app.pages.dashboard.feedback')}">
-      <a ui-sref="app.pages.dashboard.feedback.list"><i class="iconfont icon-paper-plane mr15"></i>学习反馈</a>
+      <a ui-sref="app.pages.dashboard.feedback.list" permission permission-only="'ADMIN'">
+        <i class="iconfont icon-paper-plane mr15"></i>学习反馈
+      </a>
+      <a ui-sref="app.pages.dashboard.feedback.card({id:me.id})" permission permission-only="'STUDENT'">
+        <i class="iconfont icon-paper-plane mr15"></i>学习反馈
+      </a>
     </li>
-    <li ng-class="{active:$state.includes('app.pages.dashboard.site')}">
+    <li ng-class="{active:$state.includes('app.pages.dashboard.site')}" permission permission-only="'ADMIN'">
       <a ui-sref="app.pages.dashboard.site.teacher"><i class="iconfont icon-setting mr15"></i>站点信息</a>
     </li>
   </ul>

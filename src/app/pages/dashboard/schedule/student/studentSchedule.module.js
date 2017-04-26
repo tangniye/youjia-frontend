@@ -11,7 +11,13 @@
         url: '/student',
         title: '按学生排课',
         templateUrl: '/app/pages/dashboard/schedule/student/studentSchedule.html',
-        controller: 'studentScheduleCtrl'
+        controller: 'studentScheduleCtrl',
+        data: {
+          permissions: {
+            only: 'ADMIN',
+            redirectTo: 'app.pages.dashboard.personal.info'
+          }
+        }
       });
   }
 
