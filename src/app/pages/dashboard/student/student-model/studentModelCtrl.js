@@ -5,20 +5,22 @@
   'use strict';
 
   /** @ngInject */
-  function studentModelCtrl($scope, $uibModalInstance, User) {
+  function studentModelCtrl($scope, $uibModalInstance, User, Common) {
     var vm = $scope;
+    var success_add_model_template_url = 'app/pages/dashboard/student/success-add-model/success-add-model.html';
+
     vm.gradeOptions = [
-      {value:'初一',group:'初中'},
-      {value:'初二',group:'初中'},
-      {value:'初三',group:'初中'},
-      {value:'高一',group:'高中'},
-      {value:'高二',group:'高中'},
-      {value:'高三',group:'高中'},
-      {value:'大一',group:'大学'},
-      {value:'大二',group:'大学'},
-      {value:'大三',group:'大学'},
-      {value:'大四',group:'大学'},
-      {value:'其他',group:'其他'}
+      {value: '初一', group: '初中'},
+      {value: '初二', group: '初中'},
+      {value: '初三', group: '初中'},
+      {value: '高一', group: '高中'},
+      {value: '高二', group: '高中'},
+      {value: '高三', group: '高中'},
+      {value: '大一', group: '大学'},
+      {value: '大二', group: '大学'},
+      {value: '大三', group: '大学'},
+      {value: '大四', group: '大学'},
+      {value: '其他', group: '其他'}
     ];
     vm.courseOptions = ['托福', '雅思', 'SAT', 'GCSE', 'GRE', 'GMAT', 'LSAT', 'AP', 'IB', 'CRITICAL READING', '其他'];
     vm.dateOptions = {
@@ -43,6 +45,7 @@
           User.addStudent(item).then(function (res) {
             $uibModalInstance.close();
             vm.getdata();
+            Common.model.promptModel('successAddModelCtrl', success_add_model_template_url, 'md', true, 'common-modal');
           });
         }
 
