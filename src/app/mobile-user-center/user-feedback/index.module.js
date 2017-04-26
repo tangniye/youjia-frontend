@@ -6,8 +6,15 @@
     $stateProvider
       .state('app.mobileUserCenter.userFeedback', {
         url: '/feedback',
-        title: '用户信息',
-        templateUrl: '/app/mobile-user-center/user-feedback/index.html',
+        title: '学习反馈',
+        views: {
+          'mobileUserCenterHeader': {
+            templateUrl: '/app/mobile-user-center/header.html'
+          },
+          'mobileUserCenterContent': {
+            templateUrl: '/app/mobile-user-center/user-feedback/index.html',
+          }
+        }
       });
 
   }

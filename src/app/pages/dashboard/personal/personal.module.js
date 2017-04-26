@@ -17,7 +17,7 @@
 
   angular.module('app.pages.dashboard.personal', [
       'app.pages.dashboard.personal.info',
-      'app.pages.dashboard.personal.password'
+      'app.pages.dashboard.personal.updatePassword'
     ])
     .config(routeConfig);
 })();

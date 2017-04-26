@@ -7,7 +7,14 @@
       .state('app.mobileUserCenter.userInfo', {
         url: '/info',
         title: '用户信息',
-        templateUrl: '/app/mobile-user-center/user-info/index.html',
+        views: {
+          'mobileUserCenterHeader': {
+            templateUrl: '/app/mobile-user-center/header.html'
+          },
+          'mobileUserCenterContent': {
+            templateUrl: '/app/mobile-user-center/user-info/index.html',
+          }
+        }
       });
 
   }
