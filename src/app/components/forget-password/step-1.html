@@ -1,0 +1,47 @@
+<form name="form" ng-submit="submit(item)" novalidate>
+  <div class="form-group form-group--flex"
+       ng-class="{'has-error': form.phone.$invalid && (form.phone.$dirty||form.$submitted)}">
+    <label class="form-group__label">用户名：</label>
+    <div class="form-group__input">
+      <input type="text" class="form-control" name="phone" placeholder="用户名为您的手机号" ng-model="item.phone" required>
+    </div>
+    <div class="form-group__help">
+      <div class="form-group__help__error">
+        <i class="fa fa-times-circle mr5"></i>
+        <span>用户名不能为空</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group form-group--flex"
+       ng-class="{'has-error': form.study_country.$invalid && (form.study_country.$dirty||form.$submitted)}">
+    <label class="form-group__label">期望留学国家：</label>
+    <div class="form-group__input">
+
+      <input type="text" class="form-control" name="study_country" placeholder="国家中文名称"
+             ng-model="item.study_country" required>
+    </div>
+    <div class="form-group__help">
+      <div class="form-group__help__error">
+        <i class="fa fa-times-circle mr5"></i>
+        <span>国家不能为空</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group form-group--flex"
+       ng-class="{'has-error': form.parent_phone.$invalid && (form.parent_phone.$dirty||form.$submitted)}">
+    <label class="form-group__label">家长手机号码：</label>
+    <div class="form-group__input">
+      <input type="text" class="form-control" name="parent_phone" placeholder="您家长的手机号"
+             ng-model="item.parent_phone" required>
+    </div>
+    <div class="form-group__help">
+      <div class="form-group__help__error">
+        <i class="fa fa-times-circle mr5"></i>
+        <span>手机不能为空</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-submit">
+    <button type="submit" class="btn btn-green">提 交</button>
+  </div>
+</form>

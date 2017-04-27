@@ -1,44 +1,5 @@
-<section class="update-password-section">
-  <ul class="steps-line steps-line--mobile">
-    <li class="active">1.设置新密码</li>
-    <li>2.完成</li>
-  </ul>
-  <form name="form" ng-submit="submit(item)" novalidate>
-    <div class="form-group mb30 clearfix" ng-class="{'has-error': form.phone.$invalid && (form.phone.$dirty||form.$submitted)}">
-      <label class="col-md-4 control-label">用户名：</label>
-      <div class="col-md-5">
-        <input type="text" class="form-control" name="phone" placeholder="用户名为您的手机号" ng-model="item.phone" required>
-      </div>
-      <div class="col-md-3 help-block error-block">
-        <i class="fa fa-times-circle mr5"></i>
-        <span>用户名不能为空</span>
-      </div>
-    </div>
-    <div class="form-group mb30 clearfix" ng-class="{'has-error': form.study_country.$invalid && (form.study_country.$dirty||form.$submitted)}">
-      <label class="col-md-4 control-label">期望留学国家：</label>
-      <div class="col-md-5">
-        <input type="text" class="form-control" name="study_country" placeholder="国家中文名称"
-               ng-model="item.study_country" required>
-      </div>
-      <div class="col-md-3 help-block error-block">
-        <i class="fa fa-times-circle mr5"></i>
-        <span>国家不能为空</span>
-      </div>
-    </div>
-    <div class="form-group mb30 clearfix" ng-class="{'has-error': form.parent_phone.$invalid && (form.parent_phone.$dirty||form.$submitted)}">
-      <label class="col-md-4 control-label">家长手机号码：</label>
-      <div class="col-md-5">
-        <input type="text" class="form-control" name="parent_phone" placeholder="您家长的手机号"
-               ng-model="item.parent_phone" required>
-      </div>
-      <div class="col-md-3 help-block error-block">
-        <i class="fa fa-times-circle mr5"></i>
-        <span>手机不能为空</span>
-      </div>
-    </div>
-    <div class="col-md-5 col-md-offset-4">
-      <button type="submit" class="btn btn-green">提 交</button>
-    </div>
-  </form>
-
-</section>
+<div class="mobile-password-section">
+  <div class="password-section-container">
+    <update-password></update-password>
+  </div>
+</div>

@@ -11,10 +11,10 @@
     flex: 1;
     background: #a9b6d0;
     &:before {
-      .angle-left(20px, @primary-grey, transparent);
+      .angle-left(20px, @primary-white, transparent);
     }
     &:after {
-      .angle-left(20px, transparent, @primary-grey);
+      .angle-left(20px, transparent, @primary-white);
     }
     &:first-child:before {
       border-color: transparent;
@@ -24,17 +24,21 @@
     }
   }
 }
-.steps-line.steps-line--mobile {
-  font-size: 12px;
-  li {
-    &:before {
-      .angle-left(12px, @primary-grey, transparent);
+// <768px
+@media (max-width: @screen-xs-max) {
+  .steps-line{
+    //font-size: 12px;
+    li {
+      &:before {
+        .angle-left(12px, @primary-grey, transparent);
+      }
+      &:after {
+        .angle-left(12px, transparent, @primary-grey);
+      }
     }
-    &:after {
-      .angle-left(12px, transparent, @primary-grey);
+    li:last-child:after {
+      border-color: transparent;
     }
-  }
-  li:last-child:after {
-    border-color: transparent;
   }
 }
+

@@ -1,0 +1,29 @@
+<form name="form" ng-submit="submit(item)" novalidate>
+  <div class="form-group form-group--flex" ng-class="{'has-error': !is_password_valid() && (form.password.$dirty||form.$submitted)}">
+    <label class="form-group__label">输入新密码：</label>
+    <div class="form-group__input">
+      <input type="password" class="form-control" name="password" placeholder="字母加数字组成的6-20位字符" ng-model="item.password" required>
+    </div>
+    <div class="form-group__help">
+      <div class="form-group__help__error">
+        <i class="fa fa-times-circle mr5"></i>
+        <span>新密码格式错误</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group form-group--flex" ng-class="{'has-error': !is_password_equal() && (form.repassword.$dirty||form.$submitted)}">
+    <label class="form-group__label">确定新密码：</label>
+    <div class="form-group__input">
+      <input type="password" class="form-control" name="repassword" placeholder="确定新密码：" ng-model="item.repassword" required>
+    </div>
+    <div class="form-group__help">
+      <div class="form-group__help__error">
+        <i class="fa fa-times-circle mr5"></i>
+        <span>前后密码不一致</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-submit">
+    <button type="submit" class="btn btn-green">提 交</button>
+  </div>
+</form>

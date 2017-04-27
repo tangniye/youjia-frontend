@@ -21,6 +21,7 @@
     'app.mobileUserCenter.userInfo',
     'app.mobileUserCenter.userSchedule',
     'app.mobileUserCenter.userFeedback',
-    'app.mobileUserCenter.updatePassword'
+    'app.mobileUserCenter.updatePassword',
+    'app.mobileUserCenter.forgetPassword',
   ]).config(routeConfig);
 })();
