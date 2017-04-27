@@ -62,7 +62,8 @@ function appConfig($provide, $httpProvider, $stateProvider) {
 /*
  * app run function
  */
-function appRun($cookies, PermRoleStore) {
+function appRun($rootScope, $state, $cookies, PermRoleStore) {
+  $rootScope.$state = $state;
 
   PermRoleStore.defineManyRoles({
     'AUTHORIZED': function () {

@@ -3,17 +3,19 @@
   <div class="modal-title">基本信息</div>
 </div>
 <div class="modal-body clearfix">
-  <form name="form" ng-submit="submit(item)"novalidate>
+  <form name="form" ng-submit="submit(item)" novalidate>
 
     <div class="col-md-12">
       <div class="form-group flex-vertical-center"
            ng-class="{'has-error': ((!picFile && add) || (!croppedDataUrl && edit)) && (form.picFile.$dirty || form.$submitted)}">
         <label class="control-label"><span class="must-star">*</span>头像信息：</label>
         <div class="ml5">
-          <button type="button" class="btn btn-green" ng-click="addPic()" ng-if="!picFile && !croppedDataUrl"><i class="iconfont icon-camera"></i>选择您要上传的头像
+          <button type="button" class="btn btn-green" ng-click="addPic()" ng-if="!picFile && !croppedDataUrl"><i
+            class="iconfont icon-camera"></i>选择您要上传的头像
           </button>
           <img class="preview preview-s" ng-src="{{croppedDataUrl}}" ng-if="picFile || croppedDataUrl"/>
-          <span class="edit-photo-span ml10" ng-click="editPic(croppedDataUrl)" ng-if="picFile || croppedDataUrl" ng-hide="view">修改头像 >></span>
+          <span class="edit-photo-span ml10" ng-click="editPic(croppedDataUrl)" ng-if="picFile || croppedDataUrl"
+                ng-hide="view">修改头像 >></span>
           <div class="help-block">
             <span>头像信息不能为空</span>
           </div>
@@ -126,11 +128,9 @@
              ng-class="{'has-error': form.show.$invalid && (form.show.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>显示于前端：</label>
           <div class="right">
-            <select class="form-control" name="show" ng-model="item.show" ng-checked="item.show" ng-if="!view"
-                    required>
+            <select class="form-control" name="show" ng-model="item.show" ng-if="!view"
+                    ng-options="o.v as o.n for o in [{ n: '是', v: true },{ n: '否', v: false }]" required>
               <option value="">请选择</option>
-              <option value="true">是</option>
-              <option value="false">否</option>
             </select>
             <span class="view-txt" ng-if="view"><span ng-if="item.show">是</span><span
               ng-if="!item.show">否</span></span>

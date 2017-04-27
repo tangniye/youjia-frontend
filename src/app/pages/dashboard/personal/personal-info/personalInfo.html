@@ -5,7 +5,7 @@
     <!--<a class="btn btn-green-outline" href="/export/user/info?user_id={{me.id}}" target="_blank" permission permission-only="'STUDENT'"><i class="iconfont icon-print mr10"></i>导出个人档案</a>-->
     <button class="btn btn-green fr" ui-sref="app.pages.dashboard.personal.updatePassword">修改密码</button>
   </div>
-  <div class="info-panel-body">
+  <div class="info-panel-body" ng-if="columns">
     <div class="col-md-6 mb50" ng-repeat="item in columns track by $index">
       <label ng-bind="item.name"></label>
       <span class="txt" ng-bind="data[item.col]"></span>

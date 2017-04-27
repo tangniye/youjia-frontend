@@ -89,6 +89,9 @@
 
     function edit(data) {
       User.get(data.id).then(function (res) {
+        
+        res.enrollment_time = new Date(res.enrollment_time);
+        
         Common.model.promptModel('studentModelCtrl', student_model_template_url, 'md', true, 'common-modal', {
           edit: true,
           item: res,

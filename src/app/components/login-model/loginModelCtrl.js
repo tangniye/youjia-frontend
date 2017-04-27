@@ -10,7 +10,7 @@
 
     vm.user = {
       phone: '13800138000',
-      password: '123456'
+      password: 'abc123'
     };
 
     vm.error = {

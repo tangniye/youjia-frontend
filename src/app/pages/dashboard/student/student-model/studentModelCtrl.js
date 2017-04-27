@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function studentModelCtrl($scope, $uibModalInstance, User, Common) {
+  function studentModelCtrl($scope, $uibModalInstance, User, Common, toastr) {
     var vm = $scope;
     var success_add_model_template_url = 'app/pages/dashboard/student/success-add-model/success-add-model.html';
 
@@ -41,6 +41,8 @@
 
       if (vm.form.$valid && vm.is_phone_valid() && vm.is_parent_phone_valid()) {
 
+        item.enrollment_time = item.enrollment_time ? moment(item.enrollment_time).format('YYYY-MM-DD') : '';
+
         if (vm.add) {
           User.addStudent(item).then(function (res) {
             $uibModalInstance.close();
@@ -53,6 +55,7 @@
           User.modifyStudent(item.id, item).then(function (res) {
             $uibModalInstance.close();
             vm.getdata();
+            toastr.success('修改成功', '', {'closeButton': true});
           })
         }
 
