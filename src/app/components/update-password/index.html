@@ -1,0 +1,8 @@
+<ul class="steps-line">
+  <li ng-class="{'active': step === 1}">1.设置密码</li>
+  <li ng-class="{'active': step === 2}">2.完成</li>
+</ul>
+<div class="form-container">
+  <update-password-step1 ng-if="step===1"></update-password-step1>
+  <update-password-step2 ng-if="step===2"></update-password-step2>
+</div>

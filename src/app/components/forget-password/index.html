@@ -1,0 +1,11 @@
+<ul class="steps-line">
+  <li ng-class="{'active': step === 1}">1.验证身份</li>
+  <li ng-class="{'active': step === 2}">2.设置密码</li>
+  <li ng-class="{'active': step === 3}">3.完成</li>
+</ul>
+<p class="forget-password-title">找回密码</p>
+<div class="form-container">
+  <forget-password-step1 ng-if="step===1"></forget-password-step1>
+  <forget-password-step2 ng-if="step===2"></forget-password-step2>
+  <forget-password-step3 ng-if="step===3"></forget-password-step3>
+</div>
