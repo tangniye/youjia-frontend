@@ -8,44 +8,6 @@
   function studentScheduleCtrl($scope, $state, $cookies, Schedule) {
     var vm = $scope;
 
-    vm.tableData = [
-      {
-        "id": 1001,
-        "chinese_name": "",
-        "course_name": "学习课程",
-        "create_time": "注册时间",
-        "learn_range": "学习范围",
-        "location": "目前地址",
-        "phone": "",
-        "status": "已创建/未创建",
-        "study_country": "期望学校",
-        "update_time": "2017-04-01"
-      },
-      {
-        "id": 1001,
-        "chinese_name": "",
-        "course_name": "学习课程",
-        "create_time": "注册时间",
-        "learn_range": "学习范围",
-        "location": "目前地址",
-        "phone": "",
-        "status": "已创建/未创建",
-        "study_country": "期望学校",
-        "update_time": "2017-04-01"
-      },
-      {
-        "id": 1001,
-        "chinese_name": "",
-        "course_name": "学习课程",
-        "create_time": "注册时间",
-        "learn_range": "学习范围",
-        "location": "目前地址",
-        "phone": "",
-        "status": "已创建/未创建",
-        "study_country": "期望学校",
-        "update_time": "2017-04-01"
-      }
-    ];
     vm.tableColumns = [
       {name: '中文名称', col: 'chinese_name', show: true},
       {name: '注册时间', col: 'create_time', show: true, sort: 'order_create_time'},

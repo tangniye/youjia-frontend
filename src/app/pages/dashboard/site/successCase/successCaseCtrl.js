@@ -8,36 +8,6 @@
   function successCaseCtrl($scope, Common, Case, toastr) {
     var vm = $scope;
     var success_case_model_template_url = 'app/pages/dashboard/site/successCase/success-case-model/success-case-model.html';
-    vm.tableData = [
-      {
-        "chinese_name": "学生姓名",
-        "id": 1,
-        "school": "",
-        "tag": "雅思",
-        "update_time": "2017-04-04"
-      },
-      {
-        "chinese_name": "学生姓名",
-        "id": 2,
-        "school": "",
-        "tag": "雅思",
-        "update_time": "2017-04-04"
-      },
-      {
-        "chinese_name": "学生姓名",
-        "id": 3,
-        "school": "",
-        "tag": "雅思",
-        "update_time": "2017-04-04"
-      },
-      {
-        "chinese_name": "学生姓名",
-        "id": 4,
-        "school": "",
-        "tag": "雅思",
-        "update_time": "2017-04-04"
-      }
-    ];
     vm.tableColumns = [
       {name: '学生姓名', col: 'chinese_name', show: true},
       {name: '录取学校', col: 'school', show: true},
@@ -80,10 +50,9 @@
         case_id: data.id
       };
       Case.getCaseDetailList(query).then(function (res) {
-
         Common.model.promptModel('successCaseModelCtrl', success_case_model_template_url, 'md', true, 'common-modal', {
           edit: true,
-          item: res.items,
+          item: res.items[0],
           getdata: vm.pipe
         })
       })
@@ -97,10 +66,9 @@
         case_id: data.id
       };
       Case.getCaseDetailList(query).then(function (res) {
-
         Common.model.promptModel('successCaseModelCtrl', success_case_model_template_url, 'md', true, 'common-modal', {
           view: true,
-          item: res.items
+          item: res.items[0]
         })
       })
     }
@@ -126,8 +94,8 @@
         if (data === 'ok') {
           Case.delete(ids).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
+            vm.pipe();
           });
-          vm.pipe();
         }
       });
 

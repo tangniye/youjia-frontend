@@ -8,28 +8,15 @@
   function scheduleModelCtrl($scope, $uibModalInstance, Schedule) {
     var vm = $scope;
     vm.courseOptions = ['托福', '雅思', 'SAT', 'GCSE', 'GRE', 'GMAT', 'LSAT', 'AP', 'IB', 'CRITICAL READING', '其他'];
-    vm.teacherOptions = [
-      {
-        "chinese_name": "中文名称",
-        "id": 1006
-      }, {
-        "chinese_name": "hah",
-        "id": 1003
-      },
-      {
-        "chinese_name": "hehe",
-        "id": 1002
-      }
 
-    ];
-
-    vm.item = vm.data[vm.col] ? angular.copy(vm.data[vm.col]) : {
+    vm.item = {
       student_user_id: vm.userid,
       day: parseInt(vm.col.slice(3)),
       start_time: vm.data.time.start_time,
       stop_time: vm.data.time.stop_time
     };
-    console.log(vm.item)
+
+    vm.item = vm.data[vm.col] ? Object.assign(vm.data[vm.col], vm.item) : vm.item;
 
     switch (vm.col) {
       case 'day1':
@@ -74,14 +61,14 @@
         if (vm.add) {
           Schedule.add(item).then(function (res) {
             $uibModalInstance.close();
-            vm.getdata();
+            vm.getdata(vm.userid);
           })
         }
 
         if (vm.edit) {
           Schedule.modify(item.id, item).then(function (res) {
             $uibModalInstance.close();
-            vm.getdata();
+            vm.getdata(vm.userid);
           });
         }
 

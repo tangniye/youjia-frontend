@@ -16,31 +16,6 @@
       chinese_name: 'test'
     };
 
-    vm.tableData = [
-      {
-        "chinese_name": "中文名",
-        "class_time": "8:30",
-        "contents": "课程内容",
-        "course_name": "托福",
-        "feedback": "课堂反馈",
-        "homework": "课后作业",
-        "id": 1,
-        "section": "听 说 读 写",
-        "study_date": "2017-05-05",
-        "leave_time": "11:00"
-      }, {
-        "chinese_name": "中文名",
-        "class_time": "8:30",
-        "contents": "课程内容",
-        "course_name": "托福",
-        "feedback": "课堂反馈",
-        "homework": "课后作业",
-        "id": 2,
-        "section": "听 说 读 写",
-        "study_date": "2017-05-05",
-        "leave_time": "11:00"
-      }
-    ];
     vm.pagination = {
       page: 1,
       page_size: 2,
@@ -91,8 +66,8 @@
         if (data === 'ok') {
           Feedback.delete(feedbackid).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
+            callServer();
           });
-          callServer();
         }
       });
     };
@@ -103,8 +78,8 @@
         if (data === 'ok') {
           Feedback.deleteAll(vm.userid).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
+            callServer();
           });
-          callServer();
         }
       });
 

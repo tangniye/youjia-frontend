@@ -8,41 +8,6 @@
   function historyListCtrl($scope, $state, Common, toastr, User, History) {
     var vm = $scope;
 
-    // vm.tableData = [
-    //   {
-    //     "id": 1001,
-    //     "age": 18,
-    //     "chinese_name": "中文名称",
-    //     "course_name": "托福",
-    //     "location": "成都",
-    //     "phone": "13709065417",
-    //     "school": "学校",
-    //     "sexual": "男",
-    //     "update_time": "2017-04-01 11:17:31"
-    //   },
-    //   {
-    //     "id": 1002,
-    //     "age": 18,
-    //     "chinese_name": "中文名称",
-    //     "course_name": "托福",
-    //     "location": "成都",
-    //     "phone": "13709065417",
-    //     "school": "学校",
-    //     "sexual": "男",
-    //     "update_time": "2017-04-01 11:17:31"
-    //   },
-    //   {
-    //     "id": 1003,
-    //     "age": 18,
-    //     "chinese_name": "中文名称",
-    //     "course_name": "托福",
-    //     "location": "成都",
-    //     "phone": "13709065417",
-    //     "school": "学校",
-    //     "sexual": "男",
-    //     "update_time": "2017-04-01 11:17:31"
-    //   }
-    // ];
     vm.tableColumns = [
       {name: '中文名称', col: 'chinese_name', show: true},
       {name: '性别', col: 'sexual', show: true},
@@ -114,42 +79,6 @@
         vm.tableData = res.items;
         vm.tableState.pagination.page = res.page;
         vm.tableState.pagination.page_total = res.page_total;
-      },function (res) {
-        vm.tableData = [
-          {
-            "id": 1001,
-            "age": 18,
-            "chinese_name": "中文名称",
-            "course_name": "托福",
-            "location": "成都",
-            "phone": "13709065417",
-            "school": "学校",
-            "sexual": "男",
-            "update_time": "2017-04-01 11:17:31"
-          },
-          {
-            "id": 1002,
-            "age": 18,
-            "chinese_name": "中文名称",
-            "course_name": "托福",
-            "location": "成都",
-            "phone": "13709065417",
-            "school": "学校",
-            "sexual": "男",
-            "update_time": "2017-04-01 11:17:31"
-          },
-          {
-            "id": 1003,
-            "age": 18,
-            "chinese_name": "中文名称",
-            "course_name": "托福",
-            "location": "成都",
-            "phone": "13709065417",
-            "school": "学校",
-            "sexual": "男",
-            "update_time": "2017-04-01 11:17:31"
-          }
-        ];
       })
     };
 

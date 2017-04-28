@@ -11,56 +11,8 @@
 
     vm.userid = $stateParams.id;
     vm.role = $stateParams.role;
-    console.log(vm.userid)
-    console.log(vm.role)
 
     vm.edit = $cookies.get('scheduleOption') === 'edit' ? true : false;
-
-    vm.tableData = [
-      {
-        "id": 6,
-        "chinese_name": "中文名称",
-        "course_name": "托福读",
-        "day": 5,
-        "start_time": "13:30",
-        "stop_time": "15:30"
-      },
-      {
-        "id": 6,
-        "chinese_name": "中文名称",
-        "course_name": "托福读",
-        "day": 2,
-        "start_time": "19:00",
-        "stop_time": "21:00"
-      },
-      {
-        "id": 6,
-        "chinese_name": "中文名称",
-        "course_name": "托福读",
-        "day": 3,
-        "start_time": "19:00",
-        "stop_time": "21:00"
-      },
-      {
-        "id": 6,
-        "chinese_name": "中文名称",
-        "course_name": "托福读",
-        "day": 7,
-        "start_time": "08:30",
-        "stop_time": "10:00"
-      },
-      {
-        "id": 6,
-        "chinese_name": "中文名称",
-        "course_name": "托福读",
-        "day": 5,
-        "start_time": "19:00",
-        "stop_time": "21:00"
-      }
-
-    ];
-
-    vm.tableData = courseHandler(vm.tableData);
 
     vm.tableColumns = [
       {name: '节次', col: 'meridian', show: true},
@@ -103,6 +55,7 @@
         edit: true,
         data: data,
         col: col,
+        userid: vm.userid,
         getdata: callServer
       })
     }
@@ -114,8 +67,8 @@
         if (data === 'ok') {
           Schedule.delete(id).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
+            callServer(vm.userid);
           });
-          callServer(vm.userid);
         }
       });
     }
@@ -222,8 +175,8 @@
         if (data === 'ok') {
           Schedule.deleteAll(vm.userid).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
+            callServer(vm.userid);
           });
-          callServer(vm.userid);
         }
       });
     };
