@@ -119,4 +119,63 @@
   padding-left: 70px;
   padding-right: 70px;
 }
+.login-modal .modal-footer p {
+  display: flex;
+  justify-content: center;
+  .border-line {
+    flex-grow: 1;
+    content: '';
+    max-width: 80px;
+    width: 20px;
+    height: 100%;
+    transform: translateY(-50%);
+    display: inline-block;
+    border-bottom: 1px solid @font-light-color;
+
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .login-modal {
+    .modal-dialog.modal-sm {
+      position: fixed !important;
+      left: auto;
+      right: auto;
+      top: auto;
+      transform: translate(0, 0 );
+      bottom: 0;
+      width: 100%;
+      .modal-body {
+        min-height: 214px;
+      }
+      .login-form {
+        padding: 0;
+        .help-block.error-block {
+          display: block;
+          visibility: hidden;
+          min-height: 34px;
+        }
+        &.has-error {
+          .help-block.error-block {
+            display: block;
+            visibility: inherit;
+          }
+        }
+      }
+      .modal-footer {
+        button {
+          width: 100%;
+          max-width: 400px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    & + .modal-backdrop {
+      opacity: 1 !important;
+      background-color: @primary-blue;
+    }
+  }
+}
 

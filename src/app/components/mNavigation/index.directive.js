@@ -6,6 +6,7 @@
     return {
       restrict: 'EA',
       templateUrl: 'app/components/mNavigation/index.html',
+      controller: 'pageTopCtrl',
       link: function (scope, element) {
         var sidebar = $(element).find('.mNavigation__sidebar');
         scope.toggleMenu = function () {

@@ -10,27 +10,29 @@
       restrict: 'E',
       scope: true,
       templateUrl: 'app/components/pageTop/pageTop.html',
-      link: function (scope, el) {
+      controller: 'pageTopCtrl'
+    }
+  }
 
-        $rootScope.me = $cookies.getObject('me');
+  function pageTopCtrl($scope, $rootScope, $cookies, $state, Common, User) {
 
-        scope.promptLogin = function () {
-          Common.model.promptModel('loginModelCtrl', 'app/components/login-model/login-model.html', 'sm', '', 'login-modal')
-        };
+    $rootScope.me = $cookies.getObject('me');
 
-        scope.logout = function () {
-          User.logout().then(function () {
-            $cookies.remove('me');
-            $rootScope.me = null;
-            $state.go('app.pages.index');
-          })
-        }
-
-      }
+    $scope.promptLogin = function () {
+      Common.model.promptModel('loginModelCtrl', 'app/components/login-model/login-model.html', 'sm', '', 'login-modal')
     };
+
+    $scope.logout = function () {
+      User.logout().then(function () {
+        $cookies.remove('me');
+        $rootScope.me = null;
+        $state.go('app.pages.index');
+      })
+    }
   }
 
   angular.module('app.components')
+    .controller('pageTopCtrl', pageTopCtrl)
     .directive('pageTop', pageTop);
 
 })();

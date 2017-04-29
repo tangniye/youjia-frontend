@@ -2,7 +2,8 @@
   <div class="mNavigation__topbar">
     <a class="mNavigation__logo" ui-sref="app.pages.index"></a>
     <div class="mNavigation__right-links">
-      <a class="mNavigation__login-link">登录</a>
+      <a class="mNavigation__login-link" ng-click="promptLogin()" ng-if="!me">登录</a>
+      <a class="mNavigation__login-link" ng-click="logout()" ng-if="me">退出</a>
       <a class="mNavigation__menu-toggle" ng-click="toggleMenu()"><i class="iconfont icon-menu"></i></a>
     </div>
   </div>
@@ -10,13 +11,14 @@
     <div class="mNavigation__topbar">
       <a class="mNavigation__logo" ui-sref="app.pages.index"></a>
       <div class="mNavigation__right-links">
-        <a class="mNavigation__login-link"><i class="iconfont icon-user-circle-o"></i></a>
+        <a class="mNavigation__login-link" ng-if="me" ui-sref="app.mobileUserCenter.userInfo"><i class="iconfont icon-user-circle-o"></i></a>
+        <a class="mNavigation__login-link" ng-if="!me" ng-click="promptLogin()" >登录</a>
         <a class="mNavigation__menu-toggle" ng-click="toggleMenu()"><i class="iconfont icon-close"></i></a>
       </div>
     </div>
     <ul class="mNavigation__sidebar__menu">
       <li ui-sref-active="active">
-        <a ui-sref="app.pages.index">首&emsp;页</a>
+        <a ui-sref="app.pages.index">首&emsp;页</a>s
       </li>
       <li ui-sref-active="active">
         <a ui-sref="app.pages.staff">师资团队</a>
