@@ -5,7 +5,7 @@
     'use strict';
 
     /** @ngInject */
-    function indexCtrl($scope, $timeout) {
+    function indexCtrl($scope, $timeout, Common) {
         var vm = $scope;
 
         var bannerElem = angular.element('.index-banner')[0],
@@ -53,7 +53,7 @@
 
         vm.autoAnimate = function () {
             vm.next();
-            
+
             timer = $timeout(function () {
                 vm.autoAnimate()
             }, 3000)
@@ -106,6 +106,10 @@
         vm.$on("$destroy", function () {
             timer && $timeout.cancel(timer);
         });
+
+      $scope.promptAudition = function () {
+        Common.model.promptModel('auditionModalCtrl', 'app/components/audition-modal/audition-modal.html', 'sm', '', 'login-modal audition-modal')
+      };
 
     }
 

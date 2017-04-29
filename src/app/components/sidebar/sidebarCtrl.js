@@ -5,8 +5,12 @@
     'use strict';
 
     /** @ngInject */
-    function sidebarCtrl() {
+    function sidebarCtrl($scope, Common) {
         'ngInject';
+
+      $scope.promptAudition = function () {
+        Common.model.promptModel('auditionModalCtrl', 'app/components/audition-modal/audition-modal.html', 'sm', '', 'login-modal audition-modal')
+      };
 
     }
 
