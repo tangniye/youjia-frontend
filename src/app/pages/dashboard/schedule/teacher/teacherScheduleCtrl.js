@@ -7,27 +7,6 @@
   /** @ngInject */
   function teacherScheduleCtrl($scope, $cookies, $state, Schedule) {
     var vm = $scope;
-    vm.tableData = [
-      {
-        "id": 1001,
-        "chinese_name": "",
-        "status": "已创建/未创建",
-        "update_time": "2017-04-01"
-      },
-      {
-        "id": 1001,
-        "chinese_name": "",
-        "status": "已创建/未创建",
-        "update_time": "2017-04-01"
-      },
-      {
-        "id": 1001,
-        "chinese_name": "",
-        "status": "已创建/未创建",
-        "update_time": "2017-04-01"
-      }
-
-    ];
     vm.tableColumns = [
       {name: '老师', col: 'chinese_name', show: true},
       {name: '更新日期', col: 'update_time', show: true, sort: 'order_update_time'},

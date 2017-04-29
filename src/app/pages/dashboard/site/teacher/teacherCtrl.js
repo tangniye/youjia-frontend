@@ -9,7 +9,6 @@
     var vm = $scope;
     var teacher_model_template_url = 'app/pages/dashboard/site/teacher/teacher-model/teacher-model.html';
 
-    vm.tableData = [];
     vm.tableColumns = [
       {name: '中文名称', col: 'chinese_name', show: true},
       {name: '英文名称', col: 'english_name', show: true},

@@ -8,43 +8,6 @@
   function feedbackListCtrl($scope, $state, Feedback) {
     var vm = $scope;
 
-    vm.tableData = [
-      {
-        "chinese_name": "中文名称",
-        "count": 1,
-        "course_name": "学习课程",
-        "create_time": "注册时间",
-        "id": 1005,
-        "learn_range": "学习范围",
-        "location": "目前地址",
-        "phone": "",
-        "school": "期望学校",
-        "update_time": "2017-04-03"
-      }, {
-        "chinese_name": "中文名称",
-        "count": 3,
-        "course_name": "学习课程",
-        "create_time": "注册时间",
-        "id": 1006,
-        "learn_range": "学习范围",
-        "location": "目前地址",
-        "phone": "",
-        "school": "期望学校",
-        "update_time": "2017-04-03"
-      }, {
-        "chinese_name": "中文名称",
-        "count": 1,
-        "course_name": "学习课程",
-        "create_time": "注册时间",
-        "id": 1007,
-        "learn_range": "学习范围",
-        "location": "目前地址",
-        "phone": "",
-        "school": "期望学校",
-        "update_time": "2017-04-03"
-      }
-
-    ];
     vm.tableColumns = [
       {name: '中文名称', col: 'chinese_name', show: true},
       {name: '注册时间', col: 'create_time', show: true, sort: 'order_create_time'},

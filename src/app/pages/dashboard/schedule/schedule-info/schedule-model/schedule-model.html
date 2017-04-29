@@ -28,30 +28,40 @@
 
     <div class="row m0">
       <div class="col-md-6">
-        <div class="form-group clearfix">
-          <label class="control-label">课程：</label>
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.course_name.$invalid && (form.course_name.$dirty||form.$submitted)}">
+        <label class="control-label"><span class="must-star">*</span>课程：</label>
           <div class="right">
             <select class="form-control" name="course_name" ng-model="item.course_name"
-                    ng-options="option for option in courseOptions">
+                    ng-options="option for option in courseOptions" required>
               <option value="">请选择</option>
             </select>
+            <div class="help-block">
+              <span>课程不能为空</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="form-group clearfix">
-          <label class="control-label">老师：</label>
+        <div class="form-group clearfix"
+             ng-class="{'has-error': form.teacher_user_id.$invalid && (form.teacher_user_id.$dirty||form.$submitted)}">
+        <label class="control-label"><span class="must-star">*</span>老师：</label>
           <div class="right">
             <select class="form-control" name="teacher_user_id" ng-model="item.teacher_user_id"
-                    ng-options="option.id as option.chinese_name for option in teacherOptions">
+                    ng-options="option.id as option.chinese_name for option in teacherOptions" ng-if="teacherOptions.length > 0" required>
               <option value="">请选择</option>
             </select>
+            <div class="help-block">
+              <span>老师不能为空</span>
+            </div>
+            <span class="view-txt" ng-if="teacherOptions.length == 0">该时段暂无老师</span>
           </div>
         </div>
       </div>
     </div>
 
-    <button type="submit" class="btn btn-green modal-footer-btn">保存信息</button>
+    <button type="submit" class="btn btn-green modal-footer-btn" ng-if="teacherOptions.length > 0">保存信息</button>
+    <button type="button" class="btn btn-green modal-footer-btn" ng-if="teacherOptions.length == 0" ng-click="cancel()">关 闭</button>
 
   </form>
 </div>

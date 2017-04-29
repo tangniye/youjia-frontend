@@ -7,7 +7,6 @@
   /** @ngInject */
   function successCaseModelCtrl($scope, $uibModalInstance, Case) {
     var vm = $scope;
-    
     vm.submit = function (item) {
 
       if (vm.form.$valid) {

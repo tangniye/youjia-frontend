@@ -34,7 +34,7 @@ function browserSyncInit(baseDir, browser) {
      *
      * For more details and option, https://github.com/chimurai/http-proxy-middleware/blob/v0.9.0/README.md
      */
-    var context = '/api/account'; // requests with this path will be proxied
+    var context = '/api'; // requests with this path will be proxied
 
     // configure proxy middleware options
     var options = {
