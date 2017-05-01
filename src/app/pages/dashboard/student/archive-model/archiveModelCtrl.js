@@ -18,10 +18,6 @@
       }
     };
 
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
 
   }
 

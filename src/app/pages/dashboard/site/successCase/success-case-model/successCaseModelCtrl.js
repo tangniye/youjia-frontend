@@ -30,11 +30,6 @@
       }
     };
 
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
-
   }
 
   angular.module('app.pages.dashboard.site.successCase').controller('successCaseModelCtrl', successCaseModelCtrl);

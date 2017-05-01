@@ -8,10 +8,6 @@
   function avatarModelCtrl($scope, $uibModalInstance, toastr) {
     var vm = $scope;
 
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
     vm.save = function () {
       if (!vm.picFile) {
         toastr.warning('请选择您要上传的头像', '', {timeOut: 2000})

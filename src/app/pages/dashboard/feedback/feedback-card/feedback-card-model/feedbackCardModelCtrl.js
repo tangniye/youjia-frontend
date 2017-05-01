@@ -63,10 +63,6 @@
       }
     };
 
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
   }
 
   angular.module('app.pages.dashboard.feedback.card').controller('feedbackCardModelCtrl', feedbackCardModelCtrl);

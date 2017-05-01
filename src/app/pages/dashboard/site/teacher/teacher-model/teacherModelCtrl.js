@@ -44,10 +44,6 @@
       }
     };
 
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
     vm.addPic = function () {
       Common.model.promptModel('avatarModelCtrl', 'app/pages/dashboard/site/teacher/avatar-model/avatar-model.html', 'md', true, 'common-modal')
         .result.then('', function (data) {

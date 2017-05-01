@@ -35,7 +35,7 @@
     }
 
     function view(data) {
-      Common.model.promptModel('auditionModelCtrl', audition_model_template_url, 'md', true, 'common-modal', {
+      Common.model.promptModel('', audition_model_template_url, 'md', true, 'common-modal', {
         view: true,
         item: data
       })

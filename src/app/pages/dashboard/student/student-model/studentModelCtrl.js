@@ -48,7 +48,9 @@
           User.addStudent(item).then(function (res) {
             $uibModalInstance.close();
             vm.getdata();
-            Common.model.promptModel('successAddModelCtrl', success_add_model_template_url, 'md', true, 'common-modal');
+            Common.model.promptModel('', success_add_model_template_url, 'md', true, 'common-modal', {
+              english_name: item.english_name
+            });
           });
         }
 
@@ -62,11 +64,6 @@
 
       }
     };
-
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
 
   }
 

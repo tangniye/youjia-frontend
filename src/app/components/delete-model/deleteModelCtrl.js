@@ -11,9 +11,6 @@
       $uibModalInstance.dismiss('ok');
     };
 
-    $scope.cancel = function () {
-      $uibModalInstance.dismiss('cancel');
-    };
   }
 
   angular.module('app.components').controller('deleteModelCtrl', deleteModelCtrl);

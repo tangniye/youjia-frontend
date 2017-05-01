@@ -18,10 +18,7 @@
       $uibModalInstance.close();
 
     };
-
-    $scope.cancel = function () {
-      $uibModalInstance.close();
-    };
+    
   }
 
   angular.module('app.components').controller('auditionModalCtrl', auditionModalCtrl);
