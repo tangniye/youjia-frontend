@@ -41,6 +41,13 @@
       })
     }
 
+    vm.toPage = function (page) {
+      page = page >= vm.pagination.page_total ? vm.pagination.page_total : (page <= 1 ? 1 : page);
+      vm.pagination.page = page;
+
+      callServer();
+    };
+
     vm.add = function () {
       Common.model.promptModel('feedbackCardModelCtrl', feedback_card_model_template_url, 'md', true, 'common-modal', {
         add: true,

@@ -75,10 +75,6 @@
       }
     };
 
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
   }
 
   angular.module('app.pages.dashboard.schedule.info').controller('scheduleModelCtrl', scheduleModelCtrl);

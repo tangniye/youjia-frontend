@@ -5,8 +5,9 @@
   'use strict';
 
   /** @ngInject */
-  function teacherModelCtrl($scope, $uibModalInstance, User, Common) {
+  function teacherModelCtrl($scope, $uibModalInstance, User, Common, toastr) {
     var vm = $scope;
+    vm.item = vm.item || {};
 
     vm.is_phone_valid = function () {
       var regx = /^\d{11}$/;
@@ -27,6 +28,7 @@
         if (vm.add) {
           User.addTeacher(item).then(function (res) {
             $uibModalInstance.close();
+            toastr.success('新增成功', '', {timeOut: 2000});
             vm.getdata();
           });
         }
@@ -34,15 +36,12 @@
         if (vm.edit) {
           User.modifyTeacher(item.id, item).then(function (res) {
             $uibModalInstance.close();
+            toastr.success('修改成功', '', {timeOut: 2000});
             vm.getdata();
           })
         }
 
       }
-    };
-
-    vm.cancel = function () {
-      $uibModalInstance.close();
     };
 
     vm.addPic = function () {

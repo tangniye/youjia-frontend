@@ -1,8 +1,10 @@
 <div class="modal-header">
-  <button type="button" class="close" ng-click="cancel()">&times;</button>
+  <button type="button" class="close" ng-click="$dismiss()">&times;</button>
   <div class="modal-title">基本信息</div>
 </div>
-<div class="modal-body">
-  <div>hehe</div>
+<div class="modal-body pb50">
+  <p class="text-center success-icon"><i class="iconfont icon-check-circle-o"></i></p>
+  <p class="text-center font16 mb20">用户信息添加成功!</p>
+  <p class="text-center">初始密码为：&emsp;<span class="initial-password-txt main-color"><span ng-bind="english_name"></span>2017</span>&emsp;(用户英文名 + 2017)</p>
 </div>
 

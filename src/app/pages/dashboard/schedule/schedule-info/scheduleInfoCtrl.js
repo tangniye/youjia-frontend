@@ -192,6 +192,13 @@
       }
     }
 
+    vm.is_delete_all_disabled = function () {
+      var idx = _.findIndex(vm.tableData, function (td) {
+        return td.day1 || td.day2 || td.day3 || td.day4 || td.day5 || td.day6 || td.day7
+      });
+      return idx < 0
+    }
+
   }
 
   angular.module('app.pages.dashboard.schedule.info').controller('scheduleInfoCtrl', scheduleInfoCtrl);

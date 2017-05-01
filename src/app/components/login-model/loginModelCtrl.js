@@ -31,10 +31,6 @@
       })
     };
 
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
     vm.forget = function () {
       $state.go('app.pages.password');
       $uibModalInstance.close();

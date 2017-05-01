@@ -8,6 +8,7 @@
   function studentModelCtrl($scope, $uibModalInstance, User, Common, toastr) {
     var vm = $scope;
     var success_add_model_template_url = 'app/pages/dashboard/student/success-add-model/success-add-model.html';
+    vm.item = vm.item || {};
 
     vm.gradeOptions = [
       {value: '初一', group: '初中'},
@@ -41,13 +42,15 @@
 
       if (vm.form.$valid && vm.is_phone_valid() && vm.is_parent_phone_valid()) {
 
-        item.enrollment_time = item.enrollment_time ? moment(item.enrollment_time).format('YYYY-MM-DD') : '';
+        item.enrollment_time = item.enrollment_time ? moment(item.enrollment_time).format('YYYY-MM-DD') : null;
 
         if (vm.add) {
           User.addStudent(item).then(function (res) {
             $uibModalInstance.close();
             vm.getdata();
-            Common.model.promptModel('successAddModelCtrl', success_add_model_template_url, 'md', true, 'common-modal');
+            Common.model.promptModel('', success_add_model_template_url, 'md', true, 'common-modal', {
+              english_name: item.english_name
+            });
           });
         }
 
@@ -61,11 +64,6 @@
 
       }
     };
-
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
 
   }
 

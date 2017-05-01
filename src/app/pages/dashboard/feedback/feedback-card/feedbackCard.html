@@ -2,8 +2,8 @@
   <div class="card-tool">
     <button class="btn btn-green-outline mr10" ng-click="add()" permission permission-only="'ADMIN'"><i class="iconfont icon-add-document mr10"></i>新增
     </button>
-    <a class="btn btn-green-outline mr10" href="/export.html#/?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>
-    <!--<a class="btn btn-green-outline mr10" href="/export/user/feedback?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>-->
+    <!--<a class="btn btn-green-outline mr10" href="/export.html#/?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>-->
+    <a class="btn btn-green-outline mr10" href="/export/user/feedback?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>
     <button class="btn btn-green-outline" ng-click="deleteAll()" permission permission-only="'ADMIN'" ng-disabled="tableData.length == 0"><i class="iconfont icon-brush mr10"></i>清空反馈</button>
     <button class="btn btn-green-outline fr" ui-sref="app.pages.dashboard.feedback.list" permission permission-only="'ADMIN'"><i class="iconfont icon-angle-left mr10"></i>返回
     </button>

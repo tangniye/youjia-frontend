@@ -41,7 +41,7 @@ function appConfig($provide, $httpProvider, $stateProvider) {
             toastr.error(rejection.statusText, '未找到', {'closeButton': true});
             break;
           case 500:
-            toastr.error(rejection.statusText, '服务器内部错误', {'closeButton': true});
+            toastr.error(rejection.data.message, '服务器内部错误', {'closeButton': true});
             break;
           default:
             toastr.error('', '请求超时', {'closeButton': true});

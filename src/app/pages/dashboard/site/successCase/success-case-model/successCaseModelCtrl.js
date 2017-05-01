@@ -7,6 +7,8 @@
   /** @ngInject */
   function successCaseModelCtrl($scope, $uibModalInstance, Case) {
     var vm = $scope;
+    vm.item = vm.item || {};
+
     vm.submit = function (item) {
 
       if (vm.form.$valid) {
@@ -27,11 +29,6 @@
 
       }
     };
-
-    vm.cancel = function () {
-      $uibModalInstance.close();
-    };
-
 
   }
 
