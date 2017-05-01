@@ -40,8 +40,8 @@
 
     this.modify = function (caseid, success_case) {
       var defer = $q.defer();
-      var _success_case = _.pick(success_case + '?case_id=' + caseid, ['chinese_name', 'tag', 'school', 'feeling', 'comment', 'test1', 'score1', 'test2', 'score2']);
-      $http.put(URL_CONFIG.CASE, _success_case).success(function (res) {
+      var _success_case = _.pick(success_case, ['chinese_name', 'tag', 'school', 'feeling', 'comment', 'test1', 'score1', 'test2', 'score2']);
+      $http.put(URL_CONFIG.CASE + '?case_id=' + caseid, _success_case).success(function (res) {
         defer.resolve(res);
       }).error(function (res) {
         defer.reject(res);

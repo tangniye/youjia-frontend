@@ -10,41 +10,6 @@
     var student_model_template_url = 'app/pages/dashboard/student/student-model/student-model.html';
     var archive_model_template_url = 'app/pages/dashboard/student/archive-model/archive-model.html';
 
-    vm.tableData = [
-      {
-        "id": 1001,
-        "age": 18,
-        "chinese_name": "中文名称",
-        "course_name": "托福",
-        "location": "成都",
-        "phone": "13709065417",
-        "school": "学校",
-        "sexual": "男",
-        "update_time": "2017-04-01 11:17:31"
-      },
-      {
-        "id": 1002,
-        "age": 18,
-        "chinese_name": "中文名称",
-        "course_name": "托福",
-        "location": "成都",
-        "phone": "13709065417",
-        "school": "学校",
-        "sexual": "男",
-        "update_time": "2017-04-01 11:17:31"
-      },
-      {
-        "id": 1003,
-        "age": 18,
-        "chinese_name": "中文名称",
-        "course_name": "托福",
-        "location": "成都",
-        "phone": "13709065417",
-        "school": "学校",
-        "sexual": "男",
-        "update_time": "2017-04-01 11:17:31"
-      }
-    ];
     vm.tableColumns = [
       {name: '中文名称', col: 'chinese_name', show: true},
       {name: '性别', col: 'sexual', show: true},
@@ -89,9 +54,9 @@
 
     function edit(data) {
       User.get(data.id).then(function (res) {
-        
-        res.enrollment_time = new Date(res.enrollment_time);
-        
+
+        res.enrollment_time = res.enrollment_time ? new Date(res.enrollment_time) : null;
+
         Common.model.promptModel('studentModelCtrl', student_model_template_url, 'md', true, 'common-modal', {
           edit: true,
           item: res,

@@ -38,23 +38,23 @@
     };
 
     vm.submit = function (item) {
-      console.log(item)
 
       if (vm.form.$valid && vm.is_class_time_valid() && vm.is_leave_time_valid()) {
+        var _item = angular.copy(item);
 
-        item.study_date = moment(item.study_date).format('YYYY-MM-DD');
-        item.class_time = moment(item.class_time).format('HH:mm');
-        item.leave_time = moment(item.leave_time).format('HH:mm');
+        _item.study_date = moment(item.study_date).format('YYYY-MM-DD');
+        _item.class_time = moment(item.class_time).format('HH:mm');
+        _item.leave_time = moment(item.leave_time).format('HH:mm');
 
         if (vm.add) {
-          Feedback.add(cur_user.id, item).then(function (res) {
+          Feedback.add(cur_user.id, _item).then(function (res) {
             $uibModalInstance.close();
             vm.getdata();
           });
         }
 
         if (vm.edit) {
-          Feedback.modify(item.id, item).then(function (res) {
+          Feedback.modify(_item.id, _item).then(function (res) {
             $uibModalInstance.close();
             vm.getdata();
           })

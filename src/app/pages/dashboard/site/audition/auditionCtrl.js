@@ -9,22 +9,6 @@
     var vm = $scope;
     var audition_model_template_url = 'app/pages/dashboard/site/audition/audition-model/audition-model.html';
 
-    vm.tableData = [
-      {
-        "name": "学生姓名",
-        "id": 1,
-        "phone": "",
-        "teacher": "雅思",
-        "create_time": "2017-04-04"
-      },
-      {
-        "name": "学生姓名",
-        "id": 2,
-        "phone": "",
-        "teacher": "雅思",
-        "create_time": "2017-04-04"
-      }
-    ];
     vm.tableColumns = [
       {name: '用户姓名', col: 'name', show: true},
       {name: '手机号码', col: 'phone', show: true},

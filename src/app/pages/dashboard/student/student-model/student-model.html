@@ -25,10 +25,10 @@
           <label class="control-label"><span class="must-star">*</span>英文名称：</label>
           <div class="right">
             <input type="text" class="form-control" name="english_name" ng-model="item.english_name" ng-if="!view"
-                   required>
+                   placeholder="2-16个字符" maxlength="16" minlength="2" required>
             <span class="view-txt" ng-bind="item.english_name" ng-if="view"></span>
             <div class="help-block">
-              <span>英文名称不能为空</span>
+              <span>英文名称格式不正确</span>
             </div>
           </div>
         </div>
@@ -95,7 +95,8 @@
           <label class="control-label">年级：</label>
           <div class="right">
             <select class="form-control" name="grade" ng-model="item.grade"
-                    ng-options="option.value as option.value group by option.group for option in gradeOptions" ng-if="!view">
+                    ng-options="option.value as option.value group by option.group for option in gradeOptions"
+                    ng-if="!view">
               <option value="">请选择</option>
             </select>
             <span class="view-txt" ng-bind="item.grade" ng-if="view"></span>
@@ -107,7 +108,8 @@
              ng-class="{'has-error': form.study_country.$invalid && (form.study_country.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>期望留学国家：</label>
           <div class="right">
-            <input type="text" class="form-control" name="study_country" ng-model="item.study_country" ng-if="!view" required>
+            <input type="text" class="form-control" name="study_country" ng-model="item.study_country" ng-if="!view"
+                   required>
             <span class="view-txt" ng-bind="item.study_country" ng-if="view"></span>
             <div class="help-block">
               <span>期望留学国家不能为空</span>
@@ -163,7 +165,8 @@
              ng-class="{'has-error': form.learn_range.$invalid && (form.learn_range.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>学习范围：</label>
           <div class="right">
-            <input type="text" class="form-control" name="learn_range" ng-model="item.learn_range" ng-if="!view" required>
+            <input type="text" class="form-control" name="learn_range" ng-model="item.learn_range" ng-if="!view"
+                   required>
             <span class="view-txt" ng-bind="item.learn_range" ng-if="view"></span>
             <div class="help-block">
               <span>学习范围不能为空</span>
@@ -204,7 +207,8 @@
              ng-class="{'has-error': !is_parent_phone_valid() && (form.parent_phone.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>家长手机号码：</label>
           <div class="right">
-            <input type="text" class="form-control" name="parent_phone" ng-model="item.parent_phone" ng-if="!view" required>
+            <input type="text" class="form-control" name="parent_phone" ng-model="item.parent_phone" ng-if="!view"
+                   required>
             <span class="view-txt" ng-bind="item.parent_phone" ng-if="view"></span>
             <div class="help-block">
               <span>家长手机号码不能为空</span>
