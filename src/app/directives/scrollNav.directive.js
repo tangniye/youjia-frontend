@@ -6,12 +6,12 @@
     return {
       restrict: 'EA',
       scope: true,
-      link: function ($scope, $elem, $attr) {
-        _.each($elem.find('li'), function (li) {
+      link: function (scope, elem, attr) {
+        _.each(elem.find('li'), function (li) {
           var scrollTo = $(li).attr('scroll-to');
           if (scrollTo) {
             $(li).on('click', function () {
-              _.each($elem.find('li'), function (li) {
+              _.each(elem.find('li'), function (li) {
                 $(li).removeClass('active');
               });
               $(this).addClass('active');
@@ -21,7 +21,7 @@
               }, 500)
             })
           }
-        })
+        });
       }
     }
   }
