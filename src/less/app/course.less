@@ -31,6 +31,7 @@
     position: relative;
     width: 400px;
     height: 266px;
+    overflow-x: hidden;
     ul {
       padding: 0;
       margin: 0;
@@ -38,30 +39,33 @@
     }
   }
   .carousel__slides {
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
     list-style-type: none;
     li {
+      position: absolute;
       width: 100%;
       height: 100%;
+      top: 0;
     }
     li:not(:first-child) {
       display: none;
     }
-  }
-  .carousel__slides__1 {
-    background: url("@{images-root}/course-banner-img-1.png") no-repeat center;
-    background-size: cover;
-  }
-  .carousel__slides__2 {
-    background: url("@{images-root}/course-banner-img-2.png") no-repeat center;
-    background-size: cover;
-  }
-  .carousel__slides__3 {
-    background: url("@{images-root}/course-banner-img-3.png") no-repeat center;
-    background-size: cover;
+    li:nth-child(1) {
+      background: url("@{images-root}/course-banner-img-1.png") no-repeat center;
+      background-size: cover;
+    }
+    li:nth-child(2) {
+      background: url("@{images-root}/course-banner-img-2.png") no-repeat center;
+      background-size: cover;
+    }
+    li:nth-child(3) {
+      background: url("@{images-root}/course-banner-img-3.png") no-repeat center;
+      background-size: cover;
+    }
   }
   .carousel__indicators {
     position: absolute;
@@ -77,21 +81,23 @@
       height: 53px;
       margin: 10px;
       display: inline-block;
-      background-size: cover;
       &.active, &:hover {
         border: solid 2px @primary-green;
         cursor: pointer;
       }
     }
-  }
-  .carousel__indicators__1 {
-    background: url("@{images-root}/course-banner-img-1.png") no-repeat center;
-  }
-  .carousel__indicators__2 {
-    background: url("@{images-root}/course-banner-img-2.png") no-repeat center;
-  }
-  .carousel__indicators__3 {
-    background: url("@{images-root}/course-banner-img-3.png") no-repeat center;
+    li:first-child {
+      background: url("@{images-root}/course-banner-img-1.png") no-repeat center;
+      background-size: cover;
+    }
+    li:nth-child(2) {
+      background: url("@{images-root}/course-banner-img-2.png") no-repeat center;
+      background-size: cover;
+    }
+    li:nth-child(3) {
+      background: url("@{images-root}/course-banner-img-3.png") no-repeat center;
+      background-size: cover;
+    }
   }
   .carousel__control {
     > * {
@@ -400,7 +406,8 @@
         height: 4px;
         margin: 2px;
         background: none;
-        background-color: @primary-white;
+        background-image: none !important;
+        background-color: @primary-white !important;
         opacity: 0.6;
         &.active, &:hover {
           opacity: 1;
