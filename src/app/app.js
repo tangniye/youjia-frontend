@@ -99,6 +99,7 @@ angular.module('app', [
     'permission.ui',
     'ui.bootstrap',
     'toastr',
+    'checklist-model',
     'ngFileUpload',
     'ngImgCrop',
     'app.components',

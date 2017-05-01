@@ -146,22 +146,6 @@
     <div class="row m0">
       <div class="col-md-6">
         <div class="form-group clearfix"
-             ng-class="{'has-error': form.course_name.$invalid && (form.course_name.$dirty||form.$submitted)}">
-          <label class="control-label"><span class="must-star">*</span>学习课程：</label>
-          <div class="right">
-            <select class="form-control" name="course_name" ng-model="item.course_name"
-                    ng-options="option for option in courseOptions" ng-if="!view" required>
-              <option value="">请选择</option>
-            </select>
-            <span class="view-txt" ng-bind="item.course_name" ng-if="view"></span>
-            <div class="help-block">
-              <span>学习课程不能为空</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group clearfix"
              ng-class="{'has-error': form.learn_range.$invalid && (form.learn_range.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>学习范围：</label>
           <div class="right">
@@ -174,9 +158,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="row m0">
       <div class="col-md-6">
         <div class="form-group clearfix">
           <label class="control-label">微信：</label>
@@ -186,6 +167,9 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="row m0">
       <div class="col-md-6">
         <div class="form-group clearfix"
              ng-class="{'has-error': !is_phone_valid() && (form.phone.$dirty||form.$submitted)}">
@@ -199,9 +183,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="row m0">
       <div class="col-md-6">
         <div class="form-group clearfix"
              ng-class="{'has-error': !is_parent_phone_valid() && (form.parent_phone.$dirty||form.$submitted)}">
@@ -212,6 +193,24 @@
             <span class="view-txt" ng-bind="item.parent_phone" ng-if="view"></span>
             <div class="help-block">
               <span>家长手机号码不能为空</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m0">
+      <div class="col-md-12">
+        <div class="form-group clearfix"
+             ng-class="{'has-error': (item.course_name.length == 0) && (form.course_name.$dirty||form.$submitted)}">
+          <label class="control-label"><span class="must-star">*</span>学习课程：</label>
+          <div class="right multi-select-container">
+            <div class="multi-select-container__item" ng-repeat="course in courseOptions" ng-if="!view">
+              <span class="mr5" ng-bind="course"></span><input type="checkbox" checklist-model="item.course_name" checklist-value="course">
+            </div>
+            <span class="view-txt" ng-bind="item.course_name" ng-if="view"></span>
+            <div class="help-block">
+              <span>学习课程不能为空</span>
             </div>
           </div>
         </div>
