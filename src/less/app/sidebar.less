@@ -69,3 +69,27 @@ ul.sidebar {
 }
 
 
+// <768px
+@media (max-width: @screen-xs-max) {
+  ul.sidebar {
+    li:not(:first-child) {
+      display: none;
+    }
+    li:first-child {
+      overflow: visible;
+      .pic {
+        border-radius: 50%;
+        background-color: @primary-green;
+        box-shadow:0 0 6px @primary-green;
+      }
+      .txt {
+        display: none;
+      }
+      &:hover .li-container {
+        transform: none;
+      }
+    }
+  }
+}
+
+
