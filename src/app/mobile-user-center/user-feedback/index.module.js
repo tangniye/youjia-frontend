@@ -14,6 +14,12 @@
           'mobileUserCenterContent': {
             templateUrl: '/app/mobile-user-center/user-feedback/index.html',
           }
+        },
+        data: {
+          permissions: {
+            only: 'AUTHORIZED',
+            redirectTo: 'app.pages.index'
+          }
         }
       });
 

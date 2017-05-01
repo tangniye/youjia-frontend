@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function loginModelCtrl($rootScope, $scope, $cookies, $uibModalInstance, $state, User) {
+  function loginModelCtrl($rootScope, $scope, $cookies, $uibModalInstance, $state, User, IS_MOBILE) {
     var vm = $scope;
 
     vm.user = {
@@ -32,7 +32,11 @@
     };
 
     vm.forget = function () {
-      $state.go('app.pages.password');
+      if (!IS_MOBILE) {
+        $state.go('app.pages.password');
+      } else {
+        $state.go('app.mobileUserCenter.forgetPassword')
+      }
       $uibModalInstance.close();
     }
   }
