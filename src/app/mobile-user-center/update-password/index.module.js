@@ -11,6 +11,12 @@
         'mobileUserCenterContent': {
           templateUrl: '/app/mobile-user-center/update-password/index.html',
         }
+      },
+      data: {
+        permissions: {
+          only: 'AUTHORIZED',
+          redirectTo: 'app.pages.index'
+        }
       }
     })
   }

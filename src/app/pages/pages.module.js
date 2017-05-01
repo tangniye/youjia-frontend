@@ -11,9 +11,13 @@
       abstract: true,
       views: {
         'app': {
-          templateUrl: '/app/pages/index.html'
+          templateUrl: '/app/pages/index.html',
+          controller: function ($scope, $rootScope, IS_MOBILE) {
+            $rootScope.IS_MOBILE = IS_MOBILE
+            console.log($rootScope.IS_MOBILE)
+          }
         }
-      }
+      },
     });
 
     $urlRouterProvider.otherwise('/index');
