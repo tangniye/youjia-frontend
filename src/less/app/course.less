@@ -1,5 +1,5 @@
 @course-mid-width: @content-md-width;
-@course-sm-width: 720px;
+@course-sm-width: 740px;
 .course-page {
   font-size: 14px;
   .section-content {
@@ -25,33 +25,109 @@
   padding: 20px 0;
 }
 .course-banner__left {
-  width: 400px;
+  width: 420px;
   padding-left: 20px;
-}
-.course-banner__right {
-  width: 380px;
-  padding: 20px 0 20px 60px;
-}
-.course-slide {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  li {
+  .carousel {
+    position: relative;
     width: 400px;
     height: 266px;
+    overflow-x: hidden;
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+  }
+  .carousel__slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+    li:not(:first-child) {
+      display: none;
+    }
+    li:nth-child(1) {
+      background: url("@{images-root}/course-banner-img-1.png") no-repeat center;
+      background-size: cover;
+    }
+    li:nth-child(2) {
+      background: url("@{images-root}/course-banner-img-2.png") no-repeat center;
+      background-size: cover;
+    }
+    li:nth-child(3) {
+      background: url("@{images-root}/course-banner-img-3.png") no-repeat center;
+      background-size: cover;
+    }
+  }
+  .carousel__indicators {
+    position: absolute;
+    width: 100%;
+    height: 86px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(59, 89, 152, 0.4);
+    li {
+      width: 80px;
+      height: 53px;
+      margin: 10px;
+      display: inline-block;
+      &.active, &:hover {
+        border: solid 2px @primary-green;
+        cursor: pointer;
+      }
+    }
+    li:first-child {
+      background: url("@{images-root}/course-banner-img-1.png") no-repeat center;
+      background-size: cover;
+    }
+    li:nth-child(2) {
+      background: url("@{images-root}/course-banner-img-2.png") no-repeat center;
+      background-size: cover;
+    }
+    li:nth-child(3) {
+      background: url("@{images-root}/course-banner-img-3.png") no-repeat center;
+      background-size: cover;
+    }
+  }
+  .carousel__control {
+    > * {
+      position: absolute;
+      bottom: 0;
+      height: 86px;
+      padding: 0 10px;
+      font-size: 36px;
+      color: @primary-white;
+      line-height: 86px;
+      opacity: 0.8;
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+      &:first-child {
+        left: 0;
+      }
+      &:last-child {
+        right: 0;
+      }
+    }
   }
 
 }
-.course-slide__1 {
-  background: url("@{images-root}/course-banner-img-1.png") no-repeat center;
-  background-size: cover;
+.course-banner__right {
+  width: 380px;
+  padding: 20px 0 20px 40px;
 }
-.course-slide__2 {
 
-}
-.course-slide__3 {
-
-}
 .course-banner__title {
   margin: 0 0 1rem 0;
   font-size: 18px;
@@ -89,6 +165,10 @@
     }
   }
 }
+.course-banner__block--feature {
+  position: relative;
+  top: 21px;
+}
 .course-banner__feature-title {
   font-size: 1.2rem;
   font-weight: normal;
@@ -114,7 +194,9 @@
   }
 }
 .course-banner__buttons {
-  margin: 2rem 0 0 0;
+  position: relative;
+  top: 21px;
+  margin: 18px 0 0 0;
   button {
     margin-right: 2rem;
   }
@@ -264,8 +346,11 @@
     width: @course-sm-width;
   }
   .course-banner__left {
-    width: 380px;
+    width: 400px;
     padding-left: 10px;
+    .carousel {
+      width: 390px;
+    }
   }
   .course-banner__right {
     width: 340px;
@@ -306,10 +391,32 @@
     padding: 0;
     margin: 0 0 20px 0;
   }
-  .course-slide {
-    li {
+  .course-banner__left {
+    .carousel {
       width: 100%;
       height: 200px;
+    }
+    .carousel__slides {
+    }
+    .carousel__indicators {
+      height: 20px;
+      background: none;
+      li {
+        width: 20px;
+        height: 4px;
+        margin: 2px;
+        background: none;
+        background-image: none !important;
+        background-color: @primary-white !important;
+        opacity: 0.6;
+        &.active, &:hover {
+          opacity: 1;
+          border: none;
+        }
+      }
+    }
+    .carousel__control {
+      display: none;
     }
   }
   .course-banner__block {
@@ -344,6 +451,8 @@
     }
   }
   .course-banner__block--feature {
+    position: static;
+    top: auto;
     background-color: #f4f6f9;
     margin: 20px -10px;
     .course-banner__feature-title {
@@ -364,6 +473,8 @@
     }
   }
   .course-banner__buttons {
+    position: static;
+    top: auto;
     display: flex;
     justify-content: space-around;
     button {
