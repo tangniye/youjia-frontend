@@ -15,7 +15,7 @@
         } else if (/android/.test(userAgent)) {
           scope.qqLink = 'mqqwpa://im/chat?chat_type=wpa&uin=1377716383';
         } else {
-          scope.qqLink = 'http://wpa.qq.com/msgrd?v=3&uin=1377716383&site=qq&menu=yes'
+          scope.qqLink = 'tencent://message/?uin=1377716383&amp;Site=www.xxx.com&amp;Menu=yes'
         }
 
         var windowWidth = $(window).width();

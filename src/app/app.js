@@ -4,7 +4,7 @@
  * including http interceptor and http default config
  */
 /** @ngInject */
-function appConfig($provide, $httpProvider, $stateProvider) {
+function appConfig($provide, $httpProvider, $stateProvider, $compileProvider) {
 
   $stateProvider.state('app', {
     abstract: true,
@@ -14,6 +14,8 @@ function appConfig($provide, $httpProvider, $stateProvider) {
       }
     }
   });
+
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|mqq|mqqwpa|tel|tencent|weixin):/);
 
   // Intercept http calls.
   $provide.factory('ErrorHttpInterceptor', ['$q', '$injector', function ($q, $injector) {

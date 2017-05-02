@@ -1,0 +1,50 @@
+<div class="course-banner">
+  <div class="course-banner__content">
+    <div class="course-banner__left">
+      <div class="carousel" carousel>
+        <ul class="carousel__slides">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class="carousel__indicators">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class="carousel__control">
+          <li><i class="iconfont icon-angle-left"></i></li>
+          <li><i class="iconfont icon-angle-right"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="course-banner__right">
+      <h2 class="course-banner__title">
+        <span ng-bind="title.main"></span>
+        <small ng-bind="title.sub"></small>
+      </h2>
+      <div class="course-banner__block">
+        <h3 class="course-banner__gift-title">约课送礼</h3>
+        <ul class="course-banner__gift-list">
+          <li><i class="iconfont icon-radio"></i>专业老师试听课一节</li>
+          <li><i class="iconfont icon-radio"></i>专业英语水平等级测试一次</li>
+          <li><i class="iconfont icon-radio"></i>免费定制英语学习方案一份</li>
+        </ul>
+      </div>
+      <div class="course-banner__block course-banner__block--feature">
+        <h3 class="course-banner__feature-title">课程特色</h3>
+        <ul class="course-banner__feature-list">
+          <li><i class="iconfont icon-circle-check--fill"></i>0元试听</li>
+          <li><i class="iconfont icon-circle-check--fill"></i>水平测试</li>
+          <li><i class="iconfont icon-circle-check--fill"></i>优质师资</li>
+          <li><i class="iconfont icon-circle-check--fill"></i>场景演练</li>
+          <li><i class="iconfont icon-circle-check--fill"></i>即学即用</li>
+        </ul>
+      </div>
+      <p class="course-banner__buttons">
+        <a class="btn btn-mid btn-green" ng-click="promptAudition()">申请试听<i class="iconfont icon-angle-right"></i></a>
+        <a class="btn btn-mid btn-green-outline" ng-href="{{qqLink}}">课程咨询</a>
+      </p>
+    </div>
+  </div>
+</div>
