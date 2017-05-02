@@ -13,6 +13,7 @@
           },
           'mobileUserCenterContent': {
             templateUrl: '/app/mobile-user-center/user-info/index.html',
+            controller: 'personalInfoCtrl'
           }
         },
         data: {
