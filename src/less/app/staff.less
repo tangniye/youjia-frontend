@@ -114,15 +114,20 @@
 }
 .staff-tutor-section {
   margin: 80px 0;
+
 }
 .staff-tutor-section .container {
   width: 1010px;
   max-width: 100%;
 }
+
 .staff-tutor-section {
+  font-size: 16px;
   .section-title {
     color: @primary-white;
-    margin-bottom: 40px;
+    margin: 0;
+    padding: 40px 0;
+    background-color: @primary-blue;
     small {
       color: @font-sub-color;
       &:before {
@@ -130,171 +135,125 @@
       }
     }
   }
-}
-
-.staff-tutor-section .underline {
-  width: 60px;
-  height: 2px;
-  background-color: @primary-white;
-}
-
-.staff-tutor-section .tutor-summary {
-  background-color: @primary-blue;
-  color: @primary-white;
-  text-align: center;
-  padding: 5% 0;
-
-  .title {
-    margin-bottom: 3%;
-
-    .underline {
-      opacity: .6;
-      margin: 0 auto 10px;
-    }
+  .staff-tutor-section__summary {
+    background-color: @primary-blue;
   }
-
-  .tutors-slider-container {
+  .staff-tutor-section__summary__container {
     position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-    margin: auto;
-    text-align: left;
-    font-size: 0;
-
-    .tutor-item {
-      display: inline-block;
-      font-size: 1.6rem;
-      text-align: center;
-      cursor: pointer;
-
-      &:not(:last-child) {
-        margin-right: 85px;
-      }
-
-      &.active {
-        .avatar-container {
-          width: 160px;
-          height: 160px;
-          margin-bottom: 40px;
-        }
-
-        .avatar-container img {
-          width: 148px;
-          height: 148px;
-        }
-
-        .tutor-info {
-          width: auto;
-          .tutor-name {
-            font-size: 2.4rem;
-          }
-
-          .tutor-school-major {
-            display: block;
-            font-size: 1.4rem;
-            opacity: .6;
-          }
-        }
-      }
-
-      &:hover,
-      &.active {
-        .avatar-container {
-          background-color: @primary-white;
-        }
-        .tutor-info .tutor-name {
-          opacity: 1;
-        }
-      }
-
-      .avatar-container {
-        border: 6px solid rgba(255, 255, 255, 0.2);
-        transition: all linear .5s;
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        margin-bottom: 15px;
-        img {
-          width: 108px;
-          height: 108px;
-          border-radius: 50%;
-          transition: all linear .5s;
-        }
-      }
-
-      .tutor-info {
-        position: absolute;
-        white-space: nowrap;
-        width: 120px;
-
-        .tutor-name {
-          opacity: .6;
-          transition: opacity linear .5s;
-        }
-
-        .tutor-school-major {
-          display: none;
-        }
-      }
-
-    }
+    width: 1120px;
+    margin: 0 auto;
+    padding: 0 40px;
+    color: @primary-white;
 
   }
+  .tutor-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .tutor {
+    width: 20%;
+    height: 300px;
+    text-align: center;
+    &.active {
+      &:after {
+        position: absolute;
+        bottom: 0;
+        .angle-up(20px, @primary-white, @primary-blue);
+        transform: translatex(-50%);
+      }
+    }
+  }
+  .tutor.active,
+  .tutor__content:hover {
+    .tutor__header-img {
+      img {
+        border: 6px solid @primary-white;
+        width: 140px;
+        height: 140px;
+        background-color: @primary-white;
+        transition:  all linear .5s;;
+      }
+    }
+    .tutor__name {
+      opacity: 1;
+      font-size: 1.2em;
+      transition:  all linear .5s;
+    }
+    .tutor__title {
+      display: block;
+      font-size: 0.8em;
+      opacity: .6;
+      transition:  all linear .5s;
+    }
+  }
 
-  .angle {
-    font-size: 5.6rem;
-    color: @primary-white;
-    cursor: pointer;
-    opacity: .4;
-    top: 80px;
+  .tutor__header-img {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      border: 6px solid rgba(255, 255, 255, 0.2);
+      width: 120px;
+      height: 120px;
+      border-radius: 100%;
+      cursor: pointer;
+      transition:  all linear .5s;
+    }
+  }
+  .tutor__name {
+    opacity: .6;
+    font-size: 0.8em;
+    transition:  all linear .5s;
 
+  }
+  .tutor__title {
+    display: none;
+    opacity: 1;
+    transition:  all linear .5s;
+
+  }
+  .tutor-before,
+  .tutor-after {
+    position: absolute;
+    top: 50px;
+    font-size: 3em;
+    opacity: 0.4;
     &:hover {
       opacity: 1;
+      cursor: pointer;
     }
   }
-
-  .angle.angle-left {
-    left: -60px;
+  .tutor-before {
+    left: 0;
+  }
+  .tutor-after {
+    right: 0;
   }
 
-  .angle.angle-right {
-    right: -60px;
+  .staff-tutor-section__detail__container {
+    width: 1010px;
+    margin: 0 auto;
   }
-}
-
-.staff-tutor-section .tutor-detail {
-  position: relative;
-
-  //&:before {
-  //  content: " ";
-  //  position: absolute;
-  //  top: -20px;
-  //  left: 50%;
-  //  transform: translateX(-50%);
-  //  border-left: 24px solid transparent;
-  //  border-right: 24px solid transparent;
-  //  border-bottom: 20px solid #fff;
-  //  border-top: 0;
-  //
-  //}
-
-  .tutor-brief {
+  .tutor__brief {
     width: 570px;
-    font-size: 1.4rem;
+    font-size: 1em;
     color: @font-sub-color;
-    margin: auto;
+    margin: 0 auto 40px;
     padding: 40px 0;
-
+    text-align: center;
     i.iconfont {
-      font-size: 3.4rem;
+      font-size: 2em;
     }
   }
 
-  .tutor-detail-item {
+  .tutor__detail__item {
     position: relative;
-    margin-bottom: 60px;
-    font-size: 1.6rem;
+    margin: 0 auto 60px;
+    font-size: 1em;
     color: @primary-white;
 
     .title {
@@ -314,10 +273,9 @@
       line-height: 1.8;
       padding: 88px 5% 20px;
     }
-
   }
 
-  .tutor-detail-item.case {
+  .tutor__detail__item.case {
 
     .title {
       background: url("@{images-root}/tutor-case-bg.png") no-repeat;
@@ -332,7 +290,7 @@
     }
   }
 
-  .tutor-detail-item.feature {
+  .tutor__detail__item.feature {
     .title {
       background: url("@{images-root}/tutor-feature-bg.png") no-repeat;
       background-size: contain;
@@ -345,17 +303,13 @@
       background-color: #3b5998;
     }
   }
+  .underline {
+    width: 60px;
+    height: 2px;
+    background-color: @primary-white;
+  }
 }
 
-.staff-tutor-section .anchor {
-  width: 0;
-  height: 0;
-  margin: -20px auto;
-  border-left: 24px solid transparent;
-  border-right: 24px solid transparent;
-  border-bottom: 20px solid #fff;
-  transition: transform linear .5s;
-}
 
 .staff-appoint-section {
   background-color: @primary-grey;
@@ -409,6 +363,17 @@
   .staff-standard-section__info {
     font-size: 1.6rem;
   }
+  .staff-tutor-section {
+    .staff-tutor-section__summary__container {
+      width: 980px;
+    }
+    .staff-tutor-section__detail__container {
+      width: 900px;
+    }
+    .tutor-wrapper {
+
+    }
+  }
 }
 
 // < 992px
@@ -418,7 +383,7 @@
     margin: 60px 0;
   }
   .staff-standard-section__info {
-    font-size: 1.4rem;
+    font-size: 14px;
     margin-bottom: 40px;
   }
   .staff-standard-section__content {
@@ -429,6 +394,37 @@
       .staff-standard-info {
         top: -20px;
       }
+    }
+  }
+  .staff-tutor-section {
+    font-size: 14px;
+    .staff-tutor-section__detail__container,
+    .staff-tutor-section__summary__container {
+      width: 100%;
+      padding: 0 40px;
+    }
+    .tutor {
+      height: 240px;
+    }
+    .tutor__header-img {
+      height: 120px;
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    .tutor.active,
+    .tutor__content:hover {
+      .tutor__header-img {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+    .tutor-before,
+    .tutor-after {
+      top: 30px;
     }
   }
   .staff-appoint-section {
@@ -497,21 +493,27 @@
       margin: 80px 0 40px;
       position: relative;
       text-align: center;
-      &:before, &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        width: 14%;
-        height: 100%;
-        background-color: #b1bdd6;
+    }
+    .tutor-before,
+    .tutor-after {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      width: 14%;
+      height: 100%;
+      background-color: #b1bdd6;
+      .iconfont {
+        padding: 10px;
+        font-size: 36px;
       }
-      &:before {
-        left: 0;
-      }
-      &:after {
-        right: 0;
-      }
+    }
+    .tutor-before {
+      left: 0;
+    }
+    .tutor-after {
+      right: 0;
     }
     .tutor {
       position: relative;
