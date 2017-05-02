@@ -41,6 +41,7 @@
 
         function getCaseDetailList(queryStr) {
             Case.getCaseDetailList(queryStr).then(function (res) {
+              debugger
                 vm.cases = res.items;
                 vm.queryStr.page = res.page;
                 vm.page_total = res.page_total;
