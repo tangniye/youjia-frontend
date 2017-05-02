@@ -1,6 +1,6 @@
-<page-top ng-if="!$root.IS_MOBILE"></page-top>
-<m-navigation ng-if="$root.IS_MOBILE"></m-navigation>
+<page-top class="visible-desktop"></page-top>
+<m-navigation class="visible-phone"></m-navigation>
 <div class="body-content" ui-view></div>
-<page-bottom ng-if="!$root.IS_MOBILE"></page-bottom>
-<m-footer ng-if="$root.IS_MOBILE"></m-footer>
+<page-bottom class="visible-desktop"></page-bottom>
+<m-footer class="visible-phone"></m-footer>
 <sidebar></sidebar>
