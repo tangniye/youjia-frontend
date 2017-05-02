@@ -1,38 +1,6 @@
-<section class="user-info-section" ng-controller="personalCtrl">
+<section class="user-info-section">
   <div class="row">
-    <div class="col-xs-6 user-info-item">
-      <label>中文名称:</label>
-      <span>刘德华</span>
-    </div>
-    <div class="col-xs-6 user-info-item">
-      <label>中文名称:</label>
-      <span>刘德华</span>
-    </div>
-    <div class="col-xs-6 user-info-item">
-      <label>中文名称:</label>
-      <span>刘德华</span>
-    </div>
-    <div class="col-xs-6 user-info-item">
-      <label>中文名称:</label>
-      <span>刘德华</span>
-    </div>
-    <div class="col-xs-6 user-info-item">
-      <label>中文名称:</label>
-      <span>刘德华</span>
-    </div>
-    <div class="col-xs-6 user-info-item">
-      <label>中文名称:</label>
-      <span>刘德华</span>
-    </div>
-    <div class="col-xs-6 user-info-item">
-      <label>中文名称:</label>
-      <span>刘德华</span>
-    </div>
-    <div class="col-xs-6 user-info-item">
-      <label>中文名称:</label>
-      <span>刘德华</span>
-    </div>
-    <div class="col-xs-6 user-info-item" ng-repeat="item in studentColumns track by $index">
+    <div class="col-xs-6 user-info-item" ng-repeat="item in columns track by $index">
       <label ng-bind="item.name"></label>
       <span ng-bind="data[item.col]"></span>
     </div>
