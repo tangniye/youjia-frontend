@@ -149,13 +149,14 @@
   .tutor-wrapper {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: space-between;
+    .clearfix();
   }
   .tutor {
+    position: relative;
     width: 20%;
     height: 300px;
     text-align: center;
+    float: left;
     &.active {
       &:after {
         position: absolute;

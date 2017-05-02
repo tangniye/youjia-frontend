@@ -39,28 +39,28 @@
   </h2>
   <div class="staff-tutor-section__content">
     <div class="staff-tutor-section__summary">
-      <div class="tutor-before"  ng-click="showPreviousStaff()">
-        <i class="iconfont icon-angle-left" ng-if="activeStaffIndex != 0"></i>
+      <div class="tutor-before" >
+        <i class="iconfont icon-angle-left" ng-show="activeIndexInStaffs > 0"  ng-click="showPreviousStaff()"></i>
       </div>
       <div class="tutor">
         <div class="tutor__content">
           <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
-          <h3 class="tutor__name"><span ng-bind="activeStaff.chinese_name"></span> / <span ng-bind="activeStaff.english_name"></span></h3>
-          <div class="tutor__title" ng-bind="activeStaff.graduated"></div>
-          <div class="tutor__title">主修动物科学</div>
+          <h3 class="tutor__name"><span ng-bind="staffs[activeIndexInStaffs].chinese_name"></span> / <span ng-bind="staffs[activeIndexInStaffs].english_name"></span></h3>
+          <div class="tutor__title" ng-bind="staffs[activeIndexInStaffs].graduated"></div>
+          <div class="tutor__title" ng-bind="item.major"></div>
           <i class="iconfont icon-quotation-left"></i>
-          <div class="tutor__brief" ng-bind="activeStaff.introduce"></div>
+          <div class="tutor__brief" ng-bind="staffs[activeIndexInStaffs].introduce"></div>
         </div>
       </div>
-      <div class="tutor-after"  ng-click="showNextStaff()">
-        <div class="iconfont icon-angle-right" ng-if="activeStaffIndex != staffLength - 1"></div>
+      <div class="tutor-after" >
+        <div class="iconfont icon-angle-right" ng-show="activeIndexInStaffs < staffLength - 1"  ng-click="showNextStaff()"></div>
       </div>
     </div>
     <div class="staff-tutor-section__detail">
       <h4>成功案例</h4>
-      <p ng-bind="activeStaff.success_case"></p>
+      <p ng-bind="staffs[activeIndexInStaffs].success_case"></p>
       <h4>个人特色</h4>
-      <p ng-bind="activeStaff.feature">
+      <p ng-bind="staffs[activeIndexInStaffs].feature">
       </p>
     </div>
   </div>
@@ -74,51 +74,19 @@
     <div class="staff-tutor-section__summary">
       <div class="staff-tutor-section__summary__container">
         <div class="tutor-wrapper">
-          <div class="tutor active">
-            <div class="tutor__content">
+          <div class="tutor " ng-repeat="item in activeStaffs track by $index" ng-class="{'active': item.id == activeStaff.id}">
+            <div class="tutor__content" ng-click="selectStaffById(item.id)">
               <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
-              <h3 class="tutor__name"><span ng-bind="activeStaff.chinese_name"></span> / <span ng-bind="activeStaff.english_name"></span></h3>
-              <div class="tutor__title" ng-bind="activeStaff.graduated"></div>
-              <div class="tutor__title">主修动物科学</div>
-            </div>
-          </div>
-          <div class="tutor">
-            <div class="tutor__content">
-              <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
-              <h3 class="tutor__name"><span ng-bind="activeStaff.chinese_name"></span> / <span ng-bind="activeStaff.english_name"></span></h3>
-              <div class="tutor__title" ng-bind="activeStaff.graduated"></div>
-              <div class="tutor__title">主修动物科学</div>
-            </div>
-          </div>
-          <div class="tutor">
-            <div class="tutor__content">
-              <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
-              <h3 class="tutor__name"><span ng-bind="activeStaff.chinese_name"></span> / <span ng-bind="activeStaff.english_name"></span></h3>
-              <div class="tutor__title" ng-bind="activeStaff.graduated"></div>
-              <div class="tutor__title">主修动物科学</div>
-            </div>
-          </div>
-          <div class="tutor">
-            <div class="tutor__content">
-              <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
-              <h3 class="tutor__name"><span ng-bind="activeStaff.chinese_name"></span> / <span ng-bind="activeStaff.english_name"></span></h3>
-              <div class="tutor__title" ng-bind="activeStaff.graduated"></div>
-              <div class="tutor__title">主修动物科学</div>
-            </div>
-          </div>
-          <div class="tutor">
-            <div class="tutor__content">
-              <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
-              <h3 class="tutor__name"><span ng-bind="activeStaff.chinese_name"></span> / <span ng-bind="activeStaff.english_name"></span></h3>
-              <div class="tutor__title" ng-bind="activeStaff.graduated"></div>
-              <div class="tutor__title">主修动物科学</div>
+              <h3 class="tutor__name"><span ng-bind="item.chinese_name"></span> / <span ng-bind="item.english_name"></span></h3>
+              <div class="tutor__title" ng-bind="item.graduated"></div>
+              <div class="tutor__title" ng-bind="item.major"></div>
             </div>
           </div>
         </div>
-        <div class="tutor-before"  ng-click="showPreviousStaff()">
+        <div class="tutor-before"  ng-click="showPreviousPage()" ng-show="pageIndex > 0">
           <i class="iconfont icon-angle-left"></i>
         </div>
-        <div class="tutor-after"  ng-click="showNextStaff()">
+        <div class="tutor-after"  ng-click="showNextPage()" ng-show="pageIndex < totalPages - 1">
           <div class="iconfont icon-angle-right"></div>
         </div>
       </div>
