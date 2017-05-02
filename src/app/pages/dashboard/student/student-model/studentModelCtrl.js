@@ -8,6 +8,11 @@
   function studentModelCtrl($scope, $uibModalInstance, User, Common, toastr) {
     var vm = $scope;
     var success_add_model_template_url = 'app/pages/dashboard/student/success-add-model/success-add-model.html';
+
+    if (vm.item) {
+      vm.item.course_name = vm.item.course_name.split(',');
+    }
+
     vm.item = vm.item || {};
 
     vm.gradeOptions = [
@@ -39,10 +44,11 @@
     };
 
     vm.submit = function (item) {
-
+      console.log(item)
       if (vm.form.$valid && vm.is_phone_valid() && vm.is_parent_phone_valid()) {
 
         item.enrollment_time = item.enrollment_time ? moment(item.enrollment_time).format('YYYY-MM-DD') : null;
+        item.course_name = item.course_name.toString();
 
         if (vm.add) {
           User.addStudent(item).then(function (res) {
