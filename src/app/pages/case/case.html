@@ -9,54 +9,52 @@
 </div>
 <section class="case-section">
   <h3 class="case-section__title section-title--border section-title">
-      <span>查看成功案例</span>
-      <small>VIEW SUCCESS STORIES</small>
+    <span>查看成功案例</span>
+    <small>VIEW SUCCESS STORIES</small>
   </h3>
   <ul class="case-section__nav horizontal-nav" scroll-nav>
-    <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === '雅思'}" ng-click="seeMore('雅思')">雅思</li>
-    <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === '托福'}" ng-click="seeMore('托福')">托福</li>
-    <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === 'SAT'}" ng-click="seeMore('SAT')">SAT</li>
+    <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === '雅思'}" ng-click="toggle('雅思')">雅思</li>
+    <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === '托福'}" ng-click="toggle('托福')">托福</li>
+    <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === 'SAT'}" ng-click="toggle('SAT')">SAT</li>
   </ul>
   <div class="case-section__content">
-    <div class="case-section__content__container">
+    <div class="case-section__content__container" ng-repeat="case in cases track by $index">
       <div class="case-section__content__brief-block">
         <h4 class="name">
-          <span>Z同学</span>&emsp;<span class="opacity6">|</span>&emsp;<span>2016</span>
+          <span ng-bind="case.chinese_name"></span>&emsp;<span class="opacity6">|</span>&emsp;<span
+          ng-bind="case.update_time | dateYear"></span>
         </h4>
         <p>
-          <span class="opacity6">录取院校：</span><span>宾夕法尼亚大学</span>
+          <span class="opacity6">录取院校：&emsp;</span><span ng-bind="case.school"></span>
         </p>
         <p>
-          <span class="opacity6">&emsp;&emsp;SAT：</span><span>2200</span>
+          <span class="opacity6">&emsp;&emsp;<span ng-bind="case.test1"></span>：</span>&emsp;<span
+          ng-bind="case.score1"></span>
         </p>
-        <p>
-          <span class="opacity6">&emsp;&emsp;托福：</span><span>116</span>
+        <p ng-if="case.test2">
+          <span class="opacity6">&emsp;&emsp;<span ng-bind="case.test2"></span>：</span>&emsp;<span
+          ng-bind="case.score2"></span>
         </p>
         <div class="page-pagination">
-          <span class="page-pagination__current">2</span> / <span class="page-pagination__total">4</span>
+          <span class="page-pagination__current" ng-bind="queryStr.page"></span> / <span class="page-pagination__total" ng-bind="page_total"></span>
         </div>
         <img class="brief-block__bg" src="/assets/image/case-book-bg.png"/>
         <img class="brief-block__maker--1" src="/assets/image/case-book-mark.png"/>
         <img class="brief-block__maker--2" src="/assets/image/case-book-mark.png"/>
-        </div>
+      </div>
       <div class="case-section__content__feedback-block">
         <h5 class="title">同学感悟</h5>
-        <p>
-          Clara同学从小时候学钢琴到14岁离开家到美国读高中，她并不像大多数中国女孩子一样，是在父母安排下长大的。相反，她所有的学习机会都是向父母争取来的，而且也经历了很多挫折。她的标化成绩也很普通，只能算得上是中上等。Clara同学从小时候学钢琴到14岁离开家到美国读高中，她并不像大多数中国女孩子一样，是在父母安排下长大的。相反，她所有的学习机会都是向父母争取来的，而且也经历了很多挫折。她的标化成绩也很普通，只能算得上是中上等。</p>
+        <p ng-bind="case.comment"></p>
         <h5 class="title">老师点评</h5>
-        <p>
-          在最早接触棕榈大道主导师的时候，Clara觉得自己并没有什么过人之处，反而成长的路上一直并不顺利，每次都是需要付出很多，才能获得她期望的机会。她想要达到一个目标，总是要经过很多失败，才能获得成功。她和主导师讲，那些很容易就获得成功的同学，能力都比我好，所以我就是一个普通人，作为一个普通人，机会必然来之不易。
-          看似“冷酷”的父母，其实是在用另一种方法培养她。这样的孩子反而更加谦虚，她会认为“自己还不够好”。在主导师和Clara同学由工作关系开始，后来变成朋友的过程中，文书的素材和脉络也逐渐展现出来。
-          在最早接触棕榈大道主导师的时候，Clara觉得自己并没有什么过人之处，反而成长的路上一直并不顺利，每次都是需要付出很多，才能获得她期望的机会。她想要达到一个目标，总是要经过很多失败，才能获得成功。她和主导师讲，那些很容易就获得成功的同学，能力都比我好，所以我就是一个普通人，作为一个普通人，机会必然来之不易。
-        </p>
+        <p ng-bind="case.feeling"></p>
       </div>
     </div>
-    <div class="case-section__content__footer">
-      <button class="btn btn-green" ng-click="prev()"><i class="iconfont icon-angle-thin-left"></i></button>
-      <button class="btn btn-green" ng-click="next()"><i class="iconfont icon-angle-thin-right"></i></button>
+    <div class="case-section__content__footer" ng-if="total > 0">
+      <button class="btn btn-green" ng-click="prev()" ng-hide="queryStr.page == 1"><i class="iconfont icon-angle-thin-left"></i></button>
+      <button class="btn btn-green" ng-click="next()" ng-hide="queryStr.page == page_total"><i class="iconfont icon-angle-thin-right"></i></button>
     </div>
-    <div class="show-more-case">
-      <a>      点击加载更多 <i class="iconfont icon-angle-right"></i></a>
+    <div class="show-more-case" ng-if="cases.length < total">
+      <a ng-click="seeMore()"> 点击加载更多 <i class="iconfont icon-angle-right"></i></a>
     </div>
   </div>
 </section>
