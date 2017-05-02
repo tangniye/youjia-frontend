@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function auditionModalCtrl($rootScope, $scope, $cookies, $uibModalInstance, $state, User) {
+  function auditionModalCtrl($scope, $uibModalInstance) {
 
     $scope.user = {
       phone: '13800138000',
