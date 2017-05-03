@@ -46,27 +46,14 @@
           return scope.form.password && scope.form.password.$viewValue && regx.test(scope.form.password.$viewValue);
         };
 
-        scope.check = function (oldpwd) {
-          if (!oldpwd) {
-            scope.is_oldpassword_valid = false;
-            return;
-          }
-          User.checkPwd({password:oldpwd}).then(function (res) {
-            scope.is_oldpassword_valid = true;
-          },function () {
-            scope.is_oldpassword_valid = false;
-          })
-        };
-
         scope.submit = function (item) {
-          // if (scope.form.$valid && scope.is_password_equal() && scope.is_password_valid()) {
-          //
-          //   if(scope.$parent.token) {
-          //     item.token = scope.$parent.token;
-          //   }
-          //   resetPwd(item);
-          // }
-          scope.$parent.step = 3
+          if (scope.form.$valid && scope.is_password_equal() && scope.is_password_valid()) {
+          
+            if(scope.$parent.token) {
+              item.token = scope.$parent.token;
+            }
+            resetPwd(item);
+          }
         };
 
         function resetPwd(item) {
@@ -81,10 +68,7 @@
   function forgetPasswordStep3() {
     return {
       restrict: 'E',
-      templateUrl: 'app/components/forget-password/step-3.html',
-      link: function (scope, elem, attrs) {
-
-      }
+      templateUrl: 'app/components/forget-password/step-3.html'
     }
   }
 
