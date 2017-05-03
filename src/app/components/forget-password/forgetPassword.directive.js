@@ -11,24 +11,27 @@
       }
     };
   }
-  function forgetPasswordStep1() {
+
+  /** @ngInject */
+  function forgetPasswordStep1(User) {
     return {
       restrict: 'E',
       templateUrl: 'app/components/forget-password/step-1.html',
       link: function (scope, elem, attrs) {
         scope.submit = function (item) {
-          // if (scope.form.$valid) {
-          //   User.verify(item).then(function (res) {
-          //     scope.$parent.step = 2;
-          //     scope.$parent.token = res.token;
-          //   });
-          // }
-          scope.$parent.step = 2
+           if (scope.form.$valid) {
+             User.verify(item).then(function (res) {
+               scope.$parent.step = 2;
+               scope.$parent.token = res.token;
+             });
+           }
         }
       }
     }
   }
-  function forgetPasswordStep2() {
+
+  /** @ngInject */
+  function forgetPasswordStep2(User) {
     return {
       restrict: 'E',
       templateUrl: 'app/components/forget-password/step-2.html',

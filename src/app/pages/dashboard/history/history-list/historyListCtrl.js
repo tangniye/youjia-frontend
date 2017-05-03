@@ -14,7 +14,7 @@
       {name: '年龄', col: 'age', show: true},
       {name: '学校', col: 'school', show: true},
       {name: '目前地址', col: 'location', show: true},
-      {name: '学习课程', col: 'course_name', show: true},
+      {name: '学习课程', col: 'course_name', show: true, html: courseNameHtml},
       {name: '手机号码', col: 'phone', show: true},
       {name: '更新日期', col: 'update_time', show: true, sort: 'order_update_time'},
       {name: '操作', col: 'id', show: true, class: 'option', html: optionHtml, handler: [view, deleteItem]}
@@ -35,6 +35,17 @@
       search: true,
       select: true
     };
+
+    function courseNameHtml(data) {
+      var html;
+      if (data.length > 20) {
+        var str = data.substring(0, 20) + '...';
+        html = '<span title="' + data + '">' + str + '</span>'
+      } else {
+        html = data
+      }
+      return html;
+    }
 
     function optionHtml() {
       var html = '<a ng-click="(item.handler[0])(data)" title="查看"><i class="iconfont icon-magnifier"></i></a>' +

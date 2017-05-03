@@ -13,7 +13,7 @@
       {name: '注册时间', col: 'create_time', show: true, sort: 'order_create_time'},
       {name: '期望学校', col: 'study_country', show: true},
       {name: '目前地址', col: 'location', show: true},
-      {name: '学习课程', col: 'course_name', show: true},
+      {name: '学习课程', col: 'course_name', show: true, html: courseNameHtml},
       {name: '学习范围', col: 'learn_range', show: true},
       {name: '手机号码', col: 'phone', show: true},
       {name: '课表状态', col: 'status', show: true},
@@ -31,6 +31,17 @@
         page_total: 50
       }
     };
+
+    function courseNameHtml(data) {
+      var html;
+      if (data.length > 20) {
+        var str = data.substring(0, 20) + '...';
+        html = '<span title="' + data + '">' + str + '</span>'
+      } else {
+        html = data
+      }
+      return html;
+    }
 
     function optionHtml() {
       var html = '<a ng-click="(item.handler[0])(data)" title="查看"><i class="iconfont icon-magnifier"></i></a>' +
