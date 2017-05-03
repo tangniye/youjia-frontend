@@ -1,40 +1,17 @@
 <section class="user-schedule-section">
-  <table class="user-schedule-table">
+  <table class="user-schedule-table" ng-repeat="dayTable in data track by $index">
     <thead>
     <tr>
-      <th>星期一</th>
+      <th ng-bind="weeks[$index]"></th>
       <th>节次</th>
       <th>时间</th>
       <th>课程</th>
     </tr>
     </thead>
     <tbody>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    </tbody>
-  </table>
-  <table class="user-schedule-table">
-    <thead>
-    <tr>
-      <th>星期一</th>
-      <th>节次</th>
-      <th>时间</th>
-      <th>课程</th>
+    <tr ng-repeat="item in dayTable track by $index">
+      <td></td><td>上午</td><td ng-bind="times[$index]"></td><td><span ng-bind="item.course_name">雅思</span><span ng-bind="item.chinese_name">杨老师</span></td>
     </tr>
-    </thead>
-    <tbody>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
-    <tr><td></td><td>上午</td><td>15:30-14:30</td><td><span>雅思</span><span>杨老师</span></td></tr>
     </tbody>
   </table>
 </section>
