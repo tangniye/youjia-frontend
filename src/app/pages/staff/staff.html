@@ -32,7 +32,7 @@
   </div>
 </section>
 
-<section class="visible-phone staff-tutor-section--mobile">
+<section class="staff-tutor-section--mobile">
   <h2 class="staff-tutor-section__title section-title">
     金牌导师
     <small>GOLD TUTOR</small>
@@ -65,7 +65,7 @@
     </div>
   </div>
 </section>
-<section class="visible-desktop staff-tutor-section">
+<section class="staff-tutor-section">
   <h2 class="staff-tutor-section__title section-title">
     金牌导师
     <small>GOLD TUTOR</small>
@@ -76,7 +76,7 @@
         <div class="tutor-wrapper">
           <div class="tutor " ng-repeat="item in activeStaffs track by $index" ng-class="{'active': item.id == activeStaff.id}">
             <div class="tutor__content" ng-click="selectStaffById(item.id)">
-              <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
+              <div class="tutor__header-img"><img ng-src="{{item.photo}}" alt=""></div>
               <h3 class="tutor__name"><span ng-bind="item.chinese_name"></span> / <span ng-bind="item.english_name"></span></h3>
               <div class="tutor__title" ng-bind="item.graduated"></div>
               <div class="tutor__title" ng-bind="item.major"></div>
