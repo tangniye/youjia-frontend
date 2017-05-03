@@ -13,6 +13,7 @@
           },
           'mobileUserCenterContent': {
             templateUrl: '/app/mobile-user-center/user-feedback/index.html',
+            controller: 'userFeedbackCtrl'
           }
         },
         data: {
