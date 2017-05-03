@@ -1,10 +1,10 @@
 <div class="mobile-user-center__header__top-links">
   <a class="home-link" ui-sref="app.pages.index"><i class="iconfont icon-arrow-left"></i>返回首页</a>
-  <a class="assistant-link">留学助手</a>
+  <a class="assistant-link" target="_blank" href="http://www.uplusway.com">留学助手</a>
 </div>
 <div class="mobile-user-center__header__user">
   <div class="user-header-img"><img src="assets/image/logo.png"></div>
-  <h3 class="user-name"><span ng-bind="me.chinese_name">刘德华</span><button class="btn btn-green">修改密码</button></h3>
+  <h3 class="user-name"><span ng-bind="me.chinese_name"></span><button class="btn btn-green" ui-sref="app.mobileUserCenter.updatePassword">修改密码</button></h3>
 </div>
 <ul class="mobile-user-center__header__nav">
   <li  ui-sref-active="active"><a ui-sref="app.mobileUserCenter.userInfo"><i class="iconfont icon-user"></i>个人信息</a></li>
