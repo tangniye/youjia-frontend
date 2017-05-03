@@ -8,9 +8,6 @@
       templateUrl: 'app/components/update-password/index.html',
       controller: function ($scope) {
         $scope.step = 1;
-        // $scope.goToStep = function (step) {
-        //   $scope.step = step;
-        // }
       }
     };
   }
@@ -21,6 +18,8 @@
       restrict: 'E',
       templateUrl: 'app/components/update-password/step-1.html',
       link: function (scope, elem, attrs) {
+
+        scope.is_oldpassword_valid = true;
         var regx = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
 
         scope.is_password_equal = function () {
@@ -31,26 +30,22 @@
           return scope.form.password && scope.form.password.$viewValue && regx.test(scope.form.password.$viewValue);
         };
 
-        //scope.check = function (oldpwd) {
-        //  if (!oldpwd) {
-        //    scope.is_oldpassword_valid = false;
-        //    return;
-        //  }
-        //  User.checkPwd({password: oldpwd}).then(function (res) {
-        //    scope.is_oldpassword_valid = true;
-        //  }, function () {
-        //    scope.is_oldpassword_valid = false;
-        //  })
-        //};
+        scope.check = function (oldpwd) {
+          if (!oldpwd) {
+            scope.is_oldpassword_valid = false;
+            return;
+          }
+          User.checkPwd({password: oldpwd}).then(function (res) {
+            scope.is_oldpassword_valid = true;
+          }, function () {
+            scope.is_oldpassword_valid = false;
+          })
+        };
 
         scope.submit = function (item) {
-           if (scope.form.$valid && scope.is_password_equal() && scope.is_password_valid()) {
-
-             //if (scope.$parent.token) {
-             //  item.token = scope.$parent.token;
-             //}
-             resetPwd(item);
-           }
+          if (scope.form.$valid && scope.is_password_equal() && scope.is_password_valid()) {
+            resetPwd(item);
+          }
         };
 
         function resetPwd(item) {
