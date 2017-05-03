@@ -25,15 +25,13 @@
           ng-bind="case.update_time | dateYear"></span>
         </h4>
         <p>
-          <span class="opacity6">录取院校：&emsp;</span><span ng-bind="case.school"></span>
+          <span class="brief-block__label opacity6">录取院校：</span><span class="brief-block__content" ng-bind="case.school"></span>
         </p>
         <p>
-          <span class="opacity6">&emsp;&emsp;<span ng-bind="case.test1"></span>：</span>&emsp;<span
-          ng-bind="case.score1"></span>
+          <span class="brief-block__label opacity6"><span ng-bind="case.test1"></span>：</span><span class="brief-block__content" ng-bind="case.score1"></span>
         </p>
         <p ng-if="case.test2">
-          <span class="opacity6">&emsp;&emsp;<span ng-bind="case.test2"></span>：</span>&emsp;<span
-          ng-bind="case.score2"></span>
+          <span class="brief-block__label opacity6"><span ng-bind="case.test2"></span>：</span><span class="brief-block__content" ng-bind="case.score2"></span>
         </p>
         <div class="page-pagination">
           <span class="page-pagination__current" ng-bind="queryStr.page"></span> / <span class="page-pagination__total" ng-bind="page_total"></span>
