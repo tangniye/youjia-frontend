@@ -39,21 +39,23 @@
   </h2>
   <div class="staff-tutor-section__content">
     <div class="staff-tutor-section__summary">
-      <div class="tutor-before" >
-        <i class="iconfont icon-angle-left" ng-show="activeIndexInStaffs > 0"  ng-click="showPreviousStaff()"></i>
+      <div class="tutor-before">
+        <i class="iconfont icon-angle-left" ng-show="activeIndexInStaffs > 0" ng-click="showPreviousStaff()"></i>
       </div>
       <div class="tutor">
         <div class="tutor__content">
           <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
-          <h3 class="tutor__name"><span ng-bind="staffs[activeIndexInStaffs].chinese_name"></span> / <span ng-bind="staffs[activeIndexInStaffs].english_name"></span></h3>
+          <h3 class="tutor__name"><span ng-bind="staffs[activeIndexInStaffs].chinese_name"></span> / <span
+            ng-bind="staffs[activeIndexInStaffs].english_name"></span></h3>
           <div class="tutor__title" ng-bind="staffs[activeIndexInStaffs].graduated"></div>
           <div class="tutor__title" ng-bind="item.major"></div>
           <i class="iconfont icon-quotation-left"></i>
           <div class="tutor__brief" ng-bind="staffs[activeIndexInStaffs].introduce"></div>
         </div>
       </div>
-      <div class="tutor-after" >
-        <div class="iconfont icon-angle-right" ng-show="activeIndexInStaffs < staffLength - 1"  ng-click="showNextStaff()"></div>
+      <div class="tutor-after">
+        <div class="iconfont icon-angle-right" ng-show="activeIndexInStaffs < staffLength - 1"
+             ng-click="showNextStaff()"></div>
       </div>
     </div>
     <div class="staff-tutor-section__detail">
@@ -74,19 +76,21 @@
     <div class="staff-tutor-section__summary">
       <div class="staff-tutor-section__summary__container">
         <div class="tutor-wrapper">
-          <div class="tutor " ng-repeat="item in activeStaffs track by $index" ng-class="{'active': item.id == activeStaff.id}">
+          <div class="tutor " ng-repeat="item in activeStaffs track by $index"
+               ng-class="{'active': item.id == activeStaff.id}">
             <div class="tutor__content" ng-click="selectStaffById(item.id)">
               <div class="tutor__header-img"><img ng-src="{{item.photo}}" alt=""></div>
-              <h3 class="tutor__name"><span ng-bind="item.chinese_name"></span> / <span ng-bind="item.english_name"></span></h3>
+              <h3 class="tutor__name"><span ng-bind="item.chinese_name"></span> / <span
+                ng-bind="item.english_name"></span></h3>
               <div class="tutor__title" ng-bind="item.graduated"></div>
               <div class="tutor__title" ng-bind="item.major"></div>
             </div>
           </div>
         </div>
-        <div class="tutor-before"  ng-click="showPreviousPage()" ng-show="pageIndex > 0">
+        <div class="tutor-before" ng-click="showPreviousPage()" ng-show="pageIndex > 0">
           <i class="iconfont icon-angle-left"></i>
         </div>
-        <div class="tutor-after"  ng-click="showNextPage()" ng-show="pageIndex < totalPages - 1">
+        <div class="tutor-after" ng-click="showNextPage()" ng-show="pageIndex < totalPages - 1">
           <div class="iconfont icon-angle-right"></div>
         </div>
       </div>
@@ -131,18 +135,18 @@
   <div class="staff-appoint-section__content">
     <div class="staff-appoint-section__content__bg"></div>
     <div class="staff-appoint-section__content__info">
-      <h3>预约老师课程？</h3>
-      <form action="">
+      <h3 class="mt0">预约老师课程？</h3>
+      <form name="form" ng-submit="apply()" novalidate>
         <div class="form-group">
-          <input type="text" class="input form-control" placeholder="约课老师">
+          <input type="text" class="input form-control" placeholder="约课老师" name="teacher" ng-model="item.teacher">
         </div>
         <div class="form-group">
-          <input type="text" class="input form-control" placeholder="你的姓名">
+          <input type="text" class="input form-control" placeholder="你的姓名" name="name" ng-model="item.name" required>
         </div>
         <div class="form-group">
-          <input type="text" class="input form-control" placeholder="手机号码">
+          <input type="text" class="input form-control" placeholder="手机号码" name="phone" ng-model="item.phone" required>
         </div>
-        <button class="btn btn-green">马上约课</button>
+        <button type="submit" class="btn btn-green">马上约课</button>
       </form>
     </div>
   </div>
