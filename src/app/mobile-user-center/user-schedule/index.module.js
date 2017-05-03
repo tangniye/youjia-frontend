@@ -13,6 +13,7 @@
           },
           'mobileUserCenterContent': {
             templateUrl: '/app/mobile-user-center/user-schedule/index.html',
+            controller: 'userScheduleCtrl'
           }
         },
         data: {

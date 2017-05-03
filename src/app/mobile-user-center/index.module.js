@@ -11,6 +11,7 @@
         views: {
           'app': {
             templateUrl: '/app/mobile-user-center/index.html',
+            controller: 'mobileUserCenterCtrl'
           }
         }
       });
