@@ -1,8 +1,79 @@
 <section class="user-info-section">
-  <div class="row">
-    <div class="col-xs-6 user-info-item" ng-repeat="item in columns track by $index">
-      <label ng-bind="item.name"></label>
-      <span ng-bind="data[item.col]"></span>
+    <div class="row">
+      <div class="col-xs-6 user-info-item">
+        <label>中文名称：</label>
+        <span ng-bind="data.chinese_name"></span>
+      </div>
+      <div class="col-xs-6 user-info-item">
+        <label>英文名称：</label>
+        <span ng-bind="data.english_name"></span>
+      </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col-xs-6 user-info-item">
+        <label>性别：</label>
+        <span ng-bind="data.sexual"></span>
+      </div>
+      <div class="col-xs-6 user-info-item">
+        <label>所在地：</label>
+        <span ng-bind="data.location"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 user-info-item">
+        <label>年龄：</label>
+        <span ng-bind="data.age"></span>
+      </div>
+      <div class="col-xs-6 user-info-item">
+        <label>学校：</label>
+        <span ng-bind="data.school"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 user-info-item">
+        <label>年级：</label>
+        <span ng-bind="data.grade"></span>
+      </div>
+      <div class="col-xs-6 user-info-item">
+        <label>期望留学国家：</label>
+        <span ng-bind="data.study_country"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 user-info-item">
+        <label>预计入学时间：</label>
+        <span ng-bind="data.enrollment_time"></span>
+      </div>
+      <div class="col-xs-6 user-info-item">
+        <label>期望留学专业：</label>
+        <span ng-bind="data.major"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 user-info-item">
+        <label>学习课程：</label>
+        <span ng-bind="data.course_name"></span>
+      </div>
+      <div class="col-xs-6 user-info-item">
+        <label>学习范围：</label>
+        <span ng-bind="data.learn_range"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 user-info-item">
+        <label>微信：</label>
+        <span ng-bind="data.wechat"></span>
+      </div>
+      <div class="col-xs-6 user-info-item">
+        <label>手机号码：</label>
+        <span ng-bind="data.phone"></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 user-info-item">
+        <label>家长手机号码：</label>
+        <span ng-bind="data.parent_phone"></span>
+      </div>
+    </div>
+
 </section>
