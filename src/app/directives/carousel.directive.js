@@ -11,7 +11,9 @@
         var index = 0;
         var number = slides.length;
         var baseWidth = angular.element(element).width();
-        var interval;
+        var timeTicker;
+        var slideInterval = 3000;
+        var animateTime = 500;
         var sliding = false;
         var paused = false;
 
@@ -46,50 +48,91 @@
         }
 
         function slide(i) {
-          sliding = true;
           _.forEach(slides, function (slide, key) {
             $(slide).animate({
               left: (key - i) * baseWidth + 'px'
-            }, 500)
+            }, animateTime)
           });
-          $timeout(function () {
-            sliding = false;
-          }, 500)
+        }
+
+        function endToBegin (i) {
+          _.forEach(slides, function (slide, key) {
+            if (key) {
+              $(slide).animate({
+                left: (key-number) * baseWidth + 'px'
+              }, animateTime, function () {
+                $(slide).css({
+                  left: (key - i) * baseWidth + 'px'
+                })
+              });
+            } else {
+              $(slide).css({
+                left: baseWidth + 'px'
+              }).animate({
+                left: 0
+              }, animateTime)
+            }
+          });
+        }
+        function beginToEnd (i) {
+          _.forEach(slides, function (slide, key) {
+            if (key != number - 1) {
+              $(slide).animate({
+                left: (key + 1) * baseWidth + 'px'
+              }, animateTime, function () {
+                $(slide).css({
+                  left: (key - i) * baseWidth + 'px'
+                })
+              });
+            } else {
+              $(slide).css({
+                left: - baseWidth + 'px'
+              }).animate({
+                left: 0
+              }, animateTime)
+            }
+          });
         }
 
         function pause() {
           paused = true;
-          interval && $interval.cancel(interval);
+          timeTicker && $interval.cancel(timeTicker);
         }
         function unPause() {
           paused = false;
-          interval = $interval(function () {
+          timeTicker = $interval(function () {
             goto(index + 1)
-          }, 3000)
+          }, slideInterval)
         }
 
         function goto(i) {
           if(sliding) {
             return
           }
-          console.log(sliding)
+
+          sliding = true;
           if (i > number -1) {
             i = i - number;
+            endToBegin(i);
           } else if (i < 0) {
             i = i + number;
+            beginToEnd(i)
+          } else {
+            slide(i);
           }
-          slide(i);
+          $timeout(function () {
+            sliding = false;
+          }, animateTime + 10);
 
           $(indicators).removeClass('active');
           $(indicators[i]).addClass('active');
-
           index = i;
         }
 
         initCarousel();
 
         scope.$on("$destroy", function () {
-          interval && $interval.cancel(interval);
+          timeTicker && $interval.cancel(timeTicker);
         });
       }
     }
