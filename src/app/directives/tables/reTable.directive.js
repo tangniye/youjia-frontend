@@ -6,9 +6,6 @@
 
   /** @ngInject */
   function reTable() {
-    var linkFn = function (scope, elem, attr) {
-      // console.log(scope)
-    };
 
     return {
       restrict: 'E',
@@ -17,9 +14,8 @@
       //   tableColumns: '=columns',
       //   tableState: '=state'
       // },
-      templateUrl: '/app/directives/tables/table.html',
-      controller: 'reTableCtrl',
-      link: linkFn
+      templateUrl: 'app/directives/tables/table.html',
+      controller: 'reTableCtrl'
     }
   }
 

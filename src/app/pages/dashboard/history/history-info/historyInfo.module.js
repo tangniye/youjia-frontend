@@ -10,7 +10,7 @@
       .state('app.pages.dashboard.history.info', {
         url: '/history/:id',
         title: '历史信息',
-        templateUrl: '/app/pages/dashboard/history/history-info/historyInfo.html',
+        templateUrl: 'app/pages/dashboard/history/history-info/historyInfo.html',
         controller: 'historyInfoCtrl'
       });
   }

@@ -10,7 +10,7 @@
       .state('app.pages.dashboard.personal.info', {
         url: '',
         title: '个人信息',
-        templateUrl: '/app/pages/dashboard/personal/personal-info/personalInfo.html',
+        templateUrl: 'app/pages/dashboard/personal/personal-info/personalInfo.html',
         controller: 'personalInfoCtrl'
       });
   }

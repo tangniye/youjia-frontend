@@ -10,7 +10,7 @@
             .state('app.pages.staff', {
                 url: '/staff',
                 title: '师资团队',
-                templateUrl: '/app/pages/staff/staff.html',
+                templateUrl: 'app/pages/staff/staff.html',
                 controller: 'staffCtrl'
             });
     }

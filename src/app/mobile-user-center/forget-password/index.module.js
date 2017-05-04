@@ -9,7 +9,7 @@
       views: {
         'mobileUserCenterHeader': {},
         'mobileUserCenterContent': {
-          templateUrl: '/app/mobile-user-center/forget-password/index.html',
+          templateUrl: 'app/mobile-user-center/forget-password/index.html'
         }
       }
     })

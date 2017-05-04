@@ -8,10 +8,7 @@
     function pageBottom() {
         return {
             restrict: 'E',
-            templateUrl: 'app/components/pageBottom/pageBottom.html',
-            link: function (scope, el) {
-
-            }
+            templateUrl: 'app/components/pageBottom/pageBottom.html'
         };
     }
 

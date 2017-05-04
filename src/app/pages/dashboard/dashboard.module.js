@@ -11,7 +11,7 @@
         abstract: true,
         url: '/dashboard',
         title: '个人中心',
-        templateUrl: '/app/pages/dashboard/dashboard.html',
+        templateUrl: 'app/pages/dashboard/dashboard.html',
         controller: 'dashboardCtrl',
         data: {
           permissions: {

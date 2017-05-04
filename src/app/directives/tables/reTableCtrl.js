@@ -53,13 +53,8 @@
           }
         }
       }
-
       var queryStr = Object.assign(_sort, _search, _pagination);
-
-      console.log(queryStr)
-
       vm.callServer(queryStr);
-
     };
 
     /**
@@ -110,7 +105,6 @@
     };
 
     this.pipe();
-
     vm.pipe = this.pipe;
 
   }

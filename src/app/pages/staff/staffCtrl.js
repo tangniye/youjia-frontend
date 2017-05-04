@@ -70,20 +70,7 @@
         vm.staffLength = vm.staffs.length;
         vm.totalPages = Math.ceil(vm.staffLength / vm.pageLenghth);
 
-        var qList = [];
-        _.forEach(vm.staffs, function (e) {
-          qList.push(User.getAvatar(e.id))
-        });
-
-        $q.all(qList).then(function (res) {
-          if (vm.staffLength == res.length) {
-            for (var i = 0; i < vm.staffLength - 1; i++) {
-              vm.staffs[i].photo = res[i];
-            }
-            initialActiveStaffs();
-          }
-        })
-
+        initialActiveStaffs();
       })
     }
 
