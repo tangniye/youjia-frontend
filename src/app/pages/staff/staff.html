@@ -45,7 +45,10 @@
             </div>
             <div class="tutor">
                 <div class="tutor__content">
-                    <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
+                    <div class="tutor__header-img">
+                      <img ng-src="/static/{{staffs[activeIndexInStaffs].id}}/photo.png"
+                           onerror="javascript:this.src='assets/image/logo.png';">
+                    </div>
                     <h3 class="tutor__name"><span ng-bind="staffs[activeIndexInStaffs].chinese_name"></span> / <span
                             ng-bind="staffs[activeIndexInStaffs].english_name"></span></h3>
                     <div class="tutor__title" ng-bind="staffs[activeIndexInStaffs].graduated"></div>
