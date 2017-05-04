@@ -220,9 +220,10 @@
     <div class="col-md-12">
       <div class="form-group clearfix">
         <label class="control-label">备注：</label>
-        <div class="right">
-          <textarea rows="4" class="textarea" name="remark" placeholder="请限制信息100字以内"
+        <div class="right multi-select-container">
+          <textarea ng-if="!view" rows="4" class="textarea" name="remark" placeholder="请限制信息100字以内"
                     ng-model="item.remark" maxlength="100" ng-disabled="view"></textarea>
+          <span  class="view-txt" ng-if="view" ng-bind="item.remark"></span>
         </div>
       </div>
     </div>
