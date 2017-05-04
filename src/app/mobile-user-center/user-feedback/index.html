@@ -39,7 +39,11 @@
   <div class="user-feedback-section__footer" ng-if="!pagination.pageIndex == pagination.totalPages && feedbackCards.length > 0" ng-click="getMore()">
     点击加载更多<i class="iconfont icon-angle-right"></i>
   </div>
-  <div class="user-feedback-section__footer" ng-if="pagination.pageIndex == pagination.totalPages || feedbackCards.length == 0">
+  <div class="user-feedback-section__footer" ng-if="pagination.pageIndex == pagination.totalPages && feedbackCards.length > 0">
     没有更多内容了
+  </div>
+  <div class="no-data-container text-center" ng-if="feedbackCards.length == 0">
+    <div class="no-data-container__img"></div>
+    <p>暂无数据~</p>
   </div>
 </seciton>
