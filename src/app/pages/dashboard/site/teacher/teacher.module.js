@@ -10,7 +10,7 @@
       .state('app.pages.dashboard.site.teacher', {
         url: '/teacher',
         title: '老师信息',
-        templateUrl: '/app/pages/dashboard/site/teacher/teacher.html',
+        templateUrl: 'app/pages/dashboard/site/teacher/teacher.html',
         controller: 'teacherCtrl'
       });
   }

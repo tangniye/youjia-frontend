@@ -10,7 +10,7 @@
       .state('app.pages.dashboard.schedule.info', {
         url: '/:role/:id',
         title: '课程表',
-        templateUrl: '/app/pages/dashboard/schedule/schedule-info/scheduleInfo.html',
+        templateUrl: 'app/pages/dashboard/schedule/schedule-info/scheduleInfo.html',
         controller: 'scheduleInfoCtrl'
       });
   }

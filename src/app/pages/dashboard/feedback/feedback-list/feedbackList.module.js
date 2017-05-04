@@ -10,7 +10,7 @@
       .state('app.pages.dashboard.feedback.list', {
         url: '',
         title: '学习反馈',
-        templateUrl: '/app/pages/dashboard/feedback/feedback-list/feedbackList.html',
+        templateUrl: 'app/pages/dashboard/feedback/feedback-list/feedbackList.html',
         controller: 'feedbackListCtrl'
       });
   }

@@ -13,14 +13,14 @@ var gutil = require('gulp-util');
  *  The main paths of your project handle these with care
  */
 exports.paths = {
-  bower_components:'bower_components',
+  bower_components: 'bower_components',
   src: 'src',
   dist: 'dist',
   devDist: 'dev-dist',
   tmp: '.tmp',
   e2e: 'e2e',
   mock: 'mock',
-  app:'./'
+  app: './'
 };
 
 /**
@@ -36,10 +36,10 @@ exports.wiredep = {
 /**
  *  Common implementation for an error handler of a Gulp plugin
  */
-exports.errorHandler = function(title) {
+exports.errorHandler = function (title) {
   'use strict';
 
-  return function(err) {
+  return function (err) {
     gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
     this.emit('end');
   };

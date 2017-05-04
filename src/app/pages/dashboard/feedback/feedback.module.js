@@ -11,7 +11,7 @@
         abstract: true,
         url: '/feedback',
         title: '学习反馈',
-        templateUrl: '/app/pages/dashboard/feedback/feedback.html'
+        templateUrl: 'app/pages/dashboard/feedback/feedback.html'
       });
   }
 

@@ -10,7 +10,7 @@
             .state('app.pages.about', {
                 url: '/about',
                 title: '关于我们',
-                templateUrl: '/app/pages/about/about.html',
+                templateUrl: 'app/pages/about/about.html',
                 controller: 'aboutCtrl'
             });
     }

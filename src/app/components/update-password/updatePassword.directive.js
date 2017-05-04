@@ -19,7 +19,6 @@
       templateUrl: 'app/components/update-password/step-1.html',
       link: function (scope, elem, attrs) {
 
-        scope.is_oldpassword_valid = true;
         var regx = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
 
         scope.is_password_equal = function () {

@@ -10,7 +10,7 @@
       .state('app.pages.dashboard.student', {
         url: '/student',
         title: '学生信息',
-        templateUrl: '/app/pages/dashboard/student/student.html',
+        templateUrl: 'app/pages/dashboard/student/student.html',
         controller: 'studentCtrl',
         data: {
           permissions: {

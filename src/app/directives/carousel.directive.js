@@ -2,7 +2,7 @@
   'use strict';
 
   /** @ngInject */
-  function carousel($timeout) {
+  function carousel($timeout, $interval) {
     return {
       link: function(scope, element, attrs) {
         var slides = angular.element(element).find('.carousel__slides').find('li');
@@ -11,11 +11,16 @@
         var index = 0;
         var number = slides.length;
         var baseWidth = angular.element(element).width();
-        var timer;
+        var timeTicker;
+        var slideInterval = 3000;
+        var animateTime = 500;
+        var sliding = false;
+        var paused = false;
 
         function initCarousel() {
           $(indicators).removeClass('active');
           $(indicators[0]).addClass('active');
+          sliding = false;
           _.forEach(slides, function (slide, key) {
             $(slide).css({
               left: 0 + key * baseWidth + 'px',
@@ -34,50 +39,100 @@
           $(controllers[1]).on('click', function () {
             goto(index + 1)
           });
+          unPause();
+          element.mouseenter(function () {
+            pause();
+          }).mouseleave(function () {
+            unPause();
+          });
         }
 
-        function doAnimate(i) {
+        function slide(i) {
           _.forEach(slides, function (slide, key) {
             $(slide).animate({
               left: (key - i) * baseWidth + 'px'
-            }, 1000)
+            }, animateTime)
           });
         }
 
-        function resetPosition(i) {
+        function endToBegin (i) {
           _.forEach(slides, function (slide, key) {
-            $(slide).css({
-              left: (key - i) * baseWidth + 'px'
-            })
+            if (key) {
+              $(slide).animate({
+                left: (key-number) * baseWidth + 'px'
+              }, animateTime, function () {
+                $(slide).css({
+                  left: (key - i) * baseWidth + 'px'
+                })
+              });
+            } else {
+              $(slide).css({
+                left: baseWidth + 'px'
+              }).animate({
+                left: 0
+              }, animateTime)
+            }
           });
+        }
+        function beginToEnd (i) {
+          _.forEach(slides, function (slide, key) {
+            if (key != number - 1) {
+              $(slide).animate({
+                left: (key + 1) * baseWidth + 'px'
+              }, animateTime, function () {
+                $(slide).css({
+                  left: (key - i) * baseWidth + 'px'
+                })
+              });
+            } else {
+              $(slide).css({
+                left: - baseWidth + 'px'
+              }).animate({
+                left: 0
+              }, animateTime)
+            }
+          });
+        }
+
+        function pause() {
+          paused = true;
+          timeTicker && $interval.cancel(timeTicker);
+        }
+        function unPause() {
+          paused = false;
+          timeTicker = $interval(function () {
+            goto(index + 1)
+          }, slideInterval)
         }
 
         function goto(i) {
+          if(sliding) {
+            return
+          }
+
+          sliding = true;
           if (i > number -1) {
             i = i - number;
+            endToBegin(i);
           } else if (i < 0) {
             i = i + number;
+            beginToEnd(i)
+          } else {
+            slide(i);
           }
-          doAnimate(i);
+          $timeout(function () {
+            sliding = false;
+          }, animateTime + 10);
 
           $(indicators).removeClass('active');
           $(indicators[i]).addClass('active');
-
           index = i;
-          $timeout.cancel(timer);
-          timer = $timeout(function () {
-            goto(++index);
-          }, 3000)
         }
 
         initCarousel();
 
-        timer = $timeout(function () {
-          goto(++index);
-        }, 3000);
-
         scope.$on("$destroy", function () {
-          timer && $timeout.cancel(timer);
+          timeTicker && $interval.cancel(timeTicker);
         });
       }
     }

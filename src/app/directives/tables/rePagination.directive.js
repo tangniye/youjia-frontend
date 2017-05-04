@@ -11,7 +11,7 @@
       restrict: 'E',
       require: '^reTable',
       scope: true,
-      templateUrl: '/app/directives/tables/table-pagination.html',
+      templateUrl: 'app/directives/tables/table-pagination.html',
       link: function (scope, elem, attr, ctrl) {
         scope.pagination = ctrl.getTableState().pagination;
 

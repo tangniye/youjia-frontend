@@ -10,7 +10,7 @@
       .state('app.pages.dashboard.site.successCase', {
         url: '/successCase',
         title: '成功案例',
-        templateUrl: '/app/pages/dashboard/site/successCase/successCase.html',
+        templateUrl: 'app/pages/dashboard/site/successCase/successCase.html',
         controller: 'successCaseCtrl'
       });
   }
