@@ -4,16 +4,24 @@
 
 .info-panel-body {
   padding: 60px;
-
+  .col-md-6 {
+    position: relative;
+    min-height: 20px;
+    margin-bottom: 60px;
+  }
   label {
     width: 120px;
-    float: left;
+    position: absolute;
+    left: 0;
     font-weight: normal;
     margin-left: 40px;
   }
 
   span.txt {
+    display: block;
+    margin-left: 140px;
     color: @font-sub-color;
+    word-break: break-all;
   }
 
 }
