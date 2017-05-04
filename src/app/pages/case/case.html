@@ -51,6 +51,10 @@
       <button class="btn btn-green" ng-click="prev()" ng-hide="queryStr.page == 1"><i class="iconfont icon-angle-thin-left"></i></button>
       <button class="btn btn-green" ng-click="next()" ng-hide="queryStr.page == page_total"><i class="iconfont icon-angle-thin-right"></i></button>
     </div>
+    <div class="no-data-container text-center" ng-if="total == 0">
+      <div class="no-data-container__img"></div>
+      <p>暂无数据~</p>
+    </div>
     <div class="show-more-case" ng-if="cases.length < total">
       <a ng-click="seeMore()"> 点击加载更多 <i class="iconfont icon-angle-right"></i></a>
     </div>
