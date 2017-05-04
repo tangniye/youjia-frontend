@@ -10,7 +10,7 @@
         title: '个人中心',
         views: {
           'app': {
-            templateUrl: '/app/mobile-user-center/index.html',
+            templateUrl: 'app/mobile-user-center/index.html',
             controller: 'mobileUserCenterCtrl'
           }
         }
@@ -23,6 +23,6 @@
     'app.mobileUserCenter.userSchedule',
     'app.mobileUserCenter.userFeedback',
     'app.mobileUserCenter.updatePassword',
-    'app.mobileUserCenter.forgetPassword',
+    'app.mobileUserCenter.forgetPassword'
   ]).config(routeConfig);
 })();

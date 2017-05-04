@@ -10,7 +10,7 @@
       .state('app.pages.dashboard.schedule.student', {
         url: '/student',
         title: '按学生排课',
-        templateUrl: '/app/pages/dashboard/schedule/student/studentSchedule.html',
+        templateUrl: 'app/pages/dashboard/schedule/student/studentSchedule.html',
         controller: 'studentScheduleCtrl',
         data: {
           permissions: {

@@ -1,67 +1,78 @@
 <div class="card-wrapper">
-  <div class="card-tool">
-    <button class="btn btn-green-outline mr10" ng-click="add()" permission permission-only="'ADMIN'"><i class="iconfont icon-add-document mr10"></i>新增
-    </button>
-    <!--<a class="btn btn-green-outline mr10" href="/export.html#/?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>-->
-    <a class="btn btn-green-outline mr10" href="/export/user/feedback?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>
-    <button class="btn btn-green-outline" ng-click="deleteAll()" permission permission-only="'ADMIN'" ng-disabled="tableData.length == 0"><i class="iconfont icon-brush mr10"></i>清空反馈</button>
-    <button class="btn btn-green-outline fr" ui-sref="app.pages.dashboard.feedback.list" permission permission-only="'ADMIN'"><i class="iconfont icon-angle-left mr10"></i>返回
-    </button>
+    <div class="card-tool">
+        <button class="btn btn-green-outline mr10" ng-click="add()" permission permission-only="'ADMIN'"><i
+                class="iconfont icon-add-document mr10"></i>新增
+        </button>
+        <!--<a class="btn btn-green-outline mr10" href="/export.html#/?user_id={{userid}}" target="_blank"><i class="iconfont icon-print mr10"></i>导出</a>-->
+        <a class="btn btn-green-outline mr10" href="/export/user/feedback?user_id={{userid}}" target="_blank"><i
+                class="iconfont icon-print mr10"></i>导出</a>
+        <button class="btn btn-green-outline" ng-click="deleteAll()" permission permission-only="'ADMIN'"
+                ng-disabled="tableData.length == 0"><i class="iconfont icon-brush mr10"></i>清空反馈
+        </button>
+        <button class="btn btn-green-outline fr" ui-sref="app.pages.dashboard.feedback.list" permission
+                permission-only="'ADMIN'"><i class="iconfont icon-angle-left mr10"></i>返回
+        </button>
 
-  </div>
-  <div class="flex">
-    <div class="card-box-container" ng-repeat="item in tableData track by $index">
-      <div class="card-box">
-        <div class="card-box-header">
-          <span class="font16 mr10" ng-bind="item.chinese_name"></span>
-          <span class="opacity6">日期：<span ng-bind="item.study_date"></span></span>
-          <div class="fr font20">
-            <a class="mr10" ng-click="edit(item)" title="修改" permission permission-only="'ADMIN'"><i class="iconfont icon-pencil"></i></a>
-            <a ng-click="delete(item.id)" title="删除" permission permission-only="'ADMIN'"><i class="iconfont icon-delete"></i></a>
-          </div>
-        </div>
-        <div class="card-box-body">
-          <div class="row">
-            <div class="col-md-6">
-              <p class="sub-color">上课时间：</p>
-              <p ng-bind="item.class_time"></p>
-            </div>
-            <div class="col-md-6">
-              <p class="sub-color">离校时间：</p>
-              <p ng-bind="item.leave_time"></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <p class="sub-color">课程类型：</p>
-              <p ng-bind="item.course_name"></p>
-            </div>
-            <div class="col-md-6">
-              <p class="sub-color">授课范围：</p>
-              <p ng-bind="item.section"></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <p class="sub-color">课程内容：</p>
-              <p ng-bind="item.contents"></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <p class="sub-color">课后作业：</p>
-              <p ng-bind="item.homework"></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <p class="sub-color">课堂反馈：</p>
-              <p ng-bind="item.feedback"></p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+    <div class="flex" ng-if="tableData.length > 0">
+        <div class="card-box-container" ng-repeat="item in tableData track by $index">
+            <div class="card-box">
+                <div class="card-box-header">
+                    <span class="font16 mr10" ng-bind="item.chinese_name"></span>
+                    <span class="opacity6">日期：<span ng-bind="item.study_date"></span></span>
+                    <div class="fr font20">
+                        <a class="mr10" ng-click="edit(item)" title="修改" permission permission-only="'ADMIN'"><i
+                                class="iconfont icon-pencil"></i></a>
+                        <a ng-click="delete(item.id)" title="删除" permission permission-only="'ADMIN'"><i
+                                class="iconfont icon-delete"></i></a>
+                    </div>
+                </div>
+                <div class="card-box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="sub-color">上课时间：</p>
+                            <p ng-bind="item.class_time"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="sub-color">离校时间：</p>
+                            <p ng-bind="item.leave_time"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="sub-color">课程类型：</p>
+                            <p ng-bind="item.course_name"></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="sub-color">授课范围：</p>
+                            <p ng-bind="item.section"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="sub-color">课程内容：</p>
+                            <p ng-bind="item.contents"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="sub-color">课后作业：</p>
+                            <p ng-bind="item.homework"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="sub-color">课堂反馈：</p>
+                            <p ng-bind="item.feedback"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="no-data-container text-center" ng-if="tableData.length == 0">
+        <div class="no-data-container__img"></div>
+        <p>暂无数据~</p>
+    </div>
 </div>
 <div include-with-scope="app/directives/tables/table-pagination.html"></div>

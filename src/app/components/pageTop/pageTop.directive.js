@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function pageTop($rootScope, $cookies, $state, Common, User) {
+  function pageTop() {
     return {
       restrict: 'E',
       scope: true,

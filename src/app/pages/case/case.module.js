@@ -10,7 +10,7 @@
             .state('app.pages.case', {
                 url: '/case',
                 title: '成功案例',
-                templateUrl: '/app/pages/case/case.html',
+                templateUrl: 'app/pages/case/case.html',
                 controller: 'caseCtrl'
             });
     }

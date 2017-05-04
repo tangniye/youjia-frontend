@@ -5,87 +5,108 @@
   'use strict';
 
   /** @ngInject */
-  function staffCtrl($scope, User) {
+  function staffCtrl($scope, $q, User, Audition, toastr) {
     var vm = $scope;
 
-    $scope.queryStr = {
+    vm.queryStr = {
       show: true
     };
 
-    $scope.pageLenghth = 5; // esp for desktop
-    $scope.totalPages = 0; // esp for desktop
-    $scope.pageIndex = 0; // esp for desktop
+    vm.pageLenghth = 5; // esp for desktop
+    vm.totalPages = 0; // esp for desktop
+    vm.pageIndex = 0; // esp for desktop
 
-    $scope.activeIndexInStaffs = 0; // esp for mobile
-    $scope.staffLength = 0;
+    vm.activeIndexInStaffs = 0; // esp for mobile
+    vm.staffLength = 0;
 
     // esp for desktop
-    $scope.showPreviousPage = function () {
-      if ($scope.pageIndex > 0) {
-        $scope.pageIndex--;
-        $scope.activeStaffs = _.slice($scope.staffs, $scope.pageIndex * $scope.pageLenghth, ($scope.pageIndex + 1) * $scope.pageLenghth);
-        var tempStaff = $scope.activeStaffs[Math.floor($scope.pageLenghth / 2)];
+    vm.showPreviousPage = function () {
+      if (vm.pageIndex > 0) {
+        vm.pageIndex--;
+        vm.activeStaffs = _.slice(vm.staffs, vm.pageIndex * vm.pageLenghth, (vm.pageIndex + 1) * vm.pageLenghth);
+        var tempStaff = vm.activeStaffs[Math.floor(vm.pageLenghth / 2)];
         getProfileById(tempStaff.id);
       }
     };
-    $scope.showNextPage = function () {
-      if ($scope.pageIndex < $scope.totalPages - 1) {
-        $scope.pageIndex++;
-        $scope.activeStaffs = _.slice($scope.staffs, $scope.pageIndex * $scope.pageLenghth, ($scope.pageIndex + 1) * $scope.pageLenghth);
-        var activeLength = $scope.activeStaffs.length;
-        var midIndex = Math.floor($scope.pageLenghth / 2);
-        var tempStaff = midIndex > activeLength - 1 ? $scope.activeStaffs[activeLength - 1] : $scope.activeStaffs[midIndex];
+    vm.showNextPage = function () {
+      if (vm.pageIndex < vm.totalPages - 1) {
+        vm.pageIndex++;
+        vm.activeStaffs = _.slice(vm.staffs, vm.pageIndex * vm.pageLenghth, (vm.pageIndex + 1) * vm.pageLenghth);
+        var activeLength = vm.activeStaffs.length;
+        var midIndex = Math.floor(vm.pageLenghth / 2);
+        var tempStaff = midIndex > activeLength - 1 ? vm.activeStaffs[activeLength - 1] : vm.activeStaffs[midIndex];
         getProfileById(tempStaff.id);
       }
     };
-    $scope.selectStaffById = function (userId) {
+    vm.selectStaffById = function (userId) {
       getProfileById(userId);
     };
     function getProfileById(userId) {
-      var indexInStaffs = _.findIndex($scope.staffs, function (e) {
+      var indexInStaffs = _.findIndex(vm.staffs, function (e) {
         return e.id === userId;
       });
-      $scope.activeStaff = $scope.staffs[indexInStaffs];
+      vm.activeStaff = vm.staffs[indexInStaffs];
     }
 
     // esp for mobile
-    $scope.showPreviousStaff = function () {
-      if ($scope.activeIndexInStaffs > 0) {
-        getProfileByIndex($scope.activeIndexInStaffs - 1)
+    vm.showPreviousStaff = function () {
+      if (vm.activeIndexInStaffs > 0) {
+        getProfileByIndex(vm.activeIndexInStaffs - 1)
       }
     };
-    $scope.showNextStaff = function () {
-      if ($scope.activeIndexInStaffs < $scope.staffLength - 1) {
-        getProfileByIndex($scope.activeIndexInStaffs + 1)
+    vm.showNextStaff = function () {
+      if (vm.activeIndexInStaffs < vm.staffLength - 1) {
+        getProfileByIndex(vm.activeIndexInStaffs + 1)
       }
     };
     function getProfileByIndex(indexInStaffs) {
-      $scope.activeIndexInStaffs = indexInStaffs;
+      vm.activeIndexInStaffs = indexInStaffs;
     }
 
 
     function getStaffList(queryStr) {
       User.getTeacherList(queryStr).then(function (res) {
-        $scope.staffs = res.items;
-        $scope.staffLength = $scope.staffs.length;
-        $scope.totalPages = Math.ceil($scope.staffLength / $scope.pageLenghth);
-        if ($scope.staffLength > 0) {
-          //for mobile
-          getProfileByIndex(0);
-          $scope.activeIndexInStaffs = 0;
+        vm.staffs = res.items;
+        vm.staffLength = vm.staffs.length;
+        vm.totalPages = Math.ceil(vm.staffLength / vm.pageLenghth);
 
-          //for desktop
-          $scope.pageIndex = 0;
-          $scope.activeStaffs = _.slice($scope.staffs, $scope.pageIndex * $scope.pageLenghth, ($scope.pageIndex + 1) * $scope.pageLenghth);
-          var activeLength = $scope.activeStaffs.length;
-          var midIndex = Math.floor($scope.pageLenghth / 2);
-          var tempStaff = midIndex > activeLength - 1 ? $scope.activeStaffs[activeLength - 1] : $scope.activeStaffs[midIndex];
-          getProfileById(tempStaff.id);
-        }
+        initialActiveStaffs();
       })
     }
 
-    getStaffList($scope.queryStr);
+    function initialActiveStaffs() {
+      if (vm.staffLength > 0) {
+        //for mobile
+        getProfileByIndex(0);
+        vm.activeIndexInStaffs = 0;
+
+        //for desktop
+        vm.pageIndex = 0;
+        vm.activeStaffs = _.slice(vm.staffs, vm.pageIndex * vm.pageLenghth, (vm.pageIndex + 1) * vm.pageLenghth);
+        var activeLength = vm.activeStaffs.length;
+        var midIndex = Math.floor(vm.pageLenghth / 2);
+        var tempStaff = midIndex > activeLength - 1 ? vm.activeStaffs[activeLength - 1] : vm.activeStaffs[midIndex];
+        getProfileById(tempStaff.id);
+      }
+    }
+
+    getStaffList(vm.queryStr);
+
+    var regx = /^\d{11}$/;
+
+    vm.is_phone_valid = function () {
+      return vm.form.phone && vm.form.phone.$viewValue && regx.test(vm.form.phone.$viewValue)
+    };
+
+    vm.apply = function () {
+      if (vm.form.$valid && vm.is_phone_valid()) {
+        Audition.add(vm.item).then(function (res) {
+          toastr.success('请等待通知', '预约成功', {'closeButton': true});
+          delete vm.item
+        })
+      }
+
+    };
 
   }
 

@@ -24,16 +24,19 @@
     min-width: 240px;
   }
 }
+
 .staff-standard-section {
   margin: 80px 0;
 
 }
+
 .staff-standard-section__info {
   text-align: center;
   color: @font-sub-color;
   margin: 20px 10px 60px;
   font-size: 1.8rem;
 }
+
 .staff-standard-section__content {
   display: flex;
   justify-content: space-between;
@@ -112,10 +115,12 @@
 .staff-tutor-section--mobile {
   display: none;
 }
+
 .staff-tutor-section {
   margin: 80px 0;
 
 }
+
 .staff-tutor-section .container {
   width: 1010px;
   max-width: 100%;
@@ -175,19 +180,19 @@
         width: 140px;
         height: 140px;
         background-color: @primary-white;
-        transition:  all linear .5s;;
+        transition: all linear .5s;;
       }
     }
     .tutor__name {
       opacity: 1;
       font-size: 1.2em;
-      transition:  all linear .5s;
+      transition: all linear .5s;
     }
     .tutor__title {
       display: block;
       font-size: 0.8em;
       opacity: .6;
-      transition:  all linear .5s;
+      transition: all linear .5s;
     }
   }
 
@@ -203,19 +208,19 @@
       height: 120px;
       border-radius: 100%;
       cursor: pointer;
-      transition:  all linear .5s;
+      transition: all linear .5s;
     }
   }
   .tutor__name {
     opacity: .6;
     font-size: 0.8em;
-    transition:  all linear .5s;
+    transition: all linear .5s;
 
   }
   .tutor__title {
     display: none;
     opacity: 1;
-    transition:  all linear .5s;
+    transition: all linear .5s;
 
   }
   .tutor-before,
@@ -254,7 +259,7 @@
 
   .tutor__detail__item {
     position: relative;
-    margin: 0 auto 60px;
+    margin: 0 auto 100px;
     font-size: 1em;
     color: @primary-white;
 
@@ -312,11 +317,11 @@
   }
 }
 
-
 .staff-appoint-section {
   background-color: @primary-grey;
   padding: 80px 0;
 }
+
 .staff-appoint-section__content {
   width: @content-md-width;
   height: 340px;
@@ -326,11 +331,13 @@
     width: 50%;
   }
 }
+
 .staff-appoint-section__content__bg {
   width: 50%;
   background: @primary-blue url("@{images-root}/staff-appoint-form-bg.png") no-repeat left;
   background-size: cover;
 }
+
 .staff-appoint-section__content__info {
   padding: 40px 80px;
   background-color: @primary-white;
@@ -353,11 +360,17 @@
       }
     }
 
+    &.has-error input.form-control {
+      border-color: @font-error-color;
+    }
+
   }
+
   button {
     height: 40px;
     padding: 6px 28px;
   }
+
 }
 
 // < 1200px
@@ -365,6 +378,7 @@
   .staff-standard-section__info {
     font-size: 1.6rem;
   }
+
   .staff-tutor-section {
     .staff-tutor-section__summary__container {
       width: 980px;
@@ -384,10 +398,12 @@
   .staff-tutor-section {
     margin: 60px 0;
   }
+
   .staff-standard-section__info {
     font-size: 14px;
     margin-bottom: 40px;
   }
+
   .staff-standard-section__content {
     width: 740px;
     .staff-standard-bg {
@@ -398,6 +414,7 @@
       }
     }
   }
+
   .staff-tutor-section {
     font-size: 14px;
     .staff-tutor-section__detail__container,
@@ -429,19 +446,23 @@
       top: 30px;
     }
   }
+
   .staff-appoint-section {
     padding: 60px 0;
   }
+
   .staff-appoint-section__content {
     width: 720px;
     height: 360px;
   }
+
   .staff-appoint-section__content__info {
     h3 {
       font-size: 1.8rem;
     }
   }
 }
+
 // <768px
 @media (max-width: @screen-xs-max) {
 
@@ -452,17 +473,20 @@
       margin: 0;
     }
   }
+
   .staff-standard-section,
   .staff-tutor-section {
     margin: 40px 0;
   }
+
   .staff-standard-section__info {
     font-size: 1.4rem;
   }
+
   .staff-standard-section__content {
     position: relative;
     left: 50%;
-    transform: translate(-50%, 0 );
+    transform: translate(-50%, 0);
     width: 640px;
     margin: 0 !important;
     .staff-standard-bg {
@@ -473,9 +497,11 @@
       }
     }
   }
+
   .staff-tutor-section {
     display: none;
   }
+
   .staff-tutor-section--mobile {
     display: block;
     margin: 40px 0;
@@ -576,7 +602,7 @@
         position: absolute;
         top: -15px;
         left: 50%;
-        transform: translate(-50%, 0 );
+        transform: translate(-50%, 0);
         content: '';
         width: 15px;
         height: 15px;
@@ -590,17 +616,20 @@
   .staff-appoint-section {
     padding: 40px 0;
   }
+
   .staff-appoint-section__content {
     width: 100%;
     height: auto;
     padding: 20px;
     flex-direction: column;
   }
+
   .staff-appoint-section__content__bg {
     content: '';
     width: 100% !important;
     height: 300px;
   }
+
   .staff-appoint-section__content__info {
     width: 100% !important;
     h3 {
@@ -612,24 +641,29 @@
     }
   }
 }
+
 // < 480px
 @media (max-width: @screen-xxs-max) {
   .staff-banner__container {
     width: 96%;
     height: 140px;
   }
+
   .staff-standard-section__info {
     font-size: 1.2rem;
     margin-bottom: 20px;
   }
+
   .staff-tutor-section--mobile {
     .staff-tutor-section__detail {
       padding: 10px 20px;
     }
   }
+
   .staff-appoint-section__content__bg {
     height: 200px;
   }
+
   .staff-appoint-section__content__info {
     padding: 20px;
   }

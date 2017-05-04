@@ -62,8 +62,8 @@
         if (data === 'ok') {
           Audition.delete(ids).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
+            vm.pipe();
           });
-          vm.pipe();
         }
       });
 

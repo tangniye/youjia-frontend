@@ -1,149 +1,160 @@
 <div class="staff-banner flex-center" img-resize="{height:630,width:1920}" m-size="{width: 750, height: 360}">
-  <div class="staff-banner__container">
-    <div class="banner-txt text-center absolute-center">
-      <p class="main">优质的师资队伍</p>
-      <p>专业知识过硬，教学经验丰富，教育背景行业领先</p>
+    <div class="staff-banner__container">
+        <div class="banner-txt text-center absolute-center">
+            <p class="main">优质的师资队伍</p>
+            <p>专业知识过硬，教学经验丰富，教育背景行业领先</p>
+        </div>
     </div>
-  </div>
 </div>
 
 <section class="staff-standard-section">
-  <h2 class="section-title staff-standard-section__title">
-    严格的老师录用标准
-  </h2>
-  <p class="staff-standard-section__info">对老师的严格培训、考核、淘汰机制，以保证教学的高质量</p>
-  <div class="staff-standard-section__content">
-    <div class="staff-standard-section__bg--1 staff-standard-bg">
-      <div class="hover-stratum"></div>
-      <div class="circle flex-center">优质</div>
-      <p class="staff-standard-info">
-        均毕业于国内985,211高校或国外莫纳什大学，普渡大学等知名学府，均在托福雅思考试中取得高分，部分托福单项满分，雅思单项8.5，SAT阅读780以上</p>
+    <h2 class="section-title staff-standard-section__title">
+        严格的老师录用标准
+    </h2>
+    <p class="staff-standard-section__info">对老师的严格培训、考核、淘汰机制，以保证教学的高质量</p>
+    <div class="staff-standard-section__content">
+        <div class="staff-standard-section__bg--1 staff-standard-bg">
+            <div class="hover-stratum"></div>
+            <div class="circle flex-center">优质</div>
+            <p class="staff-standard-info">
+                均毕业于国内985,211高校或国外莫纳什大学，普渡大学等知名学府，均在托福雅思考试中取得高分，部分托福单项满分，雅思单项8.5，SAT阅读780以上</p>
+        </div>
+        <div class="staff-standard-section__bg--2 staff-standard-bg">
+            <div class="hover-stratum"></div>
+            <div class="circle flex-center">丰富</div>
+            <p class="staff-standard-info">平均每人每学年授课1800小时以上，约等于公立学校英语老师11.56年的总课时</p>
+        </div>
+        <div class="staff-standard-section__bg--3 staff-standard-bg">
+            <div class="hover-stratum"></div>
+            <div class="circle flex-center">严谨</div>
+            <p class="staff-standard-info">自主研发金牌教材，每周定期教研，学生学习方法，习惯与成绩全面提高</p>
+        </div>
     </div>
-    <div class="staff-standard-section__bg--2 staff-standard-bg">
-      <div class="hover-stratum"></div>
-      <div class="circle flex-center">丰富</div>
-      <p class="staff-standard-info">平均每人每学年授课1800小时以上，约等于公立学校英语老师11.56年的总课时</p>
-    </div>
-    <div class="staff-standard-section__bg--3 staff-standard-bg">
-      <div class="hover-stratum"></div>
-      <div class="circle flex-center">严谨</div>
-      <p class="staff-standard-info">自主研发金牌教材，每周定期教研，学生学习方法，习惯与成绩全面提高</p>
-    </div>
-  </div>
 </section>
 
 <section class="staff-tutor-section--mobile">
-  <h2 class="staff-tutor-section__title section-title">
-    金牌导师
-    <small>GOLD TUTOR</small>
-  </h2>
-  <div class="staff-tutor-section__content">
-    <div class="staff-tutor-section__summary">
-      <div class="tutor-before" >
-        <i class="iconfont icon-angle-left" ng-show="activeIndexInStaffs > 0"  ng-click="showPreviousStaff()"></i>
-      </div>
-      <div class="tutor">
-        <div class="tutor__content">
-          <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
-          <h3 class="tutor__name"><span ng-bind="staffs[activeIndexInStaffs].chinese_name"></span> / <span ng-bind="staffs[activeIndexInStaffs].english_name"></span></h3>
-          <div class="tutor__title" ng-bind="staffs[activeIndexInStaffs].graduated"></div>
-          <div class="tutor__title" ng-bind="item.major"></div>
-          <i class="iconfont icon-quotation-left"></i>
-          <div class="tutor__brief" ng-bind="staffs[activeIndexInStaffs].introduce"></div>
+    <h2 class="staff-tutor-section__title section-title">
+        金牌导师
+        <small>GOLD TUTOR</small>
+    </h2>
+    <div class="staff-tutor-section__content">
+        <div class="staff-tutor-section__summary">
+            <div class="tutor-before">
+                <i class="iconfont icon-angle-left" ng-show="activeIndexInStaffs > 0"
+                   ng-click="showPreviousStaff()"></i>
+            </div>
+            <div class="tutor">
+                <div class="tutor__content">
+                    <div class="tutor__header-img"><img src="assets/image/_tutor-avatar-4.png" alt=""></div>
+                    <h3 class="tutor__name"><span ng-bind="staffs[activeIndexInStaffs].chinese_name"></span> / <span
+                            ng-bind="staffs[activeIndexInStaffs].english_name"></span></h3>
+                    <div class="tutor__title" ng-bind="staffs[activeIndexInStaffs].graduated"></div>
+                    <div class="tutor__title" ng-bind="item.major"></div>
+                    <i class="iconfont icon-quotation-left"></i>
+                    <div class="tutor__brief" ng-bind="staffs[activeIndexInStaffs].introduce"></div>
+                </div>
+            </div>
+            <div class="tutor-after">
+                <div class="iconfont icon-angle-right" ng-show="activeIndexInStaffs < staffLength - 1"
+                     ng-click="showNextStaff()"></div>
+            </div>
         </div>
-      </div>
-      <div class="tutor-after" >
-        <div class="iconfont icon-angle-right" ng-show="activeIndexInStaffs < staffLength - 1"  ng-click="showNextStaff()"></div>
-      </div>
+        <div class="staff-tutor-section__detail">
+            <h4>成功案例</h4>
+            <p ng-bind="staffs[activeIndexInStaffs].success_case"></p>
+            <h4>个人特色</h4>
+            <p ng-bind="staffs[activeIndexInStaffs].feature">
+            </p>
+        </div>
     </div>
-    <div class="staff-tutor-section__detail">
-      <h4>成功案例</h4>
-      <p ng-bind="staffs[activeIndexInStaffs].success_case"></p>
-      <h4>个人特色</h4>
-      <p ng-bind="staffs[activeIndexInStaffs].feature">
-      </p>
-    </div>
-  </div>
 </section>
 <section class="staff-tutor-section">
-  <h2 class="staff-tutor-section__title section-title">
-    金牌导师
-    <small>GOLD TUTOR</small>
-  </h2>
-  <div class="staff-tutor-section__content">
-    <div class="staff-tutor-section__summary">
-      <div class="staff-tutor-section__summary__container">
-        <div class="tutor-wrapper">
-          <div class="tutor " ng-repeat="item in activeStaffs track by $index" ng-class="{'active': item.id == activeStaff.id}">
-            <div class="tutor__content" ng-click="selectStaffById(item.id)">
-              <div class="tutor__header-img"><img ng-src="{{item.photo}}" alt=""></div>
-              <h3 class="tutor__name"><span ng-bind="item.chinese_name"></span> / <span ng-bind="item.english_name"></span></h3>
-              <div class="tutor__title" ng-bind="item.graduated"></div>
-              <div class="tutor__title" ng-bind="item.major"></div>
+    <h2 class="staff-tutor-section__title section-title">
+        金牌导师
+        <small>GOLD TUTOR</small>
+    </h2>
+    <div class="staff-tutor-section__content">
+        <div class="staff-tutor-section__summary">
+            <div class="staff-tutor-section__summary__container">
+                <div class="tutor-wrapper">
+                    <div class="tutor " ng-repeat="item in activeStaffs track by $index"
+                         ng-class="{'active': item.id == activeStaff.id}">
+                        <div class="tutor__content" ng-click="selectStaffById(item.id)">
+                            <div class="tutor__header-img">
+                                <img ng-src="/static/{{item.id}}/photo.png"
+                                     onerror="javascript:this.src='assets/image/logo.png';">
+                            </div>
+                            <h3 class="tutor__name"><span ng-bind="item.chinese_name"></span> / <span
+                                    ng-bind="item.english_name"></span></h3>
+                            <div class="tutor__title" ng-bind="item.graduated"></div>
+                            <div class="tutor__title" ng-bind="item.major"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tutor-before" ng-click="showPreviousPage()" ng-show="pageIndex > 0">
+                    <i class="iconfont icon-angle-left"></i>
+                </div>
+                <div class="tutor-after" ng-click="showNextPage()" ng-show="pageIndex < totalPages - 1">
+                    <div class="iconfont icon-angle-right"></div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="tutor-before"  ng-click="showPreviousPage()" ng-show="pageIndex > 0">
-          <i class="iconfont icon-angle-left"></i>
+        <div class="staff-tutor-section__detail">
+            <div class="staff-tutor-section__detail__container">
+                <div class="tutor__brief">
+                    <i class="iconfont icon-quotation-left"></i>
+                    <p ng-bind="activeStaff.introduce"></p>
+                </div>
+                <div class="tutor__detail__item case">
+                    <div class="title">
+                        <p class="font24">成功案例</p>
+                        <div class="underline"></div>
+                        <p>SUCCESSFUL CASE</p>
+                    </div>
+                    <div class="content">
+                        <p ng-bind="activeStaff.success_case"></p>
+                    </div>
+                </div>
+                <div class="tutor__detail__item feature">
+                    <div class="title">
+                        <p class="font24">个人特色</p>
+                        <div class="underline fr"></div>
+                        <div class='clearfix'></div>
+                        <p>PERSONAL SPECIALTY</p>
+                    </div>
+                    <div class="content">
+                        <p ng-bind="activeStaff.feature">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="tutor-after"  ng-click="showNextPage()" ng-show="pageIndex < totalPages - 1">
-          <div class="iconfont icon-angle-right"></div>
-        </div>
-      </div>
     </div>
-    <div class="staff-tutor-section__detail">
-      <div class="staff-tutor-section__detail__container">
-        <div class="tutor__brief">
-          <i class="iconfont icon-quotation-left"></i>
-          <p ng-bind="activeStaff.introduce"></p>
-        </div>
-        <div class="tutor__detail__item case">
-          <div class="title">
-            <p class="font24">成功案例</p>
-            <div class="underline"></div>
-            <p>SUCCESSFUL CASE</p>
-          </div>
-          <div class="content">
-            <p ng-bind="activeStaff.success_case"></p>
-          </div>
-        </div>
-        <div class="tutor__detail__item feature">
-          <div class="title">
-            <p class="font24">个人特色</p>
-            <div class="underline fr"></div>
-            <div class='clearfix'></div>
-            <p>PERSONAL SPECIALTY</p>
-          </div>
-          <div class="content">
-            <p ng-bind="activeStaff.feature">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section class="staff-appoint-section">
-  <h2 class="section-title">
-    预约导师
-    <small>APPOINTMENT TUTOR</small>
-  </h2>
-  <div class="staff-appoint-section__content">
-    <div class="staff-appoint-section__content__bg"></div>
-    <div class="staff-appoint-section__content__info">
-      <h3>预约老师课程？</h3>
-      <form action="">
-        <div class="form-group">
-          <input type="text" class="input form-control" placeholder="约课老师">
+    <h2 class="section-title">
+        预约导师
+        <small>APPOINTMENT TUTOR</small>
+    </h2>
+    <div class="staff-appoint-section__content">
+        <div class="staff-appoint-section__content__bg"></div>
+        <div class="staff-appoint-section__content__info">
+            <h3 class="mt0">预约老师课程？</h3>
+            <form name="form" ng-submit="apply()" novalidate>
+                <div class="form-group">
+                    <input type="text" class="input form-control" placeholder="约课老师" name="teacher"
+                           ng-model="item.teacher">
+                </div>
+                <div class="form-group" ng-class="{'has-error':form.name.$invalid && (form.name.$dirty || form.$submitted)}">
+                    <input type="text" class="input form-control" placeholder="你的姓名" name="name" ng-model="item.name"
+                           required>
+                </div>
+                <div class="form-group" ng-class="{'has-error':form.phone.$invalid && (form.phone.$dirty || form.$submitted)}">
+                    <input type="text" class="input form-control" placeholder="手机号码" name="phone" ng-model="item.phone"
+                           required>
+                </div>
+                <button type="submit" class="btn btn-green">马上约课</button>
+            </form>
         </div>
-        <div class="form-group">
-          <input type="text" class="input form-control" placeholder="你的姓名">
-        </div>
-        <div class="form-group">
-          <input type="text" class="input form-control" placeholder="手机号码">
-        </div>
-        <button class="btn btn-green">马上约课</button>
-      </form>
     </div>
-  </div>
 </section>

@@ -10,7 +10,7 @@
             .state('app.pages.index', {
                 url: '/index',
                 title: '首页',
-                templateUrl: '/app/pages/index/index.html',
+                templateUrl: 'app/pages/index/index.html',
                 controller: 'indexCtrl'
             });
     }
