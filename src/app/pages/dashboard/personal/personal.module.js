@@ -11,7 +11,7 @@
         abstract: true,
         url: '/personal',
         title: '个人信息',
-        templateUrl: '/app/pages/dashboard/personal/personal.html'
+        templateUrl: 'app/pages/dashboard/personal/personal.html'
       });
   }
 

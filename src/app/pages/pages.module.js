@@ -11,7 +11,7 @@
       abstract: true,
       views: {
         'app': {
-          templateUrl: '/app/pages/index.html'
+          templateUrl: 'app/pages/index.html'
         }
       }
     });

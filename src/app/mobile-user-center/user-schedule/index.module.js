@@ -9,10 +9,10 @@
         title: '课程表',
         views: {
           'mobileUserCenterHeader': {
-            templateUrl: '/app/mobile-user-center/header.html'
+            templateUrl: 'app/mobile-user-center/header.html'
           },
           'mobileUserCenterContent': {
-            templateUrl: '/app/mobile-user-center/user-schedule/index.html',
+            templateUrl: 'app/mobile-user-center/user-schedule/index.html',
             controller: 'userScheduleCtrl'
           }
         },

@@ -10,8 +10,7 @@
       .state('app.pages.dashboard.personal.updatePassword', {
         url: '/update-password',
         title: '修改密码',
-        templateUrl: '/app/pages/dashboard/personal/update-password/index.html'
-        //controller: 'passwordCtrl'
+        templateUrl: 'app/pages/dashboard/personal/update-password/index.html'
       });
   }
 

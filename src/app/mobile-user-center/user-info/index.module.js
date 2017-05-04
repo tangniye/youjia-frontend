@@ -9,10 +9,10 @@
         title: '用户信息',
         views: {
           'mobileUserCenterHeader': {
-            templateUrl: '/app/mobile-user-center/header.html'
+            templateUrl: 'app/mobile-user-center/header.html'
           },
           'mobileUserCenterContent': {
-            templateUrl: '/app/mobile-user-center/user-info/index.html',
+            templateUrl: 'app/mobile-user-center/user-info/index.html',
             controller: 'personalInfoCtrl'
           }
         },

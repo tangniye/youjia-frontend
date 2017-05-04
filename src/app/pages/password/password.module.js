@@ -10,7 +10,7 @@
             .state('app.pages.password', {
                 url: '/password',
                 title: '忘记密码',
-                templateUrl: '/app/pages/password/password.html'
+                templateUrl: 'app/pages/password/password.html'
             });
     }
 

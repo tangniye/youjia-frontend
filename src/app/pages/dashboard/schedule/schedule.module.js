@@ -11,7 +11,7 @@
         abstract: true,
         url: '/schedule',
         title: '课程表',
-        templateUrl: '/app/pages/dashboard/schedule/schedule.html',
+        templateUrl: 'app/pages/dashboard/schedule/schedule.html',
         controller: 'scheduleCtrl'
       });
   }
