@@ -3,6 +3,7 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
+var imagemin = require('gulp-imagemin');
 
 /**
  *  Mainly used to inject bower_components image files in the index.html
@@ -19,3 +20,10 @@ gulp.task('copyVendorImages', function () {
         .pipe(gulp.dest(path.join(conf.paths.tmp, 'serve', '/assets/image')));
 });
 
+gulp.task('imagemin', function () {
+    gulp.src(path.join(conf.paths.src, '/assets/image/imagemin/*.png'))
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulp.dest('dist/images/imagemin'))
+});
