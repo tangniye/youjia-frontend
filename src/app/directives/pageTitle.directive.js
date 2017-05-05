@@ -10,6 +10,7 @@
           // Create your own title pattern
           if (toState.title) title = '优加教育 | ' + toState.title;
 
+          document.body.scrollTop = 0;
           $timeout(function () {
             element.text(title);
           });
