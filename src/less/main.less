@@ -35,5 +35,12 @@ ul {
   color: @font-sub-color;
 }
 
+// for mobile device, set body cursor to pointer so that it can listen on click event
+@media (max-width: @screen-sm-max) {
+  body {
+    cursor: pointer;
+  }
+}
+
 // injector
 // endinjector
