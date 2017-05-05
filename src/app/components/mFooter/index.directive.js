@@ -38,7 +38,7 @@
             });
           });
 
-          $(document).on('click', function (e) {
+          $('body').on('click', function (e) {
             secondLevelMenus.removeClass('show');
           })
         }
