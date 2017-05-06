@@ -14,9 +14,9 @@
       {name: '中文名称', col: 'chinese_name', show: true},
       {name: '性别', col: 'sexual', show: true},
       {name: '年龄', col: 'age', show: true},
-      {name: '学校', col: 'school', show: true},
-      {name: '目前地址', col: 'location', show: true},
-      {name: '学习课程', col: 'course_name', show: true, html: courseNameHtml},
+      {name: '学校', col: 'school', show: true, html: cutHtml},
+      {name: '目前地址', col: 'location', show: true, html: cutHtml},
+      {name: '学习课程', col: 'course_name', show: true, html: cutHtml},
       {name: '手机号码', col: 'phone', show: true},
       {name: '更新日期', col: 'update_time', show: true, sort: 'order_update_time'},
       {name: '操作', col: 'id', show: true, class: 'option', html: optionHtml, handler: [view, edit, archive, print]}
@@ -37,10 +37,10 @@
       search: true
     };
 
-    function courseNameHtml(data) {
+    function cutHtml(data) {
       var html;
-      if (data.length > 20) {
-        var str = data.substring(0, 20) + '...';
+      if (data.length > 10) {
+        var str = data.substring(0, 10) + '...';
         html = '<span title="' + data + '">' + str + '</span>'
       } else {
         html = data

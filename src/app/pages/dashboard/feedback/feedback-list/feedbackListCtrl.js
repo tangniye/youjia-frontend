@@ -11,10 +11,10 @@
     vm.tableColumns = [
       {name: '中文名称', col: 'chinese_name', show: true},
       {name: '注册时间', col: 'create_time', show: true, sort: 'order_create_time'},
-      {name: '期望学校', col: 'school', show: true},
-      {name: '目前地址', col: 'location', show: true},
-      {name: '学习课程', col: 'course_name', show: true, html: courseNameHtml},
-      {name: '学习范围', col: 'learn_range', show: true},
+      {name: '期望学校', col: 'school', show: true, html: cutHtml},
+      {name: '目前地址', col: 'location', show: true, html: cutHtml},
+      {name: '学习课程', col: 'course_name', show: true, html: cutHtml},
+      {name: '学习范围', col: 'learn_range', show: true, html: cutHtml},
       {name: '手机号码', col: 'phone', show: true},
       {name: '更新日期', col: 'update_time', show: true},
       {name: '卡片数', col: 'count', show: true},
@@ -32,10 +32,10 @@
       }
     };
 
-    function courseNameHtml(data) {
+    function cutHtml(data) {
       var html;
-      if (data.length > 20) {
-        var str = data.substring(0, 20) + '...';
+      if (data.length > 10) {
+        var str = data.substring(0, 10) + '...';
         html = '<span title="' + data + '">' + str + '</span>'
       } else {
         html = data
