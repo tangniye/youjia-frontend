@@ -139,9 +139,14 @@
 }
 
 @media (max-width: @screen-xs-max) {
+  .modal-open {
+    #root {
+      display: none;
+    }
+  }
   .login-modal {
     .modal-dialog.modal-sm {
-      position: fixed !important;
+      //position: fixed !important;
       left: auto;
       right: auto;
       top: auto;
