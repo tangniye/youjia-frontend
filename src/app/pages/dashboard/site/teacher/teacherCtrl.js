@@ -16,7 +16,7 @@
       {name: '毕业专业', col: 'major', show: true},
       {name: '毕业国家', col: 'country', show: true},
       {name: '手机号码', col: 'phone', show: true},
-      {name: '更新日期', col: 'update_time', show: true, sort: 'order_update_time'},
+      {name: '更新日期', col: 'update_time', show: true, sort: 'order_update_time', html: updateTimeHtml},
       {name: '操作', col: 'id', show: true, class: 'option', html: optionHtml, handler: [view, edit, deleteItem]}
     ];
     vm.tableState = {
@@ -40,6 +40,10 @@
         vm.tableState.pagination.page_total = res.page_total;
       })
     };
+
+    function updateTimeHtml(data) {
+      return moment(data).format("YYYY-MM-DD");
+    }
 
     function optionHtml() {
       var html = '<a ng-click="(item.handler[0])(data)" title="查看"><i class="iconfont icon-magnifier"></i></a>' +
