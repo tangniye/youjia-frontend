@@ -56,11 +56,15 @@ section .title {
     display: flex;
     justify-content: space-between;
 
-    label {
-      width: 120px;
-      &:not(:last-child) {
+    .content-col {
+      flex: 1;
+      div{
         margin-bottom: 50px;
       }
+    }
+
+    label {
+      width: 120px;
     }
     span {
       color: @font-sub-color;
