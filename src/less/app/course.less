@@ -201,11 +201,9 @@
   }
 }
 .course-banner__buttons {
-  //display: flex;
   position: absolute;
   bottom: 20px;
   margin: 18px 0 0 0;
-  //justify-content: space-around;
   a {
     margin-right: 2rem;
   }
@@ -264,6 +262,15 @@
     position: relative;
     color: @primary-white;
     line-height: 1.2em;
+    &:hover {
+      .course-method__content {
+        top: 0;
+        bottom: 0;
+        p.method-item {
+          display: block;
+        }
+      }
+    }
   }
   .course-method__bg {
     display: block;
@@ -272,6 +279,8 @@
   }
   .course-method__content {
     position: absolute;
+    top: auto;
+    bottom: 0;
     width: 100%;
     left: 0;
     padding: 8px 20px;
@@ -286,27 +295,21 @@
         margin-bottom: 6px;
       }
     }
-    p {
-      margin-bottom: 6px;
-    }
+  }
+  p.method-item {
+    display: none;
+    margin-bottom: 6px;
   }
   .course-method--1 {
     .course-method__bg {
       background: url("@{images-root}/course-method-bg-1.jpg") no-repeat center;
       background-size: cover;
     }
-    .course-method__content {
-      top: 0;
-      height: 100%;
-    }
   }
   .course-method--2 {
     .course-method__bg {
       background: url("@{images-root}/course-method-bg-2.jpg") no-repeat center;
       background-size: cover;
-    }
-    .course-method__content {
-      bottom: 0;
     }
 
   }
@@ -553,8 +556,8 @@
         color: @font-color;
       }
     }
-    .method-item {
-      display: flex;
+    p.method-item {
+      display: flex !important;
       align-items: baseline;
       span {
         color: @font-sub-color;
