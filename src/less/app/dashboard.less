@@ -16,6 +16,11 @@
   color: @primary-white;
 }
 
+.dashboard-sidebar__header {
+  margin: 60px auto;
+  text-align: center;
+}
+
 .dashboard-sidebar .img-container-border {
   width: 70px;
   height: 70px;
@@ -41,6 +46,9 @@
   margin: 0;
   text-align: center;
 
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
   li.active {
     background-color: @primary-green;
     position: relative;
@@ -70,9 +78,9 @@
 
 .dashboard-sidebar .helper-rail {
   position: absolute;
-  float: left;
-  left: 42px;
+  width: 100%;
   bottom: 40px;
+  text-align: center;
 }
 
 .dashboard-sidebar a.helper {

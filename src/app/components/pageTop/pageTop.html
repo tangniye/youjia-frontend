@@ -9,7 +9,7 @@
         <li ui-sref-active="active">
           <a ui-sref="app.pages.staff">师资团队</a>
         </li>
-        <li ng-class="{active: $state.includes('app.pages.course')}" class="course-menu-trigger">
+        <li ng-class="{active: $state.includes('app.pages.course')}" class="dropdown-trigger">
           <a>课程列表<i class="fa fa-caret-down ml5"></i></a>
           <ul class="dropdown-menu">
             <li><a ui-sref="app.pages.course.ielts" ui-sref-active="active">雅思</a></li>
@@ -25,15 +25,15 @@
         </li>
       </ul>
     </div>
-    <div class="page-top-right fr" uib-dropdown>
+    <div class="page-top-right fr dropdown-trigger">
       <a class="btn btn-green" ng-click="promptLogin()" ng-if="!me">登录</a>
-      <div class="flex-center" uib-dropdown-toggle ng-if="me">
+      <div class="flex-center" ng-if="me">
         <i class="iconfont icon-user-circle-o mr5 font40"></i>
         <i class="fa fa-caret-down"></i>
       </div>
-      <ul role="menu" class="dropdown-menu" uib-dropdown-menu aria-labelledby="split-button" ng-if="me">
-        <li role="menuitem"><a ui-sref="app.pages.dashboard.personal.info">个人中心</a></li>
-        <li role="menuitem"><a ng-click="logout()">退出</a></li>
+      <ul class="dropdown-menu" ng-if="me">
+        <li><a ui-sref="app.pages.dashboard.personal.info">个人中心</a></li>
+        <li><a ng-click="logout()">退出</a></li>
       </ul>
     </div>
   </div>
