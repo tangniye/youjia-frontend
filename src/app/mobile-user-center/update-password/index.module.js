@@ -7,7 +7,9 @@
       url: '/update-password',
       title: '修改密码',
       views: {
-        'mobileUserCenterHeader': {},
+        'mobileUserCenterHeader': {
+          templateUrl: 'app/mobile-user-center/return-header.html'
+        },
         'mobileUserCenterContent': {
           templateUrl: 'app/mobile-user-center/update-password/index.html'
         }

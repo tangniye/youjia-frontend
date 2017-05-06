@@ -8,11 +8,6 @@
   function loginModelCtrl($rootScope, $scope, $cookies, $uibModalInstance, $state, User, IS_MOBILE) {
     var vm = $scope;
 
-    vm.user = {
-      phone: '13800138000',
-      password: 'abc123'
-    };
-
     vm.error = {
       flag: false,
       message: ''

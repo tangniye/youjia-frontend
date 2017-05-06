@@ -29,7 +29,8 @@
     'app.pages.case',
     'app.pages.course',
     'app.pages.dashboard',
-    'app.pages.password'
+    'app.pages.password',
+    'app.pages.wechat'
   ])
     .config(routeConfig);
 

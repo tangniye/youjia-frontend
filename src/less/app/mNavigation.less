@@ -1,9 +1,12 @@
+@m-navigation-height: 56px;
+
 .mNavigation {
   display: none;
 }
+
 .mNavigation__topbar {
   display: flex;
-  height: 56px;
+  height: @m-navigation-height;
   justify-content: space-between;
   align-items: center;
   background-color: @primary-blue;
@@ -15,7 +18,7 @@
     background: url("@{images-root}/page-top-logo.png") no-repeat;
     background-size: auto 40px;
   }
-  .mNavigation__login-link{
+  .mNavigation__login-link {
     padding: 16px;
     color: darken(@primary-green, 5%);
     font-size: 16px;
@@ -24,8 +27,8 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 56px;
-    height: 56px;
+    width: @m-navigation-height;
+    height: @m-navigation-height;
     background: @primary-green;
     color: @primary-white;
     .iconfont {
@@ -33,6 +36,7 @@
     }
   }
 }
+
 .mNavigation__sidebar {
   position: fixed;
   width: 100%;
@@ -83,9 +87,11 @@
   }
 
 }
+
 .mNavigation__sidebar.show {
   right: 0;
 }
+
 @media (max-width: @screen-xs-max) {
   .mNavigation {
     display: block;

@@ -5,7 +5,7 @@
   'use strict';
 
   /** @ngInject */
-  function staffCtrl($scope, $q, User, Audition, toastr) {
+  function staffCtrl($scope, User, Audition, toastr) {
     var vm = $scope;
 
     vm.queryStr = {
