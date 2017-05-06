@@ -34,7 +34,7 @@
       if (!data) {
         return '<i class="iconfont icon-pencil-circle-o" ng-click="(item.handler[0])(data,item.col)" ng-if="edit" title="编辑" permission permission-only="\'ADMIN\'"></i>';
       }
-      var html = '<p class="main-color font24">' + data.course_name + '</p>' +
+      var html = '<p class="main-color course-name">' + data.course_name + '</p>' +
         '<p>' + data.chinese_name + '<i class="iconfont icon-note ml5" ng-click="(item.handler[1])(data,item.col)" title="编辑" ng-if="edit" permission permission-only="\'ADMIN\'"></i>' +
         '<i class="iconfont icon-delete ml5" ng-click="(item.handler[2])(data,item.col)" title="删除" ng-if="edit" permission permission-only="\'ADMIN\'"></i></p>';
       return html;
