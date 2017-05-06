@@ -25,11 +25,9 @@
 <section class="profile-section">
   <h4 class="title">基本信息</h4>
   <div class="content">
-    <div class="content-col" ng-repeat="column in ::profileColumns track by $index">
-      <div ng-repeat="item in column track by $index">
+    <div ng-repeat="item in ::profileColumns track by $index">
         <label ng-bind="item.name"></label>
         <span ng-bind="userInfo.profile[item.col]"></span>
-      </div>
     </div>
   </div>
 </section>
