@@ -10,9 +10,9 @@
             restrict: 'E',
             templateUrl: 'app/components/wechat-tip/wechatTip.html',
             link: function (scope, elem, attr) {
-                scope.close = function () {
-                    elem.hide();
-                }
+                elem.on('click',function () {
+                  elem.hide();
+                })
             }
         };
     }

@@ -4,12 +4,44 @@
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.72);
-  padding: 10px;
+  background-color: rgba(0, 0, 0, .7);
   z-index: 2000;
-  .wechat-tip__close-link {
-    font-size: 2.8rem;
-    color: @primary-green;
+  .wechat-tip__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: @primary-grey;
+    font-size: 1.8rem;
+    padding: 10px;
+    margin-top: 15px;
+    &:before {
+      position: absolute;
+      top: -15px;
+      right: 0;
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      content: '';
+      width: 15px;
+      height: 15px;
+      border-bottom: solid 15px @primary-grey;
+      border-left: solid 15px transparent;
+      border-right: solid 15px transparent;
+    }
+    .wechat-tip__icon-container {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 90px;
+      flex: 0 0 80px;
+      background-color: @primary-white;
+      color: #1c8ef5;
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      font-size: 4rem;
+      line-height: 80px;
+      text-align: center;
+    }
   }
 
 }
