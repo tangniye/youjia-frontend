@@ -108,6 +108,16 @@
 
     };
 
+    $('.tutor').on('swipeLeft', function () {
+      vm.$apply(function() {
+        vm.showNextStaff();
+      })
+    }).on('swipeRight', function () {
+      vm.$apply(function() {
+        vm.showPreviousStaff();
+      })
+    })
+
   }
 
   angular.module('app.pages.staff').controller('staffCtrl', staffCtrl);
