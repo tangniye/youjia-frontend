@@ -8,7 +8,7 @@
     function sidebarCtrl($scope, Common, Constant) {
         'ngInject';
         var vm = $scope;
-        vm.qq = Constant.qq;
+        vm.qq = Constant.contact.qq;
 
         vm.promptAudition = function () {
             Common.model.promptModel('auditionModalCtrl', 'app/components/audition-modal/audition-modal.html', 'sm', '', 'login-modal')

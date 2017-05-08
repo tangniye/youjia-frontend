@@ -7,9 +7,12 @@
     /** @ngInject */
     function Constant() {
         return {
-            qq: '1377716383',
-            wechat: 'uplusway',
-            tel: '18183286948'
+            contact: {
+                qq: '1377716383',
+                wechat: 'uplusway',
+                tel: '18183286948'
+            }
+
         };
     }
 

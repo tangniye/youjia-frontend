@@ -7,8 +7,9 @@
             restrict: 'EA',
             templateUrl: 'app/components/mFooter/index.html',
             link: function (scope, element) {
-                scope.tel = Constant.tel;
-                var qq = Constant.qq;
+                scope.tel = Constant.contact.tel;
+                var qq = Constant.contact.qq;
+
                 if (Browser.versions.mobile) {
                     var ua = navigator.userAgent.toLowerCase();
                     if (ua.match(/MicroMessenger/i) == "micromessenger") {
