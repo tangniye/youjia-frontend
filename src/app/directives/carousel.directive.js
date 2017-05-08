@@ -56,11 +56,6 @@
           }).on('mouseleave touchend', function () {
             unPause();
           });
-          //element.mouseenter(function () {
-          //  pause();
-          //}).mouseleave(function () {
-          //  unPause();
-          //});
         }
 
         function slide(i) {
