@@ -12,6 +12,7 @@
         var number = slides.length;
         var baseWidth = angular.element(element).width();
         var timeTicker;
+        var timeoutTicker;
         var slideInterval = 3000;
         var animateTime = 500;
         var sliding = false;
@@ -40,11 +41,26 @@
             goto(index + 1)
           });
           unPause();
-          element.mouseenter(function () {
+          $(element).on('swipeLeft', function () {
             pause();
-          }).mouseleave(function () {
+            goto(index + 1);
+            timeoutTicker && $timeout.cancel(timeoutTicker);
+            timeoutTicker = $timeout(unPause, animateTime);
+          }).on('swipeRight', function () {
+            pause();
+            goto(index - 1 );
+            timeoutTicker && $timeout.cancel(timeoutTicker);
+            timeoutTicker = $timeout(unPause, animateTime);
+          }).on('mouseenter touchstart', function () {
+            pause();
+          }).on('mouseleave touchend', function () {
             unPause();
           });
+          //element.mouseenter(function () {
+          //  pause();
+          //}).mouseleave(function () {
+          //  unPause();
+          //});
         }
 
         function slide(i) {
