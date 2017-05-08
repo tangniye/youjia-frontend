@@ -14,8 +14,8 @@
     <li>
       <a class="mfooter__dropdown-toggle"><i class="iconfont icon-two-line"></i>咨询小U</a>
       <ul class="mfooter__dropdown-menu">
-        <li><a ng-href="{{qqLink}}">在线咨询</a></li>
-        <li><a href="tel:18183286948">电话咨询</a></li>
+        <li><a ng-href="{{qqLink}}" ng-click="toggleTip()">在线咨询</a></li>
+        <li><a href="tel:{{tel}}">电话咨询</a></li>
         <li><a ui-sref="app.pages.wechat">关注微信</a></li>
       </ul>
     </li>

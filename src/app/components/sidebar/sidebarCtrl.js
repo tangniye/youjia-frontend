@@ -5,18 +5,20 @@
     'use strict';
 
     /** @ngInject */
-    function sidebarCtrl($scope, Common) {
+    function sidebarCtrl($scope, Common, Constant) {
         'ngInject';
+        var vm = $scope;
+        vm.qq = Constant.qq;
 
-      $scope.promptAudition = function () {
-        Common.model.promptModel('auditionModalCtrl', 'app/components/audition-modal/audition-modal.html', 'sm', '', 'login-modal')
-      };
+        vm.promptAudition = function () {
+            Common.model.promptModel('auditionModalCtrl', 'app/components/audition-modal/audition-modal.html', 'sm', '', 'login-modal')
+        };
 
-      $scope.backToTop = function () {
-        $('html, body').animate({
-          scrollTop:0
-        }, 'slow');
-      }
+        vm.backToTop = function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'slow');
+        }
 
     }
 
