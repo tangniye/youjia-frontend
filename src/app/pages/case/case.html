@@ -1,5 +1,5 @@
 <div class="case-banner flex-center" img-resize="{height:360,width:1920}" m-size="{height:320,width:750}">
-  <h3 class="case-banner__text">我们一起的奋斗成果 新的开头携手共进</h3>
+  <h3 class="case-banner__text">同样的努力  更好的分数！</h3>
   <div class="case-banner__text--mobile">
     <h3 class="section-title">
       查看成功案例
@@ -15,6 +15,7 @@
   <ul class="case-section__nav horizontal-nav" scroll-nav>
     <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === '雅思'}" ng-click="toggle('雅思')">雅思</li>
     <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === '托福'}" ng-click="toggle('托福')">托福</li>
+    <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === 'GRE'}" ng-click="toggle('GRE')">GRE</li>
     <li class="horizontal-nav__tab" ng-class="{active:queryStr.tag === 'SAT'}" ng-click="toggle('SAT')">SAT</li>
   </ul>
   <div class="case-section__content">
@@ -42,9 +43,9 @@
       </div>
       <div class="case-section__content__feedback-block">
         <h5 class="title">同学感悟</h5>
-        <p ng-bind="case.comment"></p>
-        <h5 class="title">老师点评</h5>
         <p ng-bind="case.feeling"></p>
+        <h5 class="title">老师点评</h5>
+        <p ng-bind="case.comment"></p>
       </div>
     </div>
     <div class="case-section__content__footer" ng-if="total > 0">
