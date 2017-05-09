@@ -40,6 +40,10 @@
                     vm.title.main = 'SAT';
                     vm.title.sub = 'SAT';
                     break;
+                case 'app.pages.course.gre':
+                    vm.title.main = 'GRE';
+                    vm.title.sub = 'GRE';
+                    break;
             }
         });
 
