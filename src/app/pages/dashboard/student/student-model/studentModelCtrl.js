@@ -52,7 +52,7 @@
                 if (vm.add) {
                     User.addStudent(item).then(function (res) {
                         $uibModalInstance.close();
-                        vm.getdata();
+                        vm.getdata(1);
                         Common.model.promptModel('', success_add_model_template_url, 'md', true, 'common-modal', {
                             english_name: item.english_name
                         });
@@ -62,7 +62,7 @@
                 if (vm.edit) {
                     User.modifyStudent(item.id, item).then(function (res) {
                         $uibModalInstance.close();
-                        vm.getdata();
+                        vm.getdata(1);
                         toastr.success('修改成功', '', {'closeButton': true});
                     })
                 }
