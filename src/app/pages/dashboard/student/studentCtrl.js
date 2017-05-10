@@ -19,7 +19,7 @@
       {name: '学习课程', col: 'course_name', show: true, html: cutHtml},
       {name: '手机号码', col: 'phone', show: true},
       {name: '更新日期', col: 'update_time', show: true, sort: 'order_update_time'},
-      {name: '操作', col: 'id', show: true, class: 'option', html: optionHtml, handler: [view, edit, archive, print]}
+      {name: '操作', col: 'id', show: true, class: 'option', html: optionHtml, handler: [view, edit, archive]}
     ];
     vm.tableState = {
       sort: {},
@@ -53,6 +53,7 @@
         '<a ng-click="(item.handler[1])(data)" title="修改"><i class="iconfont icon-pencil"></i></a>' +
         '<a ng-click="(item.handler[2])(data)" title="归档"><i class="iconfont icon-archive"></i></a>' +
         '<a href="/export/user/info?user_id=' + data + '" target="_blank" title="导出"><i class="iconfont icon-print"></i></a>';
+        //'<a href="/export.html#/?user_id=' + data + '" target="_blank" title="导出"><i class="iconfont icon-print"></i></a>';
       return html
     }
 
@@ -92,10 +93,6 @@
       })
     }
 
-    function print(data) {
-
-    }
-
     vm.callServer = function callServer(queryStr) {
       User.getStudentList(queryStr).then(function (res) {
         vm.tableData = res.items;
@@ -105,7 +102,7 @@
     };
 
     vm.search = function () {
-      vm.pipe();
+      vm.pipe(1);
     };
 
     vm.focus = function () {

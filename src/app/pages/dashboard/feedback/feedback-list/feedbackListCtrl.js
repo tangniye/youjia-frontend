@@ -94,7 +94,7 @@
     };
 
     vm.search = function () {
-      vm.pipe();
+      vm.pipe(1);
     };
 
     vm.focus = function () {
