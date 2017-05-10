@@ -13,15 +13,17 @@
       <i class="fa fa-times-circle mr10"></i>
       <span>您输入的信息有误，请重新输入</span>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error':form.name.$invalid && (form.name.$dirty || form.$submitted)}">
       <i class="iconfont icon-user font18"></i>
       <input type="text" class="form-control input-username" name="name" placeholder="请输入您的姓名" ng-model="item.name"
              required>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error':form.phone.$invalid && (form.phone.$dirty || form.$submitted)}">
       <i class="iconfont icon-phone font18"></i>
-      <input class="form-control input-phone" name="phone" placeholder="请输入您的手机号" ng-model="item.phone"
-             ng-blur="is_phone_valid()" required>
+      <input class="form-control input-phone" name="phone" placeholder="请输入您的手机号"
+             ng-model="item.phone"
+             ng-pattern="regx"
+             required>
     </div>
 
     <div class="modal-footer">

@@ -64,11 +64,11 @@
   .form-group {
     padding-left: 15px;
 
-    &:not(:first-child) {
+    &{
       border-bottom: 1px solid @font-light-color;
     }
 
-    &:hover:not(:first-child) {
+    &:hover {
       border-bottom-color: @primary-green;
       i, input {
         color: @primary-green;
@@ -113,6 +113,19 @@
   .has-error .help-block {
     margin-top: 0;
     margin-bottom: 15px;
+  }
+  .form-group.has-error  {
+    border-bottom: 1px solid @font-error-color;
+    .iconfont {
+      color: @font-error-color;
+    }
+    .form-control {
+      color: @font-error-color;
+    }
+    &:hover {
+      color: @font-error-color;
+    }
+
   }
 
 }
