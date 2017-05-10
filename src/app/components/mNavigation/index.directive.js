@@ -5,6 +5,7 @@
   function mNavigation() {
     return {
       restrict: 'EA',
+      replace: true,
       templateUrl: 'app/components/mNavigation/index.html',
       controller: 'pageTopCtrl',
       link: function (scope, element) {

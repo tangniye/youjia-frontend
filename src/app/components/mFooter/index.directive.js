@@ -5,6 +5,7 @@
   function mFooter(Browser, Constant) {
     return {
       restrict: 'EA',
+      replace: true,
       templateUrl: 'app/components/mFooter/index.html',
       link: function (scope, element) {
         scope.tel = Constant.contact.tel;

@@ -9,6 +9,7 @@
     return {
       restrict: 'E',
       scope: true,
+      replace: true,
       templateUrl: 'app/components/pageTop/pageTop.html',
       controller: 'pageTopCtrl'
     }

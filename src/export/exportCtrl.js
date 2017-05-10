@@ -72,21 +72,31 @@
     };
     vm.userInfo.course_table = courseHandler(vm.userInfo.course_table);
     vm.profileColumns = [
-      {name: '中文名称：', col: 'chinese_name'},
-      {name: '英文名称：', col: 'english_name'},
-      {name: '性别：', col: 'sexual'},
-      {name: '所在地：', col: 'location'},
-      {name: '年龄：', col: 'age'},
-      {name: '学校：', col: 'school'},
-      {name: '年级：', col: 'grade'},
-      {name: '期望留学国家：', col: 'study_country'},
-      {name: '预计入学时间：', col: 'enrollment_time'},
-      {name: '期望留学专业：', col: 'major'},
-      {name: '学习课程：', col: 'course_name'},
-      {name: '学习范围：', col: 'learn_range'},
-      {name: '微信：', col: 'wechat'},
-      {name: '手机号码：', col: 'phone'},
-      {name: '家长手机号码：', col: 'parent_phone'}
+      [
+        {name: '中文名称：', col: 'chinese_name'},
+        {name: '英文名称：', col: 'english_name'},
+        {name: '性别：', col: 'sexual'},
+      ],
+      [
+        {name: '所在地：', col: 'location'},
+        {name: '年龄：', col: 'age'},
+        {name: '学校：', col: 'school'},
+      ],
+      [
+        {name: '年级：', col: 'grade'},
+        {name: '期望留学国家：', col: 'study_country'},
+        {name: '预计入学时间：', col: 'enrollment_time'},
+      ],
+      [
+        {name: '期望留学专业：', col: 'major'},
+        {name: '学习课程：', col: 'course_name'},
+        {name: '学习范围：', col: 'learn_range'},
+      ],
+      [
+        {name: '微信：', col: 'wechat'},
+        {name: '手机号码：', col: 'phone'},
+        {name: '家长手机号码：', col: 'parent_phone'}
+      ]
     ];
     vm.scheduleColumns = [
       {name: '节次', col: 'meridian', show: true},
