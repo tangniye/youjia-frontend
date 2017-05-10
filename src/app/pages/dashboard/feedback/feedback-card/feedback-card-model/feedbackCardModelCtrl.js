@@ -49,14 +49,15 @@
         if (vm.add) {
           Feedback.add(cur_user.id, _item).then(function (res) {
             $uibModalInstance.close();
-            vm.getdata();
+            debugger
+            vm.getdata(1);
           });
         }
 
         if (vm.edit) {
           Feedback.modify(_item.id, _item).then(function (res) {
             $uibModalInstance.close();
-            vm.getdata();
+            vm.getdata(1);
           })
         }
 

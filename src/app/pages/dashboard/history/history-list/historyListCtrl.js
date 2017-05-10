@@ -78,8 +78,8 @@
         if (data === 'ok') {
           User.delete(ids).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
+            vm.pipe(1);
           });
-          vm.pipe();
         }
       });
 
@@ -94,7 +94,7 @@
     };
 
     vm.search = function () {
-      vm.pipe();
+      vm.pipe(1);
     };
 
     vm.focus = function () {

@@ -29,7 +29,7 @@
           User.addTeacher(item).then(function (res) {
             $uibModalInstance.close();
             toastr.success('新增成功', '', {timeOut: 2000});
-            vm.getdata();
+            vm.getdata(1);
           });
         }
 
@@ -37,7 +37,7 @@
           User.modifyTeacher(item.id, item).then(function (res) {
             $uibModalInstance.close();
             toastr.success('修改成功', '', {timeOut: 2000});
-            vm.getdata();
+            vm.getdata(1);
           })
         }
 

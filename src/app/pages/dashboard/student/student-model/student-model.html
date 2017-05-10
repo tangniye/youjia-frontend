@@ -202,7 +202,7 @@
     <div class="row m0">
       <div class="col-md-12">
         <div class="form-group clearfix"
-             ng-class="{'has-error': (item.course_name.length == 0) && (form.course_name.$dirty||form.$submitted)}">
+             ng-class="{'has-error': (!item.course_name || item.course_name.length == 0) && (form.course_name.$dirty||form.$submitted)}">
           <label class="control-label"><span class="must-star">*</span>学习课程：</label>
           <div class="right multi-select-container">
             <div class="multi-select-container__item" ng-repeat="course in courseOptions" ng-if="!view">

@@ -25,9 +25,9 @@
     callServer();
 
 
-    function callServer() {
+    function callServer(page_index) {
       var query = {
-        page: vm.pagination.page,
+        page: page_index || vm.pagination.page,
         page_size: vm.pagination.page_size,
         user_id: vm.userid
       };
@@ -73,7 +73,7 @@
         if (data === 'ok') {
           Feedback.delete(feedbackid).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
-            callServer();
+            callServer(1);
           });
         }
       });
@@ -85,7 +85,7 @@
         if (data === 'ok') {
           Feedback.deleteAll(vm.userid).then(function (res) {
             toastr.success('删除成功', '', {timeOut: 2000});
-            callServer();
+            callServer(1);
           });
         }
       });

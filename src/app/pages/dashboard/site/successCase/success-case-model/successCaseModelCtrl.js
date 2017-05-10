@@ -16,14 +16,14 @@
         if (vm.add) {
           Case.add(item).then(function (res) {
             $uibModalInstance.close();
-            vm.getdata();
+            vm.getdata(1);
           });
         }
 
         if (vm.edit) {
           Case.modify(item.id, item).then(function (res) {
             $uibModalInstance.close();
-            vm.getdata();
+            vm.getdata(1);
           })
         }
 

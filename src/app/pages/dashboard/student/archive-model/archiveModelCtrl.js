@@ -9,11 +9,10 @@
     var vm = $scope;
 
     vm.submit = function (item) {
-      console.log(item)
       if (vm.form.$valid) {
         History.add(vm.id, item).then(function (res) {
           $uibModalInstance.close();
-          vm.getdata();
+          vm.getdata(1);
         });
       }
     };

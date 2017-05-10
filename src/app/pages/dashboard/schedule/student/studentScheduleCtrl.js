@@ -69,7 +69,7 @@
 
     vm.$on('searchChanged', function (event, data) {
       vm.tableState.search.key = data;
-      vm.pipe();
+      vm.pipe(1);
     })
 
   }
