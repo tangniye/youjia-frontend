@@ -55,7 +55,7 @@ function browserSyncInit(baseDir, browser) {
   };
 
   // create the proxy
-  server.middleware = [proxyMiddleware(context, options), proxyMiddleware(context_photo, options)/*, proxyMiddleware('/export', options)*/];
+  server.middleware = [proxyMiddleware(context, options), proxyMiddleware(context_photo, options), proxyMiddleware('/export', options)];
   //server.middleware = [proxyMiddleware('/intelligence', options), proxyMiddleware(context, options) /*, proxyMiddleware('/api/stable-v1', options2)*/ ];
 
   browserSync.instance = browserSync.init({
