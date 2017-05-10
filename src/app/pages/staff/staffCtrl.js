@@ -92,7 +92,7 @@
 
     getStaffList(vm.queryStr);
 
-    $scope.regx = /^\d{11}$/;
+    vm.regx = /^\d{11}$/;
 
     vm.apply = function () {
       if (vm.form.$valid) {

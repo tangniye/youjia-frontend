@@ -7,7 +7,7 @@
 <div class="modal-body">
   <p class="font18 text-center main-color">免费试听课</p>
   <form class="login-form" name="form" ng-submit="submit(item)"
-        ng-class="{'has-error':(form.name.$invalid && (form.name.$dirty || form.$submitted)) || (!is_phone_valid() && (form.phone.$dirty || form.$submitted))}"
+        ng-class="{'has-error':form.$invalid && form.$submitted}"
         novalidate>
     <div class="help-block error-block mb15 pl15">
       <i class="fa fa-times-circle mr10"></i>

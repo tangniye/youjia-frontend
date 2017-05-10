@@ -6,24 +6,29 @@
 </div>
 <div class="modal-body">
   <p class="font18 text-center main-color">优加留学登录</p>
-  <form class="login-form" ng-class="{'has-error':error.flag}">
+  <form name="form" class="login-form" ng-class="{'has-error':form.$invalid && form.$submitted}"
+        novalidate>
     <div class="help-block error-block mb15 pl15">
       <i class="fa fa-times-circle mr10"></i>
       <span ng-bind="error.message"></span>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-class="{'has-error':form.phone.$invalid && (form.phone.$dirty || form.$submitted)}">
       <i class="iconfont icon-user font18"></i>
-      <input type="text" class="form-control input-username" placeholder="请输入您的账号" ng-model="user.phone">
+      <input type="text" class="form-control input-username" name="phone" placeholder="请输入您的账号" ng-model="user.phone"
+             required>
     </div>
-    <div class="form-group">
+    <div class="form-group"
+         ng-class="{'has-error':form.password.$invalid && (form.password.$dirty || form.$submitted)}">
       <i class="iconfont icon-lock font18"></i>
-      <input type="password" class="form-control input-psd" placeholder="请输入您的密码" ng-model="user.password">
+      <input type="password" class="form-control input-psd" name="password" placeholder="请输入您的密码"
+             ng-model="user.password" required>
       <a class="forget-psd" ng-click="forget()">忘记密码</a>
     </div>
   </form>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-green" ng-click="login()">登 录</button>
-  <p class="mt25"><span class="border-line">&nbsp;</span>&nbsp;目前留学小助手只对内部学员开放&nbsp;<span class="border-line">&nbsp;</span></p>
+  <p class="mt25"><span class="border-line">&nbsp;</span>&nbsp;目前留学小助手只对内部学员开放&nbsp;<span
+    class="border-line">&nbsp;</span></p>
 </div>
 

@@ -5,12 +5,7 @@
   function auditionModalCtrl($scope, $uibModalInstance, Audition, toastr) {
     var vm = $scope;
 
-    var regx = vm.regx = /^\d{11}$/;
-
-
-    vm.is_phone_valid = function () {
-      return vm.form.phone && vm.form.phone.$viewValue && regx.test(vm.form.phone.$viewValue)
-    };
+    vm.regx = /^\d{11}$/;
 
     vm.submit = function (item) {
       if (vm.form.$valid) {

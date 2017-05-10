@@ -9,19 +9,22 @@
     var vm = $scope;
 
     vm.error = {
-      flag: false,
       message: ''
     };
 
     vm.login = function () {
+      vm.form.$submitted = true;
+      if (vm.form.$invalid) {
+        vm.error.message = '请输入用户名和密码';
+        return
+      }
       User.login(vm.user).then(function (res) {
-        vm.error.flag = false;
         $cookies.putObject('me', res);
         $rootScope.me = res;
         $uibModalInstance.close();
         $state.go('app.pages.index');
       }, function (res) {
-        vm.error.flag = true;
+        vm.form.$invalid = true;
         vm.error.message = res.message;
       })
     };
