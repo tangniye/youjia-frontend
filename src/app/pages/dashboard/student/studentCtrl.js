@@ -53,7 +53,6 @@
         '<a ng-click="(item.handler[1])(data)" title="修改"><i class="iconfont icon-pencil"></i></a>' +
         '<a ng-click="(item.handler[2])(data)" title="归档"><i class="iconfont icon-archive"></i></a>' +
         '<a href="/export/user/info?user_id=' + data + '" target="_blank" title="导出"><i class="iconfont icon-print"></i></a>';
-        //'<a href="/export.html#/?user_id=' + data + '" target="_blank" title="导出"><i class="iconfont icon-print"></i></a>';
       return html
     }
 
