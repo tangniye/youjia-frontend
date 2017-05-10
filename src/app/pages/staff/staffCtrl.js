@@ -92,16 +92,14 @@
 
     getStaffList(vm.queryStr);
 
-    var regx = /^\d{11}$/;
-
-    vm.is_phone_valid = function () {
-      return vm.form.phone && vm.form.phone.$viewValue && regx.test(vm.form.phone.$viewValue)
-    };
+    $scope.regx = /^\d{11}$/;
 
     vm.apply = function () {
-      if (vm.form.$valid && vm.is_phone_valid()) {
+      if (vm.form.$valid) {
         Audition.add(vm.item).then(function (res) {
           toastr.success('请等待通知', '预约成功', {'closeButton': true});
+          vm.form.$setPristine();
+          vm.form.$setUntouched();
           delete vm.item
         })
       }
