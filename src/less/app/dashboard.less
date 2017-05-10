@@ -4,11 +4,15 @@
 .dashboard {
   background-color: @primary-grey;
   font-size: 1.4rem;
-  padding: 40px;
+  padding: 40px 40px 100px 40px;
+  .container {
+    display: flex;
+    align-items: stretch;
+  }
 }
 
 .dashboard-sidebar {
-  position: absolute;
+  position: relative;
   background: url("@{images-root}/dashboard-sidebar-bg.png") repeat-y;
   width: @dashboard-sidebar-width;
   min-height: @dashboard-sidebar-height;
@@ -96,9 +100,9 @@
 }
 
 .dashboard-content {
-  min-height: @dashboard-sidebar-height;
-  margin-left: @dashboard-sidebar-width;
+  position: relative;
   background-color: @primary-white;
+  flex: 1 0;
 }
 
 @media (max-width: @screen-md-max) {
@@ -108,9 +112,6 @@
     }
     .dashboard-sidebar {
       width: 180px;
-    }
-    .dashboard-content {
-      margin-left: 180px;
     }
   }
 }

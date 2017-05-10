@@ -8,7 +8,6 @@
     function pageBottom() {
         return {
             restrict: 'E',
-          replace: true,
             templateUrl: 'app/components/pageBottom/pageBottom.html'
         };
     }

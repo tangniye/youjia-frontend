@@ -11,7 +11,7 @@
       templateUrl: 'app/pages/dashboard/sidebar/dashboardSidebar.html',
       link: function (scope, el) {
 
-      }
+      },
     };
   }
 
