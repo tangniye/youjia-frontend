@@ -49,7 +49,6 @@
         if (vm.add) {
           Feedback.add(cur_user.id, _item).then(function (res) {
             $uibModalInstance.close();
-            debugger
             vm.getdata(1);
           });
         }

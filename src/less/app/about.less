@@ -6,8 +6,7 @@
 }
 .about-banner {
   display: none;
-  background: url("@{images-root}/mobile-about-banner.jpg") no-repeat center;
-  background-size: cover;
+  background: none;
 }
 .about-section {
   position: relative;
@@ -46,9 +45,16 @@
   }
 }
 
-.about-section__content__contact {
+.about-section__content--bottom{
   margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
   color: @font-sub-color;
+}
+
+.about-section__content__contact {
+  //margin-top: 60px;
+  //color: @font-sub-color;
   p {
     display: flex;
     align-items: center;
@@ -63,12 +69,12 @@
   }
 }
 .about-section__content__signature {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  width: 100%;
+  //position: absolute;
+  //bottom: 40px;
+  //right: 40px;
+  //width: 100%;
   text-align: right;
-  color: @font-sub-color;
+  //color: @font-sub-color;
   .signature-logo {
     display: inline-block;
     width: 168px;
@@ -98,6 +104,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url("@{images-root}/mobile-about-banner.jpg") no-repeat center;
+    background-size: cover;
   }
   .about-banner__text--mobile {
     display: block;
@@ -148,3 +156,4 @@
     }
   }
 }
+
