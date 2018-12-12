@@ -6,7 +6,8 @@
   "node": "4.4.7",
   "scripts": {
     "postinstall": "bower install",
-    "start": "gulp serve"
+    "start": "gulp serve",
+    "build": "gulp build"
   },
   "devDependencies": {
     "browser-sync": "~2.9.11",
