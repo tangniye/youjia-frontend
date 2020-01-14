@@ -12,6 +12,6 @@
   "dependencies": {
     "lodash": "^3.6.0",
     "require-dir": "^0.3.0",
-    "restify": "^3.0.2"
+    "restify": "^8.5.1"
   }
 }
